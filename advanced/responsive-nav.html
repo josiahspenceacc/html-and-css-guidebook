@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Styling a Responsive Nav</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Styling a Responsive Nav</h1>
+
+				<p>For a real-world example of responsive design, let's take a look at how we might style some basic site navigation using common design patterns. It's a simple example, but there are many lessons it can show us.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#html">The HTML</a>
+					<a href="#mobile-first">Mobile-First Styles</a>
+					<a href="#responsive">Making it Responsive</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="html">The HTML</h2>
+			
+			<p>To get started, we first need solid HTML for our navigation. We'll use <code>a</code> links for the individual links&mdash;they're certainly the element for the job. And since we know this is the site navigation, we'll wrap it in a <code>nav</code> element, which means "a set of links for getting around a site, page, or article." Finally, inside the <code>nav</code>, we'll use an unordered list (<code>ul</code>) to contain the listing of links. This is helpful for users browsing the site using a screen-reader because it tells them <em>how many</em> links there are, so they can skip the nav altogether if it seems too long.</p>
+			
+			<p class="big-point">By starting with the HTML only, we ensure <strong>semantic</strong> element structure, rather than choosing elements based upon their appearance.</p>
+			
+			<p>The full HTML with only default browser styles looks like this:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+
+				<pre data-lang="html">&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</pre>
+
+			</div>
+			
+			<h2 id="mobile-first">Mobile-First Styles</h2>
+			
+			<p>When implementing a responsive design, it's nearly always best to use a <em>mobile-first</em> approach, meaning the first styles you write, those written outside any media query, are those for the smallest viewport width. This ensures that you start from a state of lower complexity, then gradually add complexity with media queries as the viewport gets wider.</p>
+			
+			<p class="big-point">The <strong>mobile-first approach</strong> keeps you from having to work backwards, subtracting back out complexity that you have already added.</p>
+			
+			<h3>Styling the List</h3>
+			
+			<p>First off, let's get rid of the bullets that indicate the individual list items (<code>li</code>) using the <code>list-style</code>. We only want to do this for list items in the nav, not any other potential list items that might appear elsewhere on the website, so we can use a <em>decendant selector</em> using a space to only select for list items within a <code>nav</code>.</p>
+			
+			<p class="big-point">Make sure you <strong>only</strong> select the list items in the navigation. Otherwise, your styles will be applied to all list items on the site.</p>
+
+						
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				
+				<pre data-lang="css">nav li {
+	list-style: none;
+}</pre>
+
+				<pre data-lang="html">&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</pre>
+
+			</div>
+			
+			<p>The bullets are gone! But there's a problem&mdash;all the text is indented somewhat from the left side of the page. Using the developer tools inspector, we will see that this results from the <code>padding-left</code> that is on the <code>ul</code> by default. We can remove it by zeroing out that padding, making sure again to only do so for unordered lists that are decendants of a <code>nav</code>:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				
+				<pre data-lang="css">nav ul {
+	padding-left: 0;
+}
+				
+nav li {
+	list-style: none;
+}</pre>
+
+				<pre data-lang="html">&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</pre>
+
+			</div>
+			
+			<h3>Styling the Links</h3>
+			
+			<p>To add a little visual separation, let's add some <code>padding</code> to each link and a line between them using <code>border-bottom</code>. While we're at it, we can remove the default underline from the link text using <code>text-decoration</code>:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				
+				<pre data-lang="css">nav ul {
+	padding-left: 0;
+}
+				
+nav li {
+	list-style: none;
+}
+				
+nav a {
+	border-bottom: 1px solid #ccc;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}</pre>
+
+				<pre data-lang="html">&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</pre>
+
+			</div>
+			
+			<p>Hmmm, that looks kind of funny. The borders don't stretch all the way across the space available, and something weired is hapenning vertically that causes the borders to overlap the text. So what's going on?</p>
+			
+			<p>Well, links (<code>a</code>) are <em>inline</em> be default, which means their content boxes only extend as far as the text they contain. And inline elements don't respect padding or margin on the vertical axis. That explains the issues we see.</p>
+			
+			<p class="big-point">By applying the padding to the <code>a</code> selector, we can ensure the <strong>entire area is clickable</strong>.</p>
+			
+			<p>We could solve the problem by placing the padding and border on the <code>li</code> selector instead because list items are <em>block</em> by default. However, if we did so, users wouldn't be able to tap within the padded area to visit the link. Only the links are clickable here. So instead, let's simply make the links <em>block</em> using the <code>display</code> property:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				
+				<pre data-lang="css">nav ul {
+	padding-left: 0;
+}
+				
+nav li {
+	list-style: none;
+}
+				
+nav a {
+	border-bottom: 1px solid #ccc;
+	display: block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}}</pre>
+
+				<pre data-lang="html">&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</pre>
+
+			</div>
+			
+			<h3>Link States</h3>
+			
+			<p>Now that the navigation looks good in its default state, it's time to make sure the links give a visual indication of interaction by styling the <em>hover</em>, <em>focus</em>, and <em>active</em> states.</p>
+			
+			<p>Since the hover and focus states both exist to let the user know the link is ready to be clicked, we'll use a comma-separated multi-selector to style them both the same with color and background. And we'll get rid of the default focus style using the <code>outline</code> property. Finally, we'll simply use a different background color for the active state:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				
+				<pre data-lang="css">nav ul {
+	padding-left: 0;
+}
+				
+nav li {
+	list-style: none;
+}
+				
+nav a {
+	border-bottom: 1px solid #ccc;
+	display: block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}
+				
+nav a:hover, nav a:focus {
+	background-color: blue;
+	color: white;
+	outline: none;
+}
+
+nav a:active {
+	background-color: darkblue;
+}</pre>
+
+				<pre data-lang="html">&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">Try hovering over the links. Can you figure out how to change the background color on hover? Can you make the borders thicker?</p>
+			
+			
+			<h2 id="responsive">Making it Responsive</h2>
+			
+			<p>Now that we have good-looking navigation styles for mobile, we can add media queries to create different layouts for larger viewport sizes.</p>
+			
+			<h3>Side-by-Side Links</h3>
+			
+			<p>The most common design pattern is to have the nav links sit side-by-side on larger screens, so let's create a media query where we'll apply our new styles (let's try <code>600px</code> wide and up) and set the links to <code>inline-block</code>. We choose this instead of <code>inline</code> to ensure that any vertical padding or margin is still applied.</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				
+				<pre data-lang="css">nav ul {
+	padding-left: 0;
+}
+				
+nav li {
+	list-style: none;
+}
+				
+nav a {
+	border-bottom: 1px solid #ccc;
+	display: block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}
+				
+nav a:hover, nav a:focus {
+	background-color: blue;
+	color: white;
+	outline: none;
+}
+
+nav a:active {
+	background-color: darkblue;
+}
+
+@media ( min-width: 600px ) {
+
+	nav a {
+		display: inline-block;
+	}
+
+}</pre>
+
+				<pre data-lang="html">&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</pre>
+
+			</div>
+			
+			<p>The links are still stacking, so what's going on? If you recall, each link is wrapped in a list item, which are themselves block elements by default. So we'll need to change them as well. Since their sizes are currently determind by the links they contain, it doesn't matter much whether we set them to <code>inline</code> or <code>inline-block</code>, but we'll go with <code>inline-block</code> just to be consistent:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				
+				<pre data-lang="css">nav ul {
+	padding-left: 0;
+}
+				
+nav li {
+	list-style: none;
+}
+				
+nav a {
+	border-bottom: 1px solid #ccc;
+	display: block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}
+				
+nav a:hover, nav a:focus {
+	background-color: blue;
+	color: white;
+	outline: none;
+}
+
+nav a:active {
+	background-color: darkblue;
+}
+
+@media ( min-width: 600px ) {
+
+	nav a {
+		display: inline-block;
+	}
+	
+	nav li {
+		display: inline-block;
+	}
+
+}</pre>
+
+				<pre data-lang="html">&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">Grab the lower-right corner of the demo and resize the viewport. Note how it changes between the mobile layout and the side-by-side layout depending on the width.</p>
+			
+			<p>So far, so good. But let's get rid of the borders under the links. They look a little funny in this layout:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				
+				<pre data-lang="css">nav ul {
+	padding-left: 0;
+}
+				
+nav li {
+	list-style: none;
+}
+				
+nav a {
+	border-bottom: 1px solid #ccc;
+	display: block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}
+				
+nav a:hover, nav a:focus {
+	background-color: blue;
+	color: white;
+	outline: none;
+}
+
+nav a:active {
+	background-color: darkblue;
+}
+
+@media ( min-width: 600px ) {
+
+	nav a {
+		border: none;
+		display: inline-block;
+	}
+	
+	nav li {
+		display: inline-block;
+	}
+
+}</pre>
+
+				<pre data-lang="html">&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;</pre>
+
+			</div>
+			
+			<p>There you have it! A simple responsive navigation that follows common design patterns. If you wanted you could alter the hover, focus, and active states within the media query. Or you could add a second media query to change the styles further on even larger viewport widths. Or you could create more imaginative navigation layouts at any of the sizes. This example is just here to get you started.</p>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

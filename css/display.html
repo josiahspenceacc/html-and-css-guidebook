@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The Display Property</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+	
+			<header>
+	
+				<h1>The Display Property</h1>
+				
+				<p>The display property determines the basic layout behavior of an element. Most elements have a default value of either <code>block</code> or <code>inline</code>.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#block">Block</a>
+					<a href="#inline">Inline</a>
+					<a href="#inline-block">Inline-Block</a>
+					<a href="#none">None</a>
+					<a href="#other">Other Values</a>
+					<a href="#video">Video Lesson</a>
+				</nav>
+				
+			</header>
+				
+			<h2 id="block">Block</h2>
+
+			<p>Block behavior makes elements stack one-below-another. Think of it like upside-down gravity: the elements fall to the top of the page and land below the one that came before. They also stretch horizontally to fill all the space available in the container.</p>
+
+			<p><em>Note that in this example, space has been added between the divs to make them easier to see.</em></p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="css">div {
+	background-color: lightblue;
+	height: 2rem;
+	margin-bottom: .2rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;</pre>
+			</div>
+
+			<p>Headings, paragraphs, divs, and many more elements behave as block by default.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+
+				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+
+&lt;p&gt;A paragraph of text.&lt;/p&gt;
+
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+
+&lt;div&gt;Some text in a div.&lt;/div&gt;</pre>
+			</div>
+
+			<p>Note that even though none of the elements in the above example contain enough text to fill all the horizontal space available, each is surrounded by an invisible box that extends all the way to the right edge of the container. We can make that box visible by adding a background color.</p>
+
+			<p><em>Note that in this exmaple the space between the elements results from the browser's default margin for those elements.</em></p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">h1, h2, p, div {
+	background-color: lightblue;
+}</pre>
+
+				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+
+&lt;p&gt;A paragraph of text.&lt;/p&gt;
+
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+
+&lt;div&gt;Some text in a div.&lt;/div&gt;</pre>
+			</div>
+
+
+
+			<h2 id="inline">Inline</h2>
+
+			<p>Inline behavior causes elements to be positioned in a horizontal line from left to right, just like words in a paragraph. And just like text, they wrap to a new line when they run out of room.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="css">html{
+	line-height: 1.6;
+}					
+span {
+	background-color: lightcoral;
+	padding: 0 2rem;
+}</pre>
+
+				<pre data-lang="html">&lt;span&gt;&nbsp;&lt;/span&gt;
+&lt;span&gt;&nbsp;&lt;/span&gt;
+&lt;span&gt;&nbsp;&lt;/span&gt;
+&lt;span&gt;&nbsp;&lt;/span&gt;
+&lt;span&gt;&nbsp;&lt;/span&gt;
+&lt;span&gt;&nbsp;&lt;/span&gt;
+&lt;span&gt;&nbsp;&lt;/span&gt;
+&lt;span&gt;&nbsp;&lt;/span&gt;
+&lt;span&gt;&nbsp;&lt;/span&gt;
+&lt;span&gt;&nbsp;&lt;/span&gt;</pre>
+			</div>
+
+			<p>Inline elements also behave like words when placed <em>within</em> a string of text, such as the <code>strong</code> element in the following example:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+
+				<pre data-lang="html">&lt;p&gt;This is a paragraph of example text that wraps to multiple lines, and the &lt;strong&gt;strong&lt;/strong&gt; tag is placed within the body of text. Notice how it does not break the flow of the text, but flows naturally within it.&lt;/p&gt;</pre>
+			</div>
+
+
+
+			<h2 id="inline-block">Inline-Block</h2>
+
+			<p>We run into issues when we try to apply vertical (top &amp; bottom) padding, margin, or border to <strong>inline</strong> elements. In order to preserve the position of the text on a line, those properties don't affect the element's position:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">strong {
+	background-color: lightcoral;
+	border: 2px solid lightgreen;
+	margin: 1rem;
+	padding: 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;This is a long paragraph of example text that wraps to multiple lines, and the &lt;strong&gt;strong&lt;/strong&gt; tag has padding, margin, and border applied. Notice how they work as expected on the horizontal axis, but don't cause the element to reposition on the vertical axis, which in turn causes weird overlapping.&lt;/p&gt;</pre>
+			</div>
+
+			<p>We could use <code>display: block;</code>, but that would cause the element to stretch horizontally all the way across the container:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">strong {
+	background-color: lightcoral;
+	border: 2px solid lightgreen;
+	display: block;
+	margin: 1rem;
+	padding: 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;This is a long paragraph of example text that wraps to multiple lines, and the &lt;strong&gt;strong&lt;/strong&gt; tag has padding, margin, and border applied, and is set to display: block. Notice how it now stretches horizonally across the container, pushing the neighboring content to the top and bottom. &lt;/p&gt;</pre>
+			</div>
+
+			<p>So instead we can use the hybrid <code>display: inline-block;</code>, which keeps the limited width and sits in a horizontal line like text, but respects vertical padding, margin, and border:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">strong {
+	background-color: lightcoral;
+	border: 2px solid lightgreen;
+	display: inline-block;
+	margin: 1rem;
+	padding: 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;This is a long paragraph of example text that wraps to multiple lines, and the &lt;strong&gt;strong&lt;/strong&gt; tag has padding, margin, and border applied, and is set to display: inline-block. Notice how it keeps its basic width and positioning but now respects vertical padding, margin, and border.. &lt;/p&gt;</pre>
+			</div>
+
+			<p>The above example is unlikely to be a common scenario for use of <code>inline-block</code>, but it can come in handy for all sorts of reasons, such as when styling links to look like buttons:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">a {
+	background-color: lightcoral;
+	border-radius: .5rem;
+	box-shadow: 2px 2px #444;
+	display: inline-block;
+	margin: .5rem;
+	padding: 1rem 2rem;
+}</pre>
+
+				<pre data-lang="html">&lt;a href="#"&gt;Link&lt;/a&gt; &lt;a href="#"&gt;Another&lt;/a&gt; &lt;a href="#"&gt;Third&lt;/a&gt; &lt;a href="#"&gt;Fourth&lt;/a&gt; &lt;a href="#"&gt;Fifth&lt;/a&gt;</pre>
+			</div>
+
+			<p class="try-this">In the example above, what happens if you change the <code>display</code> value to <code>inline</code>? What if you change it to <code>block</code>? This is a good demonstration of the differences between them.</p>
+
+			<h2 id="none">Display: None</h2>
+
+			<p>Occasionally, we want to visually remove an element from the page entirely, inlcuding any effect it might have on the rest of the page's layout. Examples might include a modal dialog that is hidden until a user takes an action to show it, or the contents of a collapsed accordion element, on the contents of a dropdown menu when not in use. For this, we can use <code>display: none;</code>, which causes the element to behave as though it doesn't exist at all.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	display: none;
+}</pre>
+
+				<pre data-lang="html">&lt;div&gt;There is a hidden paragraph &lt;em&gt;after&lt;/em&gt; me in the HTML&lt;/div&gt;
+
+&lt;p&gt;I am a paragraph that is hidden.&lt;/p&gt;
+
+&lt;div&gt;There is a hidden paragraph &lt;em&gt;before&lt;/em&gt; me in the HTML&lt;/div&gt;</pre>
+			</div>
+
+			<p class="try-this">In the example above, try changing the value of the <code>display</code> property to <code>block</code>. Notice how the hidden element appears. Change it back to <code>none</code> and notice how it disappears again and the layout closes the gap where it was.</p>
+
+			<h2 id="others">Other Display Values</h2>
+
+			<p>There are a number of other possible values for the <code>display</code> property, including <code>display: flex;</code> and <code>display: grid;</code>, but those serve an entirely different purpose and will be found in the articles about Flexbox and CSS Grid repectively.</p>
+			
+			
+			<h2 id="video">Video Lesson</h2>
+
+			<p>The following video demo is fully interactive. You can pause it at any time to directly edit the code, and resume playback to pickup where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/cevK9dTa"></video-demo>
+				
+
+			
+		</article>
+	
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

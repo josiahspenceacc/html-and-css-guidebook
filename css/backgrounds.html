@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Backgrounds</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>CSS Backgrounds</h1>
+				
+				<p>Whether a simple color, a repeating pattern, or a large heroic image, CSS allows you to set custom backgrounds behind any HTML content and offers a great deal of customization options.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#bg-color">Background Color</a>
+					<a href="#bg-image">Background Image</a>
+					<a href="#bg-repeat">Background Repeat</a>
+					<a href="#bg-position">Background Position</a>
+					<a href="#bg-attachment">Background Attachment</a>
+					<a href="#bg-size">Background Size</a>
+					<a href="#video">Video Lesson</a>
+					<a href="#resources">Resources</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="bg-color">Background Color</h2>
+
+			<p>A background color can be added to almost any html element using the <code>background-color</code> property followed by a valid color definition (see the <a href="../css/colors.html">CSS Color Definitions guide</a>).</p>
+
+			<p>Background colors sit behind any text, images, or other content and extend to the bounds of the element, including any padding applied.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.background-color-example {
+	background-color: salmon;
+	color: white;
+	padding: 1rem;
+}</pre>
+
+			<pre data-lang="html">&lt;div class="background-color-example"&gt;I have a background-color&lt;/div&gt;</pre>
+
+		</div>
+			
+			<p class="try-this">In the demo above, try changing the background color using other named colors, hexadecimal colors, or rgb colors.</p>
+
+
+			<h2 id="bg-image">Background Image</h2>
+
+			<p>A background image can be applied with the <code>background-image</code> property and a reference to the image path.</p>
+
+			<p>By default, a background image:</p>
+
+			<ul>
+				<li>Repeats on both the x and y axes.</li>
+				<li>Is top-left aligned to the element.</li>
+				<li>Is sized the actual scale of the image file.</li>
+			</ul>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.background-image-example {
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1725259/tulip.gif');
+	padding: 5rem 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div class="background-image-example"&gt;I have a background-image. Note how it repeats.&lt;/div&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the demo above, try replacing the image url with another image you find on the internet. Pay attention to how the size of the image affects its behavior. What happens when you use a really small image? What about a really large one?</p>
+
+			<h2 id="bg-repeat">Background Repeat</h2>
+
+			<p>By default, background images repeat in both directions if they aren't large enough to fill all the available space. The <code>background-repeat</code> property can specify for a background image to repeat only in one direction or the other, or to not repeat at all.</p>
+
+			<h4>repeat-x</h4>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.background-repeat-x-example {
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1725259/circle.png');
+	background-repeat: repeat-x;
+	padding: 5rem 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div class="background-repeat-x-example"&gt;My background image only repeats horizontally (the x-axis).&lt;/div&gt;</pre>
+
+			</div>
+
+			<h4>repeat-y</h4>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.background-repeat-y-example {
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1725259/circle.png');
+	background-repeat: repeat-y;
+	padding: 5rem 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div class="background-repeat-y-example"&gt;My background image only repeats vertically (the y-axis).&lt;/div&gt;</pre>
+
+			</div>
+
+			<h4>no-repeat</h4>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.background-no-repeat-example {
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1725259/circle.png');
+	background-repeat: no-repeat;
+	padding: 5rem 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div class="background-no-repeat-example"&gt;My background image doesn't repeat at all.&lt;/div&gt;</pre>
+
+			</div>
+
+			<h2 id="bg-position">Background Position</h2>
+
+			<p>Notice in the previous examples that by default a background image is positioned in the top-left of the element to which it is applied. This can be changed using the <code>background-position</code> property. It will accept two values: an x-axis position and a y-axis position.</p>
+
+			<h4>Keywords</h4>
+
+			<p>The simplest way to provide values for <code>background-position</code> is to use the available keywords: <code>left</code>, <code>right</code>, <code>top</code>, <code>bottom</code>, or <code>center</code>. Each behaves as you would expect.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.background-position-keyword-example {
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1725259/circle.png');
+	background-position: right center;
+	background-repeat: no-repeat;
+	padding: 5rem 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div class="background-position-keyword-example"&gt;My background image is positioned on the right side, and centered on the vertical axis.&lt;/div&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the example above, try changing the values for the <code>background-position</code> property. What happens when you use <code>left</code> or <code>center</code> for the first value? What happens when you use <code>bottom</code> or <code>top</code> for the second value? What if you only provide one value?</p>
+
+			<h4>Measurements</h4>
+
+			<p>You can also specify specific values using any appropriate CSS measurement unit. Positions are measured from the left and top.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.background-position-measurement-example {
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1725259/circle.png');
+	background-position: 40% 2rem;
+	background-repeat: no-repeat;
+	padding: 5rem 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div class="background-position-measurement-example"&gt;My background image is positioned 40% of the distance from the left edge and 2rem down from the top.&lt;/div&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the example above, try out different measurement values for the <code>background-position</code> property. Play with different unit types and different numbers.</p>
+
+			<h2 id="bg-attachment">Background Attachment</h2>
+
+			<p>By default, a background image moves with the element to which it is applied. If the page is scrolled and the top of the element is repositioned, so too is the top of the background image. This behavior can be changed with the <code>background-attachment</code> property. Combined with a value of <code>fixed</code>, the background image stays anchored in place as the element slides away, allowing for parallax-style effects.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.background-attachment-example {
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1725259/intersection.png');
+	background-attachment: fixed;
+	padding: 5rem 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div class="background-attachment-example"&gt;My background image stays put while I move on scroll.&lt;/div&gt;
+
+&lt;p&gt;Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll. Additional text so we can scroll.&lt;/p&gt;</pre>
+
+			</div>
+
+			<h2 id="bg-size">Background Size</h2>
+
+			<p>By default, a background image is scaled to match the actual pixel dimensions of the image file. However, this can be changed in a number of ways useing the <code>background-size</code> property.</p>
+
+			<h4>Keywords</h4>
+
+			<p>There are a number of named keywords for scaling background images.</p>
+
+			<h5>contain</h5>
+
+			<p><code>contain</code> scales an image so that the entire image is visible within the element.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.background-contain-example {
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1725259/tulip.gif');
+	background-size: contain;
+	padding: 5rem 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div class="background-contain-example"&gt;The whole background image is visible.&lt;/div&gt;</pre>
+
+			</div>
+
+			<h5>cover</h5>
+
+			<p><code>cover</code> scales an image so that the entire element is always covered.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.background-cover-example {
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1725259/tulip.gif');
+	background-size: cover;
+	padding: 5rem 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div class="background-cover-example"&gt;The background image covers the whole element. (Note that it is scaled to the point of pixelation - Something to look out for.)&lt;/div&gt;</pre>
+
+			</div>
+
+			<h4>Numerical Size Measurements</h4>
+
+			<p>The <code>background-size</code> property can also be used with any appropriate numerical size measurement. The values are read <em>width</em> then <em>height</em>.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.background-size-numerical-example {
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1725259/tulip.gif');
+	background-size: 50% 4rem;
+	padding: 5rem 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div class="background-size-numerical-example"&gt;My background image is half my width and 4rem tall.&lt;/div&gt;</pre>
+
+			</div>
+			
+			<h2 id="video">Video Lesson</h2>
+			
+			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/cLr8ZZtR"></video-demo>
+			
+			<h2 id="resources">Resources</h2>
+			
+			<ul>
+				<li><a href="https://yoksel.github.io/url-encoder/">SVG Background Encoding Tool</a></li>
+				<li><a href="https://www.heropatterns.com/">Hero Patterns | SVG Backgrounds</a></li>
+				<li><a href="https://unsplash.com/">Unsplash | Free Stock Images</a></li>
+			</ul>
+
+			
+		</article>
+	
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

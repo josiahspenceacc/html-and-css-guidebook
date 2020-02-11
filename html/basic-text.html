@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Basic Text Elements</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+	
+			<header>
+			
+			  <h1>Basic HTML Text Elements</h1>
+				
+				<p>Just as you might assign different roles to differnt types of text in a book or a magazine, so too HTML includes a number of different <strong>elements</strong> for identifying the <strong>roles</strong> of text content such as headings, paragraphs, lists, and more.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#headings">Headings</a>
+					<a href="#paragraphs">Paragraphs &amp; Small</a>
+					<a href="#strong-em">Strong &amp; Emphasis</a>
+					<a href="#lists">Lists</a>
+					<a href="#breaking">Breaking Tags</a>
+					<a href="#quiz">Practice Exercise</a>
+				</nav>
+				
+			</header>
+			
+
+			<h2 id="headings">Headings</h2>
+
+			<p><strong>Headings</strong> are used as section titles in an HTML document. In general, they should describe the content that follows. There are six levels of headings (<code>h1</code> - <code>h6</code>) and they can be used heirarchically to create multiple levels sub-sections within the content. Headings are block elements by default</p>
+			
+			<p class="big-point">It's important to choose heading based on their meaning in the document <strong>heirarchy</strong>, rather than on the font-size. Font-size can be changed with CSS.</p>
+
+			<p>In general, there should only be one <code>h1</code> per page, and it serves as the page title.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;h1&gt;Level 1 Heading&lt;/h1&gt;
+&lt;h2&gt;Level 2 Heading&lt;/h2&gt;
+&lt;h3&gt;Level 3 Heading&lt;/h3&gt;
+&lt;h4&gt;Level 4 Heading&lt;/h4&gt;
+&lt;h5&gt;Level 5 Heading&lt;/h5&gt;
+&lt;h6&gt;Level 6 Heading&lt;/h6&gt;</pre>
+
+			</div>
+
+			<p>It is important to remember that though headings have default styles, they should not be chosen based on appearance. (That's the job of CSS.) Instead, they denote the level of importance of the text as a title or sub-title.</p>
+
+
+
+			<h2 id="paragraphs">Paragraph and Small Elements</h2>
+
+			<h3>Paragraphs</h3>
+
+			<p><strong>Paragraphs</strong> (the <code>p</code> tag) are used for blocks of text (just like in writing). Paragraphs are block elements by default.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;p&gt;Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun.&lt;/p&gt;</pre>
+			</div>
+
+			<h3>Small</h3>
+
+			<p>The <code>small</code> represents text that is less important, a side comment, copyright, or legal information.</p>
+
+		<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;small&gt;Distributed under a Creative Commons Liscence.&lt;/small&gt;</pre>
+			</div>
+			
+			
+			<h2 id="strong-em">Strong and Emphasis Elements</h2>
+
+				<h3>Strong</h3>
+
+			<p><code>strong</code> is an inline element used to add importance to text. By default and most commonly, it makes the text <strong>bold</strong>.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;p&gt;Far out in the &lt;strong&gt;uncharted&lt;/strong&gt; backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun.&lt;/p&gt;</pre>
+			</div>
+
+			<h3>Emphasis</h3>
+
+			<p><code>em</code>is an inline element that adds emphasis to text. By default and most commonly, it makes the text <em>italic</em>.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;p&gt;Far out in the &lt;em&gt;uncharted&lt;/em&gt; backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun.&lt;/p&gt;</pre>
+			</div>
+			
+
+			<h2 id="lists">Lists</h2>
+
+			<p>There are two types of basic lists&mdash;<strong>Unordered Lists</strong> and <strong>Ordered Lists</strong>. By default both are block elements.</p>
+
+			<p>The <code>li</code> element represents a list item. If its parent element is an <code>ol</code> or <code>ul</code> element, then the element is an item of the parent element's list, as defined for those elements.</p>
+
+			<p>Lists may be <strong>nested</strong> within lists to create a heirarchy of sub-lists.</p>
+
+			<h3>Unordered Lists (ul)</h3>
+
+			<p>The <code>ul</code> element represents a list of items, where the order of the items is not important — that is, where changing the order would not materially change the meaning of the list. By default, list items within an unordered lists are denoted with the bullet sybol.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;ul&gt;
+	&lt;li&gt;Bananas&lt;/li&gt;
+	&lt;li&gt;Apples
+		&lt;ul&gt;
+			&lt;li&gt;Granny Smith&lt;/li&gt;
+			&lt;li&gt;Braeburn&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;Oranges&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+			</div>
+
+			<h3>Ordered Lists (ul)</h3>
+
+			<p>The <code>ol</code> element represents a list of items, where the items have been intentionally ordered, such that changing the order would change the meaning of the list. By default, list items within an unordered lists are denoted with the bullet sybol.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;ol&gt;
+	&lt;li&gt;Item 1&lt;/li&gt;
+	&lt;li&gt;Item 2
+		&lt;ol&gt;
+			&lt;li&gt;Sub Item 1&lt;/li&gt;
+			&lt;li&gt;Sub Item 2&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/li&gt;
+	&lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ol&gt;</pre>
+			</div>
+
+
+
+			<h2 id="breaking">Breaking Tags</h2>
+			
+			<p>While not themselves text, these self-closing tags indicate breaks in the flow of text or information. As such, they each carry a very specific meaning for the content into which they are placed.</p>
+			
+			<p class="big-point">It is important to only use these elements when their use applies real <strong>meaning</strong> to the document. They are <strong>not</strong> meant to be used for decorative or stylisting reasons.</p>
+
+			<h3>Horizontal Row</h3>
+
+			<p>The <code>hr</code> element is a divider that represents a paragraph-level thematic break. The <code>hr</code> tag is self-closing and does not require a separate closing tag.</p>
+
+			<p>The <code>hr</code> tag should <strong>not</strong> be used any place you want a line between content (for that you should apply a border with CSS). Rather it is important to use it only where there is a shift in topics between body-copy elements.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;p&gt;A first paragraph with a different theme from the second.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;A second paragraph thematically different from the first.&lt;/p&gt;</pre>
+
+			</div>
+
+			<h3>Break</h3>
+
+			<p>The <code>br</code> represents a return or break to a new line that is integral to the text content. The <code>br</code> tag is self-closing and does not require a separate closing tag.</p>
+
+			<p>The <code>br</code> tag should <strong>not</strong> be used as a generic line-break, but only in content like poetry or mailing addresses where the line breaks could be considered a part of the text's message.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;p&gt;You didn't know&lt;br&gt;
+what was in the heap. A visitor found&lt;br&gt;
+it to contain beggars. They sell the hollow&lt;br&gt;
+of their hands..&lt;/p&gt;</pre>
+			</div>
+			
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/html-text-basic.html"></lesson-quiz>
+			
+		</article>
+	
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

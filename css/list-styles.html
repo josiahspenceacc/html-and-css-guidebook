@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Styling Lists</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+	
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+
+		<main>
+
+			<article>
+
+				<header>
+
+					<h1>Styling Lists</h1>
+					
+					<p>By default, list items have either bullets or numbers, depending on the list type. However, CSS offers a number of techniques for customizing the <strong>style</strong> and <strong>positioning</strong> of list item markers.</p>
+
+					<nav class="page-nav">
+					<h2>On This Page</h2>
+						<a href="#list-style-type">List Style Type</a>
+						<a href="#nested">Nested Lists</a>
+						<a href="#padding">Padding</a>
+						<a href="#list-style-position">List Style Position</a>
+						<a href="#quiz">Practice Exercise</a>
+						<a href="#resources">Resources</a>
+					</nav>
+
+				</header>
+
+				<h2 id="list-style-type">List Style Type</h2>
+				
+				<p>The <code>list-style-type</code> property determines what style of bullet or numeric indicator is applied to each list item. This property will work if applied to the list as a whole (<code>ul</code> or <code>ol</code>), or if it is applied directly to the list items (<code>li</code>). Some common possible values are:</p>
+				
+				<ul>
+					<li style="list-style-type: disc"><code>disc</code>: The default value. A filled circle.</li>
+					<li style="list-style-type: circle"><code>circle</code>: A hollow circle.</li>
+					<li style="list-style-type: square"><code>square</code>: A filled square.</li>
+					<li style="list-style-type: decimal"><code>decimal</code>: Decimal numbers, counting up from 1.</li>
+					<li style="list-style-type: decimal-leading-zero"><code>decimal-leading-zero</code>: Decimal numbers with a leading zero, counting up from 01.</li>
+					<li style="list-style-type: upper-roman"><code>upper-roman</code>: Uppercase roman numerals, counting up from I.</li>
+					<li style="list-style-type: lower-roman"><code>lower-roman</code>: Lowercase roman numerals, counting up from i.</li>
+					<li style="list-style-type: upper-latin"><code>upper-latin</code>: Uppercase alphabetical letters, counting up from A.</li>
+					<li style="list-style-type: lower-latin"><code>lower-latin</code>: Lowercase alphabetical letters, counting up from a.</li>
+				</ul>
+
+				<h2 id="nested">Nested Lists</h2>
+				
+				<p>By default, a list nested inside another list receives different bullets/numbers from the parent list. This is great for creating visual distinction between the different levels of heirarchy. To create custom nested list styles, you can use a decendant selector. <code>ul ul</code> selects for any list inside another list. And <code>ul ul ul</code> selects for any list nested at least two deep. And so on.</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">ul {
+	list-style-type: square;
+}
+
+ul ul {
+	list-style-type: circle;
+}
+
+ol {
+	list-style-type: upper-roman;
+}
+
+ol ol {
+	list-style-type: lower-roman;
+}
+</pre>
+
+				<pre data-lang="html">&lt;ul&gt;
+
+	&lt;li&gt;List Item&lt;/li&gt;
+	
+	&lt;li&gt;List Item
+	
+		&lt;ul&gt;
+
+			&lt;li&gt;Nested List Item&lt;/li&gt;
+
+			&lt;li&gt;Nested List Item&lt;/li&gt;
+
+			&lt;li&gt;Nested List Item&lt;/li&gt;
+
+		&lt;/ul&gt;
+	
+	&lt;/li&gt;
+
+	&lt;li&gt;List Item&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;ol&gt;
+
+	&lt;li&gt;List Item&lt;/li&gt;
+	
+	&lt;li&gt;List Item
+	
+		&lt;ol&gt;
+
+			&lt;li&gt;Nested List Item&lt;/li&gt;
+
+			&lt;li&gt;Nested List Item&lt;/li&gt;
+
+			&lt;li&gt;Nested List Item&lt;/li&gt;
+
+		&lt;/ol&gt;
+	
+	&lt;/li&gt;
+
+	&lt;li&gt;List Item&lt;/li&gt;
+
+&lt;/ol&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the example above, try out different values for <code>list-item-type</code> for the different lists. Can you figure out how to make only the nested <code>ol</code> show decimal numbers?</p>
+
+				<h2 id="padding">Padding</h2>
+				
+				<p>By default, lists have a certain amount of <code>padding-left</code>, which is responsible for the indentation of the text. And, by default, the bullet sits inside of the padded area. If you wish to remove or adjust the indentation, you can simply apply a custom value, e.g. <code>padding-left: 0;</code></p>
+
+				<h2 id="list-style-position">List Style Position</h2>
+				
+				<p>By default, the bullets / numeric indicator associated with list items are placed outside the layout, to the left of the alignment of the text. However, this can be changed using the <code>list-style-position</code> property. The default value is <code>outside</code>. By changing the value to <code>inside</code>, the bullets / indicators are treated like a part of the text. This is perhaps best understood by example:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">
+.inside-list {
+	list-style-position: inside;
+}
+</pre>
+
+				<pre data-lang="html">&lt;h2&gt;Position Outside (default)&lt;/h2&gt;
+				
+&lt;ul&gt;
+
+	&lt;li&gt;“But now," says the Once-ler, "now that you're here, the word of the Lorax seems perfectly clear. Unless someone like you cares a whole awful lot, nothing is going to get better. It's not.”&lt;/li&gt;
+	
+	&lt;li&gt;Catch! calls the Once-ler. He lets something fall. It's a Truffula Seed. It's the last one of all! You're in charge of the last of the Truffula Seeds. And Truffula Trees are what everyone needs.&lt;/li&gt;
+
+&lt;/ul&gt;
+
+&lt;h2&gt;Position Inside&lt;/h2&gt;
+
+&lt;ul class="inside-list"&gt;
+
+	&lt;li&gt;“But now," says the Once-ler, "now that you're here, the word of the Lorax seems perfectly clear. Unless someone like you cares a whole awful lot, nothing is going to get better. It's not.”&lt;/li&gt;
+	
+	&lt;li&gt;Catch! calls the Once-ler. He lets something fall. It's a Truffula Seed. It's the last one of all! You're in charge of the last of the Truffula Seeds. And Truffula Trees are what everyone needs.&lt;/li&gt;
+
+&lt;/ul&gt;</pre>
+				</div>
+			
+
+				<h2 id="quiz">Practice Exercise</h2>
+
+				<lesson-quiz url="../quizzes/css-list-styles.html"></lesson-quiz>
+				
+				<h2 id="resources">Resources</h2>
+				
+				<ul>
+					<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters">MDN CSS for Lists Documentation</a></li>
+					<li><a href="https://www.smashingmagazine.com/2019/07/css-lists-markers-counters/">All About CSS Lists, Markers, And Counters</a></li>
+				</ul>
+
+			</article>
+
+		</main>
+
+		<site-footer></site-footer>
+
+	</div>
+
+<!--Scripts-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

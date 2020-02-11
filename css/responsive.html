@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Responsive Design</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+	
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+	
+			<header>
+
+				<h1>Responsive Design</h1>
+
+				<p>Responsive Design is a method for making sure a webpage looks good on all browser sizes, from tiny feature-phones to ultra-wide desktop monitors. This is achieved by using <strong>media queries</strong> to detect the size of a user's browser and implement different CSS styles based on that size. By using a series of media queries and strategic CSS overrides, a developer can create very different experiences for different browsers while writing a relatively small amount of extra code.</p>
+				
+			<p><strong>Media queries</strong> allow you to write CSS that is only applied at certain window sizes.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#mobile-first">Mobile First</a>
+					<a href="#queries">Media Queries</a>
+					<a href="#video">Video Lessons</a>
+				</nav>
+
+			</header>
+
+			<h2 id="mobile-first">Mobile First</h2>
+
+			<p>Because smaller browser viewports usually call for less complexity that a webpage in a large viewport, it is considered best practice to start with CSS for the smallest possible size and add complexity with media queries for larger and larger viewports. This practice is referred to as the <strong>mobile-first</strong> method.</p>
+
+			<figure>
+
+				<img src="images/responsive-gif.gif" alt="A responsive website showing several media sizes">
+				<figcaption>Notice how the smaller layout is the simplest.</figcaption>
+
+			</figure>
+
+			<h2 id="queries">Media Queries</h2>
+
+			<p>A media query is basically an <em>if</em> statement for CSS. It basically tells the browser, "If the criteria here are met, apply the CSS contained within." Or, more specifically for the following example, "If the browser window is at least 400px wide, make the paragraph text green."</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result"  
+			>
+
+				<pre data-lang="css">@media ( min-width: 400px ) {
+
+	p {
+		color: green;
+	}
+
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;Some text in a paragraph&lt;/p&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the demo above, try grabbing the bottom right corner of the demo and dragging to resize it to see how it behaves. Notice how the text is only green when the preview window is wider than 400px.</p>
+
+			<p>Media queries can contain multiple declaration blocks for different selectors.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result"
+			>
+
+				<pre data-lang="css">@media ( min-width: 400px ) {
+
+	h2 {
+		color: blue;
+	}
+
+	p {
+		color: green;
+	}
+
+}</pre>
+
+				<pre data-lang="html">&lt;h2&gt;A heading&lt;/h2&gt;
+
+&lt;p&gt;Some text in a paragraph&lt;/p&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the demo above, notice how the single media query contains multiple selector blocks, each with their own styles. Try resizing the demo to see the media query working.</p>
+
+			<h3>Overriding existing styles</h3>
+
+			<p>Any CSS inside a media query is read by the browser as an override to any CSS that has already been applied. This means that any CSS written <em>outside any media queries</em> is applied unless a media query specifically overrides it. And because that CSS is outside a media query, it is applied starting at a browser width of 0px. Another effect of this logic is that there is no need to repeat previously applied properties within a media query if the value doesn't change.</p>
+			
+			<p class="big-point">It's like Newton's First Law: Properties that are set tend to <strong>stay set</strong> unless acted upon by another <strong>media query</strong>.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result"
+			>
+
+				<pre data-lang="css">p {
+	color: red;
+	font-family: sans-serif;
+}
+
+@media ( min-width: 400px ) {
+
+	p {
+		color: green;
+	}
+
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;Some text in a paragraph&lt;/p&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">Try resizing the demo above. Notice how the color of the text changes to green at sizes above 400px. But also notice how the text remains sans-serif at all sizes because the media query hasn't specifically changed it. What happens if you add more styles outside the media query? Are they still applied when the window is larger than 400px?</p>
+
+			<h3>Multiple Media Queries</h3>
+
+			<p>A webpage usually needs more than one media query to work at all possible browser sizes, and it is common to use a series of media queries targeting ascending browser widths. In such cases, the same logic mentioned above is followed from media query to media query: Any CSS that has been applied from a previous media query stays applied until a new media query specifically overrides it. For instance:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result"
+			>
+
+				<pre data-lang="css">p {
+	color: red;
+	font-family: sans-serif;
+}
+
+@media ( min-width: 400px ) {
+
+	p {
+		color: green;
+		font-size: 1.1rem;
+	}
+
+}
+
+@media ( min-width: 500px ) {
+
+	p {
+		font-size: 1.2rem;
+	}
+
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;Some text in a paragraph&lt;/p&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">Try resizing the demo above. Pay careful attention to how both the color and font size change when the preview is wider than 400px, and how the font size grows more when wider than 500px. Notice how the type remains sans-serif throughout, and how the text remains green even above 500px.</p>
+
+			<h2 id="video">Video Lessons</h2>
+
+			<p>The following video demos are fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/crN7wWCv"></video-demo>
+
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

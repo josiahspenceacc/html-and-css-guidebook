@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Colors in CSS</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>CSS Color Definition Types</h1>
+				
+				<p>CSS provides quite a few ways to express colors for type, backgrounds, borders, and more. This page shows some of the most common formats for defining color values. You many encounter others.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#hex">Hexadecimal</a>
+					<a href="#rgb">RGB / RGBa</a>
+					<a href="#named">Named Colors</a>
+					<a href="#resources">Resource Links</a>
+				</nav>
+				
+			</header>
+
+
+			<h2 id="hex">Hexadecimal / Hex Shorthand</h2>
+
+			<p>The Hex format consists of six digits of alphanumeric code and are denoted by a preceding hashtag, like this: <code>#3ab13f</code>. These values can be easily copy-pasted from most design software.</p>
+
+			<p>For certain colors with repeating digits in the hex code, you can use a three-digit shorthand, like this: <code>#333</code>.</p>
+
+
+			<h2 id="rgb">RGB / RGBA</h2>
+
+			<p><strong>The RGB format</strong> consists of defined values for each of the red, green, and blue colors. It is written like this: <code>rgb( 13, 124, 0 )</code>.</p>
+
+			<p><strong>The RGBA format:</strong> When necessary, you can use a fourth value that denotes opacity to make the color semi-transparent. Opacity is scaled from 0–1, where 0 is completely transparent and 1 is fully opaque. An opacity of .5 is half-transparent. This is written like this: <code>rgba( 13, 124, 0, .5 )</code>.</p>
+
+
+			<h2 id="named">Named Colors</h2>
+
+			<p>For ease of use, there are 147 colors that have human-friendly names. These include common color names like: <code>white</code>, <code>black</code>, <code>red</code>, <code>blue</code>, etc., as well as some fancier ones like <code>cornflowerblue</code> or <code>darkolivegreen</code>.</p>
+
+			<p>There are many websites that <a href="https://htmlcolorcodes.com/color-names/" title="Named Color Reference">list all named CSS colors</a> for reference.</p>
+			
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://www.toptal.com/designers/visual/color-theory-for-designers">Color Theory for Designers</a></li>
+				<li><a href="https://codepen.io/joshatoutthink/full/byLzQG">An Animated Guide to Hex Codes</a></li>
+				<li><a href="https://refactoringui.com/previews/building-your-color-palette/">Building Your Color Palette</a></li>
+				<li><a href="https://v6.robweychert.com/blog/2018/02/v6-color/">A website color case study</a></li>
+				<li><a href="https://design.lyft.com/re-approaching-color-9e604ba22c88">Re-Approaching Color</a></li>
+				<li><a href="https://css-tricks.com/nerds-guide-color-web/">A Nerd's Guide to Color</a></li>
+			</ul>
+			
+			<h2 id="tools">Tools</h2>
+			
+			<ul>
+				<li><a href="https://coolors.co/app">Coolors: A tool for creating color palettes</a></li>
+				<li><a href="https://www.colorbox.io/">Colorbox: A tool for creating shades and tones</a></li>
+				<li><a href="https://copypalette.netlify.com/">CopyPalette: A different tool for creating shades and tones</a></li>
+			</ul>
+
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+</body>
+</html>

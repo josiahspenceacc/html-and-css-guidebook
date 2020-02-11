@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HTML Introduction</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+	
+</head>
+<body>
+	
+<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+	
+			<header>
+
+				<h1>Introduction to <abbr>HTML</abbr></h1>
+
+				<p>HTML stands for <strong>HyperText Markup Language</strong>. At the most fundamental level, HTML is a language that creates <strong>structure</strong> and adds <strong>meaning</strong> for the content of a webpage.</p>
+
+				<nv class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#content">A Language for Content</a>
+					<a href="#elements">Elements</a>
+					<a href="#semantics">Semantics</a>
+					<a href="#attributes">Attributes</a>
+					<a href="#files">HTML Files</a>
+				</nav>
+
+			</header>
+
+			<h2 id="content">A Language for Content</h2>
+			
+			<p>Different pieces of content play different roles and have different meaning. Think of an article in a magazine. There might be a title and various subheadings; there might be lists; and there would definitely be paragraphs. And we can identify this content by type. We could even label them:</p>
+				
+			<p class="big-point">HTML is a language all about <strong>content</strong> and its <strong>meaning</strong>.</p>
+			
+			<figure>
+				
+				<img src="images/html-labels.png" alt="Text with labels for its parts">
+				
+				<figcaption>We can label the parts of a block of text based on the roll they play.</figcaption>
+				
+			</figure>
+			
+			<p>That's basically what HTML does: It marks-up (that's the "M" in "HTML") content to assign it a type or role. In fact, we can use HTML to indicate the same meanings as we did above with labels:</p>
+			
+			<figure>
+				
+				<img src="images/html-markup.png" alt="Text with html tags for its parts">
+				
+				<figcaption>This HTML applies the same meanings as the labels in the previous figure.</figcaption>
+				
+			</figure>
+			
+			<p>By writing content marked up with HTML to assign correct roles, we create a document with structure and meaning for the browser to read and turn into a web page.</p>
+
+			<h2 id="elements">Elements</h2>
+			
+			<p>The basic unit of meaning in HTML is the <strong>element</strong>. An element is a piece of content and the specific meaning it carries, as well as the code used to mark it up.</p>
+			
+			<p>The code that delineates an element is called <strong>tags</strong>. Many elements require two tags, an opening tag to indicate the start of an element and a closing tag to indicate its end:</p>
+			
+			<figure>
+				
+				<img src="images/html-tags.png" alt="Diagram of an HTML element">
+				
+				<figcaption>An HTML element with an opening tag and a closing tag.</figcaption>
+				
+			</figure>
+			
+			<p>For instance, a <strong>paragraph element</strong> (<code>&lt;p&gt;</code>) needs opening and closing tags to enclose the text of the paragraph:</p>
+			
+			<figure>
+				
+				<code-block lang="markup" code='&lt;p&gt;Text in a paragraph. Paragraphs are simply blocks of related text.&lt;/p&gt;'></code-block>
+				
+				<figcaption>Note that when an element directly contains text, there is usually no line break between the tags and the text within.</figcaption>
+				
+			</figure>
+			
+			<h3>Nesting Elements</h3>
+			
+			<p>Often, elements enclose other elements to create a nested structure. We use the language of familial relationships to describe this. For instance, an element that encloses another would be called its <strong>parent</strong>, and the element that is inside the parent would be called a <strong>child</strong>. A simple example is the way an <strong>unordered list element</strong> (<code>ul</code>) serves as parent to <strong>list items</strong> (<code>li</code>):</p>
+			
+			<figure>
+				
+				<code-block lang="markup" code='&lt;ul&gt;
+	&lt;li&gt;Hats&lt;/li&gt;
+	&lt;li&gt;Shoes&lt;/li&gt;
+	&lt;li&gt;Bowties&lt;/li&gt;
+&lt;/ul&gt;'></code-block>
+				
+				<figcaption>It is common to use line breaks and indents to indicate nested relationships.</figcaption>
+				
+			</figure>
+			
+			<h3>Self-Closing Elements</h3>
+			
+			<p>There are some elements that don't need a closing tag because they don't wrap around any content. These elements are called <strong>self-closing elements</strong>. For instance, the <code>&lt;br&gt;</code> (break) element, which represents a meaningful line break:</p>
+				
+			<code-block lang="markup" code='&lt;br&gt;'></code-block>
+
+			<h2 id="semantics">Semantics</h2>
+			
+			<p>Each element in HTML has a very specifically defined meaning. <strong>Semantics</strong> is the practice of correctly using elements for content that matches their meanings.</p>
+			
+			<p class="big-point">The <strong>most important</strong> thing to know about HTML is that <strong>elements should be chosen based on their meaning</strong>.</p>
+			
+			<p>Writing semantic code is essential for accessibility (making a site usable to people with alternative needs), seach engine rankings, proper interaction with apps and extensions, and more.</p>
+
+			<h2 id="attributes">Attributes</h2>
+			
+			<p>Sometimes you want to include a little more information about an element for the browser. <strong>Attributes</strong> are extra values attached to an element to add additional functionality or context. Some attributes are specific to certain elements, but others are more universal and can be used on any element.</p>
+
+			<p>Attributes are applied to an element by placing them <em>inside</em> the element's opening tag, after the element name but before the right angle-bracket:</p>
+			
+			<figure>
+				
+				<img src="images/html-attribute.png" alt="An example of a class attribute">
+				
+				<figcaption>In this example, a <code>class</code> attribute applies a name to a <code>div</code> element.</figcaption>
+				
+			</figure>
+			
+			<p>On self-closing elements, attributes are simply placed inside the single tag:</p>
+			
+			<figure>
+			
+				<code-block lang="markup" code='&lt;img src="image-name.jpg"&gt;'></code-block>
+				
+				<figcaption>Here, the <code>src</code> attribute identifies an image file to be used for the <code>img</code> element.</figcaption>
+				
+			</figure>
+			
+			<h3>Boolean Attributes</h3>
+			
+			<p>Many attributes have both a name and a value, but some need no value and need only be present to function. These are called boolean attributes:</p>
+			
+			<figure>
+			
+				<code-block lang="markup" code='&lt;input required&gt;'></code-block>
+				
+				<figcaption>Here, the <code>required</code> attribute needs no value and marks the form field as required by its presence.</figcaption>
+				
+			</figure>
+			
+			<h3>Multiple Attributes</h3>
+			
+			<p>You can place as many attributes as you need on a single element. Attributes in the same tag should be separated with a space:</p>
+			
+			<figure>
+			
+				<code-block lang="markup" code='&lt;input type="text" name="user" disabled&gt;'></code-block>
+				
+				<figcaption>This <code>input</code> has three attributes: <code>type</code>, <code>name</code>, and <code>disabled</code>.</figcaption>
+				
+			</figure>
+			
+			<p>There is no specific order in which attributes must be written, but a common approach is to put the most important attributes first.</p>
+			
+			<h2 id="files">HTML Files</h2>
+			
+			<p>HTML is typically written in <code>.html</code> files. An HTML file can have any name, so long as the <code>.html</code> file extension is present at the end. It is good practice to never use spaces or capital letters in file names on the web in order to avoid confusing browsers. In place of spaces, standard convention is to use dashes in what is amusingly referred to as "kebab-case" (get it?): <code>about-our-company.html</code></p>
+			
+			<p class="big-point">The <strong>home page</strong> HTML file of a site should always be named <strong>index.html</strong>.</p>
+			
+			<p>While an HTML file may have any name you like, it's important that the home page for a website be named index.html. This is because a browser looking at a domain name or a directory (folder) automatically looks for a file named index.html to display. If there is no file with that name, browsers simply list the files and directories present.</p>
+
+	<p>There is certain code, commonly referred to as skeleton code, that is necessary in every HTML document. To learn more, see the <a href="/html/skeleton-code.html">skeleton code article</a>.</p>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

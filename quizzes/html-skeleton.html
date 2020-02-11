@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Skeleton Code Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="12" subject="Skeleton Code" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep">
+
+		<!--Step 1-->
+		<quiz-step :step="1" 
+					  starter=""
+					  answer='<!DOCTYPE html>'>
+
+			<p>Write the very first line of code that every HTML document should have.</p>
+
+		</quiz-step>
+
+		<!--Step 2-->
+		<quiz-step :step="2" 
+					  starter="<!DOCTYPE html>"
+					  answer='<!DOCTYPE html>
+<html lang="en-us">
+</html>'>
+
+			<p>Now add the element that is the container for everything in an HTML document. Be sure to include any necessary attributes.</p>
+
+		</quiz-step>
+
+		<!--Step 3-->
+		<question-step :step="3" 
+			v-bind:options='["True",
+								 "False"]'
+			answer="True">
+
+			<p>True or False: The <code>doctype</code> is the only tag that can exist outside the html tags.</p>
+
+		</question-step>
+
+		<!--Step 4-->
+		<quiz-step :step="4" 
+					  starter='<!DOCTYPE html>
+<html lang="en-us">
+</html>'
+					  answer='<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+	</head>
+</html>'>
+
+			<p>Add the first element that goes directly inside the <code>html</code> element, right after the opening tag.</p>
+			
+			<p>This is the element that contains information that isn't shown to the user and is for the browser's use only.</p>
+
+		</quiz-step>
+
+		<!--Step 5-->
+		<quiz-step :step="5" 
+					  starter='<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+	</head>
+</html>'
+					  answer='<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+	</head>
+	<body>
+	</body>
+</html>'>
+
+			<p>Now add the element that goes right <em>after</em> the <code>head</code> element.</p>
+			
+			<p>This is the element that contains everything the user will see.</p>
+
+		</quiz-step>
+
+		<!--Step 6-->
+		<quiz-step :step="6" 
+					  starter='<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+
+		<meta     ="UTF-8">
+		<meta name="    " content="width=device-width,     ">
+
+		<title>Page Title 
+
+	</head>
+
+	<body>
+	</body>
+</html>'
+					  answer='<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Page Title</title>
+
+	</head>
+
+	<body>
+	</body>
+</html>
+'>
+
+			<p>Carefully look over the HTML privided and add any missing or incomplete skeleton code.</p>
+
+		</quiz-step>
+
+		<!--Step 7-->
+		<question-step :step="7" 
+			v-bind:options='["True",
+								 "False"]'
+			answer="False">
+
+			<p>True or False: Information placed inside the <code>head</code> tags are displayed in the browser window.</p>
+
+		</question-step>
+
+		<!--Step 8-->
+		<question-step :step="8" 
+			v-bind:options='["As a big heading on the home page",
+								"In the browser tab and in search listings",
+								"Only in the HTML file",
+								"None of the above"]'
+			answer="In the browser tab and in search listings">
+
+			<p>Where is the text in the <code>title</code> element displayed?</p>
+
+		</question-step>
+
+		<!--Step 9-->
+		<question-step :step="9" 
+							v-bind:options='["The charset meta code",
+								"The viewport meta code",
+								"The title element",
+								"The doctype"]'
+			answer='The viewport meta code'>
+
+			<p>Which skeleton code helps control the layout of a web page on mobile devices?</p>
+
+		</question-step>
+
+		<!--Step 10-->
+		<question-step :step="10" 
+			v-bind:options='["True",
+								 "False"]'
+			answer="True">
+
+			<p>True or False: The <code>body</code> element contains all of the content that is displayed on the web page itself.</p>
+
+		</question-step>
+
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>

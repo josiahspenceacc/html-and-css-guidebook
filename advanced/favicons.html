@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Favicons</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Site Icons (Favicons)</h1>
+
+				<p>A simple way to give a site a stronger sense of identity to users is to include an icon that shows up in the browser tab, some search listings, and other places where the site needs to be recognizable at a glance. This icon is called a <strong>favicon</strong>.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#creating-favicon">Creating a Favicon</a>
+					<a href="#using-favicon">Using a Favicon on a Site</a>
+				</nav>
+				
+			</header>			
+
+			<h2 id="creating-favicon">Creating a Favicon</h2>
+			
+			<p>These days, all major browsers accept images in PNG format as a favicon. The image should have a square aspect ratio (192px &times; 192px is a good size). It's a good idea to name the file <code>favicon.png</code> and place it in the root directory of the website.</p>
+			
+			<p>Also note that PNG images support transparency, so you can create an image that is circular or other non-rectangular and the background will show through.</p>
+			
+			<h2 id="using-favicon">Using a Favicon on a Site</h2>
+			
+			<p>The most reliable way to let the browser know about a favicon is to link it in the <code>head</code> of each html document, similar to how we link to CSS files:</p>
+			
+			<figure>
+				
+				<code-block lang="markup" code='&lt;link rel="icon" href="favicon.png" type="image/png"&gt;'></code-block>
+				
+				<figcaption>This simple line of code lets the browser know about your favicon and that it is a PNG.</figcaption>
+				
+			</figure>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

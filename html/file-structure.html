@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>File Structure</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Website File Structure</h1>
+
+				<p>Websites are made up of files &mdash; code files like HTML and CSS, and media files like images, video, and audio. For everything to work as it should, it's important to pay careful attention to the structure of the folders that are home to those files.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#project-folder">Project Folder</a>
+					<a href="#home-page">Home Page</a>
+					<a href="#subfolders">Subfolders</a>
+					<a href="#parent-folders">Parent Folders</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="project-folder">Project Folder</h2>
+			
+			<p>Every website project should have its own home folder. This is refered to as the <strong>root directory</strong>. (<em>Directory</em> is a web jargon term for <em>folder</em>.)</p>
+			
+			<figure>
+				<img src="images/root-directory.png" alt="Root directory in a file structure">
+			</figure>
+			
+			<p>When you are developing the site locally (on your own computer), the root directory serves as a way to keep your files together and properly structured. When you move the site onto a server for use on the web, the root directory is all the more important because it is where the browser looks for files when it finds the server's IP address.</p>
+			
+			<p>By keeping all website files in a shared root directory, we make it possible to use <a href="/html/links.html#relative">relative links</a> between pages and files within the website. Otherwise, the browser has to look for the files the hard way, by reaching out to DNS and looking for an <a href="/html/links.html#absolute">absolute</a> address. This helps pages load faster and makes writing links easier.</p>
+			
+			<h2 id="home-page">Home Page</h2>
+			
+			<p>The HTML file for the homepage of a website should <strong>always</strong> be named <code>index.html</code>. This is because a browser that has been directed to a server or a directory always looks to display a file with this name if it hasn't been specifically pointed to another file.</p>
+			
+			<figure>
+				<img src="images/index-file.png" alt="Index.html in a file structure">
+			</figure>
+			
+			<p>As such, the <code>index.html</code> file should always be placed directly within the root directory, not in any sub-folders.</p>
+			
+			<p>Side note: Any folder can have its own <code>index.html</code> file, and a browser directed to that folder with no specific file specified will display <code>index.html</code>. For example, if a browser was directed to <code>https://site.com/folder</code>, it would display <code>https://site.com/folder/index.html</code>, if an <code>index.html</code> file was present.</p>
+			
+			<h2 id="subfolders">Subfolders</h2>
+			
+			<p>A website project can contain any subfolder / subdirectories the author desires. For instance, it is common to use a subfolder to hold any project images. But any group of pages or other files can exist in a subfolder or even in nested subfolders.</p>
+			
+			<figure>
+				<img src="images/subfolder.png" alt="Subfolder in a file structure">
+			</figure>
+			
+			<p>To refer to a file in a subfolder, the file path must be written to include the folder name, followed by a slash: <code>subfolder/file.html</code>. If there are multiple folders, each one can be written using the same format: <code>subfolder/sub-subfolder/file.html</code>.</p>
+			
+			<h2 id="parent-folders">Parent Folders</h2>
+			
+			<p>To point to a folder that is a <em>parent</em> to the folder containing the current file, writing two periods and a slash (<code>../</code>) in the file path indicates the move up the file tree. So <code>../file.html</code> would point to a file one folder <em>up</em> from the file in which the file path is written.</p>
+			
+			<p>To move up multiple folders, the same pattern may be repeated as many times as necessary: <code>../../../file.html</code> points to a file three folders up from the file in which it is written.</p>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+</body>
+</html>

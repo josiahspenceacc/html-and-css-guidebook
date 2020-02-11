@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>What is a Website?</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+	
+</head>
+<body>
+	
+<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+	
+			<header>
+
+				<h1>What is a Website?</h1>
+
+				<p>You use websites all the time, and you certainly know how to use one on an intuitive level, but what is a website really?</p>
+
+				<nv class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#network">A Network of Computers</a>
+					<a href="#finding">Finding Websites</a>
+					<a href="#building">How Pages are Built</a>
+					<a href="#file-types">Code Languages and File Types</a>
+				</nav>
+
+			</header>
+
+			<h2 id="network">A Network of Computers</h2>
+			
+			<p>You've probably heard that the internet is a "network of computers". All this really means is that it is made up of a bunch of computers that can all talk to each other and share information back and forth. This includes desktop computers, laptops, smartphones, tablets, even smart appliances and lightbulbs. As long as they are connected to the internet, any of them is capable of talking to any other.</p>
+			
+			<p>While all these computer types are important to know about, let's focus on a very special type of computer that isn't only <em>connected</em> to the internet; it's a key part of how the internet works. This type of computer is called a <strong>server</strong>.</p>
+			
+			<p>A server is much like any other computer. It has a processor and a hard drive and an operating system. It's the <em>job</em> it does that makes it special: It stores and shares web content, especially the files that make up websites.</p>
+			
+			<p class="big-point">You can think of a server as a <strong>house for web content</strong>.</p>
+			
+			<p>Every public website needs to live on a server somewhere so that the files it's made of can be shared with all the other computers on the internet whenever a user wants to see the site.</p>
+			
+			<h2 id="finding">Finding Websites</h2>
+			
+			<h3>IP Addresses</h3>
+			
+			<p>There are countless servers on the internet, so when your <strong>browser</strong> (the program used to access websites) wants to find a particular website, it needs to figure out <em>which particular server</em> houses the website it wants to display. We said earlier that servers are like houses for web content, and just like real houses, they each have a unique address called an <strong>IP Address</strong>, which stands for Internet Protocal Address. (In truth every computer connected to the internet has an IP address of its own, but we'll keep our focus on servers for now.)</p>
+			
+			<h3>DNS and Domain Names</h3>
+			
+			<p>Unfortunately, IP Addresses are long strings of numbers and dots (for instance 123.456.78.89), which aren't that easy for us humans to remember. Imagine if you had to remember an address like that for every website you ever wanted to visit! Lucky for us, there is a system called <strong>DNS</strong> (Domain Name System) whose job it is to make things easier.</p>
+			
+			<p>Let's return to our metaphor of the server as a house. I may not remember the address of a place I want to go, but if I remember the <em>name</em> of the place I can turn to a directory like Google Maps or an old-school phonebook to lookup the actual street humber. DNS is like that phonebook. All I have to remember is the site's <strong>domain name</strong>.</p>
+			
+			<p>Even if you didn't know what they are called you're probably very familiar with domain names. They're things like "wikipedia.org" or "google.com"&mdash;simple, easy to remember names for websites.</p>
+			
+			<h3>Putting it All Together</h3>
+			
+			<p>Every time you enter a domain name into the address bar of your browser it works like this:</p>
+			
+			<ol>
+				
+				<li>The browser reaches out to the DNS service and asks for the IP address associated with the domain name you entered.</li>
+				
+				<li>DNS looks up the correct IP address and tells the browser.</li>
+				
+				<li>The browser then reaches out to the server at the IP address it was given and asks for the website files.</li>
+				
+				<li>The server sends the website files to the browser.</li>
+				
+				<li>The browser looks at the instructions in those files and builds the website for you to see.</li>
+				
+			</ol>
+			
+			<p>All of this happens in a fraction of a second every time you visit a website!</p>
+			
+			<h2 id="building">How Pages are Built</h2>
+			
+			<p>As we've mentioned already, websites are made of files and browsers build websites from those files. Let's take a closer look at what that means.</p>
+			
+			<p>You probably know that websites are written in code languages. And documents filled with various types of code are the most common types files that make websites. You can think of these files as blueprints that tell the browser <em>how</em> to build each site. In this metaphor, think if the browser as a hard-hat wearing builder who reads the blueprints and follows the instructions given.</p>
+			
+			<p class="big-point">Think of code files as <strong>blueprints</strong> that tell the browser how to <strong>build the site</strong>.</p>
+			
+			<p>Every time a webpage loads, the browser must read the instructions again and re-build the whole page.</p>
+			
+			<h2 id="file-types">Code Languages and File Types</h2>
+			
+			<p>There are several kinds of code languages and file types that are most commonly used to create websites. Let's take a look at the most important ones.</p>
+			
+			<h3>HTML</h3>
+			
+			<p>HTML stands for <strong>HyperText Markup Language</strong>. "HyperText" means you can use links to get from one page to another. "Markup Language" means that you add meaning to text or other content by "marking it up", much like a teacher adding red comments and marks to an essay he is grading.</p>
+				
+			<p class="big-point">HTML's job is to <strong>structure and identify content</strong> of a web page.</p>
+			
+			<p>Basically, it is where you decide what goes <em>on</em> the page and what role you want the parts to play. The code indicates things like "this is a paragraph" or "this is the most important heading" or "this is a button". All of this is explored in more depth in the <a href="html/html-intro.html">Introduction to HTML</a> chapter of this book.</p>
+			
+			<h3>CSS</h3>
+			
+			<p>CSS stands for <strong>Cascading Style Sheets</strong>, which simply means it is a document that provides information about appearance.</p>
+			
+			<p class="big-point">CSS's job is to set the visual style and appearance of a webpage.</p>
+			
+			<p>It allows you to set things like colors, fonts, spacing, and layout for the content provided in the HTML. The code says things like "make the paragraphs all blue" or "add this much space below a certain heading" or "put the sidebar to the left of the main content". This topic is explained further in the <a href="css/css-intro.html">Introduction to CSS</a> chapter of this book.</p>
+			
+			<h3>Media Files</h3>
+			
+			<p>Websites also commonly employ media like <strong>images, video, or audio</strong>. Typically, each piece of media would be its own file, and a number of common file formats are used for websites. For instance, images can be provided in jpg, png, gif, or svg formats.</p>
+			
+			<p>Certain HTML code indicates which media file to use and where to include it in a page. For an example, see the chapter on <a href="html/images.html">Images in HTML</a></p>
+			
+			<h3>Programming Languages</h3>
+			
+			<p>If HTML shows what is <em>on</em> a webpage, and CSS indicates what it <em>looks like</em>, then programming languages exist to determine what it <em>does</em>. HTML is able to provide simple links and a few other very basic types of interactivity, but to make a webpage do anything highly interactive, things like checkouts, commenting, or social media posting, you need one of these programming languages.</p>
+			
+			<p>There are many programming languages, and each has its strengths and weaknesses, but the most common on the web today is <strong>javascript</strong>. At their most basic, all programming languages are written using a series of "if/then" statements. For instance, "<em>if</em> the user clicks a certain button, <em>then</em> make make a popup dialog appear".</p>
+			
+			<p>This book focusses on HTML and CSS only, but it is important to have a basic knowledge of programming languages and their role in creating interaction on the web.</p>
+			
+			
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

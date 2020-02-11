@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Flexbox</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="/style.css">
+	
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+	
+			<header>
+
+				<h1>Flexbox</h1>
+
+				<p>Flexbox is powerful, flexible CSS system for arranging items in a <strong>single line</strong> / along a single axis. This article only covers the very basics of flexbox. You may want to research more advanced properties and techniques on your own.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#display">Activating Flexbox</a>
+					<a href="#flex-direction">Flex Direction</a>
+					<a href="#justify-content">Justify Content</a>
+					<a href="#align-items">Align Items</a>
+					<a href="#video">Video Lesson</a>
+					<a href="#resources">Resource Links</a>
+				</nav>
+
+			</header>
+				
+			<h2 id="display">Activating Flexbox</h2>
+
+			<p>Flexbox is activated for a group of elements by applying <code>display: flex;</code> to the <em>direct</em> parent of the elements to be placed in a row. A good mnemonic for remembering that flex properties are applied to the direct parent is:</p>
+
+			<p class="big-point">Parents keep <em>their</em> <strong>children</strong> in line (pun intended). They <strong>aren't</strong> responsible for grandchildren or other decendants.</p>
+
+			<p>So let's look at some code. If we start with a series of elements within a shared parent:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+}
+
+div, ul {
+	margin: .5rem;
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+}
+
+ul {
+	background-color: khaki;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+
+			<p>We can apply <code>display: flex;</code> to the parent div, and its direct children are automatically arranged in a left-justified horizontal line, according to flexbox defaults:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+	display: flex;
+}
+
+div, ul {
+	margin: .5rem;
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+}
+
+ul {
+	background-color: khaki;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+
+			<p><em>Notice that the list items still stack on top of one another. This is because they are not direct children of the div that has been set to flex.</em></p>
+
+
+
+			<h2 id="flex-direction">Flex Direction</h2>
+
+			<p>As mentioned above, by default, flex-children are arranged in a horizontal row, but we can use the <code>flex-direction</code> property on the flex-parent to change the direction of the line. The possible values are:</p>
+
+			<ul>
+				<li><code>row</code>: The default value, which places the items in a horizontal line.</li>
+				
+				<li><code>row-reverse</code>: Reverses the order of elements and places them in a horizontal line.</li>
+				<li><code>column</code>: Places the items in a vertical line.</li>
+				<li><code>column-reverse</code>: Reverses the order of the items and places them in a vertical line.</li>
+			</ul>
+
+			<p>The direction of speficified here is referred to as the <strong>main axis</strong>.</p>
+			
+			<figure>
+				<img src="images/flex-direction.png" alt="flex-direction illustration">
+				<figcaption>Here, the line with the arrow represents the direction of the main axis.</figcaption>
+			</figure>
+			
+			<p>And here is a similar example with code:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+}
+
+.row-parent {
+	display: flex;
+	flex-direction: row; /*This is the default*/
+}
+
+.row-reverse-parent {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.column-parent {
+	display: flex;
+	flex-direction: column;
+}
+
+.column-reverse-parent {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+div, ul {
+	margin: .5rem;
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+}
+
+ul {
+	background-color: khaki;
+}
+</pre>
+
+				<pre data-lang="html">&lt;h2&gt;Row&lt;/h2&gt;
+
+&lt;div class="row-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Row Reverse&lt;/h2&gt;
+
+&lt;div class="row-reverse-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Column&lt;/h2&gt;
+
+&lt;div class="column-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Column Reverse&lt;/h2&gt;
+
+&lt;div class="column-reverse-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the example above, try the different possible values for <code>flex-direction</code> for the <code>.row-parent</code> selector. Pay attention to how the children change direction and order.</p>
+
+
+			<h2 id="justify-content">Justify Content</h2>
+
+			<p>By default, flex-children are aligned along the <em>main axis</em> at the start of the axis line, kind of like words in a sentence. But this can be changed using the <code>justify-content</code> property on the flex parent. The possible values are:</p>
+
+			<ul>
+				<li><code>flex-start</code>: The default value, which groups the items in order at the start of the line of the main axis.</li>
+				<li><code>flex-end</code>: Groups the items at the end of the main axis.</li>
+				<li><code>center</code>: Groups the items at the very center.</li>
+				<li><code>space-between</code>: Distributes the items along the main axis, with the remaining space placed evenly <em>between</em> the items.</li>
+				<li><code>space-around</code>: Distributes the items along the main axis, with the remaining space placed evenly <em>to the sides</em> of each item.</li>
+				<li><code>space-evenly</code>: Distributes the items along the main axis, with the remaining space placed evenly<em>around</em> the items.</li>
+			</ul>
+			
+			<p class="big-point">Justify-content controls how items are <strong>spaced out</strong> from one another in the container.</p>
+			
+			<figure>
+				<img src="images/justify-content.png" alt="justify-content illustration">
+				<figcaption>In this illustration, the darker background box represents the flex-parent.</figcaption>
+			</figure>
+			
+			<p>And a code example:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+}
+
+.flex-start-parent {
+	display: flex;
+	justify-content: flex-start; /* default */
+}
+
+.flex-end-parent {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.center-parent {
+	display: flex;
+	justify-content: center;
+}
+
+.space-around-parent {
+	display: flex;
+	justify-content: space-around;
+}
+
+.space-between-parent {
+	display: flex;
+	justify-content: space-between;
+}
+
+.space-evenly-parent {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+div, ul {
+	margin: .5rem;
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+}
+
+ul {
+	background-color: khaki;
+}
+</pre>
+
+				<pre data-lang="html">&lt;h2&gt;Flex-Start&lt;/h2&gt;
+
+&lt;div class="flex-start-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Flex-End&lt;/h2&gt;
+
+&lt;div class="flex-end-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Center&lt;/h2&gt;
+
+&lt;div class="center-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Space-Between&lt;/h2&gt;
+
+&lt;div class="space-between-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Space-Around&lt;/h2&gt;
+
+&lt;div class="space-around-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Space-Evenly&lt;/h2&gt;
+
+&lt;div class="space-evenly-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the above example, try the different possible values for <code>justify-content</code> for the <code>.flex-start-parent</code> selector. Pay attention to how the children are redistributed across the main axis.</p>
+
+			<h3>Margin: Auto</h3>
+
+			<p>When <code>margin: auto</code> is applied to one side of a flex-child on the main axis, it serves to push that item and its neighbor as far from one another as possible. This allows an additional element of control along the main axis in addition to what justify-content allows. Notice in the following example how the main axis is defined as <code>justify-content: space-between</code>, but because the middle item has <code>margin-left: auto</code>, it is pushed all the way to the right and sits right next to the last item:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+	display: flex;
+	justify-content: space-between; /* default */
+}
+
+.example {
+	margin-left: auto;
+}
+
+div, ul {
+	margin: .5rem;
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+}
+
+ul {
+	background-color: khaki;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+&lt;div&gt;Div 1&lt;/div&gt;
+
+&lt;div class="example"&gt;Div w/ margin-left&lt;/div&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;List Item 1&lt;/li&gt;
+	&lt;li&gt;List Item 2&lt;/li&gt;
+	&lt;li&gt;List Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the above example, try changing <code>margin-left</code> to <code>margin-right</code> for the <code>.example</code> div. If you want to go further, try moving the <code>margin</code> to other selectors to see what happens.</p>
+
+
+			<h2 id="align-items">Align Items</h2>
+
+			<p>By default, flex-children are stretched so that all are equally sized along the <em>cross axis</em> (at least the containing box is, so a background-color fills that whole space). The position of the item along the cross axis is controlled using the <code>align-items</code> property on the flex parent. Possible values are:</p>
+
+			<ul>
+				<li><code>stretch</code>: The default value, which grows the item to fill the available space on the cross axis.</li>
+				<li><code>flex-start</code>: Aligns the items to the start of the cross axis line.</li>
+				<li><code>flex-end</code>: Aligns the items to the end of the cross axis line.</li>
+				<li><code>center</code>: Center alignts the items on the cross axis.</li>
+				<li><code>baseline</code>: Aligns the baselines of the first line of text in each item.</li>
+			</ul>
+			
+			<p class="big-point">Align-items controls how items <strong>line up</strong> with one another.</p>
+			
+			<figure>
+				<img src="images/align-items.png" alt="align-items illustration">
+				<figcaption>In this illustration, the darker background box represents the flex-parent.</figcaption>
+			</figure>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+}
+
+.stretch-parent {
+	display: flex;
+	align-items: stretch; /* default */
+}
+
+.flex-start-parent {
+	display: flex;
+	align-items: flex-start; /* default */
+}
+
+.flex-end-parent {
+	display: flex;
+	align-items: flex-end;
+}
+
+.center-parent {
+	display: flex;
+	align-items: center;
+}
+
+.baseline-parent {
+	display: flex;
+	align-items: baseline;
+}
+
+div, ul {
+	margin: .5rem;
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+}
+
+ul {
+	background-color: khaki;
+}
+</pre>
+
+				<pre data-lang="html">&lt;h2&gt;Stretch&lt;/h2&gt;
+
+&lt;div class="stretch-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Flex-Start&lt;/h2&gt;
+
+&lt;div class="flex-start-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Flex-End&lt;/h2&gt;
+
+&lt;div class="flex-end-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Center&lt;/h2&gt;
+
+&lt;div class="center-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Baseline&lt;/h2&gt;
+
+&lt;div class="baseline-parent parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the above example, try the different possible values for <code>align-items</code> for the <code>.stretch-parent</code> selector. Pay attention to how the children are realigned on the cross axis.</p>
+
+
+			<h2 id="video">Video Lesson</h2>
+
+			<p>The following video demo is fully interactive. You can pause it at any time to directly edit the code, and resume playback to pickup where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/cevB72sa"></video-demo>
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox">Flexbox on MDN</a></li>
+				<li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a></li>
+				<li><a href="https://medium.freecodecamp.org/an-animated-guide-to-flexbox-d280cf6afc35">An Animated Guide to Flexbox</a></li>
+				<li><a href="https://www.youtube.com/playlist?list=PLu8EoSxDXHP7xj_y6NIAhy0wuCd4uVdid">Flexbox Video Course</a></li>
+				<li><a href="https://medium.freecodecamp.org/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af">Everything You Need to Know About Flexbox</a></li>
+				<li><a href="https://philipwalton.github.io/solved-by-flexbox/">Solved by Flexbox (demos)</a></li>
+				<li><a href="https://flexboxfroggy.com/">Flexbox Froggy (a learning game)</a></li>
+			</ul>
+
+				
+			
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

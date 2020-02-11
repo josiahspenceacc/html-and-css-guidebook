@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Interactive Elements: Details and Dialog</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Interactive Elements: Details &amp; Dialog</h1>
+
+				<p>Some elements have built-in interactivity, meaning they <strong>do something</strong> when you interact with them. A common example of this is links, which respond when you hover or click, but there are some new elements that offer other kinds of interactivity.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#details">Details &amp; Summary</a>
+					<a href="#dialog">Dialog</a>
+					<a href="#video">Video Lesson</a>
+					<a href="#resources">Resource Links</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="details">Details &amp; Summary</h2>
+
+			<p>Created for what is traditionally referred to as an "accordion" widget, the paired <code>details</code> and <code>summary</code> elements can be used to show a snippet introductory or "summary" content that can be expanded / toggled open to show further "detail" content. These elements are useful for scenarios like a FAQ where users need to be able to quickly scan and parse a large amount of information.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;details&gt;
+	&lt;summary&gt;How much wood could a woodchuck chuck?&lt;/summary&gt;
+
+	&lt;p&gt;A woodchuck would chuck as much wood as a woodchuck could chuck&lt;/p&gt;
+
+&lt;/details&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the above example, try changing the text that shows when the element is collapsed. Try changing the text that shows when the element is opened. Try adding additional paragraph to show only when the element is opened. For a more ambitious experiment, try adding a second <code>details</code> element with its own content for closed and opened states.</p>
+
+			<h2 id="dialog">Dialog</h2>
+
+			<p>The new <code>dialog</code> element is for pop-up content in what would traditionally be refered to as a modal or lightbox. when open, it overlays the normal page content.</p>
+
+			<p>The <code>dialog</code> element is hidden by default, but can be set to display using the <code>open</code> attribute like so: <code>&lt;dialog open&gt;</code>. The typical way to toggle a <code>dialog</code> open and closed is to use a little javascript, attaching the open event to a button or other element.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;button id="open-dialog" type="button"&gt;Open Dialog&lt;/button&gt;
+
+&lt;dialog id="dialog-demo"&gt;
+	I'm dialog content!
+&lt;/dialog&gt;
+
+&lt;!-- This should come just before the closing body tag --&gt;
+&lt;script&gt; 
+	const modal = document.getElementById('dialog-demo');
+	const open = document.getElementById('open-dialog');
+
+	open.addEventListener('click', () => {
+	  modal.showModal();
+	});
+
+	modal.addEventListener('click', event => {
+	  if (event.target === modal) {
+		modal.close('cancelled');
+	  }
+	});
+&lt;/script&gt;</pre>
+			</div>
+			
+			<h2 id="video">Video Lesson</h2>
+			
+			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/cp49ymcq"></video-demo>
+			
+		</article>
+		
+		<h2 id="resources">Resource Links</h2>
+		
+		<ul>
+			<li><a href="https://css-tricks.com/some-hands-on-with-the-html-dialog-element/">Some Hands on with the Dialog Element</a></li>
+		</ul>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

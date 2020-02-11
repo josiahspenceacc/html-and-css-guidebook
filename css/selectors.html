@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Selectors</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>CSS Selectors</h1>
+				
+				<p>To style content with CSS, that content must first be <strong>selected</strong>, or identified, in the CSS code. The following table explains and demonstrates some of the most common types of selectors in CSS, as well as how they can be combined.</p>
+				
+			</header>
+
+			<table class="dominant-example" dir="ltr">
+				<tbody>
+					
+					<tr>
+						<th>Selector</th>
+						<th>Meaning</th>
+						<th>Example(s)</th>
+					</tr>
+					
+					<tr>
+						<td>Element Selector</td>
+						<td>Matches elements by name.</td>
+						<td>
+							
+							<p><code>h1 { }</code></p>
+							<small>Targets all <code>&lt;h1&gt;</code> elements.</small>
+							
+						</td>
+					</tr>
+					
+					<tr>
+						<td>Class Selector</td>
+						<td>Matches an element whose <em>class</em> attribute has a value that matches the one specified after the period symbol.</td>
+						<td>
+							
+							<p><code>.note { }</code></p>
+							<small>Targets any element whose <em>class</em> attribute has a value of <em>note</em>.</small>
+								
+							<p><code>p.note { }</code></p>
+							<small>Targets only <code>&lt;p&gt;</code> elements whose <em>class</em> attribute has a value of <em>note</em>. This format should be avoided in most cases.</small>
+							
+						</td>
+					</tr>
+					
+					<tr>
+						<td>Descendant Selector</td>
+						<td>Matches an element that is a descendent of another specified element (not only a direct child of that element).</td>
+						<td>
+							
+							<p><code>p a { }</code></p>
+							<small>Targets any <code>&lt;a&gt;</code> elements that sit inside a <code>&lt;p&gt;</code> element, <strong>even if there are other elements nested between</strong> them.</small>
+							
+						</td>
+					</tr>
+					
+					<tr>
+						<td>Multiple Selector</td>
+						<td>A comma separated list of selectors that selects all matching elements. The comma means <em>and</em>.</td>
+						<td>
+							
+							<p><code>h1, h2, h3 {}</code></p>
+							<small>Targets every <code>h1</code>, every <code>h2</code>, and every <code>h3</code>.</small>
+							
+							<p><code>main p, main li, header a { }</code></p>
+							<small>Targets every <code>p</code> within a <code>main</code>, every <code>li</code> within a <code>main</code>, and every <code>a</code> within a <code>header</code>. Notice that the <strong>parent must be written again for each</strong> decendant selector separated by a comma.</small>
+							
+						</td>
+					</tr>
+					
+					<tr>
+						<td>Atribute Selector</td>
+						<td>Matches an element that has an attribute that matches.</td>
+						<td>
+							
+							<p><code>input[type="text"] { }</code></p>
+							<small>Targets every <code>input</code> with a <code>type</code> attribute with a value of <code>text</code>.</small>
+							
+							<p><code>input[required] { }</code></p>
+							<small>Targets any <code>input</code> elements with the <code>required</code> attribute.</small>
+							
+						</td>
+					</tr>
+					
+					<tr>
+						<td>Universal Selector</td>
+						<td>Using an asterisk character targets every element on a page. Take care when using this selector.</td>
+						<td>
+							
+							<p><code>* { }</code></p>
+							<small>Targets every single element on the page.</small>
+							
+						</td>
+					</tr>
+					
+					<tr>
+						<td>Direct Child Combinator</td>
+						<td>Matches an element that is a <strong>direct child</strong> of another.</td>
+						<td>
+							
+							<p><code>li &gt; a { }</code></p>
+							<small>Targets any <code>&lt;a&gt;</code> elements that are children of an <code>&lt;li&gt;</code> element (but not other <code>&lt;a&gt;</code> elements in the page).</small>
+							
+						</td>
+					</tr>
+					
+					<tr>
+						<td>General Sibling Combinator</td>
+						<td>Matches an element that is a sibling following another.</td>
+						<td>
+							
+							<p><code>h1 ~ p { }</code></p>
+							<small>Targets any <code>&lt;p&gt;</code> element that comes after any <code>&lt;h1&gt;</code> element (but not other <code>&lt;p&gt;</code> elements).</small>
+							
+						</td>
+					</tr>
+					
+					<tr>
+						<td>Adjacent Sibling Combinator</td>
+						<td>Matches an element that is the <strong>next</strong> sibling of another.</td>
+						<td>
+							
+							<p><code>h1 + p { }</code></p>
+							<small>Targets the first <code>&lt;p&gt;</code> element after any <code>&lt;h1&gt;</code> element (but not other <code>&lt;p&gt;</code> elements).</small>
+							
+						</td>
+					</tr>
+					
+					<tr>
+						<td>Pseudo-classes</td>
+						<td>A set of spacial modifiers for advanced selections. A <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements#Pseudo-classes">full list</a> can be found on MDN.</td>
+						<td>
+							
+							<p><code>a:hover { }</code></p>
+							<small>Targets any link over which the user is hovering the cursor.</small>
+								
+							<p><code>li:first-child { }</code></p>
+							<small>Targets any <code>&lt;li&gt;</code> that is the first child of a parent element.</small>
+							
+						</td>
+					</tr>
+					
+					<tr>
+						<td>ID Selector</td>
+						<td>Matches an element whose <em>id</em> attribute has a value that matches the one specified after the pound or hash symbol. While they are shown here for reference, <strong>it's best not to use IDs for CSS at all.</strong></td>
+						<td>
+							
+							<p><code>#introduction { }</code></p>
+							<small>Targets the element whose <em>id</em> attribute has a value of <em>introduction</em>.</small>
+							
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+</body>
+</html>

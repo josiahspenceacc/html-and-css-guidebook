@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Github</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+	
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+	
+			<header>
+
+				<h1>Git / Github</h1>
+
+				<p>When working with code, it's easy to loose track of the different changes you have made and the different iterations the project has undergone. One solution to this problem is to use <strong>version control</strong>&mdash;a system that remembers all the previous versions of the code and where it has changed. This makes it easy to ensure you are always working on the most current version, and to remain confident that you can always roll back your changes if something goes wrong.</p>
+				
+				<p><strong>Git</strong> is the most popular version control protocal in use today, and <strong>Github</strong> is a webapp that enables easy and free storage and management of projects in git.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#repositories">Repositories</a>
+					<a href="#commits">Commits</a>
+					<a href="#workflow">Workflow</a>
+					<a href="#video">Video Tutorial</a>
+					<a href="#resources">Resource Links</a>
+				</nav>
+
+			</header>
+
+			<h2 id="repositories">Repositories</h2>
+
+			<p>A <strong>repository</strong> is what we call a single project in git version control. For our purposes, you should probably set up a repository for each website you create. The repository holds all the code files, folders, and other files such as media that make up the site. When you make a repository on Github, it serves as a safe, online copy of your code.</p>
+			
+			<h2 id="commits">Commits</h2>
+			
+			<p>When you have made some changes to your project that you think you are ready to keep, you make a <strong>commit</strong> to the git repository. As the name implies, this can be thought of as "making it official" with regard to your changes. Another way to think of a commit is that it is like pressing <em>save</em> in a word processor. The changes are recorded and will be present when you return to the repository in the future. If you make changes but don't commit them, they are not yet saved in the repository.</p>
+			
+			<p class="big-point">Think of making a commit as similar to pressing <em>save</em> in a word processor.</p>
+			
+			<p>A common work flow is to keep a working copy of your project on your local computer, and then to commit satisfactory changes to a git repository online, like Github. That way, you can play around and test code-in-progress safe in the knowledge that the repository is safe from any accidents.</p>
+			
+			<p>When making a commit, you must add a <strong>commit message</strong> with a brief description of what changes you have made. This makes it easy to look through your version history and understand what happened at which point.</p>
+			
+			<h2 id="workflow">Workflow</h2>
+			
+			<p>There are many ways to work with git and many more features and possibilities than mentioned here, but for the purposes of this course, here is a suggested workflow:</p>
+			
+			<ul>
+				<li>
+					<p>When you begin a new project, <strong>create a repository</strong> on the Github website.</p>
+			
+					<figure>
+						<figcaption>In the main navigation, click "New Repository" under the toggle menu.</figcaption>
+						<img src="images/new-repository.png" alt="How to start a new repository">
+					</figure>
+					
+					<figure>
+						<figcaption>Name the repository and click "Create Repository".</figcaption>
+						<img src="images/create-repository.png" alt="How to create a new repository">
+					</figure>
+					
+				</li>
+				
+				<li>
+					<p>Create an <strong>initial commit</strong> of your files by visiting the "uploading an existing file" link on the repository page. Drag and drop all your files and subfolders and add a commit message.</p>
+					
+					<figure>
+						<figcaption>Add your files to the repository by clicking the "Uploading an existing file" link.</figcaption>
+						<img src="images/first-upload.png" alt="How to make your first upload">
+					</figure>
+					
+					<figure>
+						<figcaption>Upload all your files and sub-folders, write a commit message, and click the "Commit Changes" button.</figcaption>
+						<img src="images/first-commit.png" alt="How to make a first commit">
+					</figure>
+					
+				</li>
+				<li>
+					<p>Every time you complete a new phase or new section of the site, create a <strong>new commit</strong> in Github by visiting the "Upload Files" button on the repository page. Be sure you drag and drop in <em>all</em> your files. Write a commit message that explains the changes you have made. For instance, you might say "Added project cards" or "changed type colors". That way, when you look back through your commits, you know exactly what each one includes.</p>
+					
+					<figure>
+						<figcaption>To make a new commit, click the "Upload files" button to upload your changes.</figcaption>
+						<img src="images/next-upload.png" alt="How to upload new changes">
+					</figure>
+					
+				</li>
+				<li>
+					<p>Next time you are ready to work on the site. Delete any local versions of the site on your computer and <strong>download a fresh copy</strong> from Github using the "Clone or Download" button on the repository page. This ensures that you are always working on the newest, up-to-date version of the code.</p>
+					
+					<figure>
+						<figcaption>To download a copy for new work, click "Clone or download", then "Download ZIP".</figcaption>
+						<img src="images/download-repository.png" alt="How to download your files">
+					</figure>
+					
+				</li>
+				<li>
+					<p><strong>Repeat</strong> the commit and fresh download process every time you do work on the site.</p>
+					
+				</li>
+			</ul>
+			
+			<h2 id="video">Video Tutorial</h2>
+			
+			<div style="overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+	 grid-column: 1 / span 12;
+    height:0;">
+				<iframe style="left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;" width="560" height="315" src="https://www.youtube.com/embed/4E0kP3n4Els" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://techcrunch.com/2012/07/14/what-exactly-is-github-anyway/">What Exactly is Github Anyway?</a></li>
+			</ul>
+				
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

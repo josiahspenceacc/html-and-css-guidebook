@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>IDs and Classes</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>IDs and Classes</h1>
+
+				<p>IDs and classes are both types of HTML attributes that can be used to <strong>give a name</strong> of your choice to HTML elements. These names can be used as targets for CSS selectors, as targets for anchor links, or as targets for javascript functionality.</p>
+
+				<p>Like any other HTML attribute, they are placed inside the opening tag for a given HTML element and follow standard attribute syntax. ID and class names should be written in <strong>all-lowercase</strong> and with <strong>dashes</strong> instead of spaces.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#ids">IDs</a>
+					<a href="#classes">Classes</a>
+					<a href="#multiples">Use of Multiples</a>
+					<a href="#resources">Resource Links</a>
+				</nav>
+
+			</header>
+
+			<h2 id="ids">IDs</h2>
+
+			<p>What distinguishes an ID from a Class is that a particular ID <strong>can only be used once per page</strong>. IDs also have a much higher level of specificity as a CSS selector (it wins in a fight with a Class). As such, <strong>IDs shouldn't be used at all for CSS</strong>, and should only be used with great care otherwise.</p>
+
+			<pre class="language-markup"><code>&lt;h2 id="any-name"&gt;Heading Text&lt;/h2&gt;</code></pre>
+
+			<h2 id="classes">Classes</h2>
+
+			<p>Classes, on the other hand, <strong>can only be used an unlimited number of times per page</strong>, on as many elements as you like. They are also the preferred way of naming elements for use in CSS.</p>
+			
+			<p>Classes should be given names that describes the general role of the content they contain. They should <strong>never</strong> be named to reflect the style or layout CSS they will be used to apply. This causes a breakdown of the separation between HTML and CSS and can lead to all sorts of problems.</p>
+			
+			<p class="big-point">A good rule of thumb for naming classes is to <strong>make them nouns</strong>.</p>
+			
+			<p>Imagine you name a class "red-background" and use it to apply a red background-color. Then later you decide to redesign your site to have a blue background. It's too much work to go into every HTML document and change the class name, so you simply change the style applied in the HTML. Now you have a class named "red-background" that is used to apply a green background-color. Not very sensible, is it?</p>
+
+			<pre class="language-markup"><code>&lt;h2 class="reusable-name"&gt;Heading Text&lt;/h2&gt;
+
+&lt;div class="reusable-name"&gt;Div Text&lt;/div&gt;</code></pre>
+
+			<pre class="language-css"><code>.reusable-name {
+	background-color: lightblue;
+}</code></pre>
+
+			<h2 id="multiples">Multiple Classes or IDs on an Element</h2>
+
+			<p>Multiple Classes or IDs can be applied to a single element by <strong>space-separating</strong> them within the quotation marks of the attribute.</p>
+
+			<pre class="language-markup"><code>&lt;h2 class="one-class another-class"&gt;Heading Text&lt;/h2&gt;
+
+&lt;div ID="one-id another-id"&gt;Div Text&lt;/div&gt;</code></pre>
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://alistapart.com/article/meaningful-css-style-like-you-mean-it">Meaningful CSS (strategies for naming classes)</a></li>
+			</ul>
+
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+</body>
+</html>

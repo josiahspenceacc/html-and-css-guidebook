@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Type Properties</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+	
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>CSS Typography</h1>
+				
+				<p>The majority of content on a typical website consists of text, so it is no surprise that CSS offers many properties for <strong>typographic customization</strong>. The art of typography is of course a subject all its own, but here are some of the most common type-related CSS properties.</p>
+				
+				<p>Slightly more advanced typographic techniques and considerations are discussed in the second video lesson on <a href="#video">intermediate typography</a>.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#family">Font-Family</a>
+					<a href="#size">Font-Size</a>
+					<a href="#weight">Font-Weight</a>
+					<a href="#style">Font-Style</a>
+					<a href="#color">Color</a>
+					<a href="#height">Line-Height</a>
+					<a href="#transform">Text-Transform</a>
+					<a href="#decoration">Text-Decoration</a>
+					<a href="#spacing">Letter-Spacing</a>
+					<a href="#video">Video Lessons</a>
+					<a href="#resources">Resource Links</a>
+					<a href="#tools">Tools</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="family">font-family</h2>
+
+			<p><code>font-family</code> provides a list of fonts to use. The reason for providing multiple fonts is that the browser checks a user's system to see if the font is available. If it is not, it moves on to the next font specified. By providing a generic font type, like "sans-serif", it insures that a user's browser can use its default in the style if no other requested fonts are installed.</p>
+
+			<p class="big-point">Font names that contain space characters should be wrapped in quotation marks.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	font-family: Geneva, "Lucida Sans", Verdana, sans-serif;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+
+			</div>
+
+
+			<h2 id="size">font-size</h2>
+
+			<p>Fonts can be sized using most CSS size units. (See the <a href="https://codepen.io/JosiahACC/pen/OQVrva">reference guide</a>.) If percentages are used, the font will be sized as a percentage of the parent element's font size.</p>
+
+			<p><code>rem</code> units are a great choice.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	font-size: 1.2rem;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the above example, try changing the size in <code>rem</code> units to see what happens to the type. Can you think of other sizing units to try? What happens when you sue them?</p>
+
+
+			<h2 id="weight">font-weight</h2>
+
+			<p><code>font-weight</code> determines whether the type displays as bold, normal, light, etcetera. The value can be set with keywords like "bold" or "normal", or with numeric values in increments of 100, with 400 as the equivalent of "normal".</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	font-weight: bold;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+
+			</div>
+
+
+			<h2 id="style">font-style</h2>
+
+			<p><code>font-style</code> determines whether the type is normal or italic.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	font-style: italic;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+
+			</div>
+
+
+			<h2 id="color">color</h2>
+
+			<p>There are a number of formats in which colors can be expressed in CSS. For a deeper explanation, see the <a href="https://codepen.io/JosiahACC/pen/qxdLMX">chapter on color formats</a>.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	color: #4286f4;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+
+			</div>
+
+
+			<h2 id="height">line-height</h2>
+
+			<p><code>line-height</code> requires no units for the value. By default, the value is relative to the size of the type, so if the value is 2, the line-height is twice the font-size.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	line-height: 1.7;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the above example, try changing the number to adjust the <code>line-height</code>.</p>
+
+
+			<h2 id="transform">text-transform</h2>
+
+			<p><code>text-transform</code> allows you to change the case of the text through CSS. It is usually better to do this in CSS rather than in the HTML becuase it is usually a style choice rather than a part of the meaning of the text.</p>
+
+			<p>Common values are: <em>capitalize, uppercase, lowercase,</em> and <em>none.</em> None simply gets rid of any values applied elsewhere.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	text-transform: uppercase;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.&lt;/p&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the above example, try out the different values for <code>text-transform</code>. What happens when you try <code>capitalize</code>, <code>lowercase</code>, or <code>none</code>?</p>
+
+
+			<h2 id="decoration">text-decoration</h2>
+
+			<p><code>text-decoration</code> allows you to add or remove decorative elements applied to text, such as underlines or strikethroughs.</p>
+
+			<p>Common values are: <em>underline, overline, line-through,</em> and <em>none.</em> None simply gets rid of any values applied elsewhere.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	text-decoration: underline;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.&lt;/p&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the above example, try out the different values for <code>text-decoration</code>. What happens when you try <code>overline</code>, <code>line-through</code>, or <code>none</code>?</p>
+
+
+			<h2 id="spacing">letter-spacing</h2>
+
+			<p><code>letter-spacing</code> controls the tracking or amount of space between each pair of letters. <code>em</code> is often a good choice of unit for this property because it is relative to the type to which it is applied.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	letter-spacing: .3em;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.&lt;/p&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the above example, try out the different values and different measuerment units for <code>letter-spacing</code> to see what happens.</p>
+			
+			<h2 id="video">Video Lessons</h2>
+			
+			<p>The following video demos are fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
+			
+			<h3>Basics Video</h3>
+			
+			<video-demo url="https://scrimba.com/c/c27727Tg"></video-demo>
+			
+			<h3>Intermediate Video</h3>
+			
+			<video-demo url="https://scrimba.com/c/cp43W9ha"></video-demo>
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://practicaltypography.com/">Practical Typography: A Free Online Book on the Art of Typography</a></li>
+				<li><a href="https://prowebtype.com/">Pro Web Type: A Free Online Book about Type on the Web</a></li>
+				<li><a href="https://viljamis.com/2016/typography-for-user-interfaces/">Typography for User Interfaces</a></li>
+				<li><a href="http://typecast.com/blog/show-and-tell-a-practical-look-at-choosing-type">A Practical Look at Choosing Typefaces</a></li>
+				<li><a href="https://www.smashingmagazine.com/2013/10/an-exploration-of-type-focused-websites/">An Exploration of Type-Focused Websites</a></li>
+				<li><a href="https://www.zachleat.com/web/obnoxiously-readable/">Obnoxiously Readable Text with Viewport Units</a></li>
+			</ul>
+			
+			<h2 id="tools">Tools</h2>
+			
+			<ul>
+				<li><a href="https://type-scale.com/">A Tool for Creating Modular Type Scales</a></li>
+				<li><a href="https://www.toptal.com/designers/htmlarrows/">HTML Character Entities Reference</a></li>
+			</ul>
+			
+			<p class="big-point">To learn more about styling type, read the chapter on <a href="/advanced/type-advanced.html">Advanced Typographic CSS</a>.</p>
+
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

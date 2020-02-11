@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shadows</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+	
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+	
+			<header>
+
+				<h1>Special Effects</h1>
+
+				<p>In CSS, there are a number of CSS properties aimed at creating specific interesting visual effects. Among them are rounded corners and shadows.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#box">Box Shadow</a>
+					<a href="#text">Text Shadow</a>
+					<a href="#radius">Rounded Corners</a>
+					<a href="#video">Video Lesson</a>
+					<a href="#tools">Tools</a>
+				</nav>
+
+			</header>
+			
+			<p>In CSS, shadows can be added to either an element's outer box using <code>box-shadow</code>, or directly to text using <code>text-shadow</code>. The value syntax for both are identical.</p>
+
+			<h2  id="box">Box Shadow</h2>
+
+			<p><code>box-shadow</code> places a shadow on an element's outer box (the invisible box beind an element that is made visible when <code>background-color</code> is applied).</p>
+
+			<p>The property takes multiple terms for its value in the following order:</p>
+
+			<ol>
+				<li><code>[x-offset]</code> &mdash; How much the shadow is shifted on the horizontal axis. Positive numbers shift the shadow to the right, and negative numbers shift it to the left.</li>
+				<li><code>[y-offset]</code> &mdash;  How much the shadow is shifted on the vertical axis. Positive numbers shift the shadow downward, and negative numbers shift it upward.</li>
+				<li><code>[blur amount]</code> &mdash; How much the shadow is feathered or blurred at the edges. Higher values result in a blurrier edge.</li>
+				<li><code>[spread amount]</code> &mdash; Positive values cause the shadow to grow larger than the element box. Negative values cause it to shrink. No value results in a shadow the same size as the element box.</li>
+				<li><code>[color]</code> &mdash; Determiines the color of the shadow.</li>
+				<li><code>inset</code> &mdash; Including this keyword causes the shadow to be placed <strong>inside</strong> the element box.</li>
+			</ol>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">h2 {
+	box-shadow: 3px 3px 2px cornflowerblue;
+}</pre>
+
+				<pre data-lang="html">&lt;h2&gt;Heading 2&lt;/h2&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the example above, see if you can figure out how to make the edge of the shadow blurrier. Can you make the shadow bigger overall? Try changing the color. What happens if you add the <code>inset</code> keyword to the end of the value?</p>
+
+
+			<h2  id="text">Text Shadow</h2>
+
+			<p>Similarly, <code>text-shadow</code> places a shadow directly behind the letterforms of text.</p>
+
+			<p>As with <code>box-shadow</code>, <code>text-shadow</code> takes multiple terms for its value in the following order: <code>[x-offset] [y-offset] [blur amount] [color]</code>. The <code>[spread]</code> and <code>inset</code> values <strong>cannot be used</strong> for <code>text-shadow</code>.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">h2 {
+	text-shadow: 3px 3px 2px cornflowerblue;
+}</pre>
+
+				<pre data-lang="html">&lt;h2&gt;Heading 2&lt;/h2&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">Can you shift the shadow so that it sits to the top and left of the text instead of the bottom right? Can you remove the blur from the shadow so that it is hard-edged?</p>
+
+
+			<h2  id="text">Rounded Corners</h2>
+
+			<p>The CSS <code>border-radius</code> allows the creation of rounded corners on an elemen't box. Any border or backgroung present on the element will honor the rounded corners</p>
+
+			<p><code>border-radius</code> accepts any measurement value to determin the size to which the corners are rounded. This single property is actually a shorthand for individual <code>border-top-left-radius</code>, <code>border-top-right-radius</code>, <code>border-bottom-right-radius</code>, and <code>border-bottom-left-radius</code>. As a shorthand, different numbers of values have different meanings:</p>
+			
+			<ul>
+
+				<li><strong>One value:</strong> all four corners.</li>
+
+				<li><strong>Two values:</strong> top-left &amp; bottom-right together, top-right &amp; bottom-left together.</li>
+				
+				<li><strong>Three values:</strong> top-left, top-right &amp; bottom-left together, bottom-right.</li>
+				
+				<li><strong>Three values:</strong> top-left, top-right, bottom-right, bottom-left (clockwise around from top-left).</li>
+				
+			</ul>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.one-value {
+	background-color: cornflowerblue;
+	border-radius: .75rem; /*Used on all four corners*/
+	margin-bottom: 1rem;
+	padding: 1rem;
+}
+
+.four-value {
+	background-color: lightsalmon;
+	border-radius: .75rem 25px 5% 3em; /*Used on all four corners*/
+	padding: 2rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div class="one-value"&gt;
+	Div with one value for all corners
+&lt;/div&gt;
+
+&lt;div class="four-value"&gt;
+	Div with separate values for each corner
+&lt;/div&gt;</pre>
+				
+				<p class="try-this">In the demo above, can you figure out how to round the corners of the first box enough to form an actual oval? Can you make the only top-left corner of the second box a pointed corner?</p>
+
+			</div>
+			
+			<h2 id="video">Video Lesson</h2>
+			
+			<p>Of the topics covered in this chapter, this video only covers <code>box-shadow</code> and <code>text-shadow</code>.</p>
+			
+			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/cwyQe6fW"></video-demo>
+			
+			<h2 id="resources">Tools</h2>
+			
+			<ul>
+				<li><a href="https://cssgenerator.org/box-shadow-css-generator.html">Box-Shadow Generator</a></li>
+				<li><a href="https://cssgenerator.org/text-shadow-css-generator.html">Text-Shadow Generator</a></li>
+			</ul>
+				
+
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

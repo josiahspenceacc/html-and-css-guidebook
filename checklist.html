@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Website Checklist</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+
+				<h1>Website Checklist</h1>
+				
+				<p>The following checklist includes many of the factors you should <strong>consider</strong> when building and completing an HTML and CSS web project. While it is by no means exhaustive, it can serve as a helful reminder of many <strong>best practices</strong>.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#general">General</a>
+					<a href="#html">HTML-Specific</a>
+					<a href="#css">CSS-Specific</a>
+				</nav>
+
+			</header>
+
+			<h2 id="general">General</h2>
+			
+			<form>
+			
+				<div>
+					<input type="checkbox" id="file-names">
+					<label for="file-names">No file names or folder names include spaces or capital letters</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="horizontal-scroll">
+					<label for="horizontal-scroll">Pages have been checked at all browser sizes for unwanted horizontal scrollbars</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="image-folder">
+					<label for="image-folder">All project images are in an appropriate sub-folder</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="image-local">
+					<label for="image-local">No project images are absolutely linked from the web, and are downloaded to your directory</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="image-size">
+					<label for="image-size">All image files have been resized to scale appropriate for usage</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="project-requirements">
+					<label for="project-requirements">All project requirements have been met</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="live-url">
+					<label for="live-url">If required, the project has been uploaded to hosting and the live URL is submitted</label>
+				</div>
+				
+				<input type="reset" value="uncheck all">
+				
+			</form>
+
+			<h2 id="html">HTML-Specific</h2>
+			
+			<form>
+			
+				<div>
+					<input type="checkbox" id="home-index">
+					<label for="home-index">The homepage HTML file is named <code>index.html</code></label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="skeleton">
+					<label for="skeleton">All HTML documents include all required skeleton code</label>
+				</div>
+
+				<div>
+					<input type="checkbox" id="css-linked">
+					<label for="css-linked">The head of all HTML documents includes a link to the CSS file</label>
+				</div>
+
+				<div>
+					<input type="checkbox" id="html-indent">
+					<label for="html-indent">HTML indentation shows nesting / parent-child relationships</label>
+				</div>
+
+				<div>
+					<input type="checkbox" id="closing-tags">
+					<label for="closing-tags">All relevant elements have matching closing tags</label>
+				</div>
+
+				<div>
+					<input type="checkbox" id="html-semantics">
+					<label for="html-semantics">HTML elements are applied based upon their meaning rather than their appearance</label>
+				</div>
+
+				<div>
+					<input type="checkbox" id="closing-quotes">
+					<label for="closing-quotes">All attribute values have proper quotes</label>
+				</div>
+
+				<div>
+					<input type="checkbox" id="class-names">
+					<label for="class-names">No class names refer to styles</label>
+				</div>
+
+				<div>
+					<input type="checkbox" id="class-names-format">
+					<label for="class-names-format">No class names contain spaces or capital letters</label>
+				</div>
+				
+				<input type="reset" value="uncheck all">
+				
+			</form>
+
+			<h2 id="css">CSS-Specific</h2>
+			
+			<form>
+			
+				<div>
+					<input type="checkbox" id="css-file">
+					<label for="css-file">All CSS is in a single CSS file shared by all pages</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="alphabetized">
+					<label for="alphabetized">All <em>properties</em> are alphabetized within their rulesets</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="no-id">
+					<label for="no-id">No IDs have been used as CSS selectors</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="image-overflow">
+					<label for="image-overflow">Images have styles that prevent them from overflowing their container</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="closing-brackets">
+					<label for="closing-brackets">All selector blocks, media queries, and keyframes have necessary closing brackets</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="font-quotes">
+					<label for="font-quotes">Any font names containing spaces are wrapped in quotes</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="link-states">
+					<label for="link-states">All link states have CSS styles</label>
+				</div>
+			
+				<div>
+					<input type="checkbox" id="media-query-repeats">
+					<label for="media-query-repeats">No properties with unchanged values are repeated between media queries</label>
+				</div>
+				
+				<input type="reset" value="uncheck all">
+				
+			</form>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fluid Widths</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+	
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Fluid Width</h1>
+				
+				<p>Because users might be viewing a web page on virtually any size of device or browser window, it is important to ensure content fits within their viewport. <strong>Fluid design</strong> is one technique for dealing with this by allowing content to <strong>scale</strong> and <strong>reflow</strong> automatically based on the size of the container.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#fixed">Fixed Width</a>
+					<a href="#percent">Percentage Width</a>
+					<a href="#min-max">Min / Max Width</a>
+					<a href="#height">Height</a>
+					<a href="#video">Video Lesson</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="fixed">Setting Fixed Widths</h2>
+
+			<p>Any element can be given a set width using absolute CSS measurement units like <code>px</code> or <code>rem</code>. However, if the browser or container shrinks to smaller than the size set for the element, the element overflows / sticks out of the container. If it is the browser window that is too small, a horizontal scrollbar appears.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	width: 700px;
+}</pre>
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+
+			</div>
+
+			<p class="try-this">Try resizing the example above by grabbing the bottom right corner and dragging. Notice how the content fails to resize based on the size of the preview window.</p>
+
+
+			<h2 id="percent">Percentage Widths</h2>
+
+			<p>One solution is to use a percent (<code>%</code>) value for the width. No matter how the container resizes, the element always resizes to occupy the given percentage of the container's width.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	width: 80%;
+}</pre>
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+
+			</div>
+
+			<p class="try-this">Resize the preview window above by grabbing and dragging the bottom right corner to see how this content responds. Try changing the percentage size of the <code>width</code> value to see how the content behaves.</p>
+
+
+			<h2 id="min-max">Max-Width &amp; Min-Width</h2>
+
+			<h3>max-width</h3>
+
+			<p>Percentage widths can be problematic if the width of the container is not set&mdash;the element will keeps as the browser grows, past the point of looking good. The solution to this is to use the <code>max-width</code> property instead of the <code>width</code> property. With <code>max-width</code>, the element remains fluid and respond to the size of the container if the container is smaller than the size specified, but it doesn't grow beyond that size. <strong>It is an upper limit to the size of the element.</strong></p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	max-width: 25rem;
+}</pre>
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+
+			</div>
+
+			<p class="try-this">Resize the preview window above to see how this example responds. Notice how the content is fluid up until it reaches 25rem, but then grows no wider. Try changing the <code>max-width</code> value.</p>
+
+
+			<h3>min-width</h3>
+
+			<p>Similarly, the <code>min-width</code> property sets a lower limit to the width of the element.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	min-width: 24rem;
+}</pre>
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+
+			</div>
+
+
+			<h2 id="height">Height Properties</h2>
+
+			<p>Similar to <code>width</code> and its related properties, similar properties exist for <code>height</code>, <code>max-height</code>, and <code>min-height</code>, which all behave as you would expect. However, <code>height</code> properties should be used with caution because they can interfere with the natural flow of content vertically down the page.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p {
+	max-height: 4rem;
+}</pre>
+				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+
+			</div>
+			
+			<h2 id="video">Video Lesson</h2>
+			
+			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/cBgqv2Uv"></video-demo>
+
+
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

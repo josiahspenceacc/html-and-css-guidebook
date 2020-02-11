@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>List Styles Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="233" subject="CSS List Styles" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep">
+
+		<!-- Step 1 -->
+		<quiz-step :step="1" mode="html"
+					  starter='Boil water in a large pot
+Add salt to water
+Add pasta
+Boil pasta for 7 to 8 minutes
+Drain pasta'
+					  answer="<ol>
+	<li>Boil water in a large pot</li>
+	<li>Add salt to water</li>
+	<li>Add pasta</li>
+	<li>Boil pasta for 7 to 8 minutes</li>
+	<li>Drain pasta</li>
+</ol>"
+					  image="images/list-styles-1.png">
+
+			<h3>Lists in HTML</h3>
+			
+			<p>Write the HTML that would, by default, produce the styles shown in the image.</p>
+
+		</quiz-step>
+
+		<!-- Step 2 -->
+		<quiz-step :step="2" mode="html"
+					  starter='<ul>
+	<li>Cupcakes</li>
+	<li>Brownies</li>
+	<li>Ice Cream</li>
+	<li>Cheesecake</li>
+	<li>Pie</li>
+</ul>'
+					  answer="<ul>
+	<li>Cupcakes</li>
+	<li>Brownies</li>
+	<li>Ice Cream
+		<ul>
+			<li>Rocky Road</li>
+			<li>Butter Pecan</li>
+			<li>Neapolitan</li>
+		</ul>
+	</li>
+	<li>Cheesecake</li>
+	<li>Pie
+		<ul>
+			<li>Apple</li>
+			<li>Chess</li>
+			<li>Key Lime</li>
+		</ul>
+	</li>
+</ul>"
+					  image="images/list-styles-2.png">
+
+			<h3>Sub-Lists</h3>
+			
+			<p>Add the 2 nested lists shown in the image to the HTML below.</p>
+
+		</quiz-step>
+
+		<!-- Step 3 -->
+		<quiz-step :step="3" mode="css"
+					  starter='<ul>
+	<li>Cupcakes</li>
+	<li>Brownies</li>
+	<li>Ice Cream
+		<ul>
+			<li>Rocky Road</li>
+			<li>Better Pecan</li>
+			<li>Neapolitan</li>
+		</ul>
+	</li>
+	<li>Cheesecake</li>
+	<li>Pie
+		<ul>
+			<li>Apple</li>
+			<li>Chess</li>
+			<li>Key Lime</li>
+		</ul>
+	</li>
+</ul>'
+					  cssstarter=""
+					  answer="ul {
+	list-style-type: square;
+}"
+					  image="images/list-styles-3.png">
+
+			<h3>Changing Bullets</h3>
+			
+			<p>Write the CSS that makes the bullets for the lists look like those in the image.</p>
+
+		</quiz-step>
+
+		<!-- Step 4 -->
+		<quiz-step :step="4" mode="css"
+					  starter='<h1>Highest Grossing Movies of All Time</h1>
+<ol>
+	<li>Avengers: Endgame</li>
+	<li>Avatar</li>
+	<li>Titanic</li>
+	<li>Star Wars: The Force Awakens</li>
+	<li>Avengers: Infinity War</li>
+</ol>'
+					  cssstarter=""
+					  answer="ol {
+	list-style-type: upper-roman;
+}">
+
+			<h3>Changing Numbers</h3>
+			
+			<p>Write the CSS that will change the numbers to <strong>uppercase roman numerals</strong>.</p>
+
+		</quiz-step>
+
+		<!-- Step 5 -->
+		<quiz-step :step="5" mode="css"
+					  starter='<h1>Highest Grossing Movies of All Time</h1>
+<ol>
+	<li>Avengers: Endgame</li>
+	<li>Avatar</li>
+	<li>Titanic</li>
+	<li>Star Wars: The Force Awakens</li>
+	<li>Avengers: Infinity War</li>
+</ol>'
+					  cssstarter=""
+					  answer="ol {
+	padding-left: 0;
+}">
+
+			<h3>List Indentation</h3>
+			
+			<p>Write the CSS to completely <strong>remove the left indentation</strong> from this list.</p>
+
+		</quiz-step>
+
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>

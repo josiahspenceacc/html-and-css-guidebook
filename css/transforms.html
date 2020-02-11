@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Transform</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Transform</h1>
+
+				<p>The <code>transform</code> CSS property allows you to rotate, scale, skew, or move an element without removing it from its position in the <a href="/css/position.html#flow">document flow</a>. Transforms can be great for animation.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#basic-usage">Basic Usage</a>
+					<a href="#common-functions">Common Transform Functions</a>
+					<a href="#example-usage">Example Usage</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="basic-usage">Basic Usage</h2>
+			
+			<p>The <code>transform</code> property accepts a <em>transform function</em> as an indicator of the desired behavior, and the transform function then accepts its own value in parentheses. An example will make this more clear. Here the <code>rotate()</code> transform function is applied:</p>
+			
+			<figure>
+				
+				<code-block lang="css" code='transform: rotate(30deg);'></code-block>
+				
+				<figcaption>The element is rotated 30 degrees clockwise.</figcaption>
+				
+			</figure>
+			
+			<p>Different transform functions may accept different units for their values. So while the <code>rotate()</code> function accepts <code>deg</code> units (degrees), the <code>scale()</code> function accepts a unitless number, where <code>1</code> is equal to 100% of the original scale:</p>
+			
+			<figure>
+				
+				<code-block lang="css" code='transform: scale(2);'></code-block>
+				
+				<figcaption>The element grows to twice its original size.</figcaption>
+				
+			</figure>
+
+			<h2 id="common-functions">Common Transform Functions</h2>
+			
+			<p>Some of the most common transform fuctions include:</p>
+			
+			<dl>
+				<dt><code>translateX()</code>:</dt>
+				<dd>Moves the element horizontally. Accepts any size unit (px, rem, em, etcetera).</dd>
+				<dt><code>translateY()</code>:</dt>
+				<dd>Moves the element vertically. Accepts any size unit (px, rem, em, etcetera).</dd>
+				<dt><code>translate()</code>:</dt>
+				<dd>Shorthand for <code>translateX</code> and <code>translateY</code>. Requires two comma-separated values: X value, then Y value. Accepts any size unit (px, rem, em, etcetera).</dd>
+				<dt><code>scale()</code>:</dt>
+				<dd>Makes the element larger or smaller. Accepts a unitless number, where <code>1</code> is equal to 100% of the original size.</dd>
+				<dt><code>rotate()</code>:</dt>
+				<dd>Rotates (turns) the element. Accepts <code>deg</code> units, which represent degrees of angle.</dd>
+				<dt><code>skewX()</code>:</dt>
+				<dd>Distorts the element on the horizontal plane. Accepts <code>deg</code> units, which represent degrees of angle.</dd>
+				<dt><code>skewY()</code>:</dt>
+				<dd>Distorts the element on the horizontal plane. Accepts <code>deg</code> units, which represent degrees of angle.</dd>
+				<dt><code>skew()</code>:</dt>
+				<dd>Shorthand for <code>skewX</code> and <code>skewY</code>. Requires two comma-separated values: X value, then Y value. Accepts <code>deg</code> units, which represent degrees of angle.</dd>
+			</dl>
+
+			<h3 id="example-usage">Example Usage</h3>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">div {
+	background-color: lightsalmon;
+	height: 5rem;
+	padding: .25rem;
+	width: 5rem;				
+}
+
+figure {
+	background-color: ghostwhite;
+	margin: 2rem 0;
+	padding: 1rem;
+}
+
+.translatex {
+	transform: translateX(2rem);
+}
+
+.translatey {
+	transform: translateY(2rem);
+}
+
+.translate {
+	transform: translate(2rem,1rem);
+}
+
+.scale {
+	transform: scale(.5);
+}
+
+.rotate {
+	transform: rotate(45deg);
+}
+
+.skewx {
+	transform: skewX(15deg);
+}
+
+.skewy {
+	transform: skewY(20deg);
+}
+
+.skew {
+	transform: skew(15deg,20deg);
+}</pre>
+				<pre data-lang="html">&lt;h2&gt;No Transform&lt;/h2&gt;
+				
+&lt;figure&gt;
+	&lt;div&gt;No Transform&lt;/div&gt;
+&lt;/figure&gt;
+				
+&lt;h2&gt;translateX()&lt;/h2&gt;
+				
+&lt;figure&gt;
+	&lt;div class="translatex"&gt;translateX()&lt;/div&gt;
+&lt;/figure&gt;
+				
+&lt;h2&gt;translateY()&lt;/h2&gt;
+
+&lt;figure&gt;
+	&lt;div class="translatey"&gt;translateY()&lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;translate()&lt;/h2&gt;
+
+&lt;figure&gt;
+	&lt;div class="translate"&gt;translate()&lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;Scale()&lt;/h2&gt;
+
+&lt;figure&gt;
+	&lt;div class="scale"&gt;scale()&lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;rotate()&lt;/h2&gt;
+
+&lt;figure&gt;
+	&lt;div class="rotate"&gt;rotate()&lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;skewX()&lt;/h2&gt;
+
+&lt;figure&gt;
+	&lt;div class="skewx"&gt;skewX()&lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;skewY()&lt;/h2&gt;
+
+&lt;figure&gt;
+	&lt;div class="skewy"&gt;skewY()&lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;skew()&lt;/h2&gt;
+
+&lt;figure&gt;
+	&lt;div class="skew"&gt;skew()&lt;/div&gt;
+&lt;/figure&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the demo above, can you make the <code>translateX()</code> example move left instead of right? Can you turn the text of the <code>rotate()</code> example upside down?</p>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

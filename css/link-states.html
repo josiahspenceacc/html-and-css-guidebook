@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Link States</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Link States</h1>
+
+				<p>Links are <strong>interactive</strong> elements and can change their display based on the current state of their interaction with the user. It is important to write CSS for each state to <strong>visually indicate</strong> to users how they are interacting with the link.</p>
+				
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#normal">Normal</a>
+					<a href="#visited">Visited</a>
+					<a href="#hover">Hover</a>
+					<a href="#focus">Focus</a>
+					<a href="#active">Active</a>
+					<a href="#full-example">Full Example</a>
+					<a href="#video">Video Lesson</a>
+					<a href="#quiz">Practice Exercise</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="normal">Normal Links</h2>
+
+			<p>Links are marked up using the <code>&lt;a&gt;</code> tag. </p>
+
+			<pre class=" language-markup"><code>&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;</code></pre>
+
+			<p>And links in their basic state can be styled by selecting for the element normally:</p>
+
+			<pre class=" language-css"><code>a {
+	text-decoration: none;
+}</code></pre>
+
+
+			<h2 id="visited">Visited</h2>
+
+			<p>The <em>visited</em> state refers to links the user has previously clicked. It can be styled by selecting the state like this:</p>
+
+			<pre class=" language-css"><code>a:visited {
+	color: orange;
+}</code></pre>
+
+
+			<h2 id="hover">Hover</h2>
+
+			<p>The <em>hover</em> state refers to links with the user's mouse positioned over it, but not clicking. It can be styled by selecting the state like this:</p>
+
+			<pre class=" language-css"><code>a:hover {
+	text-decoration: underline;
+}</code></pre>
+
+
+			<h2 id="focus">Focus</h2>
+
+			<p>The <em>focus</em> state refers to links the user selects by navigating with the tab key. This state is important for users who are unable to use a mouse or touch input. It can be styled by selecting the state like this:</p>
+
+			<pre class=" language-css"><code>a:focus {
+	text-decoration: underline.
+}</code></pre>
+
+
+			<h2 id="active">Active</h2>
+
+			<p>The <em>active</em> state refers to a link in the moment a user clicks on it. It can be styled by selecting the state like this:</p>
+
+			<pre class=" language-css"><code>a:active {
+	color: green;
+}</code></pre>
+			
+			<h2 id="full-example">Full Example</h2>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.a {
+	color: green;
+}
+
+a:visited {
+	color: cornflowerblue;
+}
+
+a:hover {
+	background-color: salmon;
+}
+
+a:focus {
+	background-color: red;
+	outline: none;
+}
+
+a:active {
+	background-color: cornflowerblue;
+}</pre>
+				<pre data-lang="html">&lt;a&gt;A Link&lt;/a&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the above example, try hovering over the link. Try selecting it with the tab key. Try clicking on it. See what happens? Try adding your own CSS to the various link states.</p>
+			
+			<h2 id="video">Video Lesson</h2>
+			
+			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/cMv3a2AL"></video-demo>
+			
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/css-link-states.html"></lesson-quiz>
+
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

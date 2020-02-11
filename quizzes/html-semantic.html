@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Semantic Elements Quiz</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="230" subject="Links in HTML" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep">
+
+		<!--Step 1 // Nav-->
+		<quiz-step :step="1"
+					  starter='<p class="logo">Austin, Texas</p>
+
+<ul>
+	<li><a href="history.html">History</a></li>
+	<li><a href="activities.html">Activities</a></li>
+	<li><a href="living.html">Living</a></li>
+</ul>
+
+<h1>Austin History</h1>
+
+<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+<p>Written by Fred Frederson</p>
+
+<p>Last updated: June 22, 2018</p>
+
+<h2>Earliest Inhabitants</h2>
+
+<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+<p>Excavations at the Gault site</p>
+
+<h2>Native Peoples</h2>
+
+<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+<h2>Geographic Distinction</h2>
+
+<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+<p>Copyright &copy; ATX for Life</p>'
+					  answer='<p class="logo">Austin, Texas</p>
+
+<nav>
+	<ul>
+		<li><a href="history.html">History</a></li>
+		<li><a href="activities.html">Activities</a></li>
+		<li><a href="living.html">Living</a></li>
+	</ul>
+</nav>
+
+<h1>Austin History</h1>
+
+<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+<p>Written by Fred Frederson</p>
+
+<p>Last updated: June 22, 2018</p>
+
+<h2>Earliest Inhabitants</h2>
+
+<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+<p>Excavations at the Gault site</p>
+
+<h2>Native Peoples</h2>
+
+<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+<h2>Geographic Distinction</h2>
+
+<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+<p>Copyright &copy; ATX for Life</p>'>
+			
+			<h3>Links to other site pages</h3>
+			
+			<p>Over the course of this exercise, we'll take the basic HTML shown here and add additional elements to make the code more semantic and meaningful.</p>
+
+			<p>Let's get started. On lines 3&ndash;7 of the html, there is an unordered list that contains links to other pages on the site, which serve as a menu to allow users to get around.</p>
+			
+			<p><strong>Wrap</strong> this unordered list in the semantic element that is for such sets of links.</p>
+
+		</quiz-step>
+
+		<!--Step 2 // Header-->
+		<quiz-step :step="2"
+					  starter='<p class="logo">Austin, Texas</p>
+
+<nav>
+	<ul>
+		<li><a href="history.html">History</a></li>
+		<li><a href="activities.html">Activities</a></li>
+		<li><a href="living.html">Living</a></li>
+	</ul>
+</nav>
+
+<h1>Austin History</h1>
+
+<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+<p>Written by Fred Frederson</p>
+
+<p>Last updated: June 22, 2018</p>
+
+<h2>Earliest Inhabitants</h2>
+
+<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+<p>Excavations at the Gault site</p>
+
+<h2>Native Peoples</h2>
+
+<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+<h2>Geographic Distinction</h2>
+
+<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+<p>Copyright &copy; ATX for Life</p>'
+					  answer='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<h1>Austin History</h1>
+
+<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+<p>Written by Fred Frederson</p>
+
+<p>Last updated: June 22, 2018</p>
+
+<h2>Earliest Inhabitants</h2>
+
+<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+<p>Excavations at the Gault site</p>
+
+<h2>Native Peoples</h2>
+
+<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+<h2>Geographic Distinction</h2>
+
+<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+<p>Copyright &copy; ATX for Life</p>'>
+			
+			<h3>Introductory material</h3>
+
+			<p>Now that we've added the <code>nav</code> element for the menu links, let's look at lines 1&ndash;9 of the html (the logo text and the navigation) as a group. These serve to orient the user on the page and on the site as a whole.</p>
+			
+			<p><strong>Wrap</strong> this content in the semantic element that represents introductory content to a page.</p>
+
+		</quiz-step>
+
+		<!--Step 3 // Footer-->
+		<quiz-step :step="3"
+					  starter='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<h1>Austin History</h1>
+
+<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+<p>Written by Fred Frederson</p>
+
+<p>Last updated: June 22, 2018</p>
+
+<h2>Earliest Inhabitants</h2>
+
+<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+<p>Excavations at the Gault site</p>
+
+<h2>Native Peoples</h2>
+
+<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+<h2>Geographic Distinction</h2>
+
+<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+<p>Copyright &copy; ATX for Life, a public interest campaign.</p>'
+					  answer='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<h1>Austin History</h1>
+
+<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+<p>Written by Fred Frederson</p>
+
+<p>Last updated: June 22, 2018</p>
+
+<h2>Earliest Inhabitants</h2>
+
+<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+<p>Excavations at the Gault site</p>
+
+<h2>Native Peoples</h2>
+
+<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+<h2>Geographic Distinction</h2>
+
+<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'>
+			
+			<h3>Info about the creator or creation</h3>
+
+			<p>Let's jump all the way down to the end of the document. The paragraph on line 39 tells us who created the website.</p>
+			
+			<p><strong>Wrap</strong> the paragraph in the semantic element that represents information about the creator or creation of a page.</p>
+
+		</quiz-step>
+
+		<!--Step 4 // Main-->
+		<quiz-step :step="4"
+					  starter='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<h1>Austin History</h1>
+
+<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+<p>Written by Fred Frederson</p>
+
+<p>Last updated: June 22, 2018</p>
+
+<h2>Earliest Inhabitants</h2>
+
+<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+<p>Excavations at the Gault site</p>
+
+<h2>Native Peoples</h2>
+
+<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+<h2>Geographic Distinction</h2>
+
+<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'
+					  answer='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<h1>Austin History</h1>
+
+	<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+	<p>Written by Fred Frederson</p>
+
+	<p>Last updated: June 22, 2018</p>
+
+	<h2>Earliest Inhabitants</h2>
+
+	<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+	<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+	<p>Excavations at the Gault site</p>
+
+	<h2>Native Peoples</h2>
+
+	<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+	<h2>Geographic Distinction</h2>
+
+	<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'>
+			
+			<h3>Primary page content</h3>
+
+			<p>The <code>header</code> and <code>footer</code> we've just added are likely to be pretty much the same on all the pages of the site, but everything <em>between</em> them (lines 15&ndash;37) is unique to this page and probably the content the user is looking to read.</p>
+			
+			<p><strong>Wrap</strong> all the content between the <code>header</code> and <code>footer</code> in a semantic element that indicates the primary content of a page.</p>
+
+		</quiz-step>
+
+		<!--Step 5 // Article-->
+		<quiz-step :step="5"
+					  starter='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<h1>Austin History</h1>
+
+	<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+	<p>Written by Fred Frederson</p>
+
+	<p>Last updated: June 22, 2018</p>
+
+	<h2>Earliest Inhabitants</h2>
+
+	<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+	<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+	<p>Excavations at the Gault site</p>
+
+	<h2>Native Peoples</h2>
+
+	<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+	<h2>Geographic Distinction</h2>
+
+	<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'
+					  answer='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<article>
+
+		<h1>Austin History</h1>
+
+		<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+		<p>Written by Fred Frederson</p>
+
+		<p>Last updated: June 22, 2018</p>
+
+		<h2>Earliest Inhabitants</h2>
+
+		<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+		<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+		<p>Excavations at the Gault site</p>
+
+		<h2>Native Peoples</h2>
+
+		<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+		<h2>Geographic Distinction</h2>
+
+		<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+	</article>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'>
+			
+			<h3>Content that can stand alone</h3>
+
+			<p>All the content we just wrapped in the <code>main</code> shares another distiction: it could be understood independant of the rest of the page or the site. If you were to email it to a friend without any explanation, your friend would quickly understand that she was reading an account of Austin's history.</p>
+			
+			<p><strong>Wrap</strong> all the content inside the <code>main</code> in a semantic element that represents content that can be understood on its own.</p>
+
+		</quiz-step>
+
+		<!--Step 6 // Figure/Figcaption-->
+		<quiz-step :step="6"
+					  starter='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<article>
+
+		<h1>Austin History</h1>
+
+		<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+		<p>Written by Fred Frederson</p>
+
+		<p>Last updated: June 22, 2018</p>
+
+		<h2>Earliest Inhabitants</h2>
+
+		<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+		<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+		<p>Excavations at the Gault site</p>
+
+		<h2>Native Peoples</h2>
+
+		<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+		<h2>Geographic Distinction</h2>
+
+		<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+	</article>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'
+					  answer='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<article>
+
+		<h1>Austin History</h1>
+
+		<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+		<p>Written by Fred Frederson</p>
+
+		<p>Last updated: June 22, 2018</p>
+
+		<h2>Earliest Inhabitants</h2>
+
+		<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+		<figure>
+
+			<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+			<figcaption>Excavations at the Gault site</figcaption>
+		
+		</figure>
+
+		<h2>Native Peoples</h2>
+
+		<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+		<h2>Geographic Distinction</h2>
+
+		<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+	</article>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'>
+			
+			<h3>Illustrative content</h3>
+
+			<p>Let's turn our attention to the image on line 31 and the description of that image on line 33. The picture of the Gault site is helpful for the user to understand what the text is saying, and the description goes along with that.</p>
+			
+			<p><strong>Wrap</strong> the <code>img</code> on line 31 and the <code>p</code> on line 33 together in a semantic element that represents illustrative content that is helpful in understanding the content.</p>
+			
+			<p>Then, <strong>replace</strong> the <code>p</code> tags for the description with a semantic element that represents a caption for the element just added.</p>
+
+		</quiz-step>
+
+		<!--Step 7 // Aside-->
+		<quiz-step :step="7"
+					  starter='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<article>
+
+		<h1>Austin History</h1>
+
+		<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+		<p>Written by Fred Frederson</p>
+
+		<p>Last updated: June 22, 2018</p>
+
+		<h2>Earliest Inhabitants</h2>
+
+		<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+		<figure>
+
+			<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+			<figcaption>Excavations at the Gault site</figcaption>
+		
+		</figure>
+
+		<h2>Native Peoples</h2>
+
+		<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+		<h2>Geographic Distinction</h2>
+
+		<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+	</article>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'
+					  answer='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<article>
+
+		<h1>Austin History</h1>
+
+		<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+		<p>Written by Fred Frederson</p>
+
+		<p>Last updated: June 22, 2018</p>
+
+		<h2>Earliest Inhabitants</h2>
+
+		<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+		<figure>
+
+			<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+			<figcaption>Excavations at the Gault site</figcaption>
+		
+		</figure>
+
+		<h2>Native Peoples</h2>
+
+		<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+		<aside>
+
+			<h2>Geographic Distinction</h2>
+
+			<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+		</aside>
+
+	</article>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'>
+			
+			<h3>Related content</h3>
+
+			<p>Now take a look at the heading on line 43 and the paragraph on line 45. The content here is about geography, not history, which is the primary subject of the article, so while this is <em>related</em>, it's not essential to understanding the subject.</p>
+			
+			<p><strong>Wrap</strong> the <code>h2</code> and the <code>p</code> on lines 43&ndash;45 together in a semantic element that represents secondary or related content.</p>
+
+		</quiz-step>
+
+		<!--Step 8 // Header 2-->
+		<quiz-step :step="8"
+					  starter='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<article>
+
+		<h1>Austin History</h1>
+
+		<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+		<p>Written by Fred Frederson</p>
+
+		<p>Last updated: June 22, 2018</p>
+
+		<h2>Earliest Inhabitants</h2>
+
+		<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+		<figure>
+
+			<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+			<figcaption>Excavations at the Gault site</figcaption>
+		
+		</figure>
+
+		<h2>Native Peoples</h2>
+
+		<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+		<aside>
+
+			<h2>Geographic Distinction</h2>
+
+			<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+		</aside>
+
+	</article>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'
+					  answer='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<article>
+
+		<header>
+
+			<h1>Austin History</h1>
+
+			<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+		</header>
+
+		<p>Written by Fred Frederson</p>
+
+		<p>Last updated: June 22, 2018</p>
+
+		<h2>Earliest Inhabitants</h2>
+
+		<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+		<figure>
+
+			<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+			<figcaption>Excavations at the Gault site</figcaption>
+		
+		</figure>
+
+		<h2>Native Peoples</h2>
+
+		<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+		<aside>
+
+			<h2>Geographic Distinction</h2>
+
+			<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+		</aside>
+
+	</article>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'>
+			
+			<h3>Introduction of an article</h3>
+
+			<p>Doubling back to the beginning of the article, the <code>h1</code> and first <code>p</code> (lines 19&ndash;21) serve to introduce the article's subject. We've already made use of an element that refers to intruductory content for a page, but that same element can also be used for intruductory content of an <code>article</code>.</p>
+			
+			<p><strong>Wrap</strong> the <code>h1</code> and the <code>p</code> together in the semantic element that represents introductory content for a page or an article.</p>
+
+		</quiz-step>
+
+		<!--Step 9 // Footer 2-->
+		<quiz-step :step="9"
+					  starter='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<article>
+
+		<header>
+
+			<h1>Austin History</h1>
+
+			<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+		</header>
+
+		<p>Written by Fred Frederson</p>
+
+		<p>Last updated: June 22, 2018</p>
+
+		<h2>Earliest Inhabitants</h2>
+
+		<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+		<figure>
+
+			<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+			<figcaption>Excavations at the Gault site</figcaption>
+		
+		</figure>
+
+		<h2>Native Peoples</h2>
+
+		<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+		<aside>
+
+			<h2>Geographic Distinction</h2>
+
+			<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+		</aside>
+
+	</article>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'
+					  answer='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<article>
+
+		<header>
+
+			<h1>Austin History</h1>
+
+			<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+		</header>
+
+		<footer>
+
+			<p>Written by Fred Frederson</p>
+
+			<p>Last updated: June 22, 2018</p>
+
+		</footer>
+
+		<h2>Earliest Inhabitants</h2>
+
+		<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+		<figure>
+
+			<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+			<figcaption>Excavations at the Gault site</figcaption>
+		
+		</figure>
+
+		<h2>Native Peoples</h2>
+
+		<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+		<aside>
+
+			<h2>Geographic Distinction</h2>
+
+			<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+		</aside>
+
+	</article>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'>
+			
+			<h3>Creator or creation of an article</h3>
+
+			<p>Just below the <code>header</code> you just added, there are a couple of short paragraphs (lines 27&ndash;29) that tell us who wrote the article and when it was last updated. Similar to the last step, we've already made use of an element that refers to information about the creator or creation of a page, but that same element can also be used for creator or creation information about an <code>article</code>.</p>
+			
+			<p><strong>Wrap</strong> the two <code>p</code> elements together in the semantic element that represents information about the creator or creation of a page or of an article.</p>
+			
+			<p><em>Hint: Don't let an element's name confuse you into thinking it can only be used at a specific place in a page layout.</em></p>
+
+		</quiz-step>
+
+		<!--Step 10 // Section-->
+		<quiz-step :step="10"
+					  starter='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<article>
+
+		<header>
+
+			<h1>Austin History</h1>
+
+			<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+		</header>
+
+		<footer>
+
+			<p>Written by Fred Frederson</p>
+
+			<p>Last updated: June 22, 2018</p>
+
+		</footer>
+
+		<h2>Earliest Inhabitants</h2>
+
+		<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+		<figure>
+
+			<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+			<figcaption>Excavations at the Gault site</figcaption>
+		
+		</figure>
+
+		<h2>Native Peoples</h2>
+
+		<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+		<aside>
+
+			<h2>Geographic Distinction</h2>
+
+			<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+		</aside>
+
+	</article>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'
+					  answer='<header>
+
+	<p class="logo">Austin, Texas</p>
+
+	<nav>
+		<ul>
+			<li><a href="history.html">History</a></li>
+			<li><a href="activities.html">Activities</a></li>
+			<li><a href="living.html">Living</a></li>
+		</ul>
+	</nav>
+
+</header>
+
+<main>
+
+	<article>
+
+		<header>
+
+			<h1>Austin History</h1>
+
+			<p>The city of Austin has a rich culture informed by a unique history unlike anywhere else in the world.</p>
+
+		</header>
+
+		<footer>
+
+			<p>Written by Fred Frederson</p>
+
+			<p>Last updated: June 22, 2018</p>
+
+		</footer>
+
+		<section>
+
+			<h2>Earliest Inhabitants</h2>
+
+			<p>The earliest known inhabitants of the area lived around 9200 BC, based on evidence found throughout the area and especially at the much-studied Gault Archeological Site, north of the city.</p>
+
+			<figure>
+
+				<img src="images/gault-site.jpg" alt="The Gault archeological site">
+
+				<figcaption>Excavations at the Gault site</figcaption>
+
+			</figure>
+
+		</section>
+
+		<section>
+
+			<h2>Native Peoples</h2>
+
+			<p>When Europeans arrived, the area was inhabited by the Tonkawa tribe. Comanches and Lipan Apaches also traveled in the region. Though they came into contact with Spanish explorers and missions, few settlements were established for several centuries.</p>
+
+		</section>
+
+		<aside>
+
+			<h2>Geographic Distinction</h2>
+
+			<p>Austin is situated at the foot of the Balcones Escarpment, a long stable and inactive fault line, on the Colorado River. This fault divides the Hill Country to the West of Austin from the prarie land to the East.</p>
+
+		</aside>
+
+	</article>
+
+</main>
+
+<footer>
+
+	<p>Copyright &copy; ATX for Life, a public interest campaign.</p>
+
+</footer>'>
+			
+			<h3>Thematically-related grouping</h3>
+
+			<p>We've already added a lot of meaning to the structure of the HTML and we could stop here, but let's go ahead and add just a bit more.</p>
+			
+			<p>The part of the page about the Earliest Inhabitants (lines 35&ndash;45) can be grouped together because it shares a theme. Likewise, the part of the page about Native Peoples (lines 47&ndash;49) can also be grouped together because the heading and the paragraph share a theme.</p>
+			
+			<p><strong>Wrap</strong> everything related to Earliest Inhabitants (lines 35&ndash;45) in the semantic element that represents a grouping of thematically-related content. <strong>Also</strong> wrap everything related to Native Peoples (lines 47&ndash;49) in the semantic element that represents a grouping of thematically-related content.</p>
+
+		</quiz-step>
+
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Code StyleGuide</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+	
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+	
+			<header>
+				<h1>Code Style Guide</h1>
+
+				<p>An opinionated set of guidelines for writing and formatting your code. <strong>The Golden Rule:</strong> Less code is better code.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<ul>
+						<li><a href="#html-section">HTML</a>
+							<ul>
+								<li><a href="#html-line-breaks">Line Breaks</a></li>
+								<li><a href="#html-indentation">Indentation</a></li>
+								<li><a href="#html-closing-tags">Closing Tags</a></li>
+							</ul>
+						</li>
+						<li><a href="#css-section">CSS</a>
+							<ul>
+								<li><a href="#css-indentation">Indentation</a></li>
+								<li><a href="#css-property-order">Property Order</a></li>
+								<li><a href="#css-spacing">Spacing</a></li>
+								<li><a href="#css-class-names">Class Names</a></li>
+								<li><a href="#css-comments">Comments &amp; Organization</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+			<h2 id="html-section">HTML</h2>
+
+			<ul>
+				<li>Use all-lowercase for elements and attributes.</li>
+				<li>Use line breaks to separate content into logical and relatively small chunks.</li>
+				<li><strong>Always</strong> use classes instead of IDs for styling. IDs should only be used for anchor link targets (or javascript targets).</li>
+				<li>Use double quotes for attribute values, e.g. <code>&lt;p class="some-class"&gt;</code>.</li>
+				<li>Order attributes by importance, with required attributes always ordered first.</li>
+				<li>Use all lowercase and kebab-case for class and ID names, e.g. <code>&lt;p class="some-named-class"&gt;</code> instead of <code>&lt;p class="somenamedclass"&gt;</code>.</li>
+				<li>Favor full words rather than abbreviations or truncations in class and ID names e.g. <code>&lt;p class="preview-description"&gt;</code> instead of <code>&lt;p class="prev-desc"&gt;</code>.</li>
+			</ul>
+
+			<h3 id="html-line-breaks">Line Breaks</h3>
+
+			<p>There should always be line breaks between elements. There should also be line breaks between the opening and closing tags of a parent element and any children it contains.</p>
+
+			<p>The only exception is in cases of inline content that occurs within text. In this case, the element should be written within the line of the text.</p>
+
+			<pre class="language-markup code-example-good"><code>&lt;div&gt;
+  &lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href="http://google.com"&gt;link&lt;/a&gt; ut labore et dolore magna aliqua.&lt;/p&gt;</code></pre>
+
+		<pre class="language-markup code-example-bad"><code>&lt;div&gt;&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;&lt;div&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet,
+
+&lt;a href="http://google.com"&gt;link&lt;/a&gt;
+
+ut labore et dolore magna aliqua.&lt;/p&gt;</code></pre>
+
+			<h3 id="html-indentation">Indentation</h3>
+
+			<p>Indent elements relative to their parents, so that each child is indented one tab deeper than its direct parent.</p>
+			
+			<p class="big-point"><strong>Indent</strong> to show that an element is nested <strong>inside</strong> of another element.</p>
+
+			<p>Tabs width should be set to 4-spaces.</p>
+
+		<pre class="language-markup code-example-good"><code>&lt;div&gt;
+	&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+		<pre class="language-markup code-example-bad"><code>&lt;div&gt;
+  &lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+			<p>Use tabs instead of spaces for indentation. Tabs should be set to four spaces wide.</p>
+
+		<pre class="language-markup code-example-good"><code>&lt;div&gt;
+	&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+		<pre class="language-markup code-example-bad"><code>&lt;div&gt;
+  &lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+
+			<h3 id="html-closing-tags">Self-Closing Tags</h3>
+
+			<p>Self-closing tags should be written without a slash at the end.</p>
+
+		<pre class="language-markup code-example-good"><code>&lt;br&gt;
+&lt;hr&gt;
+&lt;img src="image.jpg" alt="Image"&gt;</code></pre>
+
+		<pre class="language-markup code-example-bad"><code>&lt;br/&gt;
+&lt;hr/&gt;
+&lt;img src="image.jpg" alt="Image" /&gt;</code></pre>
+
+
+			<h2 id="css-section">CSS</h2>
+
+			<ul>
+				<li>Include one declaration per line in a declaration block.</li>
+				<li>Use lowercase and shorthand hex values, e.g., #aaa.</li>
+				<li>Use single or double quotes consistently. Preference is for double quotes, e.g., content: "".</li>
+				<li>Where allowed, avoid specifying units for zero-values, e.g., <code>margin: 0</code> instead of  <code>margin: 0px</code>.</li>
+				<li>Include a semi-colon at the end of the last declaration in a declaration block.</li>
+				<li>Separate each ruleset by a blank line.</li>
+			</ul>
+
+			<h3 id="css-indentation">Indentation</h3>
+
+			<p>Use tabs instead of spaces for indentation. Tabs should be set to four spaces wide.</p>
+
+			<p>Properties should be indented one tab from the containing selector. Closing brackets should align to the selector.</p>
+
+		<pre class="language-css code-example-good"><code>.some-class {
+	position: absolute;
+}</code></pre>
+
+		<pre class="language-css code-example-bad"><code>.some-class {
+position: absolute;
+}</code></pre>
+
+			<h3 id="css-property-order">Property Order</h3>
+
+			<p>Alphabetize your CSS properties in each declaration block to make them easy to find.</p>
+
+		<pre class="language-css code-example-good"><code>.some-class {
+	border-left: none;
+	left: 0;
+	position: absolute;
+	right: 0;
+}</code></pre>
+
+		<pre class="language-css code-example-bad"><code>.some-class {
+	position: absolute;
+	left: 0;
+	right: 0;
+	border-left: none;
+}</code></pre>
+
+			<p><em>Helpful hint: To quickly alphabetize properties in Sublime Text, highlight the lines you want to sort and go to Edit > Sort Lines or press F5.</em></p>
+
+			<h3 id="css-spacing">Spacing</h3>
+
+			<p>A single space between a selector and the opening curly bracket of the declaration block is preferred. There should also be a single space between the colon that follows a property name and the value that follows.</p>
+
+		<pre class="language-css code-example-good"><code>.some-class {
+	border-left: none;
+	left: 0;
+	position: absolute;
+	right: 0;
+}</code></pre>
+
+		<pre class="language-css code-example-bad"><code>.some-class{
+	border-left:none;
+	left:0;
+	position:absolute;
+	right:0;
+}</code></pre>
+
+			<h3 id="css-class-names">Class Names</h3>
+
+			<p>Class names should be descriptive of role or meaning rather than of style. Avoid class names that do not carry obvious meaning.</p>
+			
+			<p class="big-point">Aim to write class names that are <strong>nouns</strong> rather than adjectives.</p>
+
+			<p>A good method for deciding if a class name is acceptable is to imagine someone reading your CSS who cannot look at the HTML. Would this person be able to make sense of the class? If not, try a more descriptive name.</p>
+
+		<pre class="language-css code-example-good"><code>.product-listing {}
+.site-logo {}
+.page-footer-nav {}</code></pre>
+
+		<pre class="language-css code-example-bad"><code>.green {}
+.left-column {}
+.grf-2 {}</code></pre>
+
+			<p>Use all lowercase and kebab-case for class and ID names, e.g. <code>&lt;p class="some-named-class"&gt;</code> instead of <code>&lt;p class="somenamedclass"&gt;</code>.</p>
+
+			<p>Favor full words rather than abbreviations or truncations in class and ID names e.g. <code>&lt;p class="preview-description"&gt;</code> instead of <code>&lt;p class="prev-desc"&gt;</code>.</p>
+
+			<h3 id="css-comments">Comments & Organization</h3>
+
+			<p>Make liberal use of comments to break CSS code into discrete sections. Sections should either cover types of global styles (e.g. "Typography") or specific components in your design system (e.g. "Product Listing Card"). It is also sometimes useful to breakup sections into sub-sections.</p>
+
+		<pre class="language-css code-example-good"><code>/* ==========================================================================
+ Section comment block
+========================================================================== */
+
+/** Sub-section comment block **/</code></pre>
+
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+</body>
+</html>

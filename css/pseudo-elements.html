@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS-Generated Content</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>CSS-Generated Content</h1>
+
+				<p>As we've learned, HTML is for content and CSS is for style. But sometimes, we want to add cosmetic, style-only content for visual purposes. For this we can use the <code>:before</code> and <code>:after</code> pseudo-elements in CSS, in combination with the <code>content</code> property, to insert content before or after an element.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#pseudo-elements">Pseudo-Elements</a>
+					<a href="#styling-content">Styling Inserted Content</a>
+					<a href="#absolute-positioning">Absolute Positioning</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="pseudo-elements">Pseudo-Elements</h2>
+			
+			<p>Perhaps the easiest way to get a sense of how pseudo-elements work is to see one in action:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p:before {
+	content: '!!!';
+	color: cornflowerblue;
+	font-size: 1.5rem;
+	margin-right: .5rem;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;I'm a paragraph that uses the <em>:before</em> pseudo-element&lt;/p&gt;</pre>
+
+			</div>
+
+			<p class="try-this">In the demo above, try replacing the exclamation points in the <code>content</code> property. Where does the new content appear? Can you change the selector to make the content appear <em>after</em> the text?</p>
+
+			<p>In the example above, we use the psuedo-element <code>:before</code> selector on the element to which we wish to prepend the content. Then, whatever we put between the quotes in the value for the <code>content</code> property is shown <em>before</em> the paragraph. The additional CSS properties in the selector block are applied to the inserted content, resulting in larger blue exclamation points here.</p>
+
+			<p>It's important to know that content added using pseudo-elements is not actually added to the document; it is only there visually, just as a background image isn't added to the content of the page. This means the content isn't readable by search engines or screen-readers.</p>
+
+			<p class="big-point">It's important to remember that pseudo-element content is <strong>not readable by screen-readers</strong> or other assistive technology.</p>
+			
+			<p>Because of these considerations, and to maintain the <em>separation of concerns</em> between HTML and CSS, you should never use pseudo-elements for anything other than decorative, non-essential content.</p>
+			
+			<h2 id="styling-content">Styling Inserted Content</h2>
+			
+			<p>As demonstrated, whatever CSS is written within the <code>:before</code> or <code>:after</code> selector block is applied to the content inserted by the <code>content</code> property. The possibilities are virtually limitless.</p>
+			
+			<p>For instance, we may want to set the inserted content to behave as a block element instead of the default inine behavior. All we need do is use the <code>display</code> property, just as we would on any other element:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">p:before {
+	content: '☻';
+	display: block;
+	font-size: 1.5rem;
+}</pre>
+
+				<pre data-lang="html">&lt;p&gt;I use the <em>:before</em> pseudo-element&lt;/p&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the above demo, can you change the color of the smiley face? Can you center align it?</p>
+			
+			<h2 id="absolute-positioning">Absolutely Positioning the Inserted Content</h2>
+			
+			<p>Because the insterted content acts as a child of the element to which it is attached, it is possible to position the inserted content as an absolutely relative to the canvas of the parent. (For a refresher on this technique, refer to <a href="/css/position.html#absolute-relative-parent">Absolute Child with a Relative Parent</a> from the chapter on the <code>position</code> property.)</p>
+			
+			<p>All we have to do is set the element to which the inserted content is attached to <code>position: relative</code> and the <code>:before</code> or <code>:after</code> selector to <code>position: absolute</code>. Then we can use the <code>bottom</code>, <code>left</code>, <code>right</code>, and/or <code>top</code> properties to the values we desire.</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">div {
+	box-shadow: 2px 2px 4px #aaa;
+	margin: 1rem;
+	max-width: 15rem;
+	padding: 1rem 1rem 2rem;
+	position: relative;
+}
+				
+div:before {
+	bottom: 1rem;
+	color: red;
+	content: '♥';
+	font-size: 2rem;
+	position: absolute;
+	right: 1rem;
+}</pre>
+
+				<pre data-lang="html">&lt;div&gt;
+				
+	&lt;h2&gt;A basic card&lt;/h2&gt;
+	
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;
+
+&lt;/div&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the demo above, can you move the heart to the upper right of the card? What happens if you remove <code>position: relative</code> from the div?</p>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

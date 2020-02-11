@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HTML5 Semantic Elements</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>HTML5 Semantic Elements</h1>
+
+				<p>The so-called <em>semantic elements</em> were introduced to reflect important distictions in the <strong>meaning</strong> of content. Few of these elements have any impact whatsoever on the content's <em>appearance</em>, but using them helps browsers, screen-readers, and other tools understand the content they contain.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#header">Header</a>
+					<a href="#footer">Footer</a>
+					<a href="#main">Main</a>
+					<a href="#article">Article</a>
+					<a href="#section">Section</a>
+					<a href="#aside">Aside</a>
+					<a href="#nav">Nav</a>
+					<a href="#figure">Figure &amp; Figcaption</a>
+					<a href="#video">Video Lesson</a>
+					<a href="#quiz">Practice Exercise</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="header">Header</h2>
+
+			<p>Not to be confused with <code>head</code> or headings (<code>h1</code>, <code>h2</code>, etc.), the <code>header</code> element should be used to contain introductory content for a page or <code>article</code>. It might contain things such as the title, a tagline, authorship information, etcetera.</p>
+			
+			<p>You may use more than one <code>header</code> per page. For instance, you may want a <code>header</code> for the page itself, and an additional header for an <code>article</code> contained on the page.</p>
+			
+			<p>In spite of the name, there is no requirement that a <code>header</code> be at the top of the page or article.</p>
+
+
+			<h2 id="footer">Footer</h2>
+
+			<p>The <code>footer</code> element should be used to contain content about the creator or cration of a page or <code>article</code>. It might contain things such as publication date, authorship information, links to related content, etcetera.</p>
+
+			<p>Similar to the <code>header</code> element, you may use more than one <code>footer</code> per page. For instance, you may want a <code>footer</code> for the page itself, and an additional header for an <code>article</code> contained on the page.</p>
+			
+			<p>In spite of the name, there is no requirement that a <code>footer</code> be at the bottom of the page or article.</p>
+
+
+			<h2 id="main">Main</h2>
+
+			<p>The <code>main</code> element represents the primary content of a page. As such, <strong>it should only be used once per page</strong>. This is the defacto target for screenreader users who wish to skip the sort of introductory content and navigation that might, for instance, be found in the <code>header</code> of a page.</p>
+			
+			<p>A common pattern, though certainly <em>not required</em>, is for a site to have a common <code>header</code> on every page with things like a logo and the main <code>nav</code>, a unique <code>main</code> with the specific contents of each page, then a common <code>footer</code> on every page with things like copyright information or a company-specific navigation. I tend to think of this pattern as a sort of sandwich:</p>
+			
+			<figure>
+				
+				<img src="images/semantic-burger.png" alt="The header/main/footer pattern represented by a hamburger">
+				
+				<figcaption>A common pattern is for pages to have a header, then a main, then a footer.</figcaption>
+				
+			</figure>
+
+
+			<h2 id="article">Article</h2>
+
+			<p>The <code>article</code> element signifies content that could stand alone as a document. A good way to think of it is to ask yourself if the content would make sense if you shared it with someone who didn't know what website it came from. Examples of content that might use an article element are articles (go figure), blog posts, reviews, essays, user-submitted comments, etcetera.</p>
+
+			<p>Because an article acts as an independent unit of content, it may contain most of the other semantic elements, such as <code>header</code>, <code>footer</code>, <code>section</code>, <code>aside,</code> and <code>nav</code>. It could also contain nested articles, such as when the <code>article</code> element is used for post comments.</p>
+			
+			<p class="big-point">To decide if an article is appropriate, ask yourself <strong>if the content woud make sense completely on its own.</strong></p>
+
+			<p>The <code>article</code> element should only be used for the full and actual content it represents. In other words, it should not be used for the links in a list of articles or posts.</p>
+
+
+			<h2 id="section">Section</h2>
+
+			<p>The <code>section</code> element is the most nonspecific of the semantic elements and represents a thematically-related section of a page, application, or <code>article</code>. It should be used only in instances where other semantic elements don’t make sense. Example uses might include, a chapter or subsection of an <code>article</code> or a distinct functional area of a page.</p>
+
+			<p>The <code>section</code> element should <strong>always</strong> have a natural heading demarcating its content.</p>
+
+			<p>If you simply want a container for styling or scripting purposes, a <code>div</code> should be used instead.</p>
+
+
+			<h2 id="aside">Aside</h2>
+
+			<p>The <code>aside</code> element should contain secondary or related content to a page or <code>article</code>. If used in an <code>article</code>, the content should be related to the <code>article</code>, such as a list of related terms or a timeline. On a page as a whole, it might include a blogroll, advertising, etcetera.</p>
+			
+			<p class="big-point">You can think of the <code>aside</code> element as containing <em>bonus</em> content; something extra, but not required for understanding.</p>
+
+			<h2 id="nav">Nav</h2>
+
+			<p>The <code>nav</code> element is relatively straightforward and should be used for sets of links that represent major navigation for a site or page. Examples might include primary site navigation, pagination links, a table of contents, or breadcrumb navigation.</p>
+
+			<p><code>nav</code> is not typically used for lists or articles or posts.</p>
+
+
+			<h2 id="figure">Figure & Figcaption</h2>
+
+			<p>The <code>figure</code> element is used to contain a useful image, illustration, diagram, code snippet, etcetera, that is referenced in the main flow of the document.</p>
+			
+			<p class="big-point">You might think of <code>figure</code> as a way of saying "for example...."</p>
+
+			<p>It is important to remember <code>figure</code> should not be used for purely decorative or supplemental images or content. A great example would be a chart illustrating data that is referenced in a post or an image that shows key information. Things like banner images or incidental images should not use <code>figure</code>.</p>
+
+			<p>It is important to note the difference between <code>figure</code> and <code>aside</code>. If the content is more generally related and not especially helpful to understanding, use <code>aside</code>. If the content is essential but its position in the flow of content isn’t important, use <code>figure</code>.</p>
+				
+				<p class="big-point">It's okay to have a figure without a figcaption, but every figcaption should be inside a figure.</p>
+
+			<p>The <code>figcaption</code> element can be used for a caption or legend within a <code>figure</code>. It is not required for every <code>figure</code> to contain a <code>figcaption</code>. The <code>figcaption</code> may come before or after the primary content of a <code>figure</code>. Only one <code>figcaption</code> may be used per <code>figure</code>.</p>
+			
+			<h2 id="video">Video Lesson</h2>
+			
+			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/cgqVkVCG"></video-demo>
+			
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/html-semantic.html"></lesson-quiz>
+
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+</body>
+</html>

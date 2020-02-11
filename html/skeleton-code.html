@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>HTML Skeleton Code</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Skeleton Code</h1>
+
+			<p>There is certain code that should be in <strong>every</strong> HTML document to establish a basic structure and let the browser know some important information about the page.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#doctype">Doctype</a>
+					<a href="#html">HTML</a>
+					<a href="#head">Head</a>
+					<a href="#meta">Meta</a>
+					<a href="#title">Title</a>
+					<a href="#body">Body</a>
+					<a href="#video">Video Lesson</a>
+					<a href="#quiz">Practice Exercise</a>
+				</nav>
+				
+			</header>
+			
+			<h2>Overview</h2>
+			
+			<p>First, let's look at a broad overview of typical skeleton code. Then we'll break it down into the individual elements.</p>
+			
+			<figure>
+				<code-block lang="markup" code='&lt;!DOCTYPE html&gt;
+&lt;html lang="en-us"&gt;
+
+&lt;head&gt;
+
+	&lt;meta charset="UTF-8"&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+
+	&lt;title&gt;Page Title&lt;/title&gt;
+
+	&lt;!--Additional elements for browsers and robots go here goes here--&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+	&lt;!--Elements visible to users go here--&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;'></code-block>
+				
+				<figcaptio>Note that the instructions about where additional content goes. These are HTML comments, which are notes for the author.</figcaptio>
+				
+			</figure>
+
+			<h2 id="doctype">Doctype</h2>
+
+			<p>The <code>doctype</code> simply lets the browser know which version of HTML the document uses. For most modern uses, a simple value of "html" is most appropriate.</p>
+
+			<p>This tag is self-closing.</p>
+
+			<code-block lang="markup" code="&lt;!DOCTYPE html&gt;"></code-block>
+
+
+			<h2 id="html">HTML</h2>
+
+			<p>The <code>html</code> element is a container for everything in an HTML document. The only thing that should be outside of this tag is the <code>doctype</code>.</p>
+
+			<p>The <code>lang</code> attribute let's the browser and search engine know the language (human, not code) of the website's contents. For our purposes, we use "en", for English. After the dash, we put "us" to indicate that the site uses the United States dialect of English.</p>
+
+			<pre class=" language-markup"><code>&lt;html lang="en-us"&gt;
+&lt;/html&gt;</code></pre>
+
+
+			<h2 id="head">Head</h2>
+
+			<p>The <code>head</code> element exists to hold a variety of content that <strong>is not for display</strong> on the page itself. Mostly, the content in the <code>head</code> exists to tell the browser, search engines, and other robots important information about the page.</p>
+
+			<pre class=" language-markup"><code>&lt;head&gt;
+	&lt;!--Elements for browsers and robots goes here goes here--&gt;
+&lt;/head&gt;</code></pre>
+
+
+			<h2 id="meta">Meta</h2>
+
+			<p>The <code>meta</code> element may be contain a variety of different attributes to communicate important information to the browser.</p>
+
+			<p>This tag is self-closing.</p>
+			
+			<h3>Charset Meta</h3>
+			
+			<p>Every page should include the <code>meta</code> tag with the <code>charset</code> attribute, which indicates which style of keyboard was used to code the page. American keyboards use "UTF-8" encoding, so this is the appropriate value for our purposes. The code should always be exactly the same.</p>
+
+			<pre class=" language-markup"><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+			
+			<h3>Viewport Meta</h3>
+			
+			<p>Every page should also include the <code>meta</code> tag with the shown attributes for the viewport. This code indicates that the browser should not zoom in on the page and should respect any responsive CSS code. The code should always be exactly the same.</p>
+
+			<pre class=" language-markup"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
+
+
+			<h2 id="title">Title</h2>
+
+			<p>The <code>title</code> element should contain a unique title indicating the content or purpose of the page. While this title is not displayed on the page itself, it is what shows in the browser tab and in search listings on Google and other search engines.</p>
+
+			<pre class=" language-markup"><code>&lt;title&gt;Page Title&lt;/title&gt;</code></pre>
+
+
+			<h2 id="body">Body</h2>
+
+			<p>The <code>body</code> element holds all content that is for display on the page itself. Anything a user is intended to see or interact with should go inside the <code>body</code>.</p>
+
+			<pre class=" language-markup"><code>&lt;body&gt;
+	&lt;!--Elements visible to users goes here--&gt;
+&lt;/body&gt;</code></pre>
+			
+			<h2 id="video">Video Lesson</h2>
+
+			<p>The following video demo is fully interactive. You can pause it at any time to directly edit the code, and resume playback to pickup where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/crNBWmsM"></video-demo>
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/html-skeleton.html"></lesson-quiz>
+
+  
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+</body>
+</html>

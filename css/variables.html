@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Transitions and Animations</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+	
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>CSS Variables</h1>
+
+				<p>Also known as <strong>CSS Custom Properties</strong>, variables allow you to create a <strong>named value</strong> that can be reused throughout your CSS, similar to how letters stand in for numbers in algebraic variables.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#defining">Defining Variables</a>
+					<a href="#using">Using Variables</a>
+					<a href="#video">Video Lesson</a>
+					<a href="#resources">Resource Links</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="defining">Defining Variables</h2>
+
+			<p>Variable names must be prefixed with two dashes: <code>--</code>, and they can be written like ordinary CSS declarations: <code>--variable-name: #eee;</code> They should be defined within an element and can only be used on elements that are children of the element in which they are defined. For variables you wish to use throughout your CSS, define them using <code>html</code> as the selector. (You sometimes also see <code>:root</code> used as a selector for global variables. This is the same as using <code>html</code>.)</p>
+
+			<h3>Defining a variable that can be used anywhere in the CSS</h3>
+
+			<pre class="language-css"><code>html {
+	--color-gray-light: #eee;
+}</code></pre>
+
+			<h3>Defining a variable that can only be used in the site header</h3>
+
+			<pre class="language-css"><code>.site-header {
+	--color-gray: #444;
+}</code></pre>
+
+			<h2>Redefining and Overriding Variables</h2>
+
+			<p>As with any normal CSS property, variable definitions can be overriden by redeclaring them later in the document or on a selector with higher specificity. All instances of the variable in use will reflect the new value.</p>
+
+			<p>A common use for this might be with media queries:</p>
+
+			<pre class="language-css"><code>html {
+	--font-size: 17px;
+}
+
+@media( min-width: 600px ) {
+	html {
+		--font-size: 20px;
+	}
+}</code></pre>
+
+			<p>You might also use this to create component-specific overrides:</p>
+
+			<pre class="language-css"><code>:root{
+	--color-text: #333;
+}
+
+html {
+	color: var(--color-text);
+}
+
+.sidebar {
+	--color-text: white;
+
+	background-color: blue;
+}</code></pre>
+
+
+			<h2 id="using">Using Variables</h2>
+
+			<p>Variables can be used in place of a relevant value by expressing the name within the parinthesis of <code>var()</code>.</p>
+
+			<pre class="language-css"><code>h2 {
+	color: var(--color-gray);
+}</code></pre>
+			
+			<h2 id="video">Video Lesson</h2>
+			
+			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/ca3qwJTW"></video-demo>
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://medium.freecodecamp.org/everything-you-need-to-know-about-css-variables-c74d922ea855">Everything You Need to Know About Variables</a></li>
+				<li><a href="https://www.smashingmagazine.com/2019/07/css-custom-properties-cascade/">CSS Custom Properties in the Cascade</a></li>
+			</ul>
+
+
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+</body>
+</html>

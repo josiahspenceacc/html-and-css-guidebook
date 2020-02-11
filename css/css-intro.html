@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shadows</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+	
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+	
+			<header>
+
+				<h1>Introduction to CSS</h1>
+				
+				<p>CSS is a language for setting the <strong>design</strong> or <strong>appearance</strong> of a website's content.</p>
+
+				<p>The purpose of CSS is to add <strong>style</strong> to HTML content. This means any choices of a visual nature, including typography, colors, layout, animation, and all similar concerns are the domain of CSS. HTML isn't concerned with these things and instead focusses on defining the meaning and structure of the content.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#external">External CSS</a>
+					<a href="#syntax">Syntax</a>
+					<a href="#cascade">The Cascade</a>
+					<a href="#default">Defaults</a>
+					<a href="#comments">Comments</a>
+					<a href="#resources">Resource Links</a>
+				</nav>
+
+			</header>
+
+			<h2 id="external">External CSS</h2>
+			
+			<p>It is possible to write CSS within an HTML document, either in the head in a <code>style</code> element, or in a <code>style</code> attribute directly applied to a specific element. However, neither of these methods are good practices and both ultimately defeat many of the strengths of CSS. Instead, it is best to use a dedicated CSS file that is shared by all HTML pages in a site.</p>
+			
+			<p class="big-point">It's best to use a <strong>separate CSS file</strong> that is shared by all HTML pages on a site.</p>
+			
+			<p>To do so, you first create the CSS file. It can be named whatever you want, as long as it has the ".css" file extension. Common names include <em>style.css</em> and <em>main.css</em>. Some developers like to place their CSS file in a subfolder, but there is no particular advantage to doing so.</p>
+			
+			<p>Next, you must let all the HTML files know where to look for the CSS file. To do so, you add a <code>link</code> element to the <code>head</code> of each HTML document. Then add the file path to the CSS file in the <code>href</code> attribute. The link should also include an attribute of <code>rel="stylesheet"</code>. All together the code should look something like:</p>
+			
+			<code-block lang="markup" code='&lt;link href="style.css" rel="stylesheet"&gt;'></code-block>
+
+			<h2 id="syntax">Syntax</h2>
+			
+			<figure>
+				
+				<img src="images/css-diagram.png" alt="Diagram of the parts of a CSS ruleset">
+				
+				<figcaption>The parts of a CSS ruleset and an included CSS declaration.</figcaption>
+				
+			</figure>
+			
+			<h3>Selectors</h3>
+			
+			<p>CSS is written by first identify which HTML should have particular styles applied. The identifier is called a <strong>selector</strong>. Selectors can target HTML by element, by class name, or by a number of other, more complex methods. For more information, see the <a href="/css/selectors">CSS Selectors</a> article. After the selector, a pair of curly braces (<code>{}</code>) is wrapped around whatever style code is written to be applied to that selector.</p>
+			
+			<p>A selector with its curly braces might look like this:</p>
+			
+			<code-block lang="css" code='div {
+
+}'></code-block>
+			
+			<h3>Declarations</h3>
+			
+			<p>The code written inside the curly consists of <strong>declarations</strong>, also known as <em>rules</em>, which are individual statements of how a particular aspect of style for the selected elements should behave. A declaration is made up of a <strong>property</strong>&mdash;which is the aspect of the design being determined&mdash;paired with a <strong>value</strong>&mdash;which is the specific desired behavior for the property being addressed. Properties and values are separated by a colon (<code>:</code>) and values are followed by a semi-colon (<code>;</code>) to end the declaration.</p>
+			
+			<p>A declaration (property / value pair) might look like this:</p>
+			
+			<code-block lang="css" code='font-weight: bold;'></code-block>
+			
+			<p>So when we put it all together, a selector combined with a declaration looks like this:</p>
+			
+			<code-block lang="css" code='div {
+	font-weight: bold;
+}'></code-block>
+			
+			<p>You can have as many declarations per selector as needed. By convention, usually only one declaration is written per line. For example:</p>
+			
+			<p>So when we put it all together, a selector combined with a declaration looks like this:</p>
+			
+			<code-block lang="css" code='div {
+	color: #333;
+	font-weight: bold;
+	text-align: center;
+}'></code-block>
+			
+			<p>Notice that the declarations are written in alphabetical order by property. This helps keep things organized and makes it easy to find a particular property.</p>
+			
+			<h2 id="cascade">The Cascade</h2>
+			
+			<p>The "C" in "CSS" stands for the <strong>cascade</strong>, which refers to the way CSS declarations can override other declarations and to the way declarations can be <em>inherited</em> by an element's decendants.</p>
+			
+			<h3>Order of Declarations</h3>
+			
+			<p>The first important thing to know is that CSS, like the english language, is read from top to bottom. This means that, all other factors being equal, if two declarations conflict with one another, the declaration furthest down the page will be used by the browser. For example:</p>
+			
+			<p class="big-point">Generally, whatever declaration comes <strong>last</strong> is the one that will be <strong>used</strong>.</p>
+			
+			<code-block lang="css" code='div {
+	font-size: 17px;
+	font-size: 1.5rem; /*This overrides the previous declaration*/
+}
+												  
+div {
+	font-size: 130%; /*This overrides both previous declarations*/
+}'></code-block>
+			
+			<h3>Specificity</h3>
+			
+			<p>However, some <em>selectors</em> are stronger than others and can win a conflict regardless of order. The hierarchy of selector strength is called <strong>specificty</strong>. The more specific an element, the easier it wins in a conflict. For example, a class selector is more specific than an element selector. Let's see it in action:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.class {
+	color: blue; /*Wins, even though it comes first*/
+}
+
+h2 {
+	color: red;
+}</pre>
+
+				<pre data-lang="html">&lt;h2 class="class"&gt;Heading 2 with a class named "class"&lt;/h2&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the example above, try changing the color on the <code>h2</code> selector. Does it have any effect? If you add a different <code>font-weight</code> declaration to both selectors, which one do you think will be honored?</p>
+			
+			<p>There are too many possible combinations and variations of selectors to explore specificity comprehensively here, but in general things work as you would expect. To explore and test combinations, try <a href="https://specificity.keegan.st/">this specificity calculator</a>.</p>
+			
+			<p class="big-point">Specificity is the reason it is recommended you <strong>don't use IDs as selectors</strong>. They are too specific and can cause unintended overrides.</p>
+			
+			<h3>Inheritance</h3>
+			
+			<p>Some CSS properties are passed on to an element's children, a behavior known as <strong>inheritance</strong>. (Get it?) For instance, if <code>text-align: center;</code> is applied to an <code>article</code> element, all the children of the <code>article</code> will inherit the property and have centered text.</p>
+			
+			<p class="big-point">Only <strong>some</strong> properties are <strong>inherited</strong> by an element's decendants. But they are mostly the ones you would expect.</p>
+			
+			<p>However, there are many properties that are <em>not</em> inherited. So if we add <code>border: 1px solid red;</code> to our <code>article</code>, it's children do not also each use that border. Let's see it in action:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">article {
+	border: 1px solid red; /*Not inherited by children*/
+	text-align: center; /*Inherited by children*/
+}</pre>
+
+				<pre data-lang="html">&lt;article&gt;
+				
+	&lt;h2&gt;Heading 2&lt;/h2&gt;
+	
+	&lt;p&gt;A paragraph with some text in it. Nice, meaningless text.&lt;/p&gt;
+				
+&lt;/article&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the example above, try adding <code>color: blue;</code> to the <code>article</code>. Is it inherited by the children? What if you add <code>padding: 1rem;</code>?</p>
+			
+			<h2 id="default">Default Styles</h2>
+			
+			<p>Browsers all have a set of <strong>default styles</strong> which are applied to HTML when no other styles have been provided. Basically, this is built-in CSS. Any CSS that you write serves to override and replace these default styles. Let's take a look at some HTML without any CSS specified:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+				
+	&lt;h2&gt;Heading 2&lt;/h2&gt;
+	
+	&lt;p&gt;A paragraph with some text in it. Nice, meaningless text. La da da da da du dum.&lt;/p&gt;</pre>
+			</div>
+			
+			<p>Notice that the headings display larger and bolder than the paragraph, even though no CSS has been explicitly provided. This is because they are using the browser's default styles. Even the typeface of the text and the white background are all determined by the default styles.</p>
+			
+			<p class="big-point">Even though elements have <strong>default styles</strong>, those styles should <strong>not</strong> be considered when choosing HTML elements. Elements should be chosen based on <strong>meaning</strong>.</p>
+			
+			<p>It's also important to know that different browsers can have different default styles, so it's best not to rely upon them too heavily.</p>
+			
+			<h2 id="comments">Comments in CSS</h2>
+			
+			<p>Sometimes you want to leave notes for yourself or others in your CSS, or you want to mark out sections within a file, or you want to temporarily disable a bit of code while saving it for later. To do this while making sure the browser doesn't try to read the content as part of the CSS, you must use comments.</p>
+			
+			<p class="big-point"><strong>Commenting</strong> is basically a way to mark text in a code file as <strong>not part of the code</strong> to be read by the browser.</p>
+			
+			<p>Comments in CSS are marked at the beginning with a slash then an asterisk (<code>/*</code>). They are close with an asterisk followed by a slash (<code>*/</code>).</p>
+			
+			<code-block lang="css" code='/*This text is ignored by the browser*/'></code-block>
+			
+			<p>For longer, multi-line comments or comments that serve as section headings in CSS, it is common to use <em>block comments</em>, where the opening and closing lines are filled with equals signs or asterisks:</p>
+			
+			<code-block lang="css" code='/*=================================================
+ One style of multi-line / heading comment.
+=================================================*/
+												  
+/**************************************************
+ Another style of multi-line / heading comment.
+ This one shows some code that the browser will ignore.
+												  
+ h2 {
+	 color: red;
+ }
+												  
+**************************************************/'></code-block>
+			
+			<p>It's important to note that comments use different formats in different languages. CSS comments won't work in HTML and vice-versa.</p>
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://www.smashingmagazine.com/2019/01/how-to-learn-css/">How to Learn CSS</a></li>
+			</ul>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

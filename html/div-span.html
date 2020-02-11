@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Div and Span</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Div &amp; Span: Meaningless Elements</h1>
+
+				<p>While the goal of HTML is to choose the appropriate element based on the <strong>meaning</strong> it holds, it is occasionally necessary to use elements that <strong>have no meaning</strong>. For this, we have the <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> elements.</p>
+				
+			</header>
+			
+			<p>The only difference between the two elements is that <code>&lt;div&gt;</code> behaves as a <strong>block</strong> element by default (it stacks and stretches all the way across the container), whilst <code>&lt;span&gt;</code> behaves as <strong>inline</strong> by default (it behaves like a word in a sentence, lining up horizontally from left-to-right and wrapping to a new line when needed).</p>
+
+			<p>It is suitable to make use of these elements whenever style considerations or other funtionality requires the use of a container of some kind, but <em>no other HTML element is appropriate</em> to represent the meaning of the content contained.</p>
+			
+			<p class="big-point">Div and span elements are simply <strong>containers</strong> that apply <strong>no meaning</strong> whatsoever to the content.</p>
+
+			<p>For example, for purely stylistic reasons, you may want to use a <code>&lt;span&gt;</code> to add color to a specific word in a logotype:</p>
+
+			<!--Example Pen-->
+				<div 
+				  class="codepen" 
+				  data-prefill 
+				  data-height="400"
+				  data-editable="true"
+				  data-theme-id="36581"
+				  data-default-tab="css,result" 
+				>
+					<pre data-lang="css">span {
+	color: red;
+}</pre>
+					<pre data-lang="html">&lt;h2&gt;Logo&lt;span&gt;Type&lt;/span&gt;&lt;/h2&gt;</pre>
+
+				</div>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

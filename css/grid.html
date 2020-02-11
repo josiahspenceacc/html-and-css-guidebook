@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Grid</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="/style.css">
+	
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+	
+			<header>
+
+				<h1>Grid</h1>
+
+				<p>Grid is powerful, flexible CSS system for arranging items in a <strong>two-dimesional grid</strong>. This article only covers the very basics of grid. You may want to research more advanced properties and techniques on your own.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#terminology">Terminology</a>
+					<a href="#display">Activating Grid</a>
+					<a href="#template">Grid Template</a>
+					<a href="#gap">Grid Gap</a>
+					<a href="#justify-items">Justify Items</a>
+					<a href="#align-items">Align Items</a>
+					<a href="#positioning">Positioning Grid Children</a>
+					<a href="#video">Video Lesson</a>
+					<a href="#resources">Resource Links</a>
+				</nav>
+
+			</header>
+				
+			<h2 id="terminology">Terminology</h2>
+			
+			<dl>
+				
+				<dt>Grid Parent</dt>
+				<dd>The wrapping element to which most grid properties should be applied. This should be the <em>direct parent</em> to the elements that will be arranged into grid cell.</dd>
+				
+				<dt>Grid Children</dt>
+				<dd>The <em>direct child</em> elements to the grid parent. These are the elements that will be arranged to fit in the grid cells.</dd>
+				
+				<dt>Grid Cells</dt>
+				<dd>The <em>spaces</em> defined by the intersections of grid columns and grid rows, similar to the cells in a spreadsheet. The grid children are arranged into these.</dd>
+				
+				<dt>Grid Lines</dt>
+				<dd>The lines that defined the <em>edges</em> of grid columns or rows. These are numbered from left to right and top to bottom, respectively. They are important for positioning individual grid children into specific grid cells.</dd>
+				
+			</dl>
+			
+			<p class="big-point">You can think of the <strong>grid parent</strong> as a parking lot. The <strong>grid cells</strong> are the parking spaces, created by the <strong>grid lines</strong> that define the edges of the rows and columns of the parking lot. Finally, the <strong>grid children</strong> are the cars that can go into the parking spaces.</p>
+				
+			<h2 id="display">Activating Grid</h2>
+
+			<p>Like Flexbox, grid is activated for a group of elements by applying <code>display: grid;</code> to the <em>direct</em> parent of the elements to be placed in a row.</p>
+
+			<p class="big-point">Remember that grid parents affect only their direct children. They aren't responsible for grandchildren or other decendants.</p>
+
+			<p>So let's look at some code. If we start with a series of elements within a shared parent:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+}
+
+div {
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+	border: 1px solid darkblue;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+	
+	&lt;div&gt;Div 3&lt;/div&gt;
+
+	&lt;div&gt;Div 4&lt;/div&gt;
+	
+	&lt;div&gt;Div 5&lt;/div&gt;
+
+	&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+
+			<p>We apply <code>display: grid;</code> to the parent div, but nothing happens:</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+	display: grid;
+}
+
+div {
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+	border: 1px solid darkblue;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+	
+	&lt;div&gt;Div 3&lt;/div&gt;
+
+	&lt;div&gt;Div 4&lt;/div&gt;
+	
+	&lt;div&gt;Div 5&lt;/div&gt;
+
+	&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+
+			<p>This is because the grid layout is undefined. Grid has been activated, but there are no grid cells into which the grid-children can be placed. For that we'll need Grid Template properties.</p>
+
+
+			<h2 id="template">Grid Template</h2>
+			
+			<p>The <code>grid-template-columns</code> and <code>grid-template-rows</code> properties allow us to define any number of columns or rows, respectively, into which the grid-child elements will be placed.</p>
+			
+			<figure>
+				<img src="images/grid-template.png" alt="grid-template illustration">
+				<figcaption>Here, the white lines show the delineations between grid cells.</figcaption>
+			</figure>
+			
+			<p>By default, there are no grid columns, and grid rows are generated automatically based on the content.</p>
+			
+			<p>For each of these properties, you can define any number of columns/rows by providing a size measurement value for each. Each size value should be separated by a space. So lets look at a code example:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+	display: grid;
+	grid-template-columns: 100px 200px 100px; /* 3 values = 3 columns */
+	grid-template-rows: 4rem 2rem; /* 2 values = 2 rows */
+}
+
+div {
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+	border: 1px solid darkblue;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+	
+	&lt;div&gt;Div 3&lt;/div&gt;
+
+	&lt;div&gt;Div 4&lt;/div&gt;
+	
+	&lt;div&gt;Div 5&lt;/div&gt;
+
+	&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the example above, see what happens when you change the values for the grid template properties. Try adding or removing values (remember that values must be separated by a space). What happens when you mix measurement unit types?</p>
+			
+			<p>The result is that the divs are arranged into three columns (because three values are provided for <code>grid-template-columns</code>), and the columns are 100px wide, 200px wide, and 300px wide, respectively. And the divs are arranged into two rows (because two values are provided for <code>grid-template-rows</code>), and the columns are 4rem tall and 2rem tall, respectively.</p>
+
+			<p class="big-point">The number of columns depends on the number of sizes provided in the grid-template-column value.</p>
+			
+			<h3>Automatic Rows</h3>
+			
+			<p>It's important to reiterate here that additional grid rows are added automatically whenever there is more content than the explicitly defined rows can contain. (Because of this, it is sometimes beneficial to not define any explicit rows, and instead rely entirely on automatic rows.) These new automatic rows are sized based on their contents. Let's look at what happens when we only define one explicit row:</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+	display: grid;
+	grid-template-columns: 100px 100px; /* 2 values = 2 columns */
+	grid-template-rows: 4rem; /* 1 values = 1 row */
+}
+
+div {
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+	border: 1px solid darkblue;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+	
+	&lt;div&gt;Div 3&lt;/div&gt;
+
+	&lt;div&gt;Div 4&lt;/div&gt;
+	
+	&lt;div&gt;Div 5&lt;/div&gt;
+
+	&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the example above, try adding new rows and notice how the divs resize to match the value(s) you provide.</p>
+			
+			<p>Notice how only the first row is sized to match the value provided for <code>grid-template-rows</code>. The remaining divs are placed in new rows as needed, but those rows are sized automatically to fit the divs.</p>
+
+			<p class="big-point">The number of rows depends on the how much grid-child content is present.</p>
+			
+			<h3>The fr Unit</h3>
+			
+			<p>In the examples so far, we have used fixed CSS units that don't grow or shrink with the container. If we wanted to make the grid fluid, we could use percentage units, but percentages can be tricky (especially when combined with grid gap, which we'll explore shortly). Luckily, CSS Grid gives us the new <code>fr</code> unit. The <code>fr</code> unit represents a fraction of the space available.</p>
+			
+			<p>Basically, the total number of frs given is divided by 100, and the result is the percentage of space each fr is allotted. Let's look at a couple of examples to make sense of this:</p>
+			
+			<ul>
+				<li><code>grid-template-columns: 1fr 1fr 1fr 1fr;</code> &mdash; Here there are a total of four frs given, so each fr is 25% of the available space (1/4 of 100%).</li>
+				<li><code>grid-template-columns: 1fr 1fr 2fr;</code> &mdash; Here there are still a total of four frs given, and each fr is 25% of the available space, but they are distributed differently, with the third column recieving two of the frs, or 50% of the available space.</li>
+				<li><code>grid-template-columns: 1fr 500px 1fr;</code> &mdash; Here there is a column defined in pixels, so that pixel amount is first subtracted from the available space. Then the remaining space is divided evenly between two frs expressed. They each get 50% (1/2 of 100%) of the space left.</li>
+			</ul>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr; /* 4 frs total = 25% each */
+}
+
+div {
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+	border: 1px solid darkblue;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+	
+	&lt;div&gt;Div 3&lt;/div&gt;
+
+	&lt;div&gt;Div 4&lt;/div&gt;
+	
+	&lt;div&gt;Div 5&lt;/div&gt;
+
+	&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the example above, try changing the numbers of frs in the values. Try adding new columns with fr units. Try mixing in pixel or rem values for a column.</p>
+			
+			<h3>Repeat Shorthand</h3>
+			
+			<p>When you want several rows or columns that all have the same size value in a grid template, you can use the <em>repeat</em> shorthand to write more efficient code. The word repeat is followed immediately by parenthesis. Inside the parenthesis, the first value sets the number of columns. The second value, placed after a comma, sets the size for the columns. It looks like this:</p>
+			
+			<code-block lang="css" code='grid-template-columns: repeat( /*Number of columns*/, /*Size of columns*/  );'></code-block>
+			
+			<p>So <code>repeat( 3, 5rem )</code> would create three columns of 5rem each. And <code>repeat( 4, 20px )</code> would create four columns of 20px each.</p>
+			
+			<p>The repeat shorthand can be mixed with normal template values, so <code>100px repeat( 2, 8rem )</code> would create one column of 100px, followed by two columns of 8rem each.</p>
+			
+			<h2>Grid Gap</h2>
+			
+			<p>Often, you want space between the rows and/or columns of a grid. You could apply margin directly to the grid-children, but that can be unwieldy. To make this easy, CSS grid provides <code>grid-column-gap</code>, <code>grid-row-gap</code>, and <code>grid-gap</code>, which is a shorthand for combining the previous two. For <code>grid-gap</code>, a single value is applied to both rows and columns.</p>
+			
+			<figure>
+				<img src="images/grid-gap.png" alt="grid-gap illustration">
+				<figcaption>Here, the white lines show the delineations between grid cells.</figcaption>
+			</figure>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+	display: grid;
+	grid-column-gap: .5rem;
+	grid-row-gap: 1rem;
+	grid-template-columns: repeat( 3, 1fr );
+	grid-template-rows: 50px 50px;
+}
+
+div {
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+	border: 1px solid darkblue;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+	
+	&lt;div&gt;Div 3&lt;/div&gt;
+
+	&lt;div&gt;Div 4&lt;/div&gt;
+	
+	&lt;div&gt;Div 5&lt;/div&gt;
+
+	&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the example above, try changing the values for the grid gap properties. Try removing <code>grid-column-gap</code> and <code>grid-row-gap</code>, and replace them with <code>grid-gap</code> with a single value. Notice how that one number is used for both the row and column gaps.</p>
+			
+			
+			<h2 id="justify-items">Justify Items</h2>
+			
+			<p>When the content of a grid-child isn't large enough to completely fill the width of the column that contains it, <code>justify-items</code> is used to adjust how the child behaves on the horizontal axis. The possible values are:</p>
+			
+			<ul>
+				<li><code>stretch</code>: The default value, in which the grid child is stretched to fill the entire width of the column.</li>
+				<li><code>start</code>: The grid child is only wide enough for its content and is left-aligned within the column.</li>
+				<li><code>end</code>: The grid child is only wide enough for its content and is right-aligned within the column.</li>
+				<li><code>center</code>: The grid child is only wide enough for its content and is horizontally centered within the column.</li>
+			</ul>
+			
+			<figure>
+				<img src="images/justify-items.png" alt="justify-items illustration">
+				<figcaption>Here, the salmon-colored blocks represent the content of the grid children.</figcaption>
+			</figure>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+	display: grid;
+	grid-column-gap: .5rem;
+	grid-row-gap: 1rem;
+	grid-template-columns: repeat( 3, 1fr );
+	grid-template-rows: repeat( 3, 5rem );
+	justify-items: start;
+}
+
+div {
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+	border: 1px solid darkblue;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+	
+	&lt;div&gt;Div 3&lt;/div&gt;
+
+	&lt;div&gt;Div 4&lt;/div&gt;
+	
+	&lt;div&gt;Div 5&lt;/div&gt;
+
+	&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the example above, try out the different possible values for <code>justify-items</code>. Can you center the grid children in the cells? Can you place them on the right sides of the cells?</p>
+			
+			
+			<h2 id="align-items">Align Items</h2>
+			
+			<p>Now the other direction. When the content of a grid-child isn't large enough to completely fill the height of the row that contains it, <code>align-items</code> is used to adjust how the child behaves on the vertical axis. The possible values are:</p>
+			
+			<ul>
+				<li><code>stretch</code>: The default value, in which the grid child is stretched to fill the entire height of the row.</li>
+				<li><code>start</code>: The grid child is only tall enough for its content and is top-aligned within the row.</li>
+				<li><code>end</code>: The grid child is only tall enough for its content and is bottom-aligned within the row.</li>
+				<li><code>center</code>: The grid child is only tall enough for its content and is vertically centered within the row.</li>
+			</ul>
+			
+			<figure>
+				<img src="images/grid-align-items.png" alt="align-items illustration">
+				<figcaption>Here, the salmon-colored blocks represent the content of the grid children.</figcaption>
+			</figure>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	align-items: end;
+	background-color: ghostwhite;
+	display: grid;
+	grid-column-gap: .5rem;
+	grid-row-gap: 1rem;
+	grid-template-columns: repeat( 3, 1fr );
+	grid-template-rows: repeat( 3, 5rem );
+}
+
+div {
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+	border: 1px solid darkblue;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+	
+	&lt;div&gt;Div 3&lt;/div&gt;
+
+	&lt;div&gt;Div 4&lt;/div&gt;
+	
+	&lt;div&gt;Div 5&lt;/div&gt;
+
+	&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the example above, try using the different possible values for <code>align-items</code>. Can you vertically center the grid children in the cells? Can you place them on the tops of the cells?</p>
+			
+			
+			<h2 id="positioning">Positioning Grid Children</h2>
+			
+			<p>Sometimes, we want to control where in the grid a particular grid child should fit. Sometimes we want a single cell to span multiple grids or rows. Or maybe we want to leave some grid cells empty. There are a great many sophisticated layouts that can only be achieved with this granular level of control over individual grid children. To do this, we can make use of the <code>grid-column-start</code>, <code>grid-column-end</code>, <code>grid-row-start</code>, and <code>grid-row-end</code> properties on a grid child.</p>
+			
+			<p>To use these properties, it is necessary to understand that grid columns and rows have numbered lines associated with their edges called <strong>grid lines</strong>. This is best explained with an illustration:</p>
+			
+			<figure>
+				<img src="images/grid-lines.png" alt="grid lines illustration">
+				<figcaption>Here, the dotted lines indicated the numbered grid lines.</figcaption>
+			</figure>
+			
+			<p>We can tell a grid child to start at a particular grid line and to end at another grid line for each direction.</p>
+			
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+
+				<pre data-lang="css">.parent {
+	background-color: ghostwhite;
+	display: grid;
+	grid-column-gap: .5rem;
+	grid-row-gap: 1rem;
+	grid-template-columns: repeat( 3, 1fr );
+	grid-template-rows: repeat( 3, 5rem );
+}
+
+div {
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+	border: 1px solid darkblue;
+}
+
+.div-1 {
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+
+.div-2 {
+	grid-column-start: 2;
+	grid-column-end: 4;
+}
+</pre>
+
+				<pre data-lang="html">&lt;div class="parent"&gt;
+
+	&lt;div class="div-1"&gt;Div 1&lt;/div&gt;
+
+	&lt;div class="div-2"&gt;Div 2&lt;/div&gt;
+	
+	&lt;div&gt;Div 3&lt;/div&gt;
+
+	&lt;div&gt;Div 4&lt;/div&gt;
+	
+	&lt;div&gt;Div 5&lt;/div&gt;
+
+	&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the example above, see what happens when you change the values for the start and end properties. Can you make div 1 start at the second row instead? Can you make div 2 only occupy the third column?</p>
+			
+			<p>When you manually position some grid children, the remaining children do their best to adjust accordingly. Unfortunately though, sometimes manually positioning some grid children means you will have to manually position the rest as well to achieve the desired result.</p>
+			
+			<h2 id="video">Video Lesson</h2>
+			
+			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/cLvDzLtd"></video-demo>
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid">Grid on MDN</a></li>
+				<li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">A Complete Guide to Grid</a></li>
+				<li><a href="https://www.youtube.com/watch?v=T-slCsOrLcc&list=PLu8EoSxDXHP5CIFvt9-ze3IngcdAc2xKG">Grid Video Course</a></li>
+				<li><a href="https://gridbyexample.com/examples/">Grid by Example</a></li>
+				<li><a href="https://learncssgrid.com/">Learn CSS Grid</a></li>
+				<li><a href="https://cssgridgarden.com/">CSS Grid Garden (a learning game)</a></li>
+				<li><a href="https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/">Look Ma, No media Queries: Responsive Layouts Using CSS Grid</a></li>
+				<li><a href="https://evanminto.com/blog/intrinsically-responsive-css-grid-minmax-min/">How to Make an Intrinsically Responsive Grid</a></li>
+				<li><a href="https://www.smashingmagazine.com/2018/11/css-frameworks-css-grid/">CSS Frameworks Or CSS Grid: What Should I Use For My Project?</a></li>
+			</ul>
+
+				
+			
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

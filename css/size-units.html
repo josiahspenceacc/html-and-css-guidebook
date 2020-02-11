@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Size Units</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Common CSS Size Units</h1>
+
+				<p>CSS offers many different unit types for sizing elements and type, each with its own strengths and weaknesses. The unit types listed are only some of the most common, and many other less common units may be used as well.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#pixel">Pixel</a>
+					<a href="#rem">Rems</a>
+					<a href="#em">Ems</a>
+					<a href="#percent">Percentage</a>
+					<a href="#viewport">Viewport Units</a>
+					<a href="#resources">Resource Links</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="pixels">Pixels</h2>
+
+			<p>The <code>px</code> unit is an absolute measurement. It is analogous to Points or Picas in print design.</p>
+
+			<p>A pixel is equal to one dot on the display device. For low resolution devices, this is equal to one literal pixel on the screen. For high resolution devices, such as Retina or 4k displays, a pixel is set so that there are roughly 96 pixels per inch of screen.</p>
+
+			<p>By default, the base size of type in the browser is set to 16px.</p>
+
+			<p>Pixels are good for situations where you want to define an exact dimension and don’t want the element to scale with the page.</p>
+
+
+			<h2 id="rem">Rems</h2>
+
+			<p>The <code>rem</code> is a type-relative measurement such that one em is equal to the base type size (the font-size of the <code>html</code> element).</p>
+
+			<p class="big-point">Rems are often the best and most powerful choice, especially for type.</p>
+
+			<p>This means that, by default, <code>1rem</code> is equal to <code>16px</code>. Similarly, <code>2rem</code> equals <code>32px</code>.</p>
+
+			<p>Though rems are defined relative to type, they can be used to size any property.</p>
+
+
+			<h2 id="em">Ems</h2>
+
+			<p>Like rems, the <code>em</code> is a type-relative measurement, but such that one em is equal to the current type size (the type size of whatever HTML element you are targeting).</p>
+
+			<p>This means that, by default, in any base-size <code>html</code> element, <code>1em</code> is equal to <code>16px</code>. Similarly, <code>2em</code> equals <code>32px</code>.</p>
+
+			<p>However, ems are relative to the containing element, so if you set the type size of a <code>ul</code> to <code>.5em</code>, it will equal <code>8px</code>. But if you nest a second <code>ul</code> inside another <code>ul</code>, the type in the nested <code>ul</code> will be <code>.5em</code> of the first one, in other words, <code>4px</code>. If you nested yet another <code>ul</code> inside that one, you would get a type size of <code>2px</code>. This is usually not what you want and can lead to frustration.</p>
+
+			<p><strong>For most purposes, it is best to avoid ems and use rems instead.</strong> They are mentioned here because they were common before rems became available.</p>
+
+
+			<h2 id="percent">Percentages</h2>
+
+			<p><code>%</code> units are relative units based on a 100% scale.</p>
+
+			<p>When used for things like font size, percentages are relative to the containing element type size. So setting a font size of <code>200%</code> of default body type would result in a font size equal to <code>32px</code>.</p>
+
+			<p>When used for length measurements like width or margin, percentages are relative to the containing element. So a <code>div</code> that is a direct child of <code>body</code> with a width set to <code>50%</code> would have a width equal to half of the current width of the browser window.</p>
+
+			<pre class="language-css"><code>.example{
+	font-size: 90%; /*90% of parent font size*/
+	width: 50%; /*50% of parent width*/
+}</code></pre>
+
+			<p>Percentage lengths are great for sizes that scale relative to a user’s browser size. They are very useful in fluid / responsive design.</p>
+
+
+			<h2 id="viewport">Viewport Units</h2>
+
+			<p>Viewport Units are percentages of the size of the <em>browser window</em>. There are two different viewport unit value types:</p>
+
+			<p><code>vw</code> (View Width): which is relative to the <em>width</em> of the browser window.</p>
+
+			<p><code>vh</code> (View Height): which is relative to the <em>height</em> of the browser window.</p>
+
+			<p>So in the following example:</p>
+
+			<pre class="language-css"><code>.example{
+	height: 100vh;
+	width: 50vw;
+}</code></pre>
+
+			<p>The element would be exactly as tall (<code>100%</code>) as the height of the browser window, and <code>50%</code> of the width of the window.</p>
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">Length: CSS Units on MDN</a></li>
+				<li><a href="https://css-tricks.com/rem-global-em-local/">Use 'rem' for Global Sizing; Use 'em' for Local Sizing</a></li>
+			</ul>
+
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+</body>
+</html>

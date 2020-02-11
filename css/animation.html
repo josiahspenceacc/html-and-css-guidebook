@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Transitions and Animations</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>CSS Transitions &amp; Animation</h1>
+				
+				<p>In addition to setting the still visual design of website content, CSS has the ability to apply motion to that content for greater interactivity and interest. <strong>Transitions</strong> allow for smooth animation between two states, while <strong>keyframe animations</strong> are capable of creating more complex moving visuals.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#transitions">Transitions</a>
+					<a href="#animation">Keyframe Animation</a>
+					<a href="#video">Video Lesson</a>
+					<a href="#resources">Resource Links</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="transitions">Transitions</h2>
+
+			<p>Whenever CSS properties are changed between two states of an element (such as when a link is hovered), the <code>transition</code> property can be used to add a timed transition between those states. Only properties that exist along a continuum (such as a measurement or a color) can be transitioned. Properties with discreet values (such as display or text-decoration) cannot be transitioned.</p>
+
+			<p><code>transition</code> is <strong>shorthand</strong> for:</p> 
+
+			<ul>
+				<li><code>transition-property</code>, which determines <strong>what properties</strong> will be transitioned&mdash;the keyword <code>all</code> can be used to apply the transition to all possible properties.</li>
+				<li><code>transtion-duration</code>, which set the <strong>length of time</strong> over which the transtion occurs, typically expressed in seconds (s) or milliseconds (ms).</li>
+				<li><code>transition-timing-function</code>, which determines <strong>the rate at which the change happens</strong> over the given duration, whether that be constant (linear) or gradually speeding up then slowing down (ease).</li>
+				<li><code>transition-delay</code>, which sets an amount of <strong>time the browser should wait</strong> before performing the transition. Also expressed in seconds or milliseconds.</li>
+			</ul>
+
+			<p>The order of values for the <code>transition</code> shorthand property is: <code>transition: [transition-property] [transition-duration] [transtion-timing-function (optional)] [transtion-delay (optional)]</code></p>
+
+			<p><strong>A separate transition must defined for each end state.</strong> In the example below, that means we need a transition on the hover state and another on the default state for when the hover ends and the state returns to normal.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.transition-example {
+	background-color: blue;
+	color: white;
+	padding: .5rem;
+	transition: background-color 1s linear;
+}
+
+.transition-example:hover {
+	background-color: red;
+	color: blue;
+	padding: .5rem 1rem;
+	transition: all 1s ease;
+}</pre>
+
+				<pre data-lang="html">&lt;a href="" class="transition-example"&gt;Hover over me!&lt;/a&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the example above, try removing the <code>transition</code> property from the default state, then try hovering on and off the link in the preview window. Notice how it no longer transitions back to the default state. You can also try playing with which properties transition.</p>
+
+			<p>Notice in the above example that all properties transition on hover, but only <code>background-image</code> transitions back when the hover ends.</p>
+
+
+			<h2 id="animation">Keyframe Animation</h2>
+
+			<p>Keyframes refer to defined points across the duration of an animation. Using keyframe animation, we can achieve far more complex results than with the simple <code>transition</code> property.</p>
+
+			<p>There are two steps to creating a keyframe animation. First you define the animation, which can then be invoked and reused on as many selectors as you like.</p>
+
+			<h3>Defining the Animation</h3>
+
+			<p>To define a keyframe animation, you set it up using <code>@keyframes</code> and a name of your choice. Then, you set CSS properties at each point (keyframe) along the duration of the animation (usually expressed in percentages) as are necessary for the effect.</p>
+
+			<pre class=" language-css"><code>@keyframes example-animation {
+	0% {
+		opacity: 0;
+		transform: translatex(-100rem);
+	}
+
+	85% {
+		transform: translatex(1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translatex(0);
+	}
+}</code></pre>
+
+			<p>In the above example, since the <code>opacity</code> property isn't updated at the <code>85%</code> value, <code>opacity</code> continues its transition between 0% and 100% as though there were no keyframe between.</p>
+
+			<h3>Using the Animation</h3>
+
+			<p>Now that we have defined our animation, we must apply it to a selector using the <code>animation</code> property. <code>animation</code> is a shorthand property for:</p>
+
+			<ul>
+				<li><code>animation-name</code>, which references the name given when defining the keyframes. In our example, "example-animation".</li>
+				<li><code>animation-duration</code>, which, just as with <code>transition-duration</code>, sets the length of time over which the animation plays. The percentage values given in the keyframe definition are mapped such that 0% occurs at the start of the duration and 100% occurs at the end.</li>
+				<li><code>animation-timing-function</code>, which, just as with <code>transition-timing-function</code>, determines the rate at which the animation plays out.</li>
+				<li><code>animation-delay</code>, which can set a delay time before the animation begins.</li>
+			</ul>
+
+			<p>There are several more advanced properties that can be used for animations, but those listed above cover basic implementation.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">.keyframes-example:hover {
+	/* name duration timing-function delay */
+	animation: example-animation 2s ease .5s;
+}
+
+@keyframes example-animation {
+	0% {
+		opacity: 0;
+		transform: translatex(-100rem);
+	}
+
+	85% {
+		transform: translatex(1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translatex(0);
+	}
+}</pre>
+
+				<pre data-lang="html">&lt;div class="keyframes-example"&gt;Hover over me!&lt;/div&gt;</pre>
+
+			</div>
+			
+			<p class="try-this">In the example above, try changing the animation to have the text cycle through a series of colors. Add more keyframe steps to use more colors.</p>
+
+			<p>An animation is triggered as soon as the CSS selector is recognized by the browser. In the example above, it is triggered on hover, but if the animation is applied to a static element the animation is triggered on page load. This can be utilized to create page-entrace animations.</p>
+
+			<p>It is also worth noting that you can use multiple animations on a single selector by comma-separating the declarations. This can be utilized in combination with animation-delay to create complex effects.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="css,result" 
+			>
+				<pre data-lang="css">@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.4);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.multiple-keyframes-example {
+	background-color: orange;
+}
+
+.multiple-keyframes-example:hover {
+	animation: fade-in 1.5s linear, pulse .7s ease .7s;
+}</pre>
+
+			<pre data-lang="html">&lt;div class="multiple-keyframes-example"&gt;Hover over me!&lt;/div&gt;</pre>
+
+		</div>
+			
+			<h2 id="video">Video Lesson</h2>
+			
+			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/cZnaWghz"></video-demo>
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://24ways.org/2015/animating-your-brand/">Animating Your Brand</a></li>
+				<li><a href="https://uxplanet.org/disneys-motion-principles-in-designing-interface-animations-9ac7707a2b43">Disney's Motion Principles Applied to Interface Animation</a></li>
+			</ul>
+			
+			<h2 id="tools">Tools</h2>
+			
+			<ul>
+				<li><a href="http://animista.net">Animista: A CSS Animation GUI Tool</a></li>
+				<li><a href="https://easings.net/en">Pre-Made Easing Functions</a></li>
+				<li><a href="http://cubic-bezier.com/#.17,.67,.83,.67">Build-Your-Own Cubic Bezier Easing Functions</a></li>
+			</ul>
+
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--ipts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

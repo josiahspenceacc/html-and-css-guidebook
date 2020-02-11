@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Images in HTML</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Images in HTML</h1>
+				
+				<p>As well as text, browsers allow the use of images in web page content by <strong>inserting</strong> an image file where indicated in the HTML code. Only certain image <strong>file types</strong> are supported by most browsers.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#formats">Common Formats</a>
+					<a href="#element">Image Element</a>
+					<a href="#svg">Inline SVG</a>
+					<a href="#video">Video Lesson</a>
+					<a href="#quiz">Practice Exercise</a>
+					<a href="#resources">Resource Links</a>
+					<a href="#tools">Tools</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="formats">Common Image Formats &amp; Their Uses</h2>
+
+			<h3>JPEG</h3>
+
+			<p><strong>JPEG</strong> is a compressed bitmap format (meaning is has a defined size and grid of pixels). It is best for photos and images with a lot of detail. JPEG does not support tranparency.</p>
+
+			<figure class="rendered-example">
+				<img src="images/jpeg-example.jpg" alt="JPEG Image">	
+			</figure>
+
+			<h3>SVG</h3>
+
+			<p><strong>SVG</strong> is a vector format that provides smooth graphics at any size. It supports transparency. In addition to its use in the <strong>img</strong> tag, it can also be directly pasted as code into HTML. This is especially useful because individual parts of an SVG can then be targeted by CSS for styling or animation.</p>
+			
+			<p class="big-point">Vectors are the only type of images that can be scaled up to <strong>any size</strong> without loss of quality.</p>
+
+			<figure class="rendered-example">
+				<img src="images/svg-example.svg" alt="SVG Image">
+			</figure>
+
+			<h3>PNG</h3>
+
+			<p><strong>PNG</strong> is a bitmap format that supports transparency. It is best for simple images and images that require transparency where SVG is not an option. SVG is often a better alternative these days.</p>
+
+			<figure class="rendered-example">
+				<img src="images/png-example.png" alt="PNG Image">
+			</figure>
+
+			<h3>GIF</h3>
+
+			<p><strong>GIF</strong> is a bitmap format with index color (meaning each GIF only carries a limited number of colors). It supports transparency, but results are not smooth. However, it does support frame animations. While it is an inferior format compared to other modern options, it hangs around because it is convenient for sharing simple animations.</p>
+
+			<figure class="rendered-example">
+				<img src="images/gif-example.gif" alt="GIF Image">
+			</figure>
+
+
+			<h2 id="element">The Image Element</h2>
+
+			<p>An <code>img</code> is a self-closing element that pulls in an image file. It is an inline element by default (which is counterinuitive). Also important is that it is a self-closing tag and requires no separate closing tag.</p>
+			
+			<p class="big-point">Image files should <strong>always</strong> be downloaded and added to your file structure, rather than being linked from another location on the internet.</p>
+
+			<h3>Required Attributes</h3>
+
+			<p>The <code>src</code> attribute's value refers to the image file to be displayed. Like the <code>href</code> attribute for links, this can be a relative or an absolute URL.</p>
+			
+			<code-block lang="markup" code='<!--Relative image path-->
+<img src="folder/file.jpg">
+													  
+<!--Absolute image path-->
+<img src="http://domain.com/file.jp">'></code-block>
+
+			<p>The <code>alt</code> attribute contains descriptive text about the image. It is used by screen-readers and is also shown if the link to the image fails.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;img src="https://picsum.photos/250/200" alt="Random Image"&gt;</pre>
+			</div>
+
+			<h3>Optional Attributes</h3>
+
+			<p>The <code>width</code> and <code>height</code> attributes contain the image's dimensions in pixels. Though they use pixels, the units should not be written. (e.g. width="200" should be used instead of width="200px"). These attributes are used less these days because CSS is usually used to size images.</p>
+
+			<p>The <code>title</code> attribute contains text that displays in a tooltip popup when a mouse hovers over the image. It is NOT read by screen-readers. It is most often used to provide additional context or non-essential information about an image.</p>
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;img src="https://picsum.photos/250/200" alt="Random Image" width="250" height="200" title="This text shows when you hover!"&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the above example, hover your mouse over the image to see how the <code>title</code> attribute shows up. Try changing the text of the <code>title</code> attribute and hover over the image again to see your change applied to the pop-up text.</p>
+
+
+			<h2 id="svg">Inline svg</h2>
+
+			<p>"Inline svg" referrs to the practice of directly pasting <code>svg</code> code into an HTML document. There are many advantages to doing so, chiefly the possibility of styling individual parts of the <code>svg</code> with CSS. Classes and IDs can be applied to sub-elements of an <code>svg</code> for additional control.</p>
+
+
+
+			<!--Example Pen-->
+			<div 
+			  class="codepen" 
+			  data-prefill 
+			  data-height="400"
+			  data-editable="true"
+			  data-theme-id="36581"
+			  data-default-tab="html,result" 
+			>
+				<pre data-lang="html">&lt;svg version="1.1" id="kiwi-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"	width="300px" viewBox="0 65.326 612 502.174"&gt;
+
+	&lt;ellipse class="ground" fill="coral" cx="283.5" cy="487.5" rx="259" ry="80"/&gt;
+	&lt;path class="kiwi" fill="cyan" d="M210.333,65.331C104.367,66.105-12.349,150.637,1.056,276.449c4.303,40.393,18.533,63.704,52.171,79.03
+	c36.307,16.544,57.022,54.556,50.406,112.954c-9.935,4.88-17.405,11.031-19.132,20.015c7.531-0.17,14.943-0.312,22.59,4.341
+	c20.333,12.375,31.296,27.363,42.979,51.72c1.714,3.572,8.192,2.849,8.312-3.078c0.17-8.467-1.856-17.454-5.226-26.933
+	c-2.955-8.313,3.059-7.985,6.917-6.106c6.399,3.115,16.334,9.43,30.39,13.098c5.392,1.407,5.995-3.877,5.224-6.991
+	c-1.864-7.522-11.009-10.862-24.519-19.229c-4.82-2.984-0.927-9.736,5.168-8.351l20.234,2.415c3.359,0.763,4.555-6.114,0.882-7.875
+	c-14.198-6.804-28.897-10.098-53.864-7.799c-11.617-29.265-29.811-61.617-15.674-81.681c12.639-17.938,31.216-20.74,39.147,43.489
+	c-5.002,3.107-11.215,5.031-11.332,13.024c7.201-2.845,11.207-1.399,14.791,0c17.912,6.998,35.462,21.826,52.982,37.309
+	c3.739,3.303,8.413-1.718,6.991-6.034c-2.138-6.494-8.053-10.659-14.791-20.016c-3.239-4.495,5.03-7.045,10.886-6.876
+	c13.849,0.396,22.886,8.268,35.177,11.218c4.483,1.076,9.741-1.964,6.917-6.917c-3.472-6.085-13.015-9.124-19.18-13.413
+	c-4.357-3.029-3.025-7.132,2.697-6.602c3.905,0.361,8.478,2.271,13.908,1.767c9.946-0.925,7.717-7.169-0.883-9.566
+	c-19.036-5.304-39.891-6.311-61.665-5.225c-43.837-8.358-31.554-84.887,0-90.363c29.571-5.132,62.966-13.339,99.928-32.156
+	c32.668-5.429,64.835-12.446,92.939-33.85c48.106-14.469,111.903,16.113,204.241,149.695c3.926,5.681,15.819,9.94,9.524-6.351
+	c-15.893-41.125-68.176-93.328-92.13-132.085c-24.581-39.774-14.34-61.243-39.957-91.247
+	c-21.326-24.978-47.502-25.803-77.339-17.365c-23.461,6.634-39.234-7.117-52.98-31.273C318.42,87.525,265.838,64.927,210.333,65.331
+	z M445.731,203.01c6.12,0,11.112,4.919,11.112,11.038c0,6.119-4.994,11.111-11.112,11.111s-11.038-4.994-11.038-11.111
+	C434.693,207.929,439.613,203.01,445.731,203.01z"/&gt;
+
+&lt;/svg&gt;</pre>
+			</div>
+			
+			<p class="try-this">In the above example, see if you can figure out how to change the color of the bird. What about the oval that forms its shadow?</p>
+
+			<h2 id="video">Video Lesson</h2>
+
+			<p>The following video demo is fully interactive. You can pause it at any time to directly edit the code, and resume playback to pickup where you left off.</p>
+			
+			<video-demo url="https://scrimba.com/c/cqRBweS7"></video-demo>
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/html-images.html"></lesson-quiz>
+
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://css-tricks.com/using-svg/">Guide to Using SVG</a></li>
+			</ul>
+			
+			<h2 id="tools">Tools</h2>
+			
+			<ul>
+				<li><a href="https://iconsvg.xyz/">IconSVG: A Tool for Creating Custom SVG Icons</a></li>
+				<li><a href="https://material.io/tools/icons/?style=baseline">Material Design Icons: Free Downloadable SVGs</a></li>
+				<li><a href="https://feathericons.com/">Feather Icons: Free Downloadable SVGs</a></li>
+				<li><a href="https://uxwing.com/">UXWing Icons: Free Downloadable SVGs and PNGs</a></li>
+				<li><a href="https://unsplash.com/">Unsplash | Free Stock Images</a></li>
+			</ul>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script>
+
+		/*************************************************************************
+		This little bit of javascript simply adds or removes a classs called
+		"toggle-active" to the main nav when the menu button is clicked
+		**************************************************************************/
+
+		document.addEventListener("DOMContentLoaded", function(event) { //Initialized this script after the page is finished loading 
+			var body = document.getElementsByTagName('body')[0];
+			var trigger = document.getElementById('menu-toggle'); // reference the toggle button by ID
+
+			trigger.addEventListener('click', function(e) { // Listen for when the toggle is clicked
+				e.preventDefault(); // Prevent any default button action
+				body.classList.toggle('menu-active'); // Toggle the class on or off, depending on if it is already there or not
+			});
+
+		});
+
+	</script>
+</body>
+</html>
