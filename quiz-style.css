@@ -125,6 +125,7 @@ body {
 	background-color: ghostwhite;
 	margin: 0;
 	padding: 1.7rem 1.7rem 4rem;
+	overflow-y: auto;
 }
 
 #app {
