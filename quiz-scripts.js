@@ -59,7 +59,6 @@ Vue.component('quiz-step', {
 					<button @click.prevent="resetStarter" class="reset-button">Reset Code</button>
 
 					<codemirror v-show="selectedTab === 'css'" v-model="userCode"
-						@change="changeCode"
 						:options="{
 							mode: 'css',
 							lineWrapping: true,
@@ -191,18 +190,6 @@ Vue.component('quiz-step', {
 
 	},
 
-	watch: {
-
-		// When step is active apdate to starter CSS
-		now: function () {
-			if (this.$root.currentStep == this.step) {
-				var styleTag = document.getElementById('custom-styles');
-				styleTag.innerHTML = this.cssstarter;
-			}
-		}
-
-	},
-
 	methods: {
 
 		// Check user code against final answer
@@ -252,17 +239,6 @@ Vue.component('quiz-step', {
 		// User clicks give up button
 		giveUp() {
 			this.$parent.$emit('skip-step')
-		},
-
-		stepActive() {
-			var styleTag = document.getElementById('custom-styles');
-			styleTag.innerHTML = this.cssstarter;
-		},
-
-		// Update CSS based on user input
-		changeCode() {
-			var styleTag = document.getElementById('custom-styles');
-			styleTag.innerHTML = this.userCode;
 		}
 
 	}

@@ -50,10 +50,180 @@ div {
 
 			<h3>Setting Width</h3>
 			
-			<p>Set the width of the div to be 50%.</p>
+			<p>Set the width of the div to be <code>50%</code>.</p>
 			
-			<p><em>Hint: Make sure your properties are in alphabetical order.</p>
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
 
+		</quiz-step>
+		
+		<!-- Step 2 -->
+		<quiz-step :step="2" mode="css" starter="<div>
+	<h1>Volcano Facts</h1>
+	<p>A volcano on Earth is a vent or fissure in the planet's crust through which lava, ash, rock and gases erupt. A volcano is also a mountain formed by the accumulation of these eruptive products. Volcanoes are often found at meeting points of what are called “tectonic plates”. These plates are pieces of the Earth’s surface that fit together just like a jigsaw puzzle.</p>
+</div>"
+		cssstarter="body {
+	background-color: #F7F5FB;
+}
+
+div {
+	background-color: #909CC2;
+	width: 50%;
+}"
+		answer="body {
+	background-color: #F7F5FB;
+}
+
+div {
+	background-color: #909CC2;
+	margin: 0 auto;
+	width: 50%;
+}">
+		
+			<h3>Centering with Margin</h3>
+		
+			<p>Set the div to have <strong>zero</strong> margin on the top and bottom and to <strong>center</strong> horizontally.</p>
+		
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+		
+		</quiz-step>
+		
+		<!-- Step 3 -->
+		<quiz-step :step="3" mode="css" starter="<div>
+	<h1>Volcano Facts</h1>
+	<p>A volcano on Earth is a vent or fissure in the planet's crust through which lava, ash, rock and gases erupt. A volcano is also a mountain formed by the accumulation of these eruptive products. Volcanoes are often found at meeting points of what are called “tectonic plates”. These plates are pieces of the Earth’s surface that fit together just like a jigsaw puzzle.</p>
+</div>"
+
+		cssstarter="body {
+	background-color: #F7F5FB;
+}
+
+div {
+	background-color: #909CC2;
+	margin: 0 auto;
+	width: 50%;
+}" 
+
+		answer="body {
+	background-color: #F7F5FB;
+}
+
+div {
+	background-color: #909CC2;
+	margin: 0 auto;
+	padding: 2rem;
+	width: 50%;
+}">
+		
+			<h3>Adding Padding</h3>
+		
+			<p>Give the div <code>2rem</code> of padding on all sides.</p>
+		
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+		
+		</quiz-step>
+		
+		<!-- Step 4 -->
+		<quiz-step :step="4" mode="css" starter="<div>
+	<h1>Volcano Facts</h1>
+	<p>A volcano on Earth is a vent or fissure in the planet's crust through which lava, ash, rock and gases erupt. A volcano is also a mountain formed by the accumulation of these eruptive products. Volcanoes are often found at meeting points of what are called “tectonic plates”. These plates are pieces of the Earth’s surface that fit together just like a jigsaw puzzle.</p>
+</div>"
+		cssstarter="body {
+	background-color: #F7F5FB;
+}
+
+div {
+	background-color: #909CC2;
+	margin: 0 auto;
+	width: 50%;
+}" 
+		answer="body {
+	background-color: #F7F5FB;
+}
+
+div {
+	background-color: #909CC2;
+	margin: 4rem auto 0;
+	padding: 2rem;
+	width: 50%;
+}">
+		
+			<h3>Adding Margin on Top</h3>
+		
+			<p>Change the margin of the div so that there is now <code>4rem</code> on <strong>top</strong>, while keeping no margin on the bottom and keeping it centered horizontally.</p>
+		
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+		
+		</quiz-step>
+		
+		<!-- Step 5 -->
+		<quiz-step :step="5" mode="css" starter="<div>
+	<h1>Volcano Facts</h1>
+	<p>A volcano on Earth is a vent or fissure in the planet's crust through which lava, ash, rock and gases erupt. A volcano is also a mountain formed by the accumulation of these eruptive products. Volcanoes are often found at meeting points of what are called “tectonic plates”. These plates are pieces of the Earth’s surface that fit together just like a jigsaw puzzle.</p>
+</div>"
+
+		cssstarter="body {
+	background-color: #F7F5FB;
+}
+
+div {
+	background-color: #909CC2;
+	margin: 4rem auto 0;
+	width: 50%;
+}"
+
+		answer="body {
+	background-color: #F7F5FB;
+}
+
+div {
+	background-color: #909CC2;
+	border: 1px dashed #084887;
+	margin: 4rem auto 0;
+	padding: 2rem;
+	width: 50%;
+}">
+
+			<h3>Adding a Border</h3>
+
+			<p>Give the div a <strong>dashed</strong>border on all sides using shorthand. It should be <code>10px</code> thick and the color should be <code>#084887</code>.</p>
+
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+		
+		<!-- Step 6 -->
+		<quiz-step :step="6" mode="css" starter="<div>
+	<h1>Volcano Facts</h1>
+	<p>A volcano on Earth is a vent or fissure in the planet's crust through which lava, ash, rock and gases erupt. A volcano is also a mountain formed by the accumulation of these eruptive products. Volcanoes are often found at meeting points of what are called “tectonic plates”. These plates are pieces of the Earth’s surface that fit together just like a jigsaw puzzle.</p>
+</div>"
+		cssstarter="body {
+	background-color: #F7F5FB;
+}
+
+div {
+	background-color: #909CC2;
+	border: 1px dashed #084887;
+	margin: 4rem auto 0;
+	width: 50%;
+}"
+		answer="body {
+	background-color: #F7F5FB;
+}
+
+div {
+	background-color: #909CC2;
+	border: 1.2rem solid #084887;
+	margin: 4rem auto 0;
+	padding: 2rem;
+	width: 50%;
+}">
+		
+			<h3>Changing the Border</h3>
+		
+			<p>On second thought, change the border to be <code>1.2rem</code> thick and <strong>solid</strong>.</p>
+
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+		
 		</quiz-step>
 
 	</quiz>
