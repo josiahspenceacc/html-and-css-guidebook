@@ -634,16 +634,6 @@ new Vue({
 		incorrect: 0
 	}),
 
-	created() {
-
-		//Create style tag in head
-		var head = document.head
-		var styleEl = document.createElement('style');
-		styleEl.setAttribute("id", "custom-styles");
-		head.appendChild(styleEl);
-
-	},
-
 	methods: {
 
 		// Move to next step of quiz
