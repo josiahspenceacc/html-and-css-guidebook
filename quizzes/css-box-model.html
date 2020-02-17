@@ -24,7 +24,7 @@
 <body id="quiz-body">
 
 <div id="app">
-	<quiz v-bind:badgehue="358" subject="The Box Model" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep">
+	<quiz v-bind:badgehue="358" subject="The Box Model" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
 
 		<!-- Step 1 -->
 		<quiz-step :step="1" mode="css"
@@ -179,7 +179,7 @@ div {
 
 div {
 	background-color: #909CC2;
-	border: 1px dashed #084887;
+	border: 10px dashed #084887;
 	margin: 4rem auto 0;
 	padding: 2rem;
 	width: 50%;
@@ -187,7 +187,7 @@ div {
 
 			<h3>Adding a Border</h3>
 
-			<p>Give the div a <strong>dashed</strong>border on all sides using shorthand. It should be <code>10px</code> thick and the color should be <code>#084887</code>.</p>
+			<p>Give the div a <strong>dashed</strong> border on all sides using shorthand. It should be <code>10px</code> thick and the color should be <code>#084887</code>.</p>
 
 			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
 
@@ -204,7 +204,7 @@ div {
 
 div {
 	background-color: #909CC2;
-	border: 1px dashed #084887;
+	border: 10px dashed #084887;
 	margin: 4rem auto 0;
 	padding: 2rem;
 	width: 50%;
