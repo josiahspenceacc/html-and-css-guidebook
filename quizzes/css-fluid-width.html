@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Box Model Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="58" subject="Fluid Sizing" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep">
+
+		<!-- Step 1 -->
+		<quiz-step :step="1" mode="css"
+					  starter="<section>
+	<p>Alice waited a little, half expecting to see it again, but it did not appear, and after a minute or two she walked on in the direction in which the March Hare was said to live. 'I've seen hatters before,' she said to herself; 'the March Hare will be much the most interesting, and perhaps as this is May it won't be raving mad&mdash;at least not so mad as it was in March.' As she said this, she looked up, and there was the Cat again, sitting on a branch of a tree.</p>
+</section>"
+					  cssstarter=""
+					  answer="section {
+	width: 35rem;
+}">
+
+			<h3>Setting Fixed Width</h3>
+			
+			<p>Set the width of the <strong>section</strong> to be fixed at <code>35rem</code>.</p>
+
+		</quiz-step>
+
+		<!-- Step 2 -->
+		<quiz-step :step="2" mode="css"
+					  starter="<section>
+	<p>Alice waited a little, half expecting to see it again, but it did not appear, and after a minute or two she walked on in the direction in which the March Hare was said to live. 'I've seen hatters before,' she said to herself; 'the March Hare will be much the most interesting, and perhaps as this is May it won't be raving mad&mdash;at least not so mad as it was in March.' As she said this, she looked up, and there was the Cat again, sitting on a branch of a tree.</p>
+</section>"
+					  cssstarter="section {
+	width: 35rem;
+}"
+					  answer="section {
+	max-width: 35rem;
+}">
+
+			<h3>Setting Fluid Width</h3>
+			
+			<p>The problem with the fixed width we set in the last step is that it can never shrink, even if the browser window isn't big enough, which can result in an unwanted horizontal scrollbar.</p>
+			
+			<p>To fix this problem, change the code so that the section <strong>never grows larger than</strong> <code>30rem</code>, but <strong>can shrink smaller</strong> if there isn't enough space.</p>
+
+		</quiz-step>
+
+		<!-- Step 3 -->
+		<quiz-step :step="3" mode="css"
+					  starter='<img src="images/puppy.jpg" alt="A puppy dog">'
+					  cssstarter=""
+					  answer="img {
+	max-width: 50%;
+}">
+
+			<h3>Setting Percentage Width</h3>
+			
+			<p>Set the image so that it <strong>never grows larger</strong> than <strong>half</strong> the size of the container.</p>
+
+		</quiz-step>
+
+		<!-- Step 4 -->
+		<quiz-step :step="4" mode="css"
+					  starter='<img src="images/puppy.jpg" alt="A puppy dog">'
+					  cssstarter="img {
+	max-width: 50%;
+}"
+					  answer="img {
+	max-width: 50%;
+	min-width: 200px;
+}">
+
+			<h3>Limiting Shrinking</h3>
+			
+			<p>Sometimes you want to make sure an element isn't allowed to shrink <em>too</em> small. Add the code that will <strong>stop the image from shrinking smaller than</strong> <code>200px</code>.</p>
+
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>
