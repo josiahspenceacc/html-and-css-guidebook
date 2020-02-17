@@ -211,7 +211,13 @@ body {
 }
 
 .question-option {
-	display: block;
+    align-items: baseline;
+	display: flex;
+    margin-bottom: .5rem;
+}
+
+input[name="question-answer"] {
+	margin-right: .5rem;
 }
 
 /*/////////////////////////////////////////////////////

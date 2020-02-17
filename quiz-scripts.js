@@ -264,7 +264,7 @@ Vue.component('question-step', {
 					<input type="radio"
 						v-model="selectedAnswer"
 						name="question-answer"
-						v-bind:value="option"> {{option}}
+						v-bind:value="option"> <span>{{option}}</span>
 				</label>
 			</div>
 
