@@ -83,6 +83,7 @@ a:hover,
 a:focus,
 a:active, {
 	border-bottom-color: cornflowerblue;
+	outline: none;
 }
 
 p, ul, ol, li {
@@ -132,6 +133,10 @@ body {
 	height: calc(100vh - 8rem);
 }
 
+[v-cloak] {
+	display: none;
+}
+
 .quiz {
 	height: 100%;
 }
@@ -165,6 +170,7 @@ body {
 .quiz-button:hover, .badge-download-button:hover, .quiz-button:focus, .badge-download-button:focus {
 	cursor: pointer;
 	box-shadow: 2px 3px 4px rgba(0,0,0,.2);
+	outline: none;
 	transition: box-shadow .2s ease;
 }
 
@@ -400,7 +406,6 @@ a.active-tab .not-editable-label {
 	box-sizing: border-box;
 	height: 40vh;
 	overflow-y: auto;
-	padding: 1rem;
 	width: 100%;
 }
 
