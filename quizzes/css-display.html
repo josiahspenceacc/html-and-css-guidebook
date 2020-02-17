@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Display Property Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="163" subject="CSS Display" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
+
+		<!-- Step 1 -->
+		<quiz-step :step="1" mode="css"
+                      starter='<a href="index.html">Link 1</a>
+<a href="index.html">Link 2</a>
+<a href="index.html">Link 3</a>
+<a href="index.html">Link 4</a>'
+					  cssstarter="a {
+    background-color: #90fcde;
+}"
+					  answer="a {
+    background-color: #90fcde;
+    display: block;
+}">
+
+			<h3>Making Elements Stack</h3>
+			
+			<p>As you can see from the code rendering, links sit side-by-side by default. Change the CSS to <strong>make the links stack</strong> on top of one another.</p>
+
+		</quiz-step>
+
+		<!--Step 2-->
+		<question-step :step="2" 
+			v-bind:options='["True",
+							"False"]'
+			answer="True">
+
+			<p>True or False: <strong>inline-block</strong> elements sit side-by-side, just like inline elements.</p>
+
+		</question-step>
+
+		<!-- Step 3 -->
+		<quiz-step :step="3" mode="css"
+                      starter='<a href="index.html">Link 1</a>
+<a href="index.html">Link 2</a>
+<a href="index.html">Link 3</a>
+<a href="index.html">Link 4</a>
+<a href="index.html">Link 5</a>
+<a href="index.html">Link 6</a>
+<a href="index.html">Link 7</a>
+<a href="index.html">Link 8</a>
+<a href="index.html">Link 9</a>
+<a href="index.html">Link 10</a>'
+					  cssstarter="a {
+    background-color: #90fcde;
+    padding: 2rem;
+}"
+					  answer="a {
+    background-color: #90fcde;
+    display: inline-block;
+    padding: 2rem;
+}">
+
+			<h3>Using Vertical Padding</h3>
+			
+            <p>As you can see from the code rendering, the padding on the links works as expected on the sides, but on the top and bottom it causes overlapping because it isn't factored into the layout.</p>
+            
+            <p>Add the necessary styles to keep the elements side-by-side, but <strong>respect the vertical padding</strong> as part of the layout.</p>
+
+		</quiz-step>
+
+		<!-- Step 4 -->
+		<quiz-step :step="4" mode="css"
+                      starter='<p>Keep me visible.</p>
+<p class="secret-text">Hide me.</p>
+<p>Keep me visible too.</p>'
+					  cssstarter=""
+					  answer=".secret-text {
+    display: none;
+}">
+
+			<h3>Hiding Elements</h3>
+            
+            <p>Write the CSS needed to <strong>remove the "Hide me" paragraph only</strong> from the page, while leaving the others visible.</p>
+
+            <p>You'll need to look at the <strong>HTML</strong> code in it's tab.</p>
+
+		</quiz-step>
+
+		<!--Step 5-->
+		<question-step :step="5" 
+			v-bind:options='["True",
+							"False"]'
+			answer="False">
+
+			<p>True or False: Elements set to <strong>display: none</strong> are still present on the page, only transparent.</p>
+
+		</question-step>
+
+		<!--Step 6-->
+		<question-step :step="6" 
+            v-bind:options='["Inline elements sit side-by-side, but inline-block elements stack.",
+							"Both sit side-by-side, but only inline-block elements respect vertical padding, margin, and border as part of their layout.",
+                            "Both sit side-by-side, but only inline-block elements respect horizontal padding, margin, and border as part of their layout.",
+                            "They are the same. Both sit side-by-side, with no differences."]'
+			answer="Both sit side-by-side, but only inline-block elements respect vertical padding, margin, and border as part of their layout.">
+
+			<p>What is the difference between <code>inline</code> elements and <code>inline-block</code> elements?</p>
+
+		</question-step>
+
+		<!-- Step 7 -->
+		<quiz-step :step="7" mode="css"
+                      starter='<ul>
+    <li>Item</li>
+    <li>Item</li>
+    <li>Item</li>
+</ul>'
+					  cssstarter=""
+					  answer="li {
+    display: inline;
+}">
+
+			<h3>Side-by-Side Elements</h3>
+            
+            <p>Write the CSS needed to <strong>make each item site side-by-side</strong>. The vertical padding, marging, and border <strong>don't</strong> need to be factored into layout.</p>
+
+		</quiz-step>
+
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>
