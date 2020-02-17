@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Floats Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="163" subject="Float &amp; Clear" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
+
+		<!-- Step 1 -->
+		<quiz-step :step="1" mode="css"
+                      starter='<img src="images/black-footed-cat.jpg" alt="Black footed cat">
+
+<p>The black-footed cat (Felis nigripes), also called small-spotted cat, is the smallest African cat and endemic to the southwestern arid zone of Southern Africa.</p>
+
+<p>It is listed as Vulnerable on the IUCN Red List since 2002, as the population is suspected to be declining due to bushmeat poaching of prey species, persecution, traffic accidents and predation by domestic animals.</p>
+
+<p>Felis nigripes was the scientific name proposed by William John Burchell in 1824 who described cat skins used by ethnic people for making cloaks. Felis (Microfelis) nigripes thomasi was proposed as a subspecies by Guy C. Shortridge in 1931 who described skins collected in Griqualand West as being darker. The existence of subspecies was questioned, as no geographical or ecological barriers between populations exist.</p>
+
+<p>Black-footed cats hunt mainly by stalking, rather than ambush, using the cover of darkness and all available traces of cover to approach their prey before the final pounce. They have been observed to hunt by moving swiftly to flush prey from cover, but also to stalk slowly through tufts of vegetation.</p>'
+
+                      cssstarter=""
+
+					  answer="img {
+    float: left;
+}"
+
+                        image="images/floats-1.png">
+
+			<h3>Wrapping Content</h3>
+			
+			<p>Write the CSS to cause the text to wrap around the image on its right, like the image shown.</p>
+
+		</quiz-step>
+
+		<!-- Step 2 -->
+		<quiz-step :step="2" mode="css"
+                      starter='<img src="images/black-footed-cat.jpg" alt="Black footed cat">
+
+<p>The black-footed cat (Felis nigripes), also called small-spotted cat, is the smallest African cat and endemic to the southwestern arid zone of Southern Africa.</p>
+
+<p>It is listed as Vulnerable on the IUCN Red List since 2002, as the population is suspected to be declining due to bushmeat poaching of prey species, persecution, traffic accidents and predation by domestic animals.</p>
+
+<p>Felis nigripes was the scientific name proposed by William John Burchell in 1824 who described cat skins used by ethnic people for making cloaks. Felis (Microfelis) nigripes thomasi was proposed as a subspecies by Guy C. Shortridge in 1931 who described skins collected in Griqualand West as being darker. The existence of subspecies was questioned, as no geographical or ecological barriers between populations exist.</p>
+
+<p>Black-footed cats hunt mainly by stalking, rather than ambush, using the cover of darkness and all available traces of cover to approach their prey before the final pounce. They have been observed to hunt by moving swiftly to flush prey from cover, but also to stalk slowly through tufts of vegetation.</p>'
+
+                      cssstarter="img {
+    float: left;
+}"
+
+					  answer="img {
+    float: right;
+}"
+
+                        image="images/floats-2.png">
+
+			<h3>The Other Side</h3>
+			
+			<p>On second thought, change the code so the image sits on the right side, as shown in the image.</p>
+
+		</quiz-step>
+
+		<!-- Step 3 -->
+		<quiz-step :step="3" mode="css"
+                      starter='<img src="images/black-footed-cat.jpg" alt="Black footed cat">
+
+<p>The black-footed cat (Felis nigripes), also called small-spotted cat, is the smallest African cat and endemic to the southwestern arid zone of Southern Africa.</p>
+
+<p>It is listed as Vulnerable on the IUCN Red List since 2002, as the population is suspected to be declining due to bushmeat poaching of prey species, persecution, traffic accidents and predation by domestic animals.</p>
+
+<p>Felis nigripes was the scientific name proposed by William John Burchell in 1824 who described cat skins used by ethnic people for making cloaks. Felis (Microfelis) nigripes thomasi was proposed as a subspecies by Guy C. Shortridge in 1931 who described skins collected in Griqualand West as being darker. The existence of subspecies was questioned, as no geographical or ecological barriers between populations exist.</p>
+
+<p>Black-footed cats hunt mainly by stalking, rather than ambush, using the cover of darkness and all available traces of cover to approach their prey before the final pounce. They have been observed to hunt by moving swiftly to flush prey from cover, but also to stalk slowly through tufts of vegetation.</p>'
+
+                      cssstarter="img {
+    float: right;
+}"
+
+					  answer="img {
+    float: right;
+    margin: 0 0 1rem 1rem;
+}"
+
+                        image="images/floats-3.png">
+
+			<h3>Adding Space</h3>
+			
+            <p>As is, the text runs up against the image, which doesn't look very good. To fix this <strong>add margin to the image using shorthand</strong> so that there is <code>1rem</code> on the left of the image, <code>1rem</code> on the bottom, and none on the right and top, just like the image shown.</p>
+            
+            <p><em>Hint: Be sure your properties are in alphabetical order.</em></p>
+
+        </quiz-step>
+
+		<!-- Step 4 -->
+		<quiz-step :step="4" mode="css"
+                      starter='<img src="images/black-footed-cat.jpg" alt="Black footed cat">
+
+<p>The black-footed cat (Felis nigripes), also called small-spotted cat, is the smallest African cat and endemic to the southwestern arid zone of Southern Africa.</p>
+
+<h3>Endangered Status</h3>
+
+<p>It is listed as Vulnerable on the IUCN Red List since 2002, as the population is suspected to be declining due to bushmeat poaching of prey species, persecution, traffic accidents and predation by domestic animals.</p>
+
+<p>Felis nigripes was the scientific name proposed by William John Burchell in 1824 who described cat skins used by ethnic people for making cloaks. Felis (Microfelis) nigripes thomasi was proposed as a subspecies by Guy C. Shortridge in 1931 who described skins collected in Griqualand West as being darker. The existence of subspecies was questioned, as no geographical or ecological barriers between populations exist.</p>
+
+<p>Black-footed cats hunt mainly by stalking, rather than ambush, using the cover of darkness and all available traces of cover to approach their prey before the final pounce. They have been observed to hunt by moving swiftly to flush prey from cover, but also to stalk slowly through tufts of vegetation.</p>'
+
+                      cssstarter="img {
+    float: right;
+    margin: 0 0 1rem 1rem;
+}
+
+h3{
+
+}"
+
+					  answer="img {
+    float: right;
+    margin: 0 0 1rem 1rem;
+}
+
+h3{
+    clear: right;
+}"
+
+                        image="images/floats-4.png">
+
+			<h3>Prevent Wrapping</h3>
+			
+            <p>Right now, everything that follows the image will wrap around it. Let's make it so that <strong>the <code>h3</code> never wraps around anything floated to the right</strong>, but insteads sits below it. It should still be able to wrap around anything floated to the left.</p>
+
+        </quiz-step>
+        
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>
