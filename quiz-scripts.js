@@ -585,9 +585,10 @@ Vue.component('quiz', {
 			return (this.$root.currentStep / this.totalTabs) * 100;
 		},
 
-		// Percentage scored
+		// Percentage scored, rounded to two decimal places
 		percentScored: function () {
-			return ( (this.totalTabs - this.$root.incorrect) / this.totalTabs) * 100;
+			var score = ((this.totalTabs - this.$root.incorrect) / this.totalTabs) * 100;
+			return Math.round(( score + Number.EPSILON) * 100) / 100;
 		}
 
 	},
