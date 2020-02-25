@@ -81,7 +81,7 @@ a {
 
 a:hover,
 a:focus,
-a:active, {
+a:active {
 	border-bottom-color: cornflowerblue;
 	outline: none;
 }
@@ -425,7 +425,7 @@ form.question-step .step-instructions-text {
 	max-width: 35rem;
 }
 
-@media ( min-width: 1200px ) .step-instructions-text {
+@media ( min-width: 1200px ) {
 	
 	form.question-step {
 		margin: 0 auto 0 2rem;
@@ -633,11 +633,11 @@ button.start-over-button {
 	55%,
 	75%,
 	87% {
-		transform: translateY(0px);
+		transform: translateY(0);
 		animation-timing-function: ease-out;
 	}
 	100% {
-		transform: translateY(0px);
+		transform: translateY(0);
 		animation-timing-function: ease-out;
 	}
 }
