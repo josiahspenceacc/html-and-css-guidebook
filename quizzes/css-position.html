@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Position Property Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="325" subject="Position Property" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
+
+		<!-- Step 1 -->
+		<quiz-step :step="1" mode="css"
+                      starter='<h2>Normal Heading</h2>
+<h2 class="special-heading">Special Heading</h2>
+<h2>Normal Heading</h2>
+<h2>Normal Heading</h2>'
+					  cssstarter="h2 {
+	background-color: #f27ccb;
+	margin: 0;
+	padding: .5rem;
+}
+
+.special-heading {
+	background-color: #7cf2a3;
+}"
+					  answer="h2 {
+	background-color: #f27ccb;
+	margin: 0;
+	padding: .5rem;
+}
+
+.special-heading {
+	background-color: #7cf2a3;
+	position: relative;
+	top: 2rem;
+}">
+
+			<h3>Moving from Flow Position</h3>
+			
+			<p>Sometimes we want to nudge an element out of its natural position within the document flow. Let's do this in two steps:</p>
+
+			<ol>
+				<li>Set the <code>position</code> property for the <strong>special heading</strong> so that it <strong>stays within the document flow, but can be moved based on that starting position.</strong></li>
+				<li>Move the <strong>special heading</strong> <code>2rem</code> <strong>down</strong> from its <strong>top</strong> edge.</li>
+			</ol>
+			
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!--Step 2-->
+		<question-step :step="2" 
+			v-bind:options='["The way a user navigates from page to page on a site.",
+							"The way some elements stay in place on screen as the user scrolls.",
+							"The behavior of elements that sit side-by-side by default and the way they flow down to a new line when needed.",
+							"The default positioning behavior of elements based on whether they are block, inline, or inline-block."]'
+			answer="The default positioning behavior of elements based on whether they are block, inline, or inline-block.">
+
+			<p>What is the best definition of <strong>document flow</strong>?</p>
+
+		</question-step>
+
+		<!-- Step 3 -->
+		<quiz-step :step="3" mode="css"
+                      starter='<h2>Normal Heading</h2>
+<h2 class="special-heading">Special Heading</h2>
+<h2>Normal Heading</h2>
+<h2>Normal Heading</h2>'
+					  cssstarter="h2 {
+	background-color: #f27ccb;
+	margin: 0;
+	padding: .5rem;
+}
+
+.special-heading {
+	background-color: #7cf2a3;
+}"
+					  answer="h2 {
+	background-color: #f27ccb;
+	margin: 0;
+	padding: .5rem;
+}
+
+.special-heading {
+	background-color: #7cf2a3;
+	position: absolute;
+	right: 0;
+	top: 0;
+}">
+
+			<h3>Moving on the Page</h3>
+			
+			<p>This time, let's completely remove an element from the document flow and place it somewhere on the page. Let's do this in two steps:</p>
+
+			<ol>
+				<li>Set the <code>position</code> property for the <strong>special heading</strong> so that it <strong>is removed from the document flow</strong> and can be positioned with regard to the <strong>page</strong> as a canvas. It should still move when the page scrolls.</li>
+				<li>Place the <strong>special heading</strong> in the <strong>top-right</strong> corner of the page, with <strong>no space</strong> between it and the edge of the window.</li>
+			</ol>
+			
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!--Step 4-->
+		<question-step :step="4" 
+			v-bind:options='["True",
+			"False"]'
+			answer="True">
+
+			<p>True or False: The <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> properties can only be used in combination with the <code>position</code> property.</p>
+
+		</question-step>
+
+		<!-- Step 5 -->
+		<quiz-step :step="5" mode="css"
+					  starter='<nav>
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="library.html">Library</a></li>
+		<li><a href="books.html">Books</a></li>
+	</ul>
+</nav>
+
+<h1>The Time Machine</h1>
+
+<p>The Time Traveller (for so it will be convenient to speak of him) was
+expounding a recondite matter to us. His pale grey eyes shone and twinkled, and
+his usually pale face was flushed and animated. The fire burnt brightly,
+and the soft radiance of the incandescent lights in the lilies of silver
+caught the bubbles that flashed and passed in our glasses. Our chairs,
+being his patents, embraced and caressed us rather than submitted to be sat
+upon, and there was that luxurious after-dinner atmosphere, when thought
+runs gracefully free of the trammels of precision. And he put it to us in
+this way&mdash;marking the points with a lean forefinger&mdash;as we sat
+and lazily admired his earnestness over this new paradox (as we thought it)
+and his fecundity.</p>
+
+<p>&ldquo;You must follow me carefully. I shall have to controvert one or
+two ideas that are almost universally accepted. The geometry, for instance,
+they taught you at school is founded on a misconception.&rdquo;</p>
+
+<p>&ldquo;Is not that rather a large thing to expect us to begin
+upon?&rdquo; said Filby, an argumentative person with red hair.</p>
+
+<p>&ldquo;I do not mean to ask you to accept anything without reasonable
+ground for it. You will soon admit as much as I need from you. You know of
+course that a mathematical line, a line of thickness <i>nil</i>, has no
+real existence. They taught you that? Neither has a mathematical plane.
+These things are mere abstractions.&rdquo;</p>
+
+<p>&ldquo;That is all right,&rdquo; said the Psychologist.</p>
+
+<p>&ldquo;Nor, having only length, breadth, and thickness, can a cube have
+a real existence.&rdquo;</p>
+
+<p>&ldquo;There I object,&rdquo; said Filby. &ldquo;Of course a solid body
+may exist. All real things&mdash;&rdquo;</p>
+
+<p>&ldquo;So most people think. But wait a moment. Can an
+<i>instantaneous</i> cube exist?&rdquo;</p>
+
+<p>&ldquo;Don&rsquo;t follow you,&rdquo; said Filby.</p>
+
+<p>&ldquo;Can a cube that does not last for any time at all, have a real
+existence?&rdquo;</p>
+
+<p>Filby became pensive. &ldquo;Clearly,&rdquo; the Time Traveller
+proceeded, &ldquo;any real body must have extension in <i>four</i>
+directions: it must have Length, Breadth, Thickness, and&mdash;Duration.
+But through a natural infirmity of the flesh, which I will explain to you
+in a moment, we incline to overlook this fact. There are really four
+dimensions, three which we call the three planes of Space, and a fourth,
+Time. There is, however, a tendency to draw an unreal distinction between
+the former three dimensions and the latter, because it happens that our
+consciousness moves intermittently in one direction along the latter from
+the beginning to the end of our lives.&rdquo;</p>
+
+<p>&ldquo;That,&rdquo; said a very young man, making spasmodic efforts to
+relight his cigar over the lamp; &ldquo;that . . . very clear
+indeed.&rdquo;</p>'
+					  cssstarter="body {
+	margin: 0;
+}
+
+nav {
+	background-color: #f27ccb;
+	padding: .25rem;
+	text-align: center;
+}
+
+nav ul {
+	padding-left: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 .5rem;
+}"
+					  answer="body {
+	margin: 0;
+}
+
+nav {
+	background-color: #f27ccb;
+	bottom: 0;
+	padding: .25rem;
+	position: fixed;
+	text-align: center;
+}
+
+nav ul {
+	padding-left: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 .5rem;
+}">
+
+			<h3>Moving in the Viewport</h3>
+			
+			<p>And now something a little more complex and position an element so that it stays in place as the page scrolls beneath it. Again, we'll do this in two steps:</p>
+
+			<ol>
+				<li>Set the <code>position</code> property for the <strong>navigation</strong> so that it <strong>is removed from the document flow</strong> and can be positioned with regard to the <strong>viewport window</strong> as a canvas. It should remain still when the page scrolls.</li>
+
+				<li>Place the <strong>navigation</strong> at the <strong>very bottom</strong> of the viewport window, with <strong>no space</strong> between it and the edge of the window.</li>
+			</ol>
+			
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 6 -->
+		<quiz-step :step="6" mode="css"
+					  starter='<nav>
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="library.html">Library</a></li>
+		<li><a href="books.html">Books</a></li>
+	</ul>
+</nav>
+
+<h1>The Time Machine</h1>
+
+<p>The Time Traveller (for so it will be convenient to speak of him) was
+expounding a recondite matter to us. His pale grey eyes shone and twinkled, and
+his usually pale face was flushed and animated. The fire burnt brightly,
+and the soft radiance of the incandescent lights in the lilies of silver
+caught the bubbles that flashed and passed in our glasses. Our chairs,
+being his patents, embraced and caressed us rather than submitted to be sat
+upon, and there was that luxurious after-dinner atmosphere, when thought
+runs gracefully free of the trammels of precision. And he put it to us in
+this way&mdash;marking the points with a lean forefinger&mdash;as we sat
+and lazily admired his earnestness over this new paradox (as we thought it)
+and his fecundity.</p>
+
+<p>&ldquo;You must follow me carefully. I shall have to controvert one or
+two ideas that are almost universally accepted. The geometry, for instance,
+they taught you at school is founded on a misconception.&rdquo;</p>
+
+<p>&ldquo;Is not that rather a large thing to expect us to begin
+upon?&rdquo; said Filby, an argumentative person with red hair.</p>
+
+<p>&ldquo;I do not mean to ask you to accept anything without reasonable
+ground for it. You will soon admit as much as I need from you. You know of
+course that a mathematical line, a line of thickness <i>nil</i>, has no
+real existence. They taught you that? Neither has a mathematical plane.
+These things are mere abstractions.&rdquo;</p>
+
+<p>&ldquo;That is all right,&rdquo; said the Psychologist.</p>
+
+<p>&ldquo;Nor, having only length, breadth, and thickness, can a cube have
+a real existence.&rdquo;</p>
+
+<p>&ldquo;There I object,&rdquo; said Filby. &ldquo;Of course a solid body
+may exist. All real things&mdash;&rdquo;</p>
+
+<p>&ldquo;So most people think. But wait a moment. Can an
+<i>instantaneous</i> cube exist?&rdquo;</p>
+
+<p>&ldquo;Don&rsquo;t follow you,&rdquo; said Filby.</p>
+
+<p>&ldquo;Can a cube that does not last for any time at all, have a real
+existence?&rdquo;</p>
+
+<p>Filby became pensive. &ldquo;Clearly,&rdquo; the Time Traveller
+proceeded, &ldquo;any real body must have extension in <i>four</i>
+directions: it must have Length, Breadth, Thickness, and&mdash;Duration.
+But through a natural infirmity of the flesh, which I will explain to you
+in a moment, we incline to overlook this fact. There are really four
+dimensions, three which we call the three planes of Space, and a fourth,
+Time. There is, however, a tendency to draw an unreal distinction between
+the former three dimensions and the latter, because it happens that our
+consciousness moves intermittently in one direction along the latter from
+the beginning to the end of our lives.&rdquo;</p>
+
+<p>&ldquo;That,&rdquo; said a very young man, making spasmodic efforts to
+relight his cigar over the lamp; &ldquo;that . . . very clear
+indeed.&rdquo;</p>'
+					  cssstarter="body {
+	margin: 0;
+}
+
+nav {
+	background-color: #f27ccb;
+	bottom: 0;
+	padding: .25rem;
+	position: fixed;
+	text-align: center;
+}
+
+nav ul {
+	padding-left: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 .5rem;
+}"
+					  answer="body {
+	margin: 0;
+}
+
+nav {
+	background-color: #f27ccb;
+	bottom: 0;
+	left: 0;
+	padding: .25rem;
+	position: fixed;
+	right: 0;
+	text-align: center;
+}
+
+nav ul {
+	padding-left: 0;
+}
+
+nav li {
+	display: inline;
+	margin: 0 .5rem;
+}">
+
+			<h3>Placing Multiple Sides</h3>
+			
+			<p>It's nice that the navigation stays at the bottom as the user scrolls, but we can probably make it look a little nicer. Add the CSS to make the <strong>navigation</strong> span the whole width of the bottom of the window, from the <strong>left edge</strong> to the <strong>right edge</strong>.</p>
+
+			<p>There are multiple ways to achieve this, but you should use the technique most closely tied to the <code>position</code> property and its related properties</p>
+			
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 7 -->
+		<quiz-step :step="7" mode="css"
+                      starter='<div class="card">
+	<h3>A Blog Post</h3>
+	<p>In which we discuss very interesting bloggy stuff. Perhaps you would like to read more.</p>
+	
+	<div class="star-icon">&#10026;</div>
+	
+</div>'
+					  cssstarter=".card {
+	box-shadow: 2px 2px 6px rgba(0,0,0,.3);
+	max-width: 16rem;
+	padding: 2rem;
+}
+
+.star-icon {
+	color: #7cf2a3;
+	font-size: 2rem;
+	position: absolute;
+	right: 1rem;
+	top: .5rem;
+}"
+					  answer=".card {
+	box-shadow: 2px 2px 6px rgba(0,0,0,.3);
+	max-width: 16rem;
+	padding: 2rem;
+	position: relative;
+}
+
+.star-icon {
+	color: #7cf2a3;
+	font-size: 2rem;
+	position: absolute;
+	right: 1rem;
+	top: .5rem;
+}">
+
+			<h3>Setting the Canvas</h3>
+			
+			<p>By default, absolutely positioned elements use the <em>whole page</em> as their canvas for placement. That's what's happening to the star in the code below. But sometimes we want to place the element absolutely <em>with reference</em> to a specific parent or ancestor as the canvas.</p>
+
+			<p>Add the CSS code to make the <strong>"card" div</strong> behave as the <strong>placement canvas</strong> for the absolutely postioned <strong>star</strong>. The star should end up in the upper-right corner of the card.</p>
+			
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>
