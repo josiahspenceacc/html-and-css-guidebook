@@ -33,7 +33,7 @@ Vue.component('quiz-step', {
 
 				<div v-if="mode != 'css'" class="code-single">
 
-					<h4 class="work-area-label">HTML</h4>
+					<div><h4 class="work-area-label">HTML</h4></div>
 
 					<button @click.prevent="resetStarter" class="reset-button">Reset Code</button>
 
@@ -84,7 +84,7 @@ Vue.component('quiz-step', {
 
 			<div class="quiz-rendering-area">
 
-				<h4 class="work-area-label">What Users See</h4>
+				<div><h4 class="work-area-label">What Users See</h4></div>
 
 				<iframe v-if="mode != 'css'" v-bind:srcdoc="userCode" class="quiz-rendering"></iframe>
 
