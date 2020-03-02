@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Typographic CSS Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="219" subject="Typographic CSS" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
+
+		<!-- Step 1 -->
+		<quiz-step :step="1" mode="css"
+                      starter='<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>'
+					  cssstarter=""
+					  answer="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}">
+
+			<h3>Setting Typefaces</h3>
+			
+			<p>Write the CSS so that <strong>all headings</strong> use the <strong>font</strong> <code>Verdana</code> if it is available on the user's system. If not, the browser should then look for the font <code>Geneva</code>. If Geneva is unavailable on the user's system, the default <code>sans-serif</code> should be used.</p>
+			
+			<p><em>Hint: Be sure you select for the headings in the most efficient way possible.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 2 -->
+		<quiz-step :step="2" mode="css"
+                      starter='<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>'
+					  cssstarter="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}"
+					  answer="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+}">
+
+			<h3>Setting Type Size</h3>
+			
+			<p>Add the CSS to make <strong>only the <code>h2</code></strong> have a size of <code>2.5rem</code>. (This should make it larger than the <code>h1</code>.)</p>
+
+		</quiz-step>
+
+		<!-- Step 3 -->
+		<quiz-step :step="3" mode="css"
+                      starter='<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>'
+					  cssstarter="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+}"
+					  answer="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}">
+
+			<h3>Setting Boldness</h3>
+			
+			<p>By default all headings are bold. Let's change that. Set the <code>h2</code> to be <code>normal</code> instead of bold.</p>
+			
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!--Step 4-->
+		<question-step :step="4" 
+			v-bind:options='["True",
+							"False"]'
+			answer="False">
+
+			<p>True or False: The <code>text-decoration</code> property controls whether list-items have <strong>bullets</strong>.</p>
+
+		</question-step>
+
+		<!-- Step 5 -->
+		<quiz-step :step="5" mode="css"
+                      starter='<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>'
+					  cssstarter="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+
+}"
+					  answer="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    font-style: italic;
+}">
+
+			<h3>Setting Italics</h3>
+			
+			<p>For some variation, make the <code>h3</code> text use an <strong>italic</strong> style.</p>
+
+		</quiz-step>
+
+		<!-- Step 6 -->
+		<quiz-step :step="6" mode="css"
+                      starter='<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>'
+					  cssstarter="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    font-style: italic;
+}"
+					  answer="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    color: #1bd1c2;
+    font-style: italic;
+}">
+
+			<h3>Type Color</h3>
+			
+			<p>Give the <code>h3</code> a <strong>text color</strong> of <code>#1bd1c2</code>.</p>
+			
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 7 -->
+		<quiz-step :step="7" mode="css"
+                      starter='<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>'
+					  cssstarter="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    color: #1bd1c2;
+    font-style: italic;
+}
+
+h4 {
+
+}"
+					  answer="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    color: #1bd1c2;
+    font-style: italic;
+}
+
+h4 {
+    text-transform: uppercase;
+}">
+
+			<h3>Setting Case</h3>
+			
+			<p>To switch things up a bit, set the text of the <code>h4</code> to be <strong>all uppercase</strong>.</p>
+
+		</quiz-step>
+
+		<!-- Step 8 -->
+		<quiz-step :step="8" mode="css"
+                      starter='<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>'
+					  cssstarter="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    color: #1bd1c2;
+    font-style: italic;
+}
+
+h4 {
+    text-transform: uppercase;
+}"
+					  answer="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    color: #1bd1c2;
+    font-style: italic;
+}
+
+h4 {
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}">
+
+			<h3>Spacing Between Letters</h3>
+			
+			<p>The all-caps letters need a little extra space between them to breathe. Add <code>.1rem</code> of space <strong>between the letters</strong> of the <code>h4</code>.</p>
+			
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!--Step 9-->
+		<question-step :step="9" 
+			v-bind:options='["In case the user does not have the first font installed.",
+                            "Because it would be stealing to directly send users a font to use as part of the website.",
+                            "Because the browser looks for the first one, then moves on to the next, then the next, when a font is unavailable.",
+                            "All of the above."]'
+			answer="All of the above.">
+
+			<p>Why do we provide <strong>fallback fonts</strong> for the <code>font-family</code> property?</p>
+
+		</question-step>
+
+		<!-- Step 10 -->
+		<quiz-step :step="10" mode="css"
+                      starter='<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>'
+					  cssstarter="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    color: #1bd1c2;
+    font-style: italic;
+}
+
+h4 {
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}"
+					  answer="h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    color: #1bd1c2;
+    font-style: italic;
+}
+
+h4 {
+    letter-spacing: .1rem;
+    text-decoration: overline;
+    text-transform: uppercase;
+}">
+
+			<h3>Adding Lines</h3>
+			
+			<p>For a bit of visual flare, add a <strong>line over the top</strong> of the <code>h4</code>. The line should <strong>only</strong> be the length of the text.</p>
+			
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 11 -->
+		<quiz-step :step="11" mode="css"
+                      starter='<p>This time Alice waited patiently until it chose to speak again. In a minute or two the Caterpillar took the hookah out of its mouth and yawned once or twice, and shook itself. Then it got down off the mushroom, and crawled away in the grass, merely remarking as it went, “One side will make you grow taller, and the other side will make you grow shorter.”</p>'
+					  cssstarter=""
+					  answer="p {
+    line-height: 1.6;
+}">
+
+			<h3>Leading</h3>
+			
+            <p>For text that wraps to multiple lines, it is important to specify the height of the lines. Set <strong>all paragraphs</strong> so that every line is <strong><code>1.6</code> times the height of the type</strong>.</p>
+            
+            <p><em>Hint: Think about what units are possible with this property.</em></p>
+
+		</quiz-step>
+
+		<!--Step 12-->
+		<question-step :step="12" 
+			v-bind:options='["True",
+                            "False"]'
+			answer="False">
+
+			<p>True or False: <strong>Bold</strong> weights or <strong>italic</strong> style can be applied to <strong>any typeface</strong>.</p>
+
+		</question-step>
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>
