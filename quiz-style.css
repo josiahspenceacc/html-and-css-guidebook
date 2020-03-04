@@ -393,7 +393,7 @@ a.active-tab .not-editable-label {
 	padding: .5rem 1rem;
 }
 
-#app .CodeMirror{
+.quiz-work-area .CodeMirror{
 	height: 40vh;
 	border: 1px solid #cad7ec;
 	border-top-color: cornflowerblue;

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Responsive Design Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="222" subject="Media Queries" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
+
+		<!--Step 1-->
+		<question-step :step="1" 
+			v-bind:options='["True",
+							"False"]'
+			answer="True">
+
+			<p>True or False: Media queries allow you to write CSS that is only applied at certain window sizes.</p>
+
+		</question-step>
+
+		<!--Step 2-->
+		<question-step :step="2" 
+			v-bind:options='["Make the background color gray all the time",
+							"Make the background color gray if the viewport is less than 400px wide",
+							"Make the background color gray if the user is on a mobile device",
+							"Make the background color gray if the viewport is 400px or wider"]'
+			answer="Make the background color gray if the viewport is 400px or wider">
+
+			<p>Take a look at the following CSS:</p>
+
+			<codemirror	:options="{
+							mode: 'css',
+							lineWrapping: true,
+							lineNumbers: true,
+							htmlMode: true,
+							indentUnit: 4,
+							indentWithTabs: true
+						}"
+						value='@media ( min-width: 400px ) {
+
+	body {
+		background-color: gray;
+	}
+
+}'></codemirror>
+
+			<p>What is the best description of what this media query says?</p>
+
+		</question-step>
+
+		<!--Step 3-->
+		<question-step :step="3" 
+			v-bind:options='["Mobile-first",
+							"Small-first",
+							"Responsive design",
+							"Desktop-first"]'
+			answer="Mobile-first">
+
+			<p>The practice of starting with CSS for the smallest possible size and adding complexity with media queries for larger viewports is called what?</p>
+
+		</question-step>
+
+		<!-- Step 4 -->
+		<quiz-step :step="4" mode="css"
+					  starter='<h1>A Generic HTML Page</h1>'
+					  cssstarter=""
+					  answer="@media ( min-width: 600px ) {
+
+	body {
+		background-color: #ffe08a;
+	}
+
+}">
+
+			<h3>CSS Based on Page Width</h3>
+			
+			<p>Write a media query that sets the <strong>background color</strong> of the <strong>body</strong> to be <code>#ffe08a</code> on screens <strong>wider</strong> than <code>600px</code>.</p>
+
+			<p><em>Hint: You can test your media queries by resizing the preview area by dragging the lower-right corner.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 5 -->
+		<quiz-step :step="5" mode="css"
+					  starter='<h1>Heading 1</h1>'
+					  cssstarter=""
+					  answer="@media ( min-width: 400px ) {
+
+	h1 {
+		font-size: 2.5rem;
+	}
+
+}
+
+@media ( min-width: 600px ) {
+
+	h1 {
+		font-size: 3rem;
+	}
+
+}">
+
+			<h3>Multiple Scales</h3>
+			
+			<p>Write the media queries needed to set the <strong>type size</strong> of <code>h1</code> elements to be:</p>
+			
+			<ol>
+				<li><code>2.5rem</code> on screens wider than <code>400px</code></li>
+				<li><code>3rem</code> on screens wider than <code>600px</code>.</li>
+			</ol>
+
+			<p>Be sure to write it in that order.</p>
+
+			<p><em>Hint: You can test your media queries by resizing the preview area by dragging the lower-right corner.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 6 -->
+		<quiz-step :step="6" mode="css"
+					  starter='<h1>Heading 1</h1>
+
+<p>If ever, oh ever, a wiz there was, the Wizard of Oz is one because, because because of the wonderful things he does.</p>'
+					  cssstarter="@media ( min-width: 400px ) {
+
+	h1 {
+		font-size: 2.5rem;
+	}
+
+}
+
+@media ( min-width: 600px ) {
+
+	h1 {
+		font-size: 3rem;
+	}
+
+}"
+					  answer="@media ( min-width: 400px ) {
+
+	h1 {
+		font-size: 2.5rem;
+	}
+
+}
+
+@media ( min-width: 600px ) {
+
+	h1 {
+		font-size: 3rem;
+	}
+
+	p {
+		font-size: 1.5rem;
+	}
+
+}">
+
+			<h3>Multiple Selectors</h3>
+			
+			<p>Now we have a paragraph as well as a heading. Let's make it responsive as well.</p>
+			
+			<p>Write the CSS to set the <strong>type size</strong> of the <strong>paragraph</strong> to be <code>1.5rem</code> on screens wider than <code>600px</code>.</p>
+
+			<p><em>Hint: You can test your media queries by resizing the preview area by dragging the lower-right corner.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 7 -->
+		<quiz-step :step="7" mode="css"
+					  starter='<p>If ever, oh ever, a wiz there was, the Wizard of Oz is one because, because because of the wonderful things he does.</p>'
+					  cssstarter="p {
+	color: #b52a2a;
+	font-family: Helvetica, Arial, sans-serif;
+}"
+					  answer="p {
+	color: #b52a2a;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+@media ( min-width: 400px ) {
+
+	p {
+		color: #448568;
+	}
+
+}">
+
+			<h3>Mobile-first Styling</h3>
+			
+			<p>Change the <strong>color</strong> of all <strong>paragraphs</strong> to be <code>#448568</code> when the viewport is wider than <code>400px</code>. It should stay red at sizes smaller than that, and it should use the same typefaces at all sizes.</p>
+
+			<p><em>Hint: You can test your media queries by resizing the preview area by dragging the lower-right corner.</em></p>
+
+		</quiz-step>
+
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>
