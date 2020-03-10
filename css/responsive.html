@@ -63,6 +63,8 @@
 			<h2 id="queries">Media Queries</h2>
 
 			<p>A media query is basically an <em>if</em> statement for CSS. It basically tells the browser, "If the criteria here are met, apply the CSS contained within." Or, more specifically for the following example, "If the browser window is at least 400px wide, make the paragraph text green."</p>
+			
+			<p class="big-point">The term <strong>breakpoint</strong> refers to the size at which a change in CSS is triggered.</p>
 
 			<!--Example Pen-->
 			<div 
@@ -125,6 +127,8 @@
 			<p>Any CSS inside a media query is read by the browser as an override to any CSS that has already been applied. This means that any CSS written <em>outside any media queries</em> is applied unless a media query specifically overrides it. And because that CSS is outside a media query, it is applied starting at a browser width of 0px. Another effect of this logic is that there is no need to repeat previously applied properties within a media query if the value doesn't change.</p>
 			
 			<p class="big-point">It's like Newton's First Law: Properties that are set tend to <strong>stay set</strong> unless acted upon by another <strong>media query</strong>.</p>
+			
+			<p class="big-point">Or you can think of it like speed limit signs: When you see one, you can kep going that speed <strong>until</strong> you see a sign telling you something <strong>different</strong>.</p>
 
 			<!--Example Pen-->
 			<div 
