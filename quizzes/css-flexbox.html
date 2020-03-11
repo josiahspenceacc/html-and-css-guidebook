@@ -24,28 +24,518 @@
 <body id="quiz-body">
 
 <div id="app">
-	<quiz v-bind:badgehue="175" subject="Flexbox" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
+	<quiz v-bind:badgehue="65" subject="Flexbox" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
 
 		<!-- Step 1 -->
 		<quiz-step :step="1" mode="css"
-					  starter='<a href="#">This is a link</a>'
-					  cssstarter=""
-					  answer="a {
-	color: #336941;
-	text-decoration: none;
-}">
+                      starter='<header class="site-header">
 
-			<h3>Style the default link state</h3>
+	<a href="index.html">Logo</a>
+
+	<nav>
+		<ul>
+			<li><a href="">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="blog.html">Blog</a></li>
+		</ul>
+	</nav>
+
+</header>'
+
+                      cssstarter=".site-header {
+	background-color: #F0F0C9;
+	padding: 1rem;
+}
+
+.site-header nav {
+	background-color: #fcfcdb;
+	padding: .5rem;
+}
+
+.site-header nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.site-header nav li {
+	display: inline;
+	margin-left: .75rem;
+} 
+
+.site-header a {
+	color: #087F8C;
+	text-decoration: none;
+}"
+
+					  answer=".site-header {
+	background-color: #F0F0C9;
+	display: flex;
+	padding: 1rem;
+}
+
+.site-header nav {
+	background-color: #fcfcdb;
+	padding: .5rem;
+}
+
+.site-header nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.site-header nav li {
+	display: inline;
+	margin-left: .75rem;
+} 
+
+.site-header a {
+	color: #087F8C;
+	text-decoration: none;
+}"
+
+                        image="images/flexbox1.png">
+
+			<h3>Activating Flexbox</h3>
 			
-			<p>Use CSS to:</p>
-			
-			<ol>
-				<li>Give links a color of <code>#336941</code></li>
-				<li>Remove the default underline (hint: use the <code>text-decoration</code> property)</li>
-			</ol>
+			<p>Add the CSS needed to <strong>activate flexbox</strong> on the correct element to match the example image. You <strong>only</strong> need to activate flexbox now. Don't worry about other flexbox-related properties.</p>
+
+			<p><em>Hint: Make sure to write your CSS properties in alphabetical order.</em></p>
 
 		</quiz-step>
 
+		<!-- Step 2 -->
+		<quiz-step :step="2" mode="css"
+                      starter='<header class="site-header">
+
+	<a href="index.html">Logo</a>
+
+	<nav>
+		<ul>
+			<li><a href="">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="blog.html">Blog</a></li>
+		</ul>
+	</nav>
+
+</header>'
+
+                      cssstarter=".site-header {
+	background-color: #F0F0C9;
+	display: flex;
+	padding: 1rem;
+}
+
+.site-header nav {
+	background-color: #fcfcdb;
+	padding: .5rem;
+}
+
+.site-header nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.site-header nav li {
+	display: inline;
+	margin-left: .75rem;
+} 
+
+.site-header a {
+	color: #087F8C;
+	text-decoration: none;
+}"
+
+					  answer=".site-header {
+	background-color: #F0F0C9;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.site-header nav {
+	background-color: #fcfcdb;
+	padding: .5rem;
+}
+
+.site-header nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.site-header nav li {
+	display: inline;
+	margin-left: .75rem;
+} 
+
+.site-header a {
+	color: #087F8C;
+	text-decoration: none;
+}"
+
+                        image="images/flexbox2.png">
+
+			<h3>Space on the Main Axis</h3>
+			
+			<p>To make things look a little better, let's <strong>space things out horizontally</strong> so the logo is <strong>all the way to the left</strong> and the nav is <strong> the way to the right</strong>, as shown in the example image.</p>
+
+			<p><em>Hint: Make sure to write your CSS properties in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 3 -->
+		<quiz-step :step="3" mode="css"
+                      starter='<header class="site-header">
+
+	<a href="index.html">Logo</a>
+
+	<nav>
+		<ul>
+			<li><a href="">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="blog.html">Blog</a></li>
+		</ul>
+	</nav>
+
+</header>'
+
+                      cssstarter=".site-header {
+	background-color: #F0F0C9;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.site-header nav {
+	background-color: #fcfcdb;
+	padding: .5rem;
+}
+
+.site-header nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.site-header nav li {
+	display: inline;
+	margin-left: .75rem;
+} 
+
+.site-header a {
+	color: #087F8C;
+	text-decoration: none;
+}"
+
+					  answer=".site-header {
+	align-items: center;
+	background-color: #F0F0C9;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.site-header nav {
+	background-color: #fcfcdb;
+	padding: .5rem;
+}
+
+.site-header nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+.site-header nav li {
+	display: inline;
+	margin-left: .75rem;
+} 
+
+.site-header a {
+	color: #087F8C;
+	text-decoration: none;
+}"
+
+                        image="images/flexbox3.png">
+
+			<h3>Alignment on the Cross Axis</h3>
+			
+			<p>To finish off this header, align the flex-children <strong>vertically</strong> so that the logo and the nav are <strong>centered</strong> within the header, as shown in the example image.</p>
+
+			<p><em>Hint: Make sure to write your CSS properties in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 4 -->
+		<quiz-step :step="4" mode="css"
+                      starter='<ol>
+	<li>Great Grandmother</li>
+	<li>Grandmother</li>
+	<li>Mother</li>
+	<li>Daughter</li>
+</ol>'
+
+                      cssstarter=""
+
+					  answer="ol {
+	align-items: center;
+	display: flex;
+	flex-direction: column-reverse;
+}"
+
+                        image="images/flexbox4.png">
+
+			<h3>Changing Direction</h3>
+			
+			<p>Use flexbox to make the list match the image. You will need to <strong>reverse</strong> the direction in which the items stack and <strong>center</strong> them horizontally.</p>
+
+			<p><em>Hint: Make sure to write your CSS properties in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 5 -->
+		<quiz-step :step="5" mode="css"
+                      starter='<div class="hero">
+
+	<h1>Our Site</h1>
+	<p>We do neat stuff</p>
+
+</div>'
+
+                      cssstarter="body {
+	margin: 0;
+}
+
+.hero {
+	background-color: #77edd9;
+	color: #013d33;
+	min-height: 80vh;
+	text-align: center;
+}
+
+h1 {
+	margin: 0 0 .5rem;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0;
+}"
+
+					  answer="body {
+	margin: 0;
+}
+
+.hero {
+	background-color: #77edd9;
+	color: #013d33;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 80vh;
+	text-align: center;
+}
+
+h1 {
+	margin: 0 0 .5rem;
+	text-transform: uppercase;
+}
+
+p {
+	margin: 0;
+}"
+
+                        image="images/flexbox5.png">
+
+			<h3>Vertically Centering Multiple Items</h3>
+			
+			<p>In this step, you'll need to think about a few different factors. To match the example image, <strong>vertically center the <code>h1</code> and the <code>p</code></strong> in the space available.</p>
+
+			<p>You'll probably need to take a peek at the HTML tab to see the element structure.</p>
+
+			<p><em>Hint: Make sure to write your CSS properties in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 6 -->
+		<quiz-step :step="6" mode="css"
+                      starter='<div class="featured-post-listing">
+
+	<section class="post-card">
+		<h3>A Blog Post</h3>
+		<p>Some excerpt text enticing you to want to read more&hellip;</p>
+	</section>
+
+	<section class="post-card">
+		<h3>Another Post</h3>
+		<p>Some really interesting excerpt text&hellip;</p>
+	</section>
+
+	<section class="post-card">
+		<h3>A Third Cool Post</h3>
+		<p>A whole bunch of super intriguing text that makes you really, really want to click through to read more&hellip;</p>
+	</section>
+
+</div>'
+
+                      cssstarter="body {
+	margin: 0;
+}
+
+.featured-post-listing {
+	background-color: #e6ffff;
+	padding: 1rem 0;
+}
+
+.post-card {
+	background-color: white;
+	box-sizing: border-box;
+	box-shadow: 1px 1px 2px #5b8a8c;
+	padding: 1rem;
+	max-width: 28%;
+}
+
+.post-card h3 {
+	background-color: #009191;
+	color: white;
+	margin: 0;
+	padding: .5rem 1rem;
+}
+
+.post-card p {
+	margin: 0;
+	padding: 1rem;
+}"
+
+					  answer="body {
+	margin: 0;
+}
+
+.featured-post-listing {
+	align-items: flex-start;
+	background-color: #e6ffff;
+	display: flex;
+	justify-content: space-evenly;
+	padding: 1rem 0;
+}
+
+.post-card {
+	background-color: white;
+	box-sizing: border-box;
+	box-shadow: 1px 1px 2px #5b8a8c;
+	padding: 1rem;
+	max-width: 28%;
+}
+
+.post-card h3 {
+	background-color: #009191;
+	color: white;
+	margin: 0;
+	padding: .5rem 1rem;
+}
+
+.post-card p {
+	margin: 0;
+	padding: 1rem;
+}"
+
+                        image="images/flexbox6.png">
+
+			<h3>A Card Layout</h3>
+			
+			<p>Once again in this step, use flexbox match the layout in the image shown. Notice that there is <strong>equal horizontal space</strong> between the cards and between the outer cards and the edges. Also pay attention to their <strong>vertical behavior</strong>.</p>
+
+			<p>You'll probably need to take a peek at the HTML tab to see the element structure. Pay attention to which element you target with flexbox.</p>
+
+			<p><em>Hint: Make sure to write your CSS properties in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 7 -->
+		<quiz-step :step="7" mode="css"
+                      starter='<footer class="page-footer">
+	
+	<p>All content &copy; Our Website 2030</p>
+
+	<nav>
+		<ul>
+			<li><a href="about.html">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="terms.html">Terms</a></li>
+		</ul>
+	</nav>
+
+</footer>'
+
+                      cssstarter="body {
+	margin: 0;
+}
+
+.page-footer {
+	background-color: #dbbff5;
+	font-family: 'Segoe UI', Helvetica, sans-serif;
+	padding: 1rem;
+}
+
+.page-footer p {
+	margin: 0;
+}
+
+.page-footer ul {
+	margin: 0;
+	padding: 0;
+}
+
+.page-footer li {
+	list-style: none;
+}
+
+.page-footer a {
+	color: #8700ff;
+	text-decoration: none;
+}"
+
+					  answer="body {
+	margin: 0;
+}
+
+.page-footer {
+	align-items: flex-end;
+	background-color: #dbbff5;
+	display: flex;
+	flex-direction: row-reverse;
+	font-family: 'Segoe UI', Helvetica, sans-serif;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.page-footer p {
+	margin: 0;
+}
+
+.page-footer ul {
+	margin: 0;
+	padding: 0;
+}
+
+.page-footer li {
+	list-style: none;
+}
+
+.page-footer a {
+	color: #8700ff;
+	text-decoration: none;
+}"
+
+                        image="images/flexbox7.png">
+
+			<h3>A Footer Layout</h3>
+			
+			<p>And one more time, use flexbox match the layout in the image shown. Notice the <strong>order</strong> of the content. Notice the <strong>vertical</strong> alignment and the <strong>horizontal</strong> spacing, where the children are <strong>as far away as possible</strong> from each other.</p>
+
+			<p>You'll probably need to take a peek at the HTML tab to see the element structure. Pay careful attention to which element you target with flexbox.</p>
+
+			<p><em>Hint: Make sure to write your CSS properties in alphabetical order.</em></p>
+
+		</quiz-step>
+        
 	</quiz>
 </div>
 
