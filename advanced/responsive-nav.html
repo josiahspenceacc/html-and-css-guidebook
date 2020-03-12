@@ -182,7 +182,7 @@ nav a {
 
 			</div>
 			
-			<p>Hmmm, that looks kind of funny. The borders don't stretch all the way across the space available, and something weired is hapenning vertically that causes the borders to overlap the text. So what's going on?</p>
+			<p>Hmmm, that looks kind of funny. The borders don't stretch all the way across the space available, and something wiered is happening vertically that causes the borders to overlap the text. So what's going on?</p>
 			
 			<p>Well, links (<code>a</code>) are <em>inline</em> be default, which means their content boxes only extend as far as the text they contain. And inline elements don't respect padding or margin on the vertical axis. That explains the issues we see.</p>
 			
@@ -343,7 +343,7 @@ nav a:active {
 
 			</div>
 			
-			<p>The links are still stacking, so what's going on? If you recall, each link is wrapped in a list item, which are themselves block elements by default. So we'll need to change them as well. Since their sizes are currently determind by the links they contain, it doesn't matter much whether we set them to <code>inline</code> or <code>inline-block</code>, but we'll go with <code>inline-block</code> just to be consistent:</p>
+			<p>The links are still stacking, so what's going on? If you recall, each link is wrapped in a list item, which are themselves block elements by default. So we'll need to change them as well. Since their sizes are currently determined by the links they contain, it doesn't matter much whether we set them to <code>inline</code> or <code>inline-block</code>, but we'll go with <code>inline-block</code> just to be consistent:</p>
 			
 			<!--Example Pen-->
 			<div 

@@ -71,7 +71,7 @@
 
 			<p class="try-this">In the demo above, try replacing the exclamation points in the <code>content</code> property. Where does the new content appear? Can you change the selector to make the content appear <em>after</em> the text?</p>
 
-			<p>In the example above, we use the psuedo-element <code>:before</code> selector on the element to which we wish to prepend the content. Then, whatever we put between the quotes in the value for the <code>content</code> property is shown <em>before</em> the paragraph. The additional CSS properties in the selector block are applied to the inserted content, resulting in larger blue exclamation points here.</p>
+			<p>In the example above, we use the pseudo-element <code>:before</code> selector on the element to which we wish to prepend the content. Then, whatever we put between the quotes in the value for the <code>content</code> property is shown <em>before</em> the paragraph. The additional CSS properties in the selector block are applied to the inserted content, resulting in larger blue exclamation points here.</p>
 
 			<p>It's important to know that content added using pseudo-elements is not actually added to the document; it is only there visually, just as a background image isn't added to the content of the page. This means the content isn't readable by search engines or screen-readers.</p>
 
@@ -83,7 +83,7 @@
 			
 			<p>As demonstrated, whatever CSS is written within the <code>:before</code> or <code>:after</code> selector block is applied to the content inserted by the <code>content</code> property. The possibilities are virtually limitless.</p>
 			
-			<p>For instance, we may want to set the inserted content to behave as a block element instead of the default inine behavior. All we need do is use the <code>display</code> property, just as we would on any other element:</p>
+			<p>For instance, we may want to set the inserted content to behave as a block element instead of the default inline behavior. All we need do is use the <code>display</code> property, just as we would on any other element:</p>
 
 			<!--Example Pen-->
 			<div 
@@ -108,7 +108,7 @@
 			
 			<h2 id="absolute-positioning">Absolutely Positioning the Inserted Content</h2>
 			
-			<p>Because the insterted content acts as a child of the element to which it is attached, it is possible to position the inserted content as an absolutely relative to the canvas of the parent. (For a refresher on this technique, refer to <a href="/css/position.html#absolute-relative-parent">Absolute Child with a Relative Parent</a> from the chapter on the <code>position</code> property.)</p>
+			<p>Because the inserted content acts as a child of the element to which it is attached, it is possible to position the inserted content as an absolutely relative to the canvas of the parent. (For a refresher on this technique, refer to <a href="/css/position.html#absolute-relative-parent">Absolute Child with a Relative Parent</a> from the chapter on the <code>position</code> property.)</p>
 			
 			<p>All we have to do is set the element to which the inserted content is attached to <code>position: relative</code> and the <code>:before</code> or <code>:after</code> selector to <code>position: absolute</code>. Then we can use the <code>bottom</code>, <code>left</code>, <code>right</code>, and/or <code>top</code> properties to the values we desire.</p>
 			

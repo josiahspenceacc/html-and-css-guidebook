@@ -54,12 +54,12 @@
 
 			<ul>
 				<li><code>transition-property</code>, which determines <strong>what properties</strong> will be transitioned&mdash;the keyword <code>all</code> can be used to apply the transition to all possible properties.</li>
-				<li><code>transtion-duration</code>, which set the <strong>length of time</strong> over which the transtion occurs, typically expressed in seconds (s) or milliseconds (ms).</li>
+				<li><code>transition-duration</code>, which set the <strong>length of time</strong> over which the transition occurs, typically expressed in seconds (s) or milliseconds (ms).</li>
 				<li><code>transition-timing-function</code>, which determines <strong>the rate at which the change happens</strong> over the given duration, whether that be constant (linear) or gradually speeding up then slowing down (ease).</li>
 				<li><code>transition-delay</code>, which sets an amount of <strong>time the browser should wait</strong> before performing the transition. Also expressed in seconds or milliseconds.</li>
 			</ul>
 
-			<p>The order of values for the <code>transition</code> shorthand property is: <code>transition: [transition-property] [transition-duration] [transtion-timing-function (optional)] [transtion-delay (optional)]</code></p>
+			<p>The order of values for the <code>transition</code> shorthand property is: <code>transition: [transition-property] [transition-duration] [transition-timing-function (optional)] [transition-delay (optional)]</code></p>
 
 			<p><strong>A separate transition must defined for each end state.</strong> In the example below, that means we need a transition on the hover state and another on the default state for when the hover ends and the state returns to normal.</p>
 
@@ -172,7 +172,7 @@
 			
 			<p class="try-this">In the example above, try changing the animation to have the text cycle through a series of colors. Add more keyframe steps to use more colors.</p>
 
-			<p>An animation is triggered as soon as the CSS selector is recognized by the browser. In the example above, it is triggered on hover, but if the animation is applied to a static element the animation is triggered on page load. This can be utilized to create page-entrace animations.</p>
+			<p>An animation is triggered as soon as the CSS selector is recognized by the browser. In the example above, it is triggered on hover, but if the animation is applied to a static element the animation is triggered on page load. This can be utilized to create page-entrance animations.</p>
 
 			<p>It is also worth noting that you can use multiple animations on a single selector by comma-separating the declarations. This can be utilized in combination with animation-delay to create complex effects.</p>
 

@@ -627,7 +627,7 @@ Vue.component( 'table-of-contents', {
 			<ul>
 
 				<li><h5><a href="/styleguide.html">Code Style Guide</a></h5>
-					<div class="meta-text">Use this resouce to guide you in formatting and other preferred practices for writing your code.</div>
+					<div class="meta-text">Use this resource to guide you in formatting and other preferred practices for writing your code.</div>
 				</li>
 
 				<li><h5><a href="/glossary.html">Glossary</a></h5>
