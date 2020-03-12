@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Special Effects Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="15" subject="Special" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
+
+		<!--Step 1-->
+		<question-step :step="1" 
+			v-bind:options='["x-offset y-offset blur color",
+							"y-offset x-offset blur color",
+							"blur y-offset x-offset color",
+							"x-offset blur y-offset color"]'
+			answer="x-offset y-offset blur color">
+
+			<p>In the code below, what does each value represent, in the order they are written?</p>
+
+			<codemirror	:options="{
+							mode: 'css',
+							lineWrapping: true,
+							lineNumbers: true,
+							htmlMode: true,
+							indentUnit: 4,
+							indentWithTabs: true
+						}"
+						value='h2 {
+	text-shadow: -1px -3px 5px #4f4f4f;
+}'></codemirror>
+
+		</question-step>
+
+		<!--Step 2-->
+		<question-step :step="2" 
+			v-bind:options='["2px",
+							"4px",
+							"10px",
+							"5px"]'
+			answer="10px">
+
+			<p>In the code below, what is the blur amount?</p>
+
+			<codemirror	:options="{
+							mode: 'css',
+							lineWrapping: true,
+							lineNumbers: true,
+							htmlMode: true,
+							indentUnit: 4,
+							indentWithTabs: true
+						}"
+						value='.card {
+	box-shadow: 2px 4px 10px 5px #2571ad;
+}
+'></codemirror>
+
+		</question-step>
+
+		<!-- Step 3 -->
+		<quiz-step :step="3" mode="css"
+					  starter='<h1>Heading 1</h1>'
+
+                      cssstarter=""
+
+					  answer="h1 {
+	box-shadow: 6px 10px 4px 2px #b5532f;
+}">
+
+			<h3>Creating a Shadows</h3>
+			
+			<p>Add a <strong>box shadow</strong> to the <code>h1</code> with the following values:</p>
+
+			<ul>
+				<li>Color: <code>#b5532f</code></li>
+				<li>Blur: <code>4px</code></li>
+				<li>X-offset: <code>6px</code></li>
+				<li>Y-offset: <code>10px</code></li>
+				<li>Spread: <code>2px</code></li>
+			</ul>
+
+		</quiz-step>
+
+		<!-- Step 4 -->
+		<quiz-step :step="4" mode="css"
+					  starter='<h1>Heading 1</h1>'
+
+                      cssstarter="h1 {
+	box-shadow: 6px 10px 4px 2px #b5532f;
+}"
+
+					  answer="h1 {
+	box-shadow: 6px 10px 4px 2px #b5532f inset;
+}">
+
+			<h3>Inside Shadow</h3>
+			
+			<p>On second thought, maybe the shadow should go <strong>inside</strong> the box. Add the value that will place the shadow <strong>inside</strong> the element box.</p>
+
+		</quiz-step>
+
+		<!-- Step 5 -->
+		<quiz-step :step="5" mode="css"
+					  starter='<h2>Heading 2</h2>'
+
+                      cssstarter=""
+
+					  answer="h2 {
+	text-shadow: 2px 1px 0 coral;
+}">
+
+			<h3>Shadows for Text</h3>
+			
+			<p>Add a <strong>shadow</strong> to the <strong>text</strong> of the <code>h2</code> with the following values:</p>
+
+			<ul>
+				<li>Blur: <code>0</code></li>
+				<li>Color: <code>coral</code></li>
+				<li>X-offset: <code>2px</code></li>
+				<li>Y-offset: <code>1px</code></li>
+			</ul>
+
+		</quiz-step>
+
+		<!-- Step 6 -->
+		<quiz-step :step="6" mode="css"
+					  starter='<p>"A reader lives a thousand lives before he dies," said Jojen. "The man who never reads lives only one.”</p>'
+
+                      cssstarter="p {
+	background-color: powderblue;
+	margin-bottom: 1rem;
+	padding: 1rem;
+}"
+
+					  answer="p {
+	background-color: powderblue;
+	border-radius: .6rem;
+	margin-bottom: 1rem;
+	padding: 1rem;
+}">
+
+			<h3>Rounded Corners</h3>
+			
+			<p><strong>Round all 4 corners</strong> of the paragraph to a measurement of <code>.6rem</code>.</p>
+
+			<p><em>Hint: Make sure your properties are written in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!-- Step 7 -->
+		<quiz-step :step="7" mode="css"
+					  starter='<p>"A reader lives a thousand lives before he dies," said Jojen. "The man who never reads lives only one.”</p>'
+
+                      cssstarter="p {
+	background-color: powderblue;
+	border-radius: .6rem;
+	margin-bottom: 1rem;
+	padding: 1rem;
+}"
+
+					  answer="p {
+	background-color: powderblue;
+	border-radius: 0 .6rem;
+	margin-bottom: 1rem;
+	padding: 1rem;
+}">
+
+			<h3>Rounding Specific Corners</h3>
+			
+			<p>On second thought, let’s keep the <strong>top-right</strong> and <strong>bottom-left</strong> corners at <code>.6rem</code>, but change the <strong>top-left</strong> and <strong>bottom-right</strong> to <code>0</code>.</p>
+				
+			<p>Remember, you can do this with <strong>only 2 values</strong>.</p>
+
+		</quiz-step>
+
+		<!-- Step 8 -->
+		<quiz-step :step="8" mode="css"
+					  starter='<div>Just a div.</div>'
+
+                      cssstarter="div {
+	background-color: lemonchiffon;
+	padding: 2rem;
+}"
+
+					  answer="div {
+	background-color: lemonchiffon;
+	border-radius: .75rem 1rem .5rem 0; 
+	padding: 2rem;
+}">
+
+			<h3>Rounding Specific Corners</h3>
+			
+			<p>Round the corners on the div below so that each corner is as follows:</p>
+
+			<ul>
+				<li>Top-left: <code>.75rem</code></li>
+				<li>Top-right: <code>1rem</code></li>
+				<li>Bottom-right: <code>.5rem</code></li>
+				<li>Bottom-left: <code>0</code></li>
+			</ul>
+				
+			<p><em>Hint: Make sure your properties are written in alphabetical order.</em></p>
+
+		</quiz-step>
+		
+		<!--Step 9-->
+		<question-step :step="9" 
+			v-bind:options='["inner",
+							"inside",
+							"inset",
+							"into"]'
+			answer="inset">
+
+			<p>When specifying a <code>box-shadow</code>, what keyword puts the shadow <strong>inside</strong> the element box?</p>
+
+		</question-step>
+        
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>
