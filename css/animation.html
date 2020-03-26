@@ -41,6 +41,7 @@
 					<a href="#transitions">Transitions</a>
 					<a href="#animation">Keyframe Animation</a>
 					<a href="#video">Video Lesson</a>
+					<a href="#quiz">Practice Exercise</a>
 					<a href="#resources">Resource Links</a>
 				</nav>
 				
@@ -55,7 +56,16 @@
 			<ul>
 				<li><code>transition-property</code>, which determines <strong>what properties</strong> will be transitioned&mdash;the keyword <code>all</code> can be used to apply the transition to all possible properties.</li>
 				<li><code>transition-duration</code>, which set the <strong>length of time</strong> over which the transition occurs, typically expressed in seconds (s) or milliseconds (ms).</li>
-				<li><code>transition-timing-function</code>, which determines <strong>the rate at which the change happens</strong> over the given duration, whether that be constant (linear) or gradually speeding up then slowing down (ease).</li>
+				<li><code>transition-timing-function</code>, which determines <strong>the rate at which the change happens</strong> over the given duration, whether that be constant (linear) or gradually speeding up then slowing down (ease). Possible timing function keywords include:
+				
+					<ul>
+						<li><code>linear</code> (the default): A constant speed that doesn't change.</li>
+						<li><code>ease</code>: Starts slow, speeds up, then slows back down.</li>
+						<li><code>ease-in</code>: Starts slow, then speeds up.</li>
+						<li><code>ease-out</code>: Starts fast, then slows down.</li>
+					</ul>
+
+				</li>
 				<li><code>transition-delay</code>, which sets an amount of <strong>time the browser should wait</strong> before performing the transition. Also expressed in seconds or milliseconds.</li>
 			</ul>
 
@@ -130,7 +140,16 @@
 			<ul>
 				<li><code>animation-name</code>, which references the name given when defining the keyframes. In our example, "example-animation".</li>
 				<li><code>animation-duration</code>, which, just as with <code>transition-duration</code>, sets the length of time over which the animation plays. The percentage values given in the keyframe definition are mapped such that 0% occurs at the start of the duration and 100% occurs at the end.</li>
-				<li><code>animation-timing-function</code>, which, just as with <code>transition-timing-function</code>, determines the rate at which the animation plays out.</li>
+				<li><code>animation-timing-function</code>, which, just as with <code>transition-timing-function</code>, determines the rate at which the animation plays out. Possible timing function keywords include:
+				
+					<ul>
+						<li><code>linear</code> (the default): A constant speed that doesn't change.</li>
+						<li><code>ease</code>: Starts slow, speeds up, then slows back down.</li>
+						<li><code>ease-in</code>: Starts slow, then speeds up.</li>
+						<li><code>ease-out</code>: Starts fast, then slows down.</li>
+					</ul>
+				
+				</li>
 				<li><code>animation-delay</code>, which can set a delay time before the animation begins.</li>
 			</ul>
 
@@ -226,6 +245,10 @@
 			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
 			
 			<video-demo url="https://scrimba.com/c/cZnaWghz"></video-demo>
+			
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/css-animation.html"></lesson-quiz>
 			
 			<h2 id="resources">Resource Links</h2>
 			

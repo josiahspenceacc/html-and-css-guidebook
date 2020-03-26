@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Transitions and Animation Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="215" subject="CSS Animation" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
+
+
+		<!-- Step 1 -->
+		<quiz-step :step="1" mode="css"
+					  starter='<a href="#">A Link</a>'
+
+                      cssstarter="a {
+	background-color: #333;
+	color: #5ffaf3;
+	display: inline-block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #5ffaf3;
+	border-radius: .4rem;
+	color: #333;
+}"
+
+					  answer="a {
+	background-color: #333;
+	color: #5ffaf3;
+	display: inline-block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #5ffaf3;
+	border-radius: .4rem;
+	color: #333;
+	transition: background-color .7s;
+}">
+
+			<h3>Basic Transition</h3>
+			
+			<p>This link has styles for a default state and a hover state, and right now the changes all take place instantaneously on hover. Let's add a transition:</p>
+
+			<p>Add a <strong><code>.7s</code> transition</strong> that only works when the state changes <strong>to hover</strong> and <strong>only effects the <code>background-color</code></strong>.
+
+				<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+
+		<!-- Step 2 -->
+		<quiz-step :step="2" mode="css"
+					  starter='<a href="#">A Link</a>'
+
+                      cssstarter="a {
+	background-color: #333;
+	color: #5ffaf3;
+	display: inline-block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #5ffaf3;
+	border-radius: .4rem;
+	color: #333;
+	transition: background-color .7s;
+}"
+
+					  answer="a {
+	background-color: #333;
+	color: #5ffaf3;
+	display: inline-block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #5ffaf3;
+	border-radius: .4rem;
+	color: #333;
+	transition: all .7s;
+}">
+
+			<h3>Transitioning All Properties</h3>
+			
+			<p>Actually, let's <strong>change</strong> it so that <strong>all properties that can be transitioned are used</strong> instead of just the background-color.</p>
+
+		</quiz-step>
+
+		<!--Step 3-->
+		<question-step :step="3" 
+			v-bind:options='["True",
+							"False"]'
+			answer="False">
+
+			<p>True or False: <strong>Every</strong> CSS property can be transitioned.</p>
+
+		</question-step>
+
+
+		<!-- Step 4 -->
+		<quiz-step :step="4" mode="css"
+					  starter='<a href="#">A Link</a>'
+
+                      cssstarter="a {
+	background-color: #333;
+	color: #5ffaf3;
+	display: inline-block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #5ffaf3;
+	border-radius: .4rem;
+	color: #333;
+	transition: all .7s;
+}"
+
+					  answer="a {
+	background-color: #333;
+	color: #5ffaf3;
+	display: inline-block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #5ffaf3;
+	border-radius: .4rem;
+	color: #333;
+	transition: all .7s ease-out;
+}">
+
+			<h3>Transition Timing Functions</h3>
+			
+			<p>Right now, our transition plays at a constant speed, which isn't very naturalistic. Add a value to the transition that will make speed of change <strong>start fast and end slow</strong>.</p>
+
+		</quiz-step>
+
+		<!--Step 5-->
+		<question-step :step="5" 
+			v-bind:options='["True",
+							"False"]'
+			answer="False">
+
+			<p>True or False: The <code>font-style</code> property <strong>can</strong> be transitioned.</p>
+
+		</question-step>
+
+
+		<!-- Step 6 -->
+		<quiz-step :step="6" mode="css"
+					  starter='<a href="#">A Link</a>'
+
+                      cssstarter="a {
+	background-color: #333;
+	color: #5ffaf3;
+	display: inline-block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #5ffaf3;
+	border-radius: .4rem;
+	color: #333;
+	transition: all .7s ease-out;
+}"
+
+					  answer="a {
+	background-color: #333;
+	color: #5ffaf3;
+	display: inline-block;
+	padding: .5rem .75rem;
+	text-decoration: none;
+	transition: all .7s ease-out;
+}
+
+a:hover {
+	background-color: #5ffaf3;
+	border-radius: .4rem;
+	color: #333;
+	transition: all .7s ease-out;
+}">
+
+			<h3>Transitioning Back</h3>
+			
+			<p>As is, the transition only happens when animating <strong>to</strong> the hover state. Add the CSS to <strong>make the transition happen in both directions</strong>, so that it also transitions when going back to the non-hovered state.</p>
+
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+		<!--Step 7-->
+		<question-step :step="7" 
+			v-bind:options='["Transitions only involve two steps, a beginning and an end. Keyframes can have as many steps as you want.",
+							"Only certain CSS properties can be transitioned, but ANY property can be keyframe animated.",
+							"Only links can be transitioned.",
+							"Keyframes animations can be any length, but transitions must be less than one second long."]'
+			answer="Transitions only involve two steps, a beginning and an end. Keyframes can have as many steps as you want.">
+
+			<p>What is the <strong>difference</strong> between transitions and keyframe animations?</p>
+
+		</question-step>
+
+
+		<!-- Step 8 -->
+		<quiz-step :step="8" mode="css"
+					  starter='<h1>Animate Me!</h1>'
+
+                      cssstarter="h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+@keyframes grow-in {
+	0% {
+		opacity: 0;
+		transform: scale(.5);
+	}
+	70% {
+		transform: scale(1.3);
+	}
+	100% {
+		transform: scale(1);
+	}
+}"
+
+					  answer="h1 {
+	animation: grow-in .8s;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+@keyframes grow-in {
+	0% {
+		opacity: 0;
+		transform: scale(.5);
+	}
+	70% {
+		transform: scale(1.3);
+	}
+	100% {
+		transform: scale(1);
+	}
+}">
+
+			<h3>Applying a Keyframe Animation</h3>
+			
+			<p>Here we have a keyframe animation already written, but it doesn't work just yet. <strong>Apply the keyframe animation</strong> to the <code>h1</code> and make it last <code>.8s</code>.</p>
+
+			<p><em>Hint: Make sure your properties are in alphabetical order.</em></p>
+
+		</quiz-step>
+
+
+		<!-- Step 9 -->
+		<quiz-step :step="9" mode="css"
+					  starter='<h1>Animate Me!</h1>'
+
+                      cssstarter="h1 {
+	animation: color-cycle 1.5s;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}"
+
+					  answer="h1 {
+	animation: color-cycle 1.5s;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+@keyframes color-cycle {
+	0% {
+		color: #963ec9;
+	}
+	25% {
+		color: #c93e47;
+	}
+	50% {
+		color: #c9ad3e;
+	}
+	75% {
+		color: #4cc93e;
+	}
+	100% {
+		color: #000;
+	}
+}">
+
+			<h3>Writing Keyframes</h3>
+			
+			<p>Here we have the <code>animation</code> property applied, but the keyframe animation it references doesn't exist. Create the keyframe animation to do the following:</p>
+
+			<ol>
+				<li>At <code>0%</code>, the text color should be <code>#963ec9</code>.</li>
+				<li>At <code>25%</code>, the text color should be <code>#c93e47</code>.</li>
+				<li>At <code>50%</code>, the text color should be <code>#c9ad3e</code>.</li>
+				<li>At <code>75%</code>, the text color should be <code>#4cc93e</code>.</li>
+				<li>At <code>100%</code>, the text color should be <code>#000</code>.</li>
+			</ol>
+
+			<p><em>Hint: Write the animation <strong>after</strong> the existing CSS.</em></p>
+
+		</quiz-step>
+
+
+		<!-- Step 10 -->
+		<quiz-step :step="10" mode="css"
+					  starter='<h1>Animate Me!</h1>'
+
+                      cssstarter="h1 {
+	animation: slide-in 1s;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes slide-in {
+	0% {
+		transform: translateX(-5rem);
+	}
+	70% {
+		transform: translateX(4rem);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}"
+
+					  answer="h1 {
+	animation: slide-in 1s ease;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes slide-in {
+	0% {
+		transform: translateX(-5rem);
+	}
+	70% {
+		transform: translateX(4rem);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}">
+
+			<h3>Writing Keyframes</h3>
+			
+			<p>The animation here works as is, but it changes at a constant rate. To make things a little more naturalistic, add the value to make the animation <strong>start slow, speed up, then slow back down</strong>.</p>
+
+		</quiz-step>
+
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>
