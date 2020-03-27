@@ -281,18 +281,24 @@ a:hover {
 
 		<!-- Step 9 -->
 		<quiz-step :step="9" mode="css"
-					  starter='<h1>Animate Me!</h1>'
+					  starter='<h1>Hover Me!</h1>'
 
                       cssstarter="h1 {
-	animation: color-cycle 1.5s;
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
+}
+
+h1:hover {	
+	animation: color-cycle 1.5s;
 }"
 
 					  answer="h1 {
-	animation: color-cycle 1.5s;
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
+}
+
+h1:hover {	
+	animation: color-cycle 1.5s;
 }
 
 @keyframes color-cycle {
@@ -332,11 +338,14 @@ a:hover {
 
 		<!-- Step 10 -->
 		<quiz-step :step="10" mode="css"
-					  starter='<h1>Animate Me!</h1>'
+					  starter='<h1>Hover Me!</h1>'
 
                       cssstarter="h1 {
-	animation: slide-in 1s;
 	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1:hover {
+	animation: slide-in 1s;
 }
 
 @keyframes slide-in {
@@ -352,8 +361,11 @@ a:hover {
 }"
 
 					  answer="h1 {
-	animation: slide-in 1s ease;
 	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1:hover {
+	animation: slide-in 1s ease;
 }
 
 @keyframes slide-in {
