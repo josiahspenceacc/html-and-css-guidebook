@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Introduction Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="242" subject="Website Basics" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
+
+		<!--Step 1-->
+		<question-step :step="1" 
+			v-bind:options='["What you type into the address bar of a web browser to find a site.",
+							"The type of file that make up websites.",
+							"A unique numeric identifier for a computer on the internet.",
+							"A special kind of computer for housing website content."]'
+			answer="A unique numeric identifier for a computer on the internet.">
+
+			<p>What is an <strong>IP Address</strong>?</p>
+
+		</question-step>
+
+		<!--Step 2-->
+		<question-step :step="2" 
+			v-bind:options='["Servers",
+							"DNS",
+							"Google",
+							"Networks"]'
+			answer="Servers">
+
+			<p>Where are the files that make up websites stored?</p>
+
+		</question-step>
+
+		<!--Step 3-->
+		<question-step :step="3" 
+			v-bind:options='["To house and run thousands of servers.",
+							"To write the HTML and CSS code that makes up a website.",
+							"To build a website out of HTML and CSS files.",
+							"To help a browser find a website by matching the domain name to the IP address of a server."]'
+			answer="To help a browser find a website by matching the domain name to the IP address of a server.">
+
+			<p>What is the purpose of <strong>DNS</strong>?</p>
+
+		</question-step>
+
+		<!--Step 4-->
+		<question-step :step="4" 
+			v-bind:options='["It shows them to the user.",
+							"It uses them like blueprints to build a webpage.",
+							"It ignores them.",
+							"It reaches out to DNS to find a server."]'
+			answer="It uses them like blueprints to build a webpage.">
+
+			<p>What does a <strong>browser</strong> do when it gets HTML and CSS files?</p>
+
+		</question-step>
+
+		<!--Step 5-->
+		<question-step :step="5" 
+			v-bind:options='["To store the images that will be shown on a webpage.",
+							"To create advanced interactivity.",
+							"To structure and identify the content of a webpage.",
+							"To set the visual style and appearance of a webpage."]'
+			answer="To set the visual style and appearance of a webpage.">
+
+			<p>What is the purpose of the <strong>CSS</strong> language?</p>
+
+		</question-step>
+
+		<!--Step 6-->
+		<question-step :step="6" 
+			v-bind:options='["To store the images that will be shown on a webpage.",
+							"To create advanced interactivity.",
+							"To structure and identify the content of a webpage.",
+							"To set the visual style and appearance of a webpage."]'
+			answer="To structure and identify the content of a webpage.">
+
+			<p>What is the purpose of the <strong>HTML</strong> language?</p>
+
+		</question-step>
+
+		<!--Step 7-->
+		<question-step :step="7" 
+			v-bind:options='["Images",
+							"Video",
+							"Javascript",
+							"Audio"]'
+			answer="Javascript">
+
+			<p>Which of these is <strong>not</strong> an example of a media file?</p>
+
+		</question-step>
+
+		<!--Step 8-->
+		<question-step :step="8" 
+			v-bind:options='["Cascading style sheets",
+							"A programming language",
+							"A media file",
+							"HTML"]'
+			answer="A programming language">
+
+			<p><strong>Javascript</strong> is an example of what?</p>
+
+		</question-step>
+
+		<!--Step 9-->
+		<question-step :step="9" 
+			v-bind:options='["wikipedia.org",
+							"HyperText Markup Language",
+							"172.16.254.1",
+							"a browser"]'
+			answer="wikipedia.org">
+
+			<p>Which of these is an example of a <strong>domain name</strong>?</p>
+
+		</question-step>
+
+		<!--Step 10-->
+		<question-step :step="10" 
+			v-bind:options='["Reaching out to DNS with a domain name.",
+							"Asking a server for website files.",
+							"Building a webpage based on HTML, CSS, and other files.",
+							"All of the above."]'
+			answer="All of the above.">
+
+			<p>Which of these <strong>is</strong> a job performed by a <strong>browser</strong>?</p>
+
+		</question-step>
+
+	</quiz>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
+<script>
+	window.CodeMirror = VueCodeMirror.CodeMirror
+</script>
+</script>
+<script src="https://codemirror.net/mode/xml/xml.js"></script>
+<script src="https://codemirror.net/mode/css/css.js"></script>
+<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
+<script src="../quiz-scripts.js"></script>
+
+</body>
+</html>
