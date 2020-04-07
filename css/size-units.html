@@ -40,9 +40,9 @@
 					<h2>On This Page</h2>
 					<a href="#pixel">Pixel</a>
 					<a href="#rem">Rems</a>
-					<a href="#em">Ems</a>
 					<a href="#percent">Percentage</a>
 					<a href="#viewport">Viewport Units</a>
+					<a href="#em">Ems</a>
 					<a href="#resources">Resource Links</a>
 				</nav>
 				
@@ -68,17 +68,6 @@
 			<p>This means that, by default, <code>1rem</code> is equal to <code>16px</code>. Similarly, <code>2rem</code> equals <code>32px</code>.</p>
 
 			<p>Though rems are defined relative to type, they can be used to size any property.</p>
-
-
-			<h2 id="em">Ems</h2>
-
-			<p>Like rems, the <code>em</code> is a type-relative measurement, but such that one em is equal to the current type size (the type size of whatever HTML element you are targeting).</p>
-
-			<p>This means that, by default, in any base-size <code>html</code> element, <code>1em</code> is equal to <code>16px</code>. Similarly, <code>2em</code> equals <code>32px</code>.</p>
-
-			<p>However, ems are relative to the containing element, so if you set the type size of a <code>ul</code> to <code>.5em</code>, it will equal <code>8px</code>. But if you nest a second <code>ul</code> inside another <code>ul</code>, the type in the nested <code>ul</code> will be <code>.5em</code> of the first one, in other words, <code>4px</code>. If you nested yet another <code>ul</code> inside that one, you would get a type size of <code>2px</code>. This is usually not what you want and can lead to frustration.</p>
-
-			<p><strong>For most purposes, it is best to avoid ems and use rems instead.</strong> They are mentioned here because they were common before rems became available.</p>
 
 
 			<h2 id="percent">Percentages</h2>
@@ -113,6 +102,19 @@
 }</code></pre>
 
 			<p>The element would be exactly as tall (<code>100%</code>) as the height of the browser window, and <code>50%</code> of the width of the window.</p>
+
+
+			<h2 id="em">Ems</h2>
+
+			<p><strong>For most purposes, it is best to avoid ems and use rems instead.</strong> They are mentioned here because they were common before rems became available.</p>
+
+			<p>Like rems, the <code>em</code> is a type-relative measurement, but such that one em is equal to the current type size (the type size of whatever HTML element you are targeting).</p>
+
+			<p>This means that, by default, in any base-size <code>html</code> element, <code>1em</code> is equal to <code>16px</code>. Similarly, <code>2em</code> equals <code>32px</code>.</p>
+
+			<p>However, ems are relative to the containing element, so if you set the type size of a <code>ul</code> to <code>.5em</code>, it will equal <code>8px</code>. But if you nest a second <code>ul</code> inside another <code>ul</code>, the type in the nested <code>ul</code> will be <code>.5em</code> of the first one, in other words, <code>4px</code>. If you nested yet another <code>ul</code> inside that one, you would get a type size of <code>2px</code>. This is usually not what you want and can lead to frustration.</p>
+
+			
 			
 			<h2 id="resources">Resource Links</h2>
 			
