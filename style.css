@@ -231,10 +231,10 @@ article > table {
 
 th {
 	border-bottom: 1px solid #ccc;
+	font-family: var(--font-secondary);
+	font-size: var(--size-large);
 	font-weight: bold;
-	letter-spacing: .05em;
 	text-align: left;
-	text-transform: uppercase;
 }
 
 tr:nth-child(2n) {
