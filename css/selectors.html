@@ -44,13 +44,14 @@
 					<a href="#list">Selector List</a>
 					<a href="#attribute">Attribute Selector</a>
 					<a href="#advanced">Advanced Selectors</a>
+					<a href="#quiz">Practice Exercise</a>
 				</nav>
 				
 			</header>
 
 			<h2 id="element">Element Selector</h2>
 
-			<p>The most straightforward way to select HTML is to directly reference an element by its name. Any element can be selected this way, and the CSS styles are applied to all instances of that element.</p>
+			<p>The most straightforward way to select HTML is to directly reference an element by its name. Any element can be selected this way, and the CSS styles are applied to <strong>all instances</strong> of that element.</p>
 
 			<p>For instance, in the following example the CSS selects for the <code>p</code> (paragraph) element, and the color style written within the selector block is applied to all paragraphs on the page:</p>
 
@@ -84,7 +85,7 @@
 
 			<p>As discussed in the chapter about <a href="../html/ids-classes.html">IDs and Classes</a> in HTML, classes are custom names that can be applied to one or more HTML elements using an attribute. So an element written like <code>&lt;h3 class="special-heading"&gt;Heading Text&lt;/h3&gt;</code> represents a third-level heading with a class name of <em>special-heading</em>.</p>
 
-			<p>Classes can be selected in CSS by writing a period (.) followed by the name of the class. So for the example in the previous paragraph, you can select the class in CSS by writing <code>.special-heading</code>. Note that it isn't necessary to write the name of the element at all.</p>
+			<p>Classes can be selected in CSS by writing a period (.) followed by the name of the class. So for the example in the previous paragraph, you can select the class in CSS by writing <code>.special-heading</code>. Note that it isn't necessary to write the name of the <em>element</em> at all.</p>
 
 			<p>In the following example, only the second paragraph has the class selected in the CSS, so only it receives the text color.</p>
 
@@ -241,7 +242,7 @@
 
 			<h2 id="advanced">Advanced Selectors and Combinators</h2>
 
-			<p>A number of other selectors and combinators provide greater levels of control for more niche use cases. The following table explains and gives examples of several of these.</p>
+			<p>A number of other selectors and combinators provide greater levels of control for more niche use cases. The following table explains and gives brief examples of several of these.</p>
 
 			<table class="dominant-example" dir="ltr">
 				<tbody>
@@ -298,7 +299,7 @@
 					
 					<tr>
 						<td>Pseudo-classes</td>
-						<td>A set of spacial modifiers for advanced selections. A <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements#Pseudo-classes">full list</a> can be found on MDN.</td>
+						<td>A set of special modifiers for advanced selections. A <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements#Pseudo-classes">full list</a> can be found on MDN.</td>
 						<td>
 							
 							<p><code>a:hover { }</code></p>
@@ -322,6 +323,10 @@
 					</tr>
 				</tbody>
 			</table>
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/css-selectors.html"></lesson-quiz>
 			
 		</article>
 		
