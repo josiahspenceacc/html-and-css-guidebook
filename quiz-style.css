@@ -427,6 +427,14 @@ form.question-step .step-instructions-text {
 	max-width: 35rem;
 }
 
+.question-step .vue-codemirror-wrap {
+	margin-bottom: var(--line-height);
+}
+
+.question-option code {
+	user-select: text;
+}
+
 @media ( min-width: 1200px ) {
 	
 	form.question-step {
