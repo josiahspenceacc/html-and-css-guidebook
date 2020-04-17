@@ -59,22 +59,22 @@
 			</question-step>
 
 			<!--Step 4-->
-			<question-step :step="4" v-bind:options='["pages-about.html",
-							"about.html/pages",
-							"pages/about.html",
-							"pages(about.html)"]'
-				answer="pages/about.html">
+			<question-step :step="4" v-bind:options='["<code>pages-about.html</code>",
+							"<code>about.html/pages</code>",
+							"<code>pages/about.html</code>",
+							"<code>pages(about.html)</code>"]'
+				answer="<code>pages/about.html</code>">
 
 				<p>How would you write the file path for a file named <code>about.html</code> inside a subfolder named <code>pages</code>?</p>
 
 			</question-step>
 
 			<!--Step 5-->
-			<question-step :step="5" v-bind:options='["/+",
-							"../",
-							"up/",
-							"///"]'
-				answer="../">
+			<question-step :step="5" v-bind:options='["<code>/+</code>",
+							"<code>../</code>",
+							"<code>up/</code>",
+							"<code>///</code>"]'
+				answer="<code>../</code>">
 
 				<p>In a file path, how do you indicate a move <strong>up</strong> a folder level?</p>
 
