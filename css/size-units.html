@@ -43,6 +43,7 @@
 					<a href="#percent">Percentage</a>
 					<a href="#viewport">Viewport Units</a>
 					<a href="#em">Ems</a>
+					<a href="#quiz">Practice Exercise</a>
 					<a href="#resources">Resource Links</a>
 				</nav>
 				
@@ -54,7 +55,7 @@
 
 			<p>A pixel is equal to one dot on the display device. For low resolution devices, this is equal to one literal pixel on the screen. For high resolution devices, such as Retina or 4k displays, a pixel is set so that there are roughly 96 pixels per inch of screen.</p>
 
-			<p>By default, the base size of type in the browser is set to 16px.</p>
+			<p>By default, the base size of type in the browser is set to <code>16px</code>.</p>
 
 			<p>Pixels are good for situations where you want to define an exact dimension and don’t want the element to scale with the page.</p>
 
@@ -63,9 +64,11 @@
 
 			<p>The <code>rem</code> is a type-relative measurement such that one em is equal to the base type size (the font-size of the <code>html</code> element).</p>
 
-			<p class="big-point">Rems are often the best and most powerful choice, especially for type.</p>
-
 			<p>This means that, by default, <code>1rem</code> is equal to <code>16px</code>. Similarly, <code>2rem</code> equals <code>32px</code>.</p>
+
+			<p>But the size of <code>1rem</code> can be changed by setting the font size on the <code>html</code> element. So if you wrote <code>html { font-size: 20px}</code>, <code>1rem</code> would then be equal to <code>20px</code> and <code>2rem</code> would be equal to <code>40px</code>. This flexibility allows you to resize everything set in rem units by changing a single value.</p>
+
+			<p class="big-point">Rems are often the best and most powerful choice, especially for type.</p>
 
 			<p>Though rems are defined relative to type, they can be used to size any property.</p>
 
@@ -113,6 +116,10 @@
 			<p>This means that, by default, in any base-size <code>html</code> element, <code>1em</code> is equal to <code>16px</code>. Similarly, <code>2em</code> equals <code>32px</code>.</p>
 
 			<p>However, ems are relative to the containing element, so if you set the type size of a <code>ul</code> to <code>.5em</code>, it will equal <code>8px</code>. But if you nest a second <code>ul</code> inside another <code>ul</code>, the type in the nested <code>ul</code> will be <code>.5em</code> of the first one, in other words, <code>4px</code>. If you nested yet another <code>ul</code> inside that one, you would get a type size of <code>2px</code>. This is usually not what you want and can lead to frustration.</p>
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/css-units.html"></lesson-quiz>
 
 			
 			
