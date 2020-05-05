@@ -38,7 +38,6 @@
 
 				<nav class="page-nav">
 					<h2>On This Page</h2>
-					<a href="#webfonts">Web Fonts</a>
 					<a href="#modular-scales">Modular Scales</a>
 					<a href="#responsive-type">Responsive Type</a>
 					<a href="#video">Video Lesson</a>
@@ -47,44 +46,6 @@
 				</nav>
 				
 			</header>
-
-			<h2 id="webfonts">Web Fonts</h2>
-			
-			<p>As we've <a ref="/css/type-css.html#family">already learned</a>, typefaces can be applied to any HTML element using the <code>font-family</code> CSS property. A series of font options are given as a value, e.g. <code>"Times New Roman", Georgia, serif</code>. The browser looks on the user's computer to see if each font is available, from left to right. If the first font isn't installed (Times New Roman), the browser moves on to the next one (Georgia), and then on to the next, through as many font options are provided. It's standard practice to provide a generic option (serif or sans-serif) as the last in the series so that the browser can use the system default if none of the specified fonts are available.</p>
-			
-			<p class="big-point">Traditional use of the <code>font-family</code> property looks for fonts installed on the <strong>user's computer.</strong></p>
-			
-			<p>The reason the web has traditionally relied on <em>system fonts</em>&mdash;those installed on the user's computer&mdash;rather than providing custom fonts along with the other website files is that fonts are intellectual property. If a font is downloadable by the browser, it's easy for a user to keep the font without paying for it, which is both illegal and harmful to font creators. For decades, this limitation meant that only a handful of "web-safe" fonts&mdash;those commonly found pre-installed on most operating systems&mdash;could be used to style websites.</p>
-			
-			<h3>Web Font Services</h3>
-			
-			<p>Luckily for us, advances in technology and business models have created a new golden age of web typography through the advent of <em>web font services</em>. These are services that provide licenced and hosted web fonts that can be used legally and safely to style a site. Some of the most common web font services include <a href="https://fonts.google.com/">Google Fonts</a> (which has the added advantage of being completely free), <a href="https://fonts.adobe.com/">Adobe Fonts</a>, and <a href="https://www.fonts.com/">Fonts.com</a>, but there are countless others.</p>
-			
-			<p class="big-point">Web font services provide access to libraries of <strong>licensed typefaces</strong> for legal use on websites.</p>
-			
-			<p>These services provide the site developer with short snippet of <em>embed code</em> to be placed in either the site's CSS or the <code>head</code> of each HTML file. The font can then be applied normally using the <code>font-family</code> CSS property. It's still a good idea to provide fallback fonts, just in case anything goes wrong with the web font.</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">/*Google Fonts CSS Embed Code:*/
-@import url('https://fonts.googleapis.com/css?family=Bitter&display=swap');
-				
-p {
-	font-family: Bitter, Times, serif;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;This text uses a typeface called Bitter from Google Fonts.&lt;/p&gt;</pre>
-
-			</div>
-			
-			<p class="try-this">What happens if you remove the Google Fonts embed code? Do you think the font will change?</p>
 			
 			<h2 id="modular-scales">Modular Scales</h2>
 			

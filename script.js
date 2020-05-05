@@ -457,6 +457,19 @@ Vue.component( 'table-of-contents', {
 
 				</li>
 
+				<li><h5><a href="/css/web-fonts.html">Web Fonts</a></h5>
+					<div class="meta-text">Custom typefaces for web pages.</div>
+
+					<ul>
+						<li><a href="/css/web-fonts.html#webfonts">Web Font Basics</a></li>
+						<li><a href="/css/web-fonts.html#services">Web Font Services</a></li>
+						<li><a href="/css/web-fonts.html#weights-styles">Weights &amp; Styles</a></li>
+						<li><a href="/css/web-fonts.html#resources">Resources</a></li>
+						<li><a href="/css/web-fonts.html#tools">Tools</a></li>
+					</ul>
+
+				</li>
+
 				<li><h5><a href="/css/position.html">Position</a></h5>
 					<div class="meta-text">For when you want full manual control of the placement of an element.</div>
 
@@ -524,6 +537,18 @@ Vue.component( 'table-of-contents', {
 
 				</li>
 
+				<li><h5><a href="/css/type-advanced.html">Advanced Typographic CSS</a></h5>
+					<div class="meta-text">Techniques for creating cohesive, responsive typography.</div>
+
+					<ul>
+						<li><a href="/css/type-advanced.html#modular-scales">Modular Scales</a></li>
+						<li><a href="/css/type-advanced.html#responsive-type">Responsive Type</a></li>
+						<li><a href="/css/type-advanced.html#video">Video</a></li>
+						<li><a href="/css/type-advanced.html#resources">Resource Links</a></li>
+					</ul>
+
+				</li>
+
 				<li><h5><a href="/css/variables.html">Variables</a></h5>
 					<div class="meta-text">For creating reusable CSS values.</div>
 
@@ -557,19 +582,6 @@ Vue.component( 'table-of-contents', {
 			<h3 id="advanced">Advanced / Other</h3>
 
 			<ul>
-
-				<li><h5><a href="/advanced/type-advanced.html">Advanced Typographic CSS</a></h5>
-					<div class="meta-text">Techniques for creating cohesive, responsive typography.</div>
-
-					<ul>
-						<li><a href="/advanced/type-advanced.html#webfonts">Web Fonts</a></li>
-						<li><a href="/advanced/type-advanced.html#modular-scales">Modular Scales</a></li>
-						<li><a href="/advanced/type-advanced.html#responsive-type">Responsive Type</a></li>
-						<li><a href="/advanced/type-advanced.html#video">Video</a></li>
-						<li><a href="/advanced/type-advanced.html#resources">Resource Links</a></li>
-					</ul>
-
-				</li>
 
 				<li><h5><a href="/advanced/responsive-nav.html">Styling a Responsive Nav</a></h5>
 					<div class="meta-text">A simple example of responsive design for site navigation.</div>
