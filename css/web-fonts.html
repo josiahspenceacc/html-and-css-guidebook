@@ -41,6 +41,7 @@
 					<a href="#webfonts">Web Font Basics</a>
 					<a href="#services">Web Font Services</a>
 					<a href="#weights-styles">Weights &amp; Styles</a>
+					<a href="#quiz">Practice Exercise</a>
 					<a href="#resources">Resources</a>
 					<a href="#tools">Tools</a>
 				</nav>
@@ -93,11 +94,17 @@ p {
 
 			<p class="big-point">When selecting webfonts, choosing <strong>which</strong> weights and styles to include is super important.</p>
 
+			<h3>Fake Bold and Fake Italic</h3>
+
 			<p>Another factor to bear in mind is that some elements have weights or styles applied to them by the browser's default CSS, such as the bold applied to headings by default or the italics applied to the <code>em</code> element. If you load a webfont that lacks a bold style and use it on an element that is bolded by either default styles or your CSS, the browser will attempt to <em>fake</em> a bold style by simply making the available weight thicker. Similarly, if there is no italic style available for an element that is italicized by default or by your CSS, the browser will attempt to fake it by tilting the letterforms.</p>
 			
 			<p class="big-point"><strong>Fake bold or italic</strong> is a typographic crime and should <strong>never</strong> be allowed to happen.</p>
 
 			<p>To avoid fake bold and italic, you can either ensure that the needed weights or styles are included for whatever typeface you use. Or you can manually set the weight (using <code>font-weight</code>) and / or style (using <code>font-style</code>) in the CSS to match what <em>is</em> available for the typeface.</p>
+			
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/css-webfonts.html"></lesson-quiz>
 			
 			
 			<h2 id="resources">Resource Links</h2>
