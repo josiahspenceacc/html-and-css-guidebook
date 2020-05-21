@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -55,29 +54,19 @@
 
 			<p>For instance, in the following example the CSS selects for the <code>p</code> (paragraph) element, and the color style written within the selector block is applied to all paragraphs on the page:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
+			<pen-demo html-code='&lt;h1&gt;I am a heading, so the color is not applied to me.&lt;/h1&gt;
 
-				<pre data-lang="css">p {
+&lt;p&gt;I am a paragraph, so the color is applied to me.&lt;/p&gt;
+
+&lt;p&gt;I am also paragraph, so I get the color too.&lt;/p&gt;
+
+&lt;p&gt;Me too. I am another paragraph.&lt;/p&gt;'
+
+			css-code='p {
 	color: #6a266e;
-}</pre>
-
-				<pre data-lang="html">&lt;h1&gt;I'm a heading, so I don't get the color&lt;/h1&gt;
-
-&lt;p&gt;I'm a paragraph, so the color is applied to me.&lt;/p&gt;
-
-&lt;p&gt;I'm also paragraph, so I get the color too.&lt;/p&gt;
-
-&lt;p&gt;Me too. I'm another paragraph.&lt;/p&gt;
-</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<h2 class="classes">Class Selector</h2>
 
@@ -89,27 +78,17 @@
 
 			<p>In the following example, only the second paragraph has the class selected in the CSS, so only it receives the text color.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
+			<pen-demo html-code='&lt;p&gt;I am  a paragraph with no class, so the color is not applied to me.&lt;/p&gt;
 
-				<pre data-lang="css">.special-paragraph {
+&lt;p class="special-paragraph"&gt;I am  paragraph with the correct class, so I get the color.&lt;/p&gt;
+
+&lt;p class="another-paragraph"&gt;I have a different class, so I do not get the color.&lt;/p&gt;'
+
+			css-code='.special-paragraph {
 	color: #cf8600;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;I'm a paragraph with no class, so the color isn't applied to me.&lt;/p&gt;
-
-&lt;p class="special-paragraph"&gt;I'm paragraph with the correct class, so I get the color.&lt;/p&gt;
-
-&lt;p class="another-paragraph"&gt;I have a different class, so I don't get the color.&lt;/p&gt;
-</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<h2 class="decendant">Decendant Combinator</h2>
 
@@ -123,36 +102,27 @@
 
 			<p>In this example, there are two decendant combinators: one that selects for a direct child, and one that selects for a grandchild. Be sure to check the HTML view to see the structure of the elements.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
+			<pen-demo html-code='&lt;section class="parent-section"&gt;
 
-				<pre data-lang="css">.parent-section h3 {
+&lt;h3&gt;I am an h3 that is the child of the "parent-section" class, so I get a pink background.&lt;/h3&gt;
+
+&lt;div&gt;
+
+	&lt;p&gt;I am paragraph that is a grandchild of the "parent-section" class, so I get a blue background.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/section&gt;'
+
+			css-code='.parent-section h3 {
 	background-color: lightpink;
 }
 
 .parent-section p {
 	background-color: lightblue;
-}</pre>
-
-				<pre data-lang="html">&lt;section class="parent-section"&gt;
-
-	&lt;h3&gt;I'm an h3 that is the child of the "parent-section" class, so I get a pink background.&lt;/h3&gt;
-
-	&lt;div&gt;
-
-		&lt;p&gt;I'm paragraph that is a grandchild of the "parent-section" class, so I get a blue background.&lt;/p&gt;
-
-	&lt;/div&gt;
-
-&lt;/section&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<h2 class="list">Selector List</h2>
 
@@ -164,17 +134,23 @@
 
 			<p>Here are some examples of selector lists. Be sure to check the HTML tab to see the structure of the elements.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
+			<pen-demo html-code='&lt;h1&gt;Heading 1&lt;/h1&gt;
 
-				<pre data-lang="css">h1, h2, h3, .fancy {
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+
+&lt;p class="fancy"&gt;I am paragraph with a class of "fancy".&lt;/p&gt;
+
+&lt;section class="parent-section"&gt;
+
+		&lt;p&gt;I am paragraph inside a section with a class of "parent-section".&lt;/p&gt;
+
+		&lt;blockquote&gt;I am blockquote inside a section with a class of "parent-section".&lt;/blockquote&gt;
+
+&lt;/section&gt;'
+
+			css-code='h1, h2, h3, .fancy {
 	font-style: italic;
 }
 
@@ -182,24 +158,9 @@
 	border-left: 3px solid orange;
 	margin-left: 0;
 	padding-left: 1rem;
-}</pre>
-
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
-
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-
-&lt;p class="fancy"&gt;I'm paragraph with a class of "fancy".&lt;/p&gt;
-
-&lt;section class="parent-section"&gt;
-
-		&lt;p&gt;I'm paragraph inside a section with a class of "parent-section".&lt;/p&gt;
-
-		&lt;blockquote&gt;I'm blockquote inside a section with a class of "parent-section".&lt;/blockquote&gt;
-
-&lt;/section&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<h2 class="attribute">Attribute Selector</h2>
 
@@ -209,17 +170,13 @@
 
 			<p>Take a look at the following examples of attribute selectors. Be sure to check the HTML tab to see where and how the attributes are applied to the elements.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
+			<pen-demo html-code='&lt;label for="example-1"&gt;An input with a "disabled" attribute:&lt;/label&gt;
+&lt;input type="text" id="example-1" disabled&gt;
 
-				<pre data-lang="css">input {
+&lt;label for="example-2"&gt;An input with a "type" attribute of "email":&lt;/label&gt;
+&lt;input type="email" id="example-2"&gt;'
+
+			css-code='input {
 	display: block;
 	margin: .5rem 0 1.5rem;
 }
@@ -230,15 +187,9 @@
 
 [type="email"] {
 	border: 2px solid #0060f7;
-}</pre>
-
-				<pre data-lang="html">&lt;label for="example-1"&gt;An input with a "disabled" attribute:&lt;/label&gt;
-&lt;input type="text" id="example-1" disabled&gt;
-
-&lt;label for="example-2"&gt;An input with a "type" attribute of "email":&lt;/label&gt;
-&lt;input type="email" id="example-2"&gt;
-</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<h2 id="advanced">Advanced Selectors and Combinators</h2>
 
@@ -337,9 +288,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

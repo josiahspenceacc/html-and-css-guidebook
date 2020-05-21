@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -44,8 +43,8 @@
 					<a href="#email">Email Links</a>
 					<a href="#optional-attributes">Optional Attributes</a>
 					<a href="#video">Video Lesson</a>
-					<a href="#tools">Tools</a>
 					<a href="#quiz">Practice Exercise</a>
+					<a href="#tools">Tools</a>
 				</nav>
 				
 			</header>
@@ -54,30 +53,30 @@
 
 			<p><strong>Absolute links</strong> are links to a full URL, which can be anywhere on the internet. They require the <code>http://</code> (or <code>htpps://</code>) at the beginning. Clicking on one of these links queries the DNS system to find the server where the content lives.</p>
 
-			<pre class="language-markup "><code>&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;</code></pre>
+			<code-block code='&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;'></code-block>
 
 
 			<h2 id="relative">Relative Links</h2>
 
 			<p><strong>Relative links</strong> point to local content in your project directory. You only need to specify the file name and, if present, the folder structure.</p>
 
-			<pre class="language-markup "><code>&lt;a href="subfolder/about.html"&gt;About Page&lt;/a&gt;</code></pre>
+			<code-block code='&lt;a href="subfolder/about.html"&gt;About Page&lt;/a&gt;'></code-block>
 
 
 			<h2 id="anchor">Anchor Links</h2>
 
 			<p><strong>Anchor links</strong> scroll the current page to the location of specific content. The <code>href</code> attribute points to an <code>id</code> present somewhere on the page (indicated with a hashtag). No scrolling will happen if the browser window is too tall to allow it.</p>
 
-			<pre class="language-markup "><code>&lt;a href="#id-name"&gt;Anchor link&lt;/a&gt;
+			<code-block code='&lt;a href="#id-name"&gt;Anchor link&lt;/a&gt;
 
-&lt;h2 id="id-name"&gt;Target Element&lt;/h2&gt;</code></pre>
+&lt;h2 id="id-name"&gt;Target Element&lt;/h2&gt;'></code-block>
 
 
 			<h2 id="email">Email Links</h2>
 
 			<p><strong>Email links</strong>, also known as <strong>mailto links</strong> open a new email draft, addressed to the specified recipient, in the default email app. The user must have a properly configured email app for the link to work. The syntax of the <code>href</code> attribute value is <code>mailto:</code> followed by the recipient email address with no spaces anywhere in the href.</p>
 
-			<pre class="language-markup "><code>&lt;a href="mailto:soandso@fake.edu"&gt;Email Me&lt;/a&gt;</code></pre>
+			<code-block code='&lt;a href="mailto:soandso@fake.edu"&gt;Email Me&lt;/a&gt;'></code-block>
 
 
 			<h2 id="optional-attributes">Optional Attributes</h2>
@@ -86,19 +85,23 @@
 
 			<p>The <code>title</code> attribute contains alternate text describing the link. This will be read by screen-readers, and as such should be employed when a link lacks descriptive text inside it. It also displays a tooltip popup on mouse hover, so, again, it is useful when the link contains no text, such as a linked image.</p>
 
-			<pre class="language-markup "><code>&lt;a href="somewhere.html" title="Title Text"&gt;Link with a title attribute - try hovering over me!&lt;/a&gt;</code></pre>
+			<code-block code='&lt;a href="somewhere.html" title="Title Text"&gt;Link with a title attribute - try hovering over me!&lt;/a&gt;'></code-block>
 
 			<h3>The Target Attribute</h3>
 
 			<p>The <code>target</code> forces a link to open in a new tab. Really the only useful value for <code>target</code> is <code>_blank</code> (including the underscore), which specified that the link should open in a new tab.</p>
 
-			<pre class="language-markup "><code>&lt;a href="http://imdb.com" target="_blank"&gt;Link with a target attribute&lt;/a&gt;</code></pre>
+			<code-block code='&lt;a href="http://imdb.com" target="_blank"&gt;Link with a target attribute&lt;/a&gt;'></code-block>
 
 			<h2 id="video">Video Lesson</h2>
 
 			<p>The following video demo is fully interactive. You can pause it at any time to directly edit the code, and resume playback to pickup where you left off.</p>
 			
 			<video-demo url="https://scrimba.com/c/cEeeZPfK"></video-demo>
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/html-links.html"></lesson-quiz>
 			
 			
 			<h2 id="tools">Tools</h2>
@@ -106,10 +109,6 @@
 			<ul>
 				<li><a href="http://robspangler.com/blog/encrypt-mailto-links-to-stop-email-spam/">Encrypt Email Links to Fight Spam</a></li>
 			</ul>
-
-			<h2 id="quiz">Practice Exercise</h2>
-			
-			<lesson-quiz url="../quizzes/html-links.html"></lesson-quiz>
 
 			
 		</article>
@@ -121,8 +120,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

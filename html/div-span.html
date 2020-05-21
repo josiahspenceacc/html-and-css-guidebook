@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -43,6 +42,8 @@
 				</nav>
 				
 			</header>
+
+			<h2>The Difference</h2>
 			
 			<p>The only difference between the two elements is that <code>&lt;div&gt;</code> behaves as a <strong>block</strong> element by default (it stacks and stretches all the way across the container), whilst <code>&lt;span&gt;</code> behaves as <strong>inline</strong> by default (it behaves like a word in a sentence, lining up horizontally from left-to-right and wrapping to a new line when needed).</p>
 
@@ -52,21 +53,10 @@
 
 			<p>For example, for purely stylistic reasons, you may want to use a <code>&lt;span&gt;</code> to add color to a specific word in a logotype:</p>
 
-			<!--Example Pen-->
-				<div 
-				  class="codepen" 
-				  data-prefill 
-				  data-height="400"
-				  data-editable="true"
-				  data-theme-id="36581"
-				  data-default-tab="css,result" 
-				>
-					<pre data-lang="css">span {
+			<pen-demo html-code="&lt;h2&gt;Logo&lt;span&gt;Type&lt;/span&gt;&lt;/h2&gt;"
+			css-code='span {
 	color: red;
-}</pre>
-					<pre data-lang="html">&lt;h2&gt;Logo&lt;span&gt;Type&lt;/span&gt;&lt;/h2&gt;</pre>
-
-				</div>
+}'></pen-demo>
 			
 			<h2 id="quiz">Practice Exercise</h2>
 			
@@ -81,9 +71,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

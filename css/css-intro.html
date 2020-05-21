@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 	
 </head>
@@ -132,27 +131,18 @@ div {
 			<h3>Specificity</h3>
 			
 			<p>However, some <em>selectors</em> are stronger than others and can win a conflict regardless of order. The hierarchy of selector strength is called <strong>specificity</strong>. The more specific an element, the easier it wins in a conflict. For example, a class selector is more specific than an element selector. Let's see it in action:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="css">.class {
+			<pen-demo html-code='&lt;h2 class="class"&gt;Heading 2 with a class named "class"&lt;/h2&gt;'
+
+			css-code='.class {
 	color: blue; /*Wins, even though it comes first*/
 }
 
 h2 {
 	color: red;
-}</pre>
-
-				<pre data-lang="html">&lt;h2 class="class"&gt;Heading 2 with a class named "class"&lt;/h2&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the example above, try changing the color on the <code>h2</code> selector. Does it have any effect? If you add a different <code>font-weight</code> declaration to both selectors, which one do you think will be honored?</p>
 			
@@ -167,53 +157,37 @@ h2 {
 			<p class="big-point">Only <strong>some</strong> properties are <strong>inherited</strong> by an element's decendants. But they are mostly the ones you would expect.</p>
 			
 			<p>However, there are many properties that are <em>not</em> inherited. So if we add <code>border: 1px solid red;</code> to our <code>article</code>, it's children do not also each use that border. Let's see it in action:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="css">article {
-	border: 1px solid red; /*Not inherited by children*/
-	text-align: center; /*Inherited by children*/
-}</pre>
-
-				<pre data-lang="html">&lt;article&gt;
+			<pen-demo html-code='&lt;article&gt;
 				
 	&lt;h2&gt;Heading 2&lt;/h2&gt;
 	
 	&lt;p&gt;A paragraph with some text in it. Nice, meaningless text.&lt;/p&gt;
 				
-&lt;/article&gt;</pre>
-			</div>
+&lt;/article&gt;'
+
+			css-code='article {
+	border: 1px solid red; /*Not inherited by children*/
+	text-align: center; /*Inherited by children*/
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the example above, try adding <code>color: blue;</code> to the <code>article</code>. Is it inherited by the children? What if you add <code>padding: 1rem;</code>?</p>
 			
 			<h2 id="default">Default Styles</h2>
 			
 			<p>Browsers all have a set of <strong>default styles</strong> which are applied to HTML when no other styles have been provided. Basically, this is built-in CSS. Any CSS that you write serves to override and replace these default styles. Let's take a look at some HTML without any CSS specified:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+			<pen-demo html-code='&lt;h1&gt;Heading 1&lt;/h1&gt;
 				
-	&lt;h2&gt;Heading 2&lt;/h2&gt;
-	
-	&lt;p&gt;A paragraph with some text in it. Nice, meaningless text. La da da da da du dum.&lt;/p&gt;</pre>
-			</div>
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+
+&lt;p&gt;A paragraph with some text in it. Nice, meaningless text. La da da da da du dum.&lt;/p&gt;'
+
+			css-code=''
+			selected-tab="css"
+		></pen-demo>
 			
 			<p>Notice that the headings display larger and bolder than the paragraph, even though no CSS has been explicitly provided. This is because they are using the browser's default styles. Even the typeface of the text and the white background are all determined by the default styles.</p>
 			
@@ -268,9 +242,10 @@ h2 {
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

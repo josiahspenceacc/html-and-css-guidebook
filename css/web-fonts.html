@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -63,26 +62,17 @@
 			<p class="big-point">Web font services provide access to libraries of <strong>licensed typefaces</strong> for legal use on websites.</p>
 			
 			<p>These services provide the site developer with short snippet of <em>embed code</em> to be placed in either the site's CSS or the <code>head</code> of each HTML file. The font can then be applied normally using the <code>font-family</code> CSS property. It's still a good idea to provide fallback fonts, just in case anything goes wrong with the web font.</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">/*Google Fonts CSS Embed Code:*/
+
+			<pen-demo html-code='&lt;p&gt;This text uses a typeface called Bitter from Google Fonts.&lt;/p&gt;'
+
+			css-code="/*Google Fonts CSS Embed Code:*/
 @import url('https://fonts.googleapis.com/css?family=Bitter&display=swap');
 				
 p {
 	font-family: Bitter, Times, serif;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;This text uses a typeface called Bitter from Google Fonts.&lt;/p&gt;</pre>
-
-			</div>
+}"
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">What happens if you remove the Google Fonts embed code? Do you think the font will change?</p>
 			
@@ -135,9 +125,10 @@ p {
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

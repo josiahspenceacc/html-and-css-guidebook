@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -55,7 +54,7 @@
 
 			<p>Instead, IDs are best used as targets for <strong>anchor links</strong> or as targets for <strong>javascript</strong> functionality.</p>
 
-			<pre class="language-markup"><code>&lt;h2 id="any-name"&gt;Heading Text&lt;/h2&gt;</code></pre>
+			<code-block code='&lt;h2 id="any-name"&gt;Heading Text&lt;/h2&gt;'></code-block>
 
 			<h2 id="classes">Classes</h2>
 
@@ -67,32 +66,32 @@
 			
 			<p>Imagine you name a class "red-background" and use it to apply a red background-color. Then later you decide to redesign your site to have a blue background. It's too much work to go into every HTML document and change the class name, so you simply change the style applied in the HTML. Now you have a class named "red-background" that is used to apply a green background-color. Not very sensible, is it?</p>
 
-			<pre class="language-markup"><code>&lt;h2 class="reusable-name"&gt;Heading Text&lt;/h2&gt;
+			<code-block code='&lt;h2 class="reusable-name"&gt;Heading Text&lt;/h2&gt;
 
-&lt;div class="reusable-name"&gt;Div Text&lt;/div&gt;</code></pre>
+&lt;div class="reusable-name"&gt;Div Text&lt;/div&gt;'></code-block>
 
-			<pre class="language-css"><code>.reusable-name {
+			<code-block lang='css' code='.reusable-name {
 	background-color: lightblue;
-}</code></pre>
+}'></code-block>
 
 			<h2 id="multiples">Multiple Classes or IDs on an Element</h2>
 
 			<p>Multiple Classes or IDs can be applied to a single element by <strong>space-separating</strong> them within the quotation marks of the attribute.</p>
 
-			<pre class="language-markup"><code>&lt;h2 class="one-class another-class"&gt;Heading Text&lt;/h2&gt;
+			<code-block code='&lt;h2 class="one-class another-class"&gt;Heading Text&lt;/h2&gt;
 
-&lt;div ID="one-id another-id"&gt;Div Text&lt;/div&gt;</code></pre>
+&lt;div ID="one-id another-id"&gt;Div Text&lt;/div&gt;'></code-block>
+			
+
+			<h2 id="quiz">Practice Exercise</h2>
+
+			<lesson-quiz url="../quizzes/html-ids-classes.html"></lesson-quiz>
 			
 			<h2 id="resources">Resource Links</h2>
 			
 			<ul>
 				<li><a href="https://alistapart.com/article/meaningful-css-style-like-you-mean-it">Meaningful CSS (strategies for naming classes)</a></li>
 			</ul>
-			
-
-			<h2 id="quiz">Practice Exercise</h2>
-			
-			<lesson-quiz url="../quizzes/html-ids-classes.html"></lesson-quiz>
 
 			
 		</article>
@@ -104,8 +103,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

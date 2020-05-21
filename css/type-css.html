@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 	
 </head>
@@ -62,24 +61,16 @@
 
 			<p><code>font-family</code> provides a list of fonts to use. The reason for providing multiple fonts is that the browser checks a user's system to see if the font is available. If it is not, it moves on to the next font specified. By providing a generic font type, like "sans-serif", it insures that a user's browser can use its default in the style if no other requested fonts are installed.</p>
 
-			<p class="big-point">Font names that contain space characters should be wrapped in quotation marks.</p>
+			<p class="big-point">Font names that <strong>contain space characters</strong> should be wrapped in <strong>quotation marks</strong>.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What has happened to me?" he thought.&lt;/p&gt;</pre>
+				'
+
+			css-code='p {
 	font-family: Geneva, "Lucida Sans", Verdana, sans-serif;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 
 			<h2 id="size">font-size</h2>
@@ -88,22 +79,14 @@
 
 			<p><code>rem</code> units are a great choice.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What has happened to me?" he thought.&lt;/p&gt;</pre>
+				'
+
+			css-code='p {
 	font-size: 1.2rem;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above example, try changing the size in <code>rem</code> units to see what happens to the type. Can you think of other sizing units to try? What happens when you sue them?</p>
 
@@ -112,88 +95,56 @@
 
 			<p><code>font-weight</code> determines whether the type displays as bold, normal, light, etcetera. The value can be set with keywords like "bold" or "normal", or with numeric values in increments of 100, with 400 as the equivalent of "normal".</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What has happened to me?" he thought.&lt;/p&gt;</pre>
+				'
+
+			css-code='p {
 	font-weight: bold;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 
 			<h2 id="style">font-style</h2>
 
 			<p><code>font-style</code> determines whether the type is normal or italic.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What has happened to me?" he thought.&lt;/p&gt;</pre>
+				'
+
+			css-code='p {
 	font-style: italic;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 
 			<h2 id="color">color</h2>
 
 			<p>There are a number of formats in which colors can be expressed in CSS. For a deeper explanation, see the <a href="https://codepen.io/JosiahACC/pen/qxdLMX">chapter on color formats</a>.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What has happened to me?" he thought.&lt;/p&gt;</pre>
+				'
+
+			css-code='p {
 	color: #4286f4;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 
 			<h2 id="height">line-height</h2>
 
 			<p><code>line-height</code> requires no units for the value. By default, the value is relative to the size of the type, so if the value is 2, the line-height is twice the font-size.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What has happened to me?" he thought.&lt;/p&gt;</pre>
+				'
+
+			css-code='p {
 	line-height: 1.7;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above example, try changing the number to adjust the <code>line-height</code>.</p>
 
@@ -204,22 +155,14 @@
 
 			<p>Common values are: <em>capitalize, uppercase, lowercase,</em> and <em>none.</em> None simply gets rid of any values applied elsewhere.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.&lt;/p&gt;</pre>
+				'
+
+			css-code='p {
 	text-transform: uppercase;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above example, try out the different values for <code>text-transform</code>. What happens when you try <code>capitalize</code>, <code>lowercase</code>, or <code>none</code>?</p>
 
@@ -230,22 +173,14 @@
 
 			<p>Common values are: <em>underline, overline, line-through,</em> and <em>none.</em> None simply gets rid of any values applied elsewhere.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.&lt;/p&gt;</pre>
+				'
+
+			css-code='p {
 	text-decoration: underline;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above example, try out the different values for <code>text-decoration</code>. What happens when you try <code>overline</code>, <code>line-through</code>, or <code>none</code>?</p>
 
@@ -254,30 +189,20 @@
 
 			<p><code>letter-spacing</code> controls the tracking or amount of space between each pair of letters. <code>em</code> is often a good choice of unit for this property because it is relative to the type to which it is applied.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.&lt;/p&gt;</pre>
+				'
+
+			css-code='p {
 	letter-spacing: .3em;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above example, try out the different values and different measurement units for <code>letter-spacing</code> to see what happens.</p>
 			
-			<h2 id="video">Video Lessons</h2>
+			<h2 id="video">Video Lesson</h2>
 			
-			<p>The following video demos are fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
-			
-			<h3>Basics Video</h3>
+			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
 			
 			<video-demo url="https://scrimba.com/c/c27727Tg"></video-demo>
 
@@ -316,9 +241,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

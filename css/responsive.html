@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 	
 </head>
@@ -66,43 +65,27 @@
 			
 			<p class="big-point">The term <strong>breakpoint</strong> refers to the size at which a change in CSS is triggered.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result"  
-			>
+			<pen-demo html-code='&lt;p&gt;Some text in a paragraph&lt;/p&gt;'
 
-				<pre data-lang="css">@media ( min-width: 400px ) {
+			css-code='@media ( min-width: 400px ) {
 
 	p {
 		color: green;
 	}
 
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;Some text in a paragraph&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
-			<p class="try-this">In the demo above, try grabbing the bottom right corner of the demo and dragging to resize it to see how it behaves. Notice how the text is only green when the preview window is wider than 400px.</p>
+			<p class="try-this">In the demo above, try grabbing the bottom-right corner of the demo and dragging to resize it to see how it behaves. Notice how the text is only green when the preview window is wider than 400px.</p>
 
 			<p>Media queries can contain multiple declaration blocks for different selectors.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result"
-			>
+			<pen-demo html-code='&lt;h2&gt;A heading&lt;/h2&gt;
 
-				<pre data-lang="css">@media ( min-width: 400px ) {
+&lt;p&gt;Some text in a paragraph&lt;/p&gt;'
+
+			css-code='@media ( min-width: 400px ) {
 
 	h2 {
 		color: blue;
@@ -112,13 +95,9 @@
 		color: green;
 	}
 
-}</pre>
-
-				<pre data-lang="html">&lt;h2&gt;A heading&lt;/h2&gt;
-
-&lt;p&gt;Some text in a paragraph&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the demo above, notice how the single media query contains multiple selector blocks, each with their own styles. Try resizing the demo to see the media query working.</p>
 
@@ -126,21 +105,15 @@
 
 			<p>Any CSS inside a media query is read by the browser as an override to any CSS that has already been applied. This means that any CSS written <em>outside any media queries</em> is applied unless a media query specifically overrides it. And because that CSS is outside a media query, it is applied starting at a browser width of 0px. Another effect of this logic is that there is no need to repeat previously applied properties within a media query if the value doesn't change.</p>
 			
-			<p class="big-point">It's like Newton's First Law: Properties that are set tend to <strong>stay set</strong> unless acted upon by another <strong>media query</strong>.</p>
+			<div class="big-point">
+				<p>It's like Newton's First Law: Properties that are set tend to <strong>stay set</strong> unless acted upon by another <strong>media query</strong>.</p>
 			
-			<p class="big-point">Or you can think of it like speed limit signs: When you see one, you can kep going that speed <strong>until</strong> you see a sign telling you something <strong>different</strong>.</p>
+				<p><strong>Or,</strong> you can think of it like speed limit signs: When you see one, you can kep going that speed <strong>until</strong> you see a sign telling you something <strong>different</strong>.</p>
+			</div>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result"
-			>
+			<pen-demo html-code='&lt;p&gt;Some text in a paragraph&lt;/p&gt;'
 
-				<pre data-lang="css">p {
+			css-code='p {
 	color: red;
 	font-family: sans-serif;
 }
@@ -151,11 +124,9 @@
 		color: green;
 	}
 
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;Some text in a paragraph&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">Try resizing the demo above. Notice how the color of the text changes to green at sizes above 400px. But also notice how the text remains sans-serif at all sizes because the media query hasn't specifically changed it. What happens if you add more styles outside the media query? Are they still applied when the window is larger than 400px?</p>
 
@@ -163,17 +134,9 @@
 
 			<p>A webpage usually needs more than one media query to work at all possible browser sizes, and it is common to use a series of media queries targeting ascending browser widths. In such cases, the same logic mentioned above is followed from media query to media query: Any CSS that has been applied from a previous media query stays applied until a new media query specifically overrides it. For instance:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result"
-			>
+			<pen-demo html-code='&lt;p&gt;Some text in a paragraph&lt;/p&gt;'
 
-				<pre data-lang="css">p {
+			css-code='p {
 	color: red;
 	font-family: sans-serif;
 }
@@ -193,11 +156,9 @@
 		font-size: 1.2rem;
 	}
 
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;Some text in a paragraph&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">Try resizing the demo above. Pay careful attention to how both the color and font size change when the preview is wider than 400px, and how the font size grows more when wider than 500px. Notice how the type remains sans-serif throughout, and how the text remains green even above 500px.</p>
 
@@ -220,9 +181,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

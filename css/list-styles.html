@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 	
 </head>
@@ -68,35 +67,8 @@
 				<h2 id="nested">Nested Lists</h2>
 				
 				<p>By default, a list nested inside another list receives different bullets/numbers from the parent list. This is great for creating visual distinction between the different levels of hierarchy. To create custom nested list styles, you can use a decendant selector. <code>ul ul</code> selects for any list inside another list. And <code>ul ul ul</code> selects for any list nested at least two deep. And so on.</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="css">ul {
-	list-style-type: square;
-}
-
-ul ul {
-	list-style-type: circle;
-}
-
-ol {
-	list-style-type: upper-roman;
-}
-
-ol ol {
-	list-style-type: lower-roman;
-}
-</pre>
-
-				<pre data-lang="html">&lt;ul&gt;
+			<pen-demo html-code='&lt;ul&gt;
 
 	&lt;li&gt;List Item&lt;/li&gt;
 	
@@ -138,8 +110,25 @@ ol ol {
 
 	&lt;li&gt;List Item&lt;/li&gt;
 
-&lt;/ol&gt;</pre>
-			</div>
+&lt;/ol&gt;'
+
+			css-code='ul {
+	list-style-type: square;
+}
+
+ul ul {
+	list-style-type: circle;
+}
+
+ol {
+	list-style-type: upper-roman;
+}
+
+ol ol {
+	list-style-type: lower-roman;
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the example above, try out different values for <code>list-item-type</code> for the different lists. Can you figure out how to make only the nested <code>ol</code> show decimal numbers?</p>
 
@@ -150,30 +139,14 @@ ol ol {
 				<h2 id="list-style-position">List Style Position</h2>
 				
 				<p>By default, the bullets / numeric indicator associated with list items are placed outside the layout, to the left of the alignment of the text. However, this can be changed using the <code>list-style-position</code> property. The default value is <code>outside</code>. By changing the value to <code>inside</code>, the bullets / indicators are treated like a part of the text. This is perhaps best understood by example:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="css">
-.inside-list {
-	list-style-position: inside;
-}
-</pre>
+				<pen-demo html-code='&lt;h2&gt;Position Outside (default)&lt;/h2&gt;
 
-				<pre data-lang="html">&lt;h2&gt;Position Outside (default)&lt;/h2&gt;
-				
 &lt;ul&gt;
 
-	&lt;li&gt;“But now," says the Once-ler, "now that you're here, the word of the Lorax seems perfectly clear. Unless someone like you cares a whole awful lot, nothing is going to get better. It's not.”&lt;/li&gt;
+	&lt;li&gt;“But now," says the Once-ler, "now that you are here, the word of the Lorax seems perfectly clear. Unless someone like you cares a whole awful lot, nothing is going to get better. It is not.”&lt;/li&gt;
 	
-	&lt;li&gt;Catch! calls the Once-ler. He lets something fall. It's a Truffula Seed. It's the last one of all! You're in charge of the last of the Truffula Seeds. And Truffula Trees are what everyone needs.&lt;/li&gt;
+	&lt;li&gt;Catch! calls the Once-ler. He lets something fall. It is a Truffula Seed. It is the last one of all! You are in charge of the last of the Truffula Seeds. And Truffula Trees are what everyone needs.&lt;/li&gt;
 
 &lt;/ul&gt;
 
@@ -181,12 +154,17 @@ ol ol {
 
 &lt;ul class="inside-list"&gt;
 
-	&lt;li&gt;“But now," says the Once-ler, "now that you're here, the word of the Lorax seems perfectly clear. Unless someone like you cares a whole awful lot, nothing is going to get better. It's not.”&lt;/li&gt;
+	&lt;li&gt;“But now," says the Once-ler, "now that you are here, the word of the Lorax seems perfectly clear. Unless someone like you cares a whole awful lot, nothing is going to get better. It is not.”&lt;/li&gt;
 	
-	&lt;li&gt;Catch! calls the Once-ler. He lets something fall. It's a Truffula Seed. It's the last one of all! You're in charge of the last of the Truffula Seeds. And Truffula Trees are what everyone needs.&lt;/li&gt;
+	&lt;li&gt;Catch! calls the Once-ler. He lets something fall. It is a Truffula Seed. It is the last one of all! You are in charge of the last of the Truffula Seeds. And Truffula Trees are what everyone needs.&lt;/li&gt;
 
-&lt;/ul&gt;</pre>
-				</div>
+&lt;/ul&gt;'
+	
+				css-code='.inside-list {
+	list-style-position: inside;
+}'
+				selected-tab="css"
+			></pen-demo>
 			
 
 				<h2 id="quiz">Practice Exercise</h2>
@@ -208,10 +186,12 @@ ol ol {
 
 	</div>
 
-<!--Scripts-->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="/script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<!--Scripts-->
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
+</body>
 </body>
 </html>

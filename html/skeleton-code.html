@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -55,25 +54,25 @@
 			<p>First, let's look at a broad overview of typical skeleton code. Then we'll break it down into the individual elements.</p>
 			
 			<figure>
-				<code-block lang="markup" code='&lt;!DOCTYPE html&gt;
-&lt;html lang="en-us"&gt;
+				<code-block code='<!DOCTYPE html>
+<html lang="en-us">
 
-&lt;head&gt;
+<head>
 
-	&lt;meta charset="UTF-8"&gt;
-	&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	&lt;title&gt;Page Title&lt;/title&gt;
+	<title>Page Title</title>
 
-	&lt;!--Additional elements for browsers and robots go here goes here--&gt;
+	<!--Additional elements for browsers and robots go here goes here-->
 
-&lt;/head&gt;
+</head>
 
-&lt;body&gt;
-	&lt;!--Elements visible to users go here--&gt;
-&lt;/body&gt;
+<body>
+	<!--Elements visible to users go here-->
+</body>
 
-&lt;/html&gt;'></code-block>
+</html>'></code-block>
 				
 				<figcaption>Note that the instructions about where additional content goes. These are HTML comments, which are notes for the author.</figcaption>
 				
@@ -85,7 +84,7 @@
 
 			<p>This tag is self-closing.</p>
 
-			<code-block lang="markup" code="&lt;!DOCTYPE html&gt;"></code-block>
+			<code-block lang="markup" code='<!DOCTYPE html>'></code-block>
 
 
 			<h2 id="html">HTML</h2>
@@ -94,17 +93,17 @@
 
 			<p>The <code>lang</code> attribute let's the browser and search engine know the language (human, not code) of the website's contents. For our purposes, we use "en", for English. After the dash, we put "us" to indicate that the site uses the United States dialect of English.</p>
 
-			<pre class=" language-markup"><code>&lt;html lang="en-us"&gt;
-&lt;/html&gt;</code></pre>
+			<code-block lang="markup" code='&lt;html lang="en-us"&gt;
+&lt;/html&gt;'></code-block>
 
 
 			<h2 id="head">Head</h2>
 
 			<p>The <code>head</code> element exists to hold a variety of content that <strong>is not for display</strong> on the page itself. Mostly, the content in the <code>head</code> exists to tell the browser, search engines, and other robots important information about the page.</p>
 
-			<pre class=" language-markup"><code>&lt;head&gt;
+			<code-block lang="markup" code='&lt;head&gt;
 	&lt;!--Elements for browsers and robots goes here goes here--&gt;
-&lt;/head&gt;</code></pre>
+&lt;/head&gt;'></code-block>
 
 
 			<h2 id="meta">Meta</h2>
@@ -117,29 +116,29 @@
 			
 			<p>Every page should include the <code>meta</code> tag with the <code>charset</code> attribute, which indicates which style of keyboard was used to code the page. American keyboards use "UTF-8" encoding, so this is the appropriate value for our purposes. The code should always be exactly the same.</p>
 
-			<pre class=" language-markup"><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+			<code-block lang="markup" code='&lt;meta charset="UTF-8"&gt;'></code-block>
 			
 			<h3>Viewport Meta</h3>
 			
 			<p>Every page should also include the <code>meta</code> tag with the shown attributes for the viewport. This code indicates that the browser should not zoom in on the page and should respect any responsive CSS code. The code should always be exactly the same.</p>
 
-			<pre class=" language-markup"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code></pre>
+			<code-block lang="markup" code='&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;'></code-block>
 
 
 			<h2 id="title">Title</h2>
 
 			<p>The <code>title</code> element should contain a unique title indicating the content or purpose of the page. While this title is not displayed on the page itself, it is what shows in the browser tab and in search listings on Google and other search engines.</p>
 
-			<pre class=" language-markup"><code>&lt;title&gt;Page Title&lt;/title&gt;</code></pre>
+			<code-block lang="markup" code='&lt;title&gt;Page Title&lt;/title&gt;'></code-block>
 
 
 			<h2 id="body">Body</h2>
 
 			<p>The <code>body</code> element holds all content that is for display on the page itself. Anything a user is intended to see or interact with should go inside the <code>body</code>.</p>
 
-			<pre class=" language-markup"><code>&lt;body&gt;
+			<code-block lang="markup" code='&lt;body&gt;
 	&lt;!--Elements visible to users goes here--&gt;
-&lt;/body&gt;</code></pre>
+&lt;/body&gt;'></code-block>
 			
 			<h2 id="video">Video Lesson</h2>
 
@@ -161,8 +160,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

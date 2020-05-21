@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -100,21 +99,11 @@
 <img src="folder/file.jpg">
 													  
 <!--Absolute image path-->
-<img src="http://domain.com/file.jp">'></code-block>
+<img src="http://domain.com/file.jpg">'></code-block>
 
 			<p>The <code>alt</code> attribute contains descriptive text about the image. It is used by screen-readers and is also shown if the link to the image fails.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
-				<pre data-lang="html">&lt;img src="https://picsum.photos/250/200" alt="Random Image"&gt;</pre>
-			</div>
+			<pen-demo html-code='<img src="images/kitten.jpg" alt="Two tabby kittens">'></pen-demo>
 
 			<h3>Optional Attributes</h3>
 
@@ -122,17 +111,7 @@
 
 			<p>The <code>title</code> attribute contains text that displays in a tooltip popup when a mouse hovers over the image. It is NOT read by screen-readers. It is most often used to provide additional context or non-essential information about an image.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
-				<pre data-lang="html">&lt;img src="https://picsum.photos/250/200" alt="Random Image" width="250" height="200" title="This text shows when you hover!"&gt;</pre>
-			</div>
+			<pen-demo html-code='<img src="images/kitten.jpg" alt="Two tabby kittens" width="350" height="234" title="This text shows when you hover!">'></pen-demo>
 			
 			<p class="try-this">In the above example, hover your mouse over the image to see how the <code>title</code> attribute shows up. Try changing the text of the <code>title</code> attribute and hover over the image again to see your change applied to the pop-up text.</p>
 
@@ -141,21 +120,10 @@
 
 			<p>"Inline svg" refers to the practice of directly pasting <code>svg</code> code into an HTML document. There are many advantages to doing so, chiefly the possibility of styling individual parts of the <code>svg</code> with CSS. Classes and IDs can be applied to sub-elements of an <code>svg</code> for additional control.</p>
 
-
-
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
-				<pre data-lang="html">&lt;svg version="1.1" id="kiwi-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"	width="300px" viewBox="0 65.326 612 502.174"&gt;
+			<pen-demo html-code='&lt;svg version="1.1" id="kiwi-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"	width="300px" viewBox="0 65.326 612 502.174"&gt;
 
 	&lt;ellipse class="ground" fill="coral" cx="283.5" cy="487.5" rx="259" ry="80"/&gt;
-	&lt;path class="kiwi" fill="cyan" d="M210.333,65.331C104.367,66.105-12.349,150.637,1.056,276.449c4.303,40.393,18.533,63.704,52.171,79.03
+	&lt;path class="kiwi" fill="cornflowerblue" d="M210.333,65.331C104.367,66.105-12.349,150.637,1.056,276.449c4.303,40.393,18.533,63.704,52.171,79.03
 	c36.307,16.544,57.022,54.556,50.406,112.954c-9.935,4.88-17.405,11.031-19.132,20.015c7.531-0.17,14.943-0.312,22.59,4.341
 	c20.333,12.375,31.296,27.363,42.979,51.72c1.714,3.572,8.192,2.849,8.312-3.078c0.17-8.467-1.856-17.454-5.226-26.933
 	c-2.955-8.313,3.059-7.985,6.917-6.106c6.399,3.115,16.334,9.43,30.39,13.098c5.392,1.407,5.995-3.877,5.224-6.991
@@ -172,8 +140,7 @@
 	z M445.731,203.01c6.12,0,11.112,4.919,11.112,11.038c0,6.119-4.994,11.111-11.112,11.111s-11.038-4.994-11.038-11.111
 	C434.693,207.929,439.613,203.01,445.731,203.01z"/&gt;
 
-&lt;/svg&gt;</pre>
-			</div>
+&lt;/svg&gt;'></pen-demo>
 			
 			<p class="try-this">In the above example, see if you can figure out how to change the color of the bird. What about the oval that forms its shadow?</p>
 
@@ -213,28 +180,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-	<script>
-
-		/*************************************************************************
-		This little bit of javascript simply adds or removes a classs called
-		"toggle-active" to the main nav when the menu button is clicked
-		**************************************************************************/
-
-		document.addEventListener("DOMContentLoaded", function(event) { //Initialized this script after the page is finished loading 
-			var body = document.getElementsByTagName('body')[0];
-			var trigger = document.getElementById('menu-toggle'); // reference the toggle button by ID
-
-			trigger.addEventListener('click', function(e) { // Listen for when the toggle is clicked
-				e.preventDefault(); // Prevent any default button action
-				body.classList.toggle('menu-active'); // Toggle the class on or off, depending on if it is already there or not
-			});
-
-		});
-
-	</script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>
