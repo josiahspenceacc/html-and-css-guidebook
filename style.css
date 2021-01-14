@@ -327,7 +327,7 @@ details[open] summary {
 
 .selectable {
 	background-color: var(--color-blue-lighter);
-	padding: .1rem .5rem;
+	padding: .1rem .25rem;
 	user-select: all;
 }
 
