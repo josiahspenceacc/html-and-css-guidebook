@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -34,9 +33,167 @@
 	
 				<h1>CSS Selectors</h1>
 				
-				<p>To style content with CSS, that content must first be <strong>selected</strong>, or identified, in the CSS code. The following table explains and demonstrates some of the most common types of selectors in CSS, as well as how they can be combined.</p>
+				<p>To style HTML content with CSS, that content must first be <strong>selected</strong>, or identified, in the CSS code. CSS includes a number of different methods to select for different types of content and different combinations of content. This chapter explores the most common of them.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#element">Element Selector</a>
+					<a href="#class">Class Selector</a>
+					<a href="#decendant">Decendant Combinator</a>
+					<a href="#list">Selector List</a>
+					<a href="#attribute">Attribute Selector</a>
+					<a href="#advanced">Advanced Selectors</a>
+					<a href="#quiz">Practice Exercise</a>
+				</nav>
 				
 			</header>
+
+			<h2 id="element">Element Selector</h2>
+
+			<p>The most straightforward way to select HTML is to directly reference an element by its name. Any element can be selected this way, and the CSS styles are applied to <strong>all instances</strong> of that element.</p>
+
+			<p>For instance, in the following example the CSS selects for the <code>p</code> (paragraph) element, and the color style written within the selector block is applied to all paragraphs on the page:</p>
+
+			<pen-demo html-code='&lt;h1&gt;I am a heading, so the color is not applied to me.&lt;/h1&gt;
+
+&lt;p&gt;I am a paragraph, so the color is applied to me.&lt;/p&gt;
+
+&lt;p&gt;I am also paragraph, so I get the color too.&lt;/p&gt;
+
+&lt;p&gt;Me too. I am another paragraph.&lt;/p&gt;'
+
+			css-code='p {
+	color: #6a266e;
+}'
+			selected-tab="css"
+		></pen-demo>
+
+			<h2 class="classes">Class Selector</h2>
+
+			<p>Sometimes, you don't want to select <em>all</em> the instances of a particular element, but would instead like to select just one or just a few specific instances. In this case, the <strong>class selector</strong> can be used.</p>
+
+			<p>As discussed in the chapter about <a href="../html/ids-classes.html">IDs and Classes</a> in HTML, classes are custom names that can be applied to one or more HTML elements using an attribute. So an element written like <code>&lt;h3 class="special-heading"&gt;Heading Text&lt;/h3&gt;</code> represents a third-level heading with a class name of <em>special-heading</em>.</p>
+
+			<p>Classes can be selected in CSS by writing a period (.) followed by the name of the class. So for the example in the previous paragraph, you can select the class in CSS by writing <code>.special-heading</code>. Note that it isn't necessary to write the name of the <em>element</em> at all.</p>
+
+			<p>In the following example, only the second paragraph has the class selected in the CSS, so only it receives the text color.</p>
+
+			<pen-demo html-code='&lt;p&gt;I am  a paragraph with no class, so the color is not applied to me.&lt;/p&gt;
+
+&lt;p class="special-paragraph"&gt;I am  paragraph with the correct class, so I get the color.&lt;/p&gt;
+
+&lt;p class="another-paragraph"&gt;I have a different class, so I do not get the color.&lt;/p&gt;'
+
+			css-code='.special-paragraph {
+	color: #cf8600;
+}'
+			selected-tab="css"
+		></pen-demo>
+
+			<h2 class="decendant">Decendant Combinator</h2>
+
+			<p>HTML is structured into a series of <em>nested</em> elements, and we use the terminology of a family tree (such as parent, child, sibling, decendant, et cetera) to refer to this structure. Sometimes in CSS, it is necessary to write selectors that reference these relationships. The <strong>decendant combinator</strong> selects for an element that is a child, grandchild, or further decendant of one or more specific selectors.</p>
+
+			<p>Decendant combinators are written as a space-separated series of selectors, parent first. For instance, <code>div h2</code> selects for any <code>h2</code> element that is a <em>decendant</em> of (nested within) a <code>div</code> element, whether as a direct child or as a great-great-great-grandchild.</p>
+
+			<p>In decendant combinators that select for deep nesting it is <strong>not</strong> necessary to include intermediate elements from the family tree. For instance, if selecting for a <code>span</code> nested within a <code>li</code> nested within a <code>ul</code>, you <em>could</em> write <code>ul li span</code>, but it would be simpler to write <code>ul span</code> and skip the <code>li</code> unless there is some reason to be extra specific.</p>
+
+			<p>Another important thing to know is that <strong>any type of selector can be used</strong> as part of a decendant relationship. For instance, you could use a class as the parent and an element as the decendant: <code>.product-item h3</code>, which selects for any <code>h3</code> that is a decendant of an element with a class of <code>product-item</code>.</p>
+
+			<p>In this example, there are two decendant combinators: one that selects for a direct child, and one that selects for a grandchild. Be sure to check the HTML view to see the structure of the elements.</p>
+
+			<pen-demo html-code='&lt;section class="parent-section"&gt;
+
+&lt;h3&gt;I am an h3 that is the child of the "parent-section" class, so I get a pink background.&lt;/h3&gt;
+
+&lt;div&gt;
+
+	&lt;p&gt;I am paragraph that is a grandchild of the "parent-section" class, so I get a blue background.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/section&gt;'
+
+			css-code='.parent-section h3 {
+	background-color: lightpink;
+}
+
+.parent-section p {
+	background-color: lightblue;
+}'
+			selected-tab="css"
+		></pen-demo>
+
+			<h2 class="list">Selector List</h2>
+
+			<p>Sometimes you want to apple the same CSS styles to several different elements at once. You could of course write the same styles multiple times in different selector blocks, but a <strong>selector list</strong> makes it possible to write those styles only once by allowing you to select for multiple elements fat a time.</p>
+
+			<p>Selector lists are written by comma-separating each individual selector. For instance, <code>h1, h2, h3</code> selects for every <code>h1</code>, <code>h2</code>, and <code>h3</code>. Any type of selector or combinator may be used in a selector list and it is okay to mix selector types. For example, <code>blockquote, .featured-paragraph</code> selects for all <code>blockquote</code> elements and all elements with a class of <code>featured-paragraph</code>.</p>
+
+			<p>When selecting lists that include the decendant combinator or other combinators, it is important to know that each comma completely resets the selector. <code>section h2, p</code> does <strong>not</strong> select for paragraphs inside a section. It selects for all <code>h2</code> elements inside a <code>section</code> element and all <code>p</code> elements everywhere. To select for all <code>h2</code> elements inside a <code>section</code> and all <code>p</code> elements inside a <code>section</code>, you would need to write <code>section h2, section p</code>.</p>
+
+			<p>Here are some examples of selector lists. Be sure to check the HTML tab to see the structure of the elements.</p>
+
+			<pen-demo html-code='&lt;h1&gt;Heading 1&lt;/h1&gt;
+
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+
+&lt;p class="fancy"&gt;I am paragraph with a class of "fancy".&lt;/p&gt;
+
+&lt;section class="parent-section"&gt;
+
+		&lt;p&gt;I am paragraph inside a section with a class of "parent-section".&lt;/p&gt;
+
+		&lt;blockquote&gt;I am blockquote inside a section with a class of "parent-section".&lt;/blockquote&gt;
+
+&lt;/section&gt;'
+
+			css-code='h1, h2, h3, .fancy {
+	font-style: italic;
+}
+
+.parent-section p, .parent-section blockquote {
+	border-left: 3px solid orange;
+	margin-left: 0;
+	padding-left: 1rem;
+}'
+			selected-tab="css"
+		></pen-demo>
+
+			<h2 class="attribute">Attribute Selector</h2>
+
+			<p>In addition to classes and Ids, HTML elements can have many other <a href="../html/html-intro.html#attributes">attributes</a> (such as <code>href</code> for links or <code>required</code> for form fields) to apply extra meaning or functionality, and sometimes it is helpful to select for those attributes in CSS directly. To write the selector, the attribute is indicated within square brackets (<code>[]</code>). For instance, a form field element with the <code>required</code> attribute could be selected using <code>[required]</code>.</p>
+
+			<p>For attributes that include a value, the square brackets can include the value in quotes after an equals sign, just like how the selector is written in the HTML tag. So for an HTML element like <code>&lt;input type="email"&gt;</code>, the CSS selector would be written <code>[type="email"]</code>.</p>
+
+			<p>Take a look at the following examples of attribute selectors. Be sure to check the HTML tab to see where and how the attributes are applied to the elements.</p>
+
+			<pen-demo html-code='&lt;label for="example-1"&gt;An input with a "disabled" attribute:&lt;/label&gt;
+&lt;input type="text" id="example-1" disabled&gt;
+
+&lt;label for="example-2"&gt;An input with a "type" attribute of "email":&lt;/label&gt;
+&lt;input type="email" id="example-2"&gt;'
+
+			css-code='input {
+	display: block;
+	margin: .5rem 0 1.5rem;
+}
+					
+[disabled] {
+	background-color: #c4dcff;
+}
+
+[type="email"] {
+	border: 2px solid #0060f7;
+}'
+			selected-tab="css"
+		></pen-demo>
+
+			<h2 id="advanced">Advanced Selectors and Combinators</h2>
+
+			<p>A number of other selectors and combinators provide greater levels of control for more niche use cases. The following table explains and gives brief examples of several of these.</p>
 
 			<table class="dominant-example" dir="ltr">
 				<tbody>
@@ -46,71 +203,7 @@
 						<th>Meaning</th>
 						<th>Example(s)</th>
 					</tr>
-					
-					<tr>
-						<td>Element Selector</td>
-						<td>Matches elements by name.</td>
-						<td>
-							
-							<p><code>h1 { }</code></p>
-							<small>Targets all <code>&lt;h1&gt;</code> elements.</small>
-							
-						</td>
-					</tr>
-					
-					<tr>
-						<td>Class Selector</td>
-						<td>Matches an element whose <em>class</em> attribute has a value that matches the one specified after the period symbol.</td>
-						<td>
-							
-							<p><code>.note { }</code></p>
-							<small>Targets any element whose <em>class</em> attribute has a value of <em>note</em>.</small>
-								
-							<p><code>p.note { }</code></p>
-							<small>Targets only <code>&lt;p&gt;</code> elements whose <em>class</em> attribute has a value of <em>note</em>. This format should be avoided in most cases.</small>
-							
-						</td>
-					</tr>
-					
-					<tr>
-						<td>Descendant Selector</td>
-						<td>Matches an element that is a descendent of another specified element (not only a direct child of that element).</td>
-						<td>
-							
-							<p><code>p a { }</code></p>
-							<small>Targets any <code>&lt;a&gt;</code> elements that sit inside a <code>&lt;p&gt;</code> element, <strong>even if there are other elements nested between</strong> them.</small>
-							
-						</td>
-					</tr>
-					
-					<tr>
-						<td>Multiple Selector</td>
-						<td>A comma separated list of selectors that selects all matching elements. The comma means <em>and</em>.</td>
-						<td>
-							
-							<p><code>h1, h2, h3 {}</code></p>
-							<small>Targets every <code>h1</code>, every <code>h2</code>, and every <code>h3</code>.</small>
-							
-							<p><code>main p, main li, header a { }</code></p>
-							<small>Targets every <code>p</code> within a <code>main</code>, every <code>li</code> within a <code>main</code>, and every <code>a</code> within a <code>header</code>. Notice that the <strong>parent must be written again for each</strong> decendant selector separated by a comma.</small>
-							
-						</td>
-					</tr>
-					
-					<tr>
-						<td>Attribute Selector</td>
-						<td>Matches an element that has an attribute that matches.</td>
-						<td>
-							
-							<p><code>input[type="text"] { }</code></p>
-							<small>Targets every <code>input</code> with a <code>type</code> attribute with a value of <code>text</code>.</small>
-							
-							<p><code>input[required] { }</code></p>
-							<small>Targets any <code>input</code> elements with the <code>required</code> attribute.</small>
-							
-						</td>
-					</tr>
-					
+
 					<tr>
 						<td>Universal Selector</td>
 						<td>Using an asterisk character targets every element on a page. Take care when using this selector.</td>
@@ -157,7 +250,7 @@
 					
 					<tr>
 						<td>Pseudo-classes</td>
-						<td>A set of spacial modifiers for advanced selections. A <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements#Pseudo-classes">full list</a> can be found on MDN.</td>
+						<td>A set of special modifiers for advanced selections. A <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Pseudo-classes_and_pseudo-elements#Pseudo-classes">full list</a> can be found on MDN.</td>
 						<td>
 							
 							<p><code>a:hover { }</code></p>
@@ -181,6 +274,10 @@
 					</tr>
 				</tbody>
 			</table>
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/css-selectors.html"></lesson-quiz>
 			
 		</article>
 		
@@ -191,8 +288,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

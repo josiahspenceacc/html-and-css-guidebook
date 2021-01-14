@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -54,62 +53,55 @@
 
 			<p>Links are marked up using the <code>&lt;a&gt;</code> tag. </p>
 
-			<pre class=" language-markup"><code>&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;</code></pre>
+			<code-block lang="markup" code='&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;'></code-block>
 
 			<p>And links in their basic state can be styled by selecting for the element normally:</p>
 
-			<pre class=" language-css"><code>a {
+			<code-block lang="css" code='a {
 	text-decoration: none;
-}</code></pre>
+}'></code-block>
 
 
 			<h2 id="visited">Visited</h2>
 
 			<p>The <em>visited</em> state refers to links the user has previously clicked. It can be styled by selecting the state like this:</p>
 
-			<pre class=" language-css"><code>a:visited {
+			<code-block lang="css" code='a:visited {
 	color: orange;
-}</code></pre>
+}'></code-block>
 
 
 			<h2 id="hover">Hover</h2>
 
 			<p>The <em>hover</em> state refers to links with the user's mouse positioned over it, but not clicking. It can be styled by selecting the state like this:</p>
 
-			<pre class=" language-css"><code>a:hover {
+			<code-block lang="css" code='a:hover {
 	text-decoration: underline;
-}</code></pre>
+}'></code-block>
 
 
 			<h2 id="focus">Focus</h2>
 
 			<p>The <em>focus</em> state refers to links the user selects by navigating with the tab key. This state is important for users who are unable to use a mouse or touch input. It can be styled by selecting the state like this:</p>
 
-			<pre class=" language-css"><code>a:focus {
+			<code-block lang="css" code='a:focus {
 	text-decoration: underline.
-}</code></pre>
+}'></code-block>
 
 
 			<h2 id="active">Active</h2>
 
 			<p>The <em>active</em> state refers to a link in the moment a user clicks on it. It can be styled by selecting the state like this:</p>
 
-			<pre class=" language-css"><code>a:active {
+			<code-block lang="css" code='a:active {
 	color: green;
-}</code></pre>
+}'></code-block>
 			
 			<h2 id="full-example">Full Example</h2>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.a {
+
+			<pen-demo html-code='&lt;a&gt;A Link&lt;/a&gt;'
+
+			css-code='.a {
 	color: green;
 }
 
@@ -128,10 +120,9 @@ a:focus {
 
 a:active {
 	background-color: cornflowerblue;
-}</pre>
-				<pre data-lang="html">&lt;a&gt;A Link&lt;/a&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above example, try hovering over the link. Try selecting it with the tab key. Try clicking on it. See what happens? Try adding your own CSS to the various link states.</p>
 			
@@ -156,9 +147,10 @@ a:active {
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

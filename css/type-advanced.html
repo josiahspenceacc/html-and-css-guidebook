@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -38,7 +37,6 @@
 
 				<nav class="page-nav">
 					<h2>On This Page</h2>
-					<a href="#webfonts">Web Fonts</a>
 					<a href="#modular-scales">Modular Scales</a>
 					<a href="#responsive-type">Responsive Type</a>
 					<a href="#video">Video Lesson</a>
@@ -47,44 +45,6 @@
 				</nav>
 				
 			</header>
-
-			<h2 id="webfonts">Web Fonts</h2>
-			
-			<p>As we've <a ref="/css/type-css.html#family">already learned</a>, typefaces can be applied to any HTML element using the <code>font-family</code> CSS property. A series of font options are given as a value, e.g. <code>"Times New Roman", Georgia, serif</code>. The browser looks on the user's computer to see if each font is available, from left to right. If the first font isn't installed (Times New Roman), the browser moves on to the next one (Georgia), and then on to the next, through as many font options are provided. It's standard practice to provide a generic option (serif or sans-serif) as the last in the series so that the browser can use the system default if none of the specified fonts are available.</p>
-			
-			<p class="big-point">Traditional use of the <code>font-family</code> property looks for fonts installed on the <strong>user's computer.</strong></p>
-			
-			<p>The reason the web has traditionally relied on <em>system fonts</em>&mdash;those installed on the user's computer&mdash;rather than providing custom fonts along with the other website files is that fonts are intellectual property. If a font is downloadable by the browser, it's easy for a user to keep the font without paying for it, which is both illegal and harmful to font creators. For decades, this limitation meant that only a handful of "web-safe" fonts&mdash;those commonly found pre-installed on most operating systems&mdash;could be used to style websites.</p>
-			
-			<h3>Web Font Services</h3>
-			
-			<p>Luckily for us, advances in technology and business models have created a new golden age of web typography through the advent of <em>web font services</em>. These are services that provide licenced and hosted web fonts that can be used legally and safely to style a site. Some of the most common web font services include <a href="https://fonts.google.com/">Google Fonts</a> (which has the added advantage of being completely free), <a href="https://fonts.adobe.com/">Adobe Fonts</a>, and <a href="https://www.fonts.com/">Fonts.com</a>, but there are countless others.</p>
-			
-			<p class="big-point">Web font services provide access to libraries of <strong>licensed typefaces</strong> for legal use on websites.</p>
-			
-			<p>These services provide the site developer with short snippet of <em>embed code</em> to be placed in either the site's CSS or the <code>head</code> of each HTML file. The font can then be applied normally using the <code>font-family</code> CSS property. It's still a good idea to provide fallback fonts, just in case anything goes wrong with the web font.</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">/*Google Fonts CSS Embed Code:*/
-@import url('https://fonts.googleapis.com/css?family=Bitter&display=swap');
-				
-p {
-	font-family: Bitter, Times, serif;
-}</pre>
-
-				<pre data-lang="html">&lt;p&gt;This text uses a typeface called Bitter from Google Fonts.&lt;/p&gt;</pre>
-
-			</div>
-			
-			<p class="try-this">What happens if you remove the Google Fonts embed code? Do you think the font will change?</p>
 			
 			<h2 id="modular-scales">Modular Scales</h2>
 			
@@ -100,17 +60,16 @@ p {
 			</ul>
 			
 			<p>Here it is in action. Notice how the sizes scale harmoniously:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">h1 {
+
+			<pen-demo html-code='&lt;h1&gt;Heading 1&lt;/h1&gt;
+
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+
+&lt;p&gt;Paragraph&lt;/p&gt;'
+
+			css-code='h1 {
 	font-size: 3.375rem;
 }
 				
@@ -120,34 +79,25 @@ h2 {
 				
 h3 {
 	font-size: 1.5rem;
-}</pre>
-
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
-				
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-
-&lt;p&gt;Paragraph&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<h3>Letting the Browser Do the Math</h3>
 			
 			<p>The modular scale technique is a nice design tool, but we can make things easier to manage by letting the browser do the math for us. To make this work, we'll need to make use of <a href="/css/variables.html">CSS Variables</a> and the CSS <em>calc function</em>, which is like an in-code calculator tool.</p>
 			
 			<p>By creating each size as a variable, we can use the calc function to multiply the ratio by the previous size:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">html {
+
+			<pen-demo html-code='&lt;h1&gt;Heading 1&lt;/h1&gt;
+
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+
+&lt;p&gt;Paragraph&lt;/p&gt;'
+
+			css-code='html {
 	--ratio: 		1.5;
 	--size-one: 	calc( 1rem * var(--ratio) );
 	--size-two: 	calc( var(--size-one) * var(--ratio) );
@@ -164,17 +114,9 @@ h2 {
 				
 h3 {
 	font-size: var(--size-one);
-}</pre>
-
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
-				
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-
-&lt;p&gt;Paragraph&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">What happens if you try changing the value of the <em>ratio</em> variable? Notice how all the sizes are recalculated and all the type scales accordingly. Can you figure out how to create a fourth size?</p>
 			
@@ -209,17 +151,16 @@ h2 {
 }'></code-block>
 			
 			<p>But there's a better way! By using the <code>rem</code> unit to size all type, the process becomes much easier. The <code>rem</code> unit is a <em>relative</em> unit, meaning, as long as all other elements are sized using the <code>rem</code> unit, we can change the size of all elements by changing a single number. This is because the definition of <code>1rem</code> is changeable. Specifically, <code>1rem</code> is equal to whatever font size is set on the <code>html</code> selector. By default, this is <code>16px</code>, but we can change this size to be whatever we want:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">h1 {
+
+			<pen-demo html-code='&lt;h1&gt;Heading 1&lt;/h1&gt;
+
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+
+&lt;p&gt;Paragraph&lt;/p&gt;'
+
+			css-code='h1 {
 	font-size: 2rem;
 }
 				
@@ -237,48 +178,39 @@ h3 {
 		font-size: 20px;
 	}
 
-}</pre>
-
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
-				
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-
-&lt;p&gt;Paragraph&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">Try grabbing the lower-right corner of the demo above and resizing it. Notice how <em>all</em> the elements change size in response to the viewport size. What happens if you change the font size that is set in the media query?</p>
 			
 			<h3>Responsive Modular Scale with Variables</h3>
 			
 			<p>While changing the value of <code>1rem</code> is a powerful technique for making type responsive, you might sometimes find that the jump in sizes between headings needs to use a larger ratio on desktop sizes than on mobile sizes. If you use a modular scale with calc and variables as shown above, you can simply change the <em>ratio variable</em> in a media query and all the size variables are recalculated at that viewport width:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">html {
+
+			<pen-demo html-code='&lt;h1&gt;Heading 1&lt;/h1&gt;
+
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+
+&lt;p&gt;Paragraph&lt;/p&gt;'
+
+			css-code='html {
 	--ratio: 		1.2;
 	--size-one: 	calc( 1rem * var(--ratio) );
 	--size-two: 	calc( var(--size-one) * var(--ratio) );
 	--size-three: 	calc( var(--size-two) * var(--ratio) );
 }
-				
+
 h1 {
 	font-size: var(--size-three);
 }
-				
+
 h2 {
 	font-size: var(--size-two);
 }
-				
+
 h3 {
 	font-size: var(--size-one);
 }
@@ -289,17 +221,9 @@ h3 {
 		--ratio: 1.6;
 	}
 
-}</pre>
-
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
-				
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-
-&lt;p&gt;Paragraph&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">Try grabbing the lower-right corner of the demo above and resizing it. Notice how <em>all</em> the elements change size when the ratio variable changes. What happens if you change the number for the ratio variable in the media query?</p>
 			
@@ -337,9 +261,10 @@ h3 {
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

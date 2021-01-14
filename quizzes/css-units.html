@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sizing Units Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+	<div id="app">
+		<quiz v-bind:badgehue="50" subject="Sizing Units" :currentStep="currentStep" v-on:next-step="nextStep"
+			v-on:skip-step="skipStep" v-cloak>
+
+			<!--Step 1-->
+			<question-step :step="1" v-bind:options='["Picas",
+							"Percentage",
+							"Pixels",
+							"It is not a unit of measurement in CSS"]'
+				answer="Pixels">
+
+				<p>What does the <code>px</code> unit mean?</p>
+
+			</question-step>
+
+			<!--Step 2-->
+			<question-step :step="2" v-bind:options='["Rems",
+							"Pixels",
+							"Percentage",
+							"Viewport Units"]'
+				answer="Rems">
+
+				<p>What unit type is often the best and most powerful choice, especially for type?</p>
+
+			</question-step>
+
+			<!--Step 3-->
+			<question-step :step="3" v-bind:options='["The page body",
+							"The containing element",
+							"One rem",
+							"The viewport width"]'
+				answer="The containing element">
+
+				<p>When used for length measurement, what is a percentage unit a percentage of?</p>
+
+			</question-step>
+
+			<!--Step 4-->
+			<question-step :step="4" v-bind:options='["12px",
+							"16px",
+							"18px",
+							"Rems cannot be compared to pixel values."]'
+				answer="16px">
+
+				<p>What is the default pixel equivalent for <code>1rem</code>?</p>
+
+			</question-step>
+
+			<!--Step 5-->
+			<question-step :step="5" v-bind:options='["Change the <code>rem-size</code> property.",
+							"Change the size of the browser window.",
+							"Change the font size on the <code>html</code> element.",
+							"Rems are fixed units and cannot be resized/"]'
+				answer="Change the font size on the <code>html</code> element.">
+
+				<p>How can you change the size of <code>1rem</code>?</p>
+
+			</question-step>
+
+			<!--Step 6-->
+			<question-step :step="6" v-bind:options='["True",
+							"False"]'
+				answer="False">
+
+				<p>True or False: It is generally better to use <strong>em</strong> units instead of <strong>rem</strong> units.</p>
+
+			</question-step>
+
+			<!--Step 7-->
+			<question-step :step="7" v-bind:options='["<code>rem</code>",
+							"<code>%</code>",
+							"<code>vw</code>",
+							"<code>vh</code>"]'
+				answer="<code>vh</code>">
+
+				<p>What unit of measurement is a percentage of the <strong>height of the browser window</strong>?</p>
+
+			</question-step>
+
+			<!--Step 8-->
+			<question-step :step="8" v-bind:options='["Twice the size of the parent font size.",
+							"Twice the size of the width of the parent element.",
+							"20px",
+							"2vh"]'
+				answer="Twice the size of the parent font size.">
+
+				<p>Using the following CSS: <code>font-size: 200%</code>, what would be the size of the type?</p>
+
+			</question-step>
+			
+
+		</quiz>
+	</div>
+
+	<script src="../dependencies/compressed.js"></script>
+	<script async src="../dependencies/xml.js"></script>
+	<script async src="../dependencies/css.js"></script>
+	<script async src="../dependencies/htmlmixed.js"></script>
+	<script src="js/quiz-scripts-dist.js"></script>
+
+</body>
+
+</html>

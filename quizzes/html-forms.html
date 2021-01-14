@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Forms Quiz</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+<div id="app">
+	<quiz v-bind:badgehue="246" subject="HTML Forms" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
+
+		<!--Step 1-->
+		<quiz-step :step="1"
+					  starter='<form action="filename.js">
+
+</form>'
+					  answer='<form action="filename.js">
+	<input type="text" name="name">
+</form>'>
+			
+			<h3>Basic Text Field</h3>
+			
+			<p>Create a basic <strong>text field</strong> in the form below. Remember, you will need two attributes. Don't worry about creating the label or its related attributes.</p>
+
+			<p><em>Hint: Use the name: <code>name</code>.</em></p>
+
+		</quiz-step>
+
+		<!--Step 2 -->
+		<quiz-step :step="2"
+					  starter='<form action="filename.js">
+	<input type="text" name="name">
+</form>'
+					  answer='<form action="filename.js">
+	<input type="text" name="name" placeholder="First and Last Name">
+</form>'>
+			
+			<h3>Placeholder Text</h3>
+			
+			<p>Add <strong>placeholder</strong> text to indicate where and how the user should add input. Make that text say <code>First and Last Name</code>.</p>
+
+			<p><em>Hint: Write the placeholder attribute last.</em></p>
+
+		</quiz-step>
+
+		<!--Step 3 -->
+		<quiz-step :step="3"
+					  starter='<form action="filename.js">
+	<label>Email</label>
+	<input type="email" id="email" name="email">
+</form>'
+					  answer='<form action="filename.js">
+	<label for="email">Email</label>
+	<input type="email" id="email" name="email">
+</form>'>
+			
+			<h3>Labels for Fields</h3>
+			
+			<p>There's an important <strong>attribute missing</strong> from one of the elements in the code provided. <strong>Add</strong> the missing attribute.</p>
+
+		</quiz-step>
+
+		<!--Step 4 -->
+		<quiz-step :step="4"
+					  starter='<form action="filename.js">
+	<label for="topic">Select</label>
+	<select id="topic" name="topic">
+			<option>Choose One</option>
+			<option>Option 1</option>
+			<option>Option 2</option>
+			<option>Option 3</option>
+	</select>
+</form>'
+					  answer='<form action="filename.js">
+	<label for="topic">Select</label>
+	<select id="topic" name="topic">
+			<option disabled hidden selected>Choose One</option>
+			<option>Option 1</option>
+			<option>Option 2</option>
+			<option>Option 3</option>
+	</select>
+</form>'>
+			
+			<h3>Select Options</h3>
+			
+			<p>In the provided select field, we don't want the user to be able to actually choose the first option that says "Choose One". Add the correct code to the first <code>option</code> to:</p>
+
+			<ol>
+				<li>Prevent it from being selected</li>
+				<li>Prevent it from showing in the dropdown</li>
+				<li>Always show by default</li>
+			</ol>
+
+			<p><em>Hint: Write the code in the order specified.</em></p>
+
+		</quiz-step>
+
+		<!--Step 5 -->
+		<quiz-step :step="5"
+					  starter='<input type="submit">'
+					  answer='<input type="submit" value="Sign Up">'>
+			
+			<h3>Submit Text</h3>
+			
+			<p>Change the text in the submit button to say <code>Sign Up</code>.</p>
+
+		</quiz-step>
+
+		<!--Step 6 -->
+		<quiz-step :step="6"
+					  starter='<form action="filename.js">
+
+	<div>
+		<label for="name">Name</label>
+		<input type="text" id="name" name="name">
+	</div>
+
+	<div>
+		<label for="email">Email</label>
+		<input type="email" id="email" name="email">
+	</div>
+
+	<div>
+		<label for="password">Password</label>
+		<input type="password" id="password" name="password">
+	</div>
+
+</form>'
+					  answer='<form action="filename.js">
+
+<div>
+	<label for="name">Name</label>
+	<input type="text" id="name" name="name">
+</div>
+
+<div>
+	<label for="email">Email</label>
+	<input type="email" id="email" name="email" required>
+</div>
+
+<div>
+	<label for="password">Password</label>
+	<input type="password" id="password" name="password" required>
+</div>
+
+</form>'>
+			
+			<h3>Basic Validation</h3>
+			
+			<p>In the form below, add the information that will show the user an error if the <code>email</code> and <code>password</code> fields are not filled out.</p>
+
+			<p><em>Hint: Add the new code last for each field.</em></p>
+
+		</quiz-step>
+		
+		<!--Step 7-->
+		<question-step :step="7" 
+			v-bind:options='["input",
+							"select",
+							"option",
+							"textarea"]'
+			answer="textarea">
+
+			<p>What element creates a large <strong>multi-line text field</strong>?</p>
+
+		</question-step>
+
+		<!--Step 8-->
+		<question-step :step="8" 
+			v-bind:options='["True",
+							"False"]'
+			answer="False">
+
+			<p>True or False: The <code>input</code> element <strong>requires</strong> a closing tag</p>
+
+		</question-step>
+		
+		<!--Step 9-->
+		<question-step :step="9" 
+			v-bind:options='["To give your form a title",
+							"To specify where to send the form data when the form is submitted",
+							"To indicate that a field is required",
+							"To specify what form task is associated with a given label"]'
+			answer="To specify where to send the form data when the form is submitted">
+
+			<p>What is the purpose of the <code>action</code> attribute?</p>
+
+		</question-step>
+		
+		<!--Step 10-->
+		<question-step :step="10" 
+			v-bind:options='["whatever you want it to be",
+							"text",
+							"address",
+							"name"]'
+			answer="address">
+
+			<p>In the code below, what should the value of <code>id</code> be?</p>
+
+			<codemirror	:options="{
+				mode: 'htmlmixed',
+				lineWrapping: true,
+				htmlMode: true,
+				indentUnit: 4,
+				indentWithTabs: true,
+				readOnly: true
+			}"
+			value='<label for="address">Address</label>
+<input type="text" id="      " name="address">'></codemirror>
+
+		</question-step>
+
+	</quiz>
+</div>
+
+<script src="../dependencies/compressed.js"></script>
+	<script async src="../dependencies/xml.js"></script>
+	<script async src="../dependencies/css.js"></script>
+	<script async src="../dependencies/htmlmixed.js"></script>
+	<script src="js/quiz-scripts-dist.js"></script>
+
+</body>
+</html>

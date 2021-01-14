@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Introduction to HTML Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+	<div id="app">
+		<quiz v-bind:badgehue="137" subject="HTML Fundamentals" :currentStep="currentStep" v-on:next-step="nextStep"
+			v-on:skip-step="skipStep" v-cloak>
+
+			<!--Step 1-->
+			<question-step :step="1" v-bind:options='["It applies meaning and roles to webpage content.",
+							"It applies style to webpage content.",
+							"It creates interactivity.",
+							"It points to a server where files live."]'
+				answer="It applies meaning and roles to webpage content.">
+
+				<p>What is the purpose of HTML?</p>
+
+			</question-step>
+			
+			<!--Step 2-->
+			<question-step :step="2" v-bind:options='["Tag",
+							"Attribute",
+							"Element",
+							"Markup"]'
+				answer="Element">
+
+				<p>What is the <strong>basic unit of meaning</strong> in HTML?</p>
+			
+			</question-step>
+			
+			<!--Step 3-->
+			<question-step :step="3" v-bind:options='["The parent element is nested within the child element.",
+										"The parent element created the child element.",
+										"The parent element comes before the child element.",
+										"The parent element contains the child element."]'
+					answer="The parent element contains the child element.">
+
+				<p>What does it mean to say that an element is the <strong>parent</strong> of another element?</p>
+
+			</question-step>
+			
+			<!--Step 4-->
+			<question-step :step="4" v-bind:options='["home.html",
+													"index.html",
+													"site.html",
+													"You can name it whatever you want"]'
+					answer="index.html">
+			
+				<p>What should the file name always be for the home page of a website?</p>
+			
+			</question-step>
+			
+			<!--Step 5-->
+			<question-step :step="5" v-bind:options='["True",
+													"False"]'
+					answer="False">
+			
+				<p>True or False: <strong>Every</strong> HTML element has both an opening tag and a closing tag.</p>
+			
+			</question-step>
+			
+			<!--Step 6-->
+			<question-step :step="6" v-bind:options='["True",
+													"False"]'
+					answer="True">
+			
+				<p>True or False: HTML elements should be chosen based on their <strong>meaning</strong>.</p>
+			
+			</question-step>
+			
+			<!--Step 7-->
+			<question-step :step="7" v-bind:options='["The meaning of an HTML element.",
+													"The code that indicates the beginning or end of an element.",
+													"The basic unit of meaning in HTML.",
+													"Extra values attached to an element to add additional meaning or functionality."]'
+					answer="Extra values attached to an element to add additional meaning or functionality.">
+			
+				<p>What is an <strong>attribute</strong> in HTML?</p>
+			
+			</question-step>
+			
+			<!--Step 8-->
+			<question-step :step="8" v-bind:options='["True",
+													"False"]'
+										answer="True">
+			
+				<p>True or False: There is <strong>no limit</strong> to how many attributes you can have on a single HTML element.</p>
+			
+			</question-step>
+			
+			<!--Step 9-->
+			<question-step :step="9" v-bind:options='["True",
+													"False"]'
+										answer="False">
+			
+				<p>True or False: It is okay to use <strong>spaces</strong> in the name of an HTML file.</p>
+			
+			</question-step>
+			
+			<!--Step 10-->
+			<question-step :step="10" v-bind:options='["After the opening tag of an element.",
+													"Inside the closing tag of an element.",
+													"Inside the opening tag of an element.",
+													"Before an element."]'
+					answer="Inside the opening tag of an element.">
+			
+				<p>Where are <strong>attributes</strong> placed?</p>
+			
+			</question-step>
+
+		</quiz>
+	</div>
+
+	<script src="../dependencies/compressed.js"></script>
+	<script async src="../dependencies/xml.js"></script>
+	<script async src="../dependencies/css.js"></script>
+	<script async src="../dependencies/htmlmixed.js"></script>
+	<script src="js/quiz-scripts-dist.js"></script>
+
+</body>
+
+</html>

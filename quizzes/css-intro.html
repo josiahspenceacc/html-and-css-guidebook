@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Introduction to CSS Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+	<div id="app">
+		<quiz v-bind:badgehue="171" subject="CSS Basics" :currentStep="currentStep" v-on:next-step="nextStep"
+			v-on:skip-step="skipStep" v-cloak>
+
+			<!--Step 1-->
+			<question-step :step="1" v-bind:options='["h1",
+							"color",
+							"blue",
+							"color: blue"]'
+				answer="h1">
+
+				<p>In the ruleset below, what is the <strong>selector</strong>?</p>
+
+				<codemirror	:options="{
+					mode: 'css',
+					lineWrapping: true,
+					lineNumbers: true,
+					htmlMode: true,
+					indentUnit: 4,
+					indentWithTabs: true
+				}"
+				value='h1 {
+	color: blue;
+}'></codemirror>
+
+			</question-step>
+
+			<!--Step 2-->
+			<question-step :step="2" v-bind:options='["h1",
+							"color",
+							"blue",
+							"color: blue"]'
+				answer="color">
+
+				<p>In the ruleset below, what is the <strong>property</strong>?</p>
+
+				<codemirror	:options="{
+					mode: 'css',
+					lineWrapping: true,
+					lineNumbers: true,
+					htmlMode: true,
+					indentUnit: 4,
+					indentWithTabs: true
+				}"
+				value='h1 {
+	color: blue;
+}'></codemirror>
+
+			</question-step>
+
+			<!--Step 3-->
+			<question-step :step="3" v-bind:options='["h1",
+							"color",
+							"blue",
+							"color: blue"]'
+				answer="color: blue">
+
+				<p>In the ruleset below, what is the <strong>declaration</strong>?</p>
+
+				<codemirror	:options="{
+					mode: 'css',
+					lineWrapping: true,
+					lineNumbers: true,
+					htmlMode: true,
+					indentUnit: 4,
+					indentWithTabs: true
+				}"
+				value='h1 {
+	color: blue;
+}'></codemirror>
+
+			</question-step>
+
+			<!--Step 4-->
+			<question-step :step="4" v-bind:options='["To define the meaning and structure of web page content",
+							"To set the design or appearance of a web page",
+							"To create advanced functionality",
+							"To store web content for users"]'
+				answer="To set the design or appearance of a web page">
+
+				<p>What is the purpose of CSS?</p>
+
+			</question-step>
+
+			<!--Step 5-->
+			<question-step :step="5" v-bind:options='["True",
+							"False"]'
+				answer="False">
+
+				<p>True or False: The <strong>file extension</strong> for CSS files is <code>.style</code>. E.g. a file might be named <code>main.style</code>.</p>
+
+			</question-step>
+
+			<!--Step 6-->
+			<question-step :step="6" v-bind:options='["<code>href</code> and <code>head</code>",
+							"<code>stylesheet</code> and <code>rel</code>",
+							"<code>head</code> and <code>stylesheet</code>",
+							"<code>href</code> and <code>rel</code>"]'
+				answer="<code>href</code> and <code>rel</code>">
+
+				<p>In HTML, the <code>link</code> element is used to tell the HTML file where to look for the CSS file. What are the <strong>two attributes</strong> that go in the <code>link</code> element?</p>
+
+			</question-step>
+
+			<!--Step 7-->
+			<question-step :step="7" v-bind:options='["True",
+			"False"]'
+				answer="True">
+
+				<p>True or False: It's best to use a single separate CSS file that is <strong>shared by all HTML pages</strong> on a site.</p>
+
+			</question-step>
+
+			<!--Step 8-->
+			<question-step :step="8" v-bind:options='["True",
+			"False"]'
+				answer="True">
+
+				<p>True or False: Some CSS properties are passed on to an element's children, which is known as <strong>inheritance</strong>.</p>
+
+			</question-step>
+
+			<!--Step 9-->
+			<question-step :step="9" v-bind:options='["Only 1",
+							"No more than 5",
+							"No more than 10",
+							"As many as needed"]'
+				answer="As many as needed">
+
+				<p>How many <strong>declarations</strong> can each ruleset for a selector contain?</p>
+
+			</question-step>
+
+			<!--Step 10-->
+			<question-step :step="10" v-bind:options='["The web page will fail to load because the browser doesn’t know what to do.",
+							"The browser randomly chooses which declaration it wants to display each time the page is loaded.",
+							"All else being equal, the browser uses the declaration that is furthest down in the CSS.",
+							"The browser uses the declaration that is closest to the browser default."]'
+				answer="All else being equal, the browser uses the declaration that is furthest down in the CSS.">
+
+				<p>What happens when two CSS declarations <strong>conflict</strong> with one another?</p>
+
+			</question-step>
+			
+
+		</quiz>
+	</div>
+
+	<script src="../dependencies/compressed.js"></script>
+	<script async src="../dependencies/xml.js"></script>
+	<script async src="../dependencies/css.js"></script>
+	<script async src="../dependencies/htmlmixed.js"></script>
+	<script src="js/quiz-scripts-dist.js"></script>
+
+</body>
+
+</html>

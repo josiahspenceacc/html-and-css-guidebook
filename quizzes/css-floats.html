@@ -17,7 +17,6 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css">
 	<link rel="stylesheet" href="../quiz-style.css">
 </head>
 
@@ -152,16 +151,11 @@ h3{
 	</quiz>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="https://unpkg.com/vue-codemirror-lite/dist/vuecodemirror.min.js"></script>
-<script>
-	window.CodeMirror = VueCodeMirror.CodeMirror
-</script>
-</script>
-<script src="https://codemirror.net/mode/xml/xml.js"></script>
-<script src="https://codemirror.net/mode/css/css.js"></script>
-<script src="https://codemirror.net/mode/htmlmixed/htmlmixed.js"></script>
-<script src="../quiz-scripts.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script async src="../dependencies/xml.js"></script>
+	<script async src="../dependencies/css.js"></script>
+	<script async src="../dependencies/htmlmixed.js"></script>
+	<script src="js/quiz-scripts-dist.js"></script>
 
 </body>
 </html>

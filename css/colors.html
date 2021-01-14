@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -41,6 +40,7 @@
 					<a href="#hex">Hexadecimal</a>
 					<a href="#rgb">RGB / RGBa</a>
 					<a href="#named">Named Colors</a>
+					<a href="#quiz">Practice Exercise</a>
 					<a href="#resources">Resource Links</a>
 				</nav>
 				
@@ -51,7 +51,7 @@
 
 			<p>The Hex format consists of six digits of alphanumeric code and are denoted by a preceding hashtag, like this: <code>#3ab13f</code>. These values can be easily copy-pasted from most design software.</p>
 
-			<p>For certain colors with repeating digits in the hex code, you can use a three-digit shorthand, like this: <code>#333</code>.</p>
+			<p>For certain colors with repeating digits in the hex code, you can use a three-digit shorthand. For instance, <code>#333333</code> can be shortened to <code>#333</code>.</p>
 
 
 			<h2 id="rgb">RGB / RGBA</h2>
@@ -66,6 +66,10 @@
 			<p>For ease of use, there are 147 colors that have human-friendly names. These include common color names like: <code>white</code>, <code>black</code>, <code>red</code>, <code>blue</code>, etc., as well as some fancier ones like <code>cornflowerblue</code> or <code>darkolivegreen</code>.</p>
 
 			<p>There are many websites that <a href="https://htmlcolorcodes.com/color-names/" title="Named Color Reference">list all named CSS colors</a> for reference.</p>
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/css-colors.html"></lesson-quiz>
 			
 			
 			<h2 id="resources">Resource Links</h2>
@@ -97,8 +101,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

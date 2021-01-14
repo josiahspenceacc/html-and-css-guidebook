@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 	
 </head>
@@ -56,63 +55,39 @@
 
 			<p>By default, a block element is as wide as the container and as tall as the content it contains. Let's look at an example div that contains some text. (We'll give it a background color to make it easier to see the box.)</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.example-div{
-	background-color: powderblue;
-}</pre>
-				<pre data-lang="html">&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;</pre>
+			<pen-demo html-code='&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;'
 
-			</div>
+			css-code='.example-div{
+	background-color: powderblue;
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p>We can apply a set width and/or height to change the size however we want:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.example-div{
+			<pen-demo html-code='&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;'
+
+			css-code='.example-div{
 	background-color: powderblue;
 	height: 20rem;
 	width: 80%;
-}</pre>
-				<pre data-lang="html">&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above example, try changing the values for the <code>width</code> and <code>height</code> properties.</p>
 
 			<p>However, we need to be careful about setting a height because if there is too much content, it will grow outside of the container:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.example-div{
-	background-color: powderblue;
-	height: 5rem;
-	width: 80%;
-}</pre>
-				<pre data-lang="html">&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;</pre>
+			<pen-demo html-code='&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;'
 
-			</div>
+			css-code='.example-div{
+	background-color: powderblue;
+	height: 4rem;
+	width: 80%;
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p>So, in general, it's good to let height take care of itself in most cases.</p>
 			
@@ -122,25 +97,16 @@
 
 			<p>These related properties allow you to set a maximum width or height up to which an element may expand, or a minimum width or height down to which an element may shrink. These properties can be combined to work together:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.example-div{
+			<pen-demo html-code='&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;'
+
+			css-code='.example-div{
 	background-color: powderblue;
 	max-width: 250px;
 	min-width: 200px;
 	width: 40%;
-}</pre>
-
-				<pre data-lang="html">&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p class="try-this">Try resizing the demo preview window by grabbing the bottom right corner and dragging. Notice how element grows, but only up to 250px, and it shrinks, but only down to 200px.</p>
 
@@ -149,23 +115,14 @@
 
 			<p>Padding defines space <em>within</em> an element, between the edge of the box and the content the element contains. The simple <strong>padding</strong> property is shorthand for <strong>padding-top, padding-right, padding-bottom, padding-left.</strong> (Notice that the properties in the shorthand are ordered clockwise, starting at the top.)</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.example-div{
+			<pen-demo html-code='&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;'
+
+			css-code='.example-div{
 	background-color: powderblue;
 	padding: 1rem 2rem 10px 20px;
-}</pre>
-
-				<pre data-lang="html">&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the demo above, try changing the values for <code>padding</code> on different sides of the element. Notice how the content is pushed away from the edges of the box.</p>
 
@@ -179,23 +136,23 @@
 				<li><strong>One value:</strong> all sides.</li>
 			</ul>
 
-			<pre class="language-css "><code>.top-leftright-bottom{
+			<code-block lang="css" code='.top-leftright-bottom {
 	padding: 1rem 2rem 10px;
 }
 
-.topbottom-leftright{
+.topbottom-leftright {
 	padding: 1rem 2rem;
 }
 
-.topbottomleftright{
+.topbottomleftright {
 	padding: 3rem;
-}</code></pre>
+}'></code-block>
 
 			<p>You can, of course, use the non-shorthand properties for individual sides:</p>
 
-			<pre class="language-css "><code>.one-side-only{
+			<code-block lang="css" code='.one-side-only {
 	padding-left: 3rem;
-}</code></pre>
+}'></code-block>
 
 			<p>Notice that the padding is <em>added</em> to the existing dimensions of the box, unless the box already fills its container (as in a full-width box), in which case it pushes the content in to make room for the padding.</p>
 
@@ -204,25 +161,16 @@
 
 			<p>Margin defines space <em>around</em> an element, between the element and its neighbors. As with padding, The simple <strong>margin</strong> property is shorthand for <strong>margin-top, margin-right, margin-bottom, margin-left.</strong> We'll need two divs for our demonstration.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.example-div{
+			<pen-demo html-code='&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;
+
+&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;'
+
+			css-code='.example-div{
 	background-color: powderblue;
 	margin: 1rem 2rem 10px 20px;
-}</pre>
-
-				<pre data-lang="html">&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;
-
-&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the demo above, try changing the values for <code>margin</code> on the various sides. Note how the boxes are spaced away from each other and from the edges of the preview window in response.</p>
 
@@ -230,44 +178,35 @@
 
 			<p>All the same shorthand rules apply as with padding. The properties in the shorthand are ordered clockwise, starting at the top. The same three, two, and single value versions are available, and the same single-side properties are available.</p>
 
-			<pre class="language-css "><code>.top-leftright-bottom{
+			<code-block lang="css" code='.top-leftright-bottom {
 	margin: 1rem 2rem 10px;
 }
 
-.topbottom-leftright{
+.topbottom-leftright {
 	margin: 1rem 2rem;
 }
 
-.topbottomleftright{
+.topbottomleftright {
 	margin: 3rem;
 }
 
-.one-side-only{
+.one-side-only {
 	margin-left: 3rem;
-}</code></pre>
+}'></code-block>
 
 			<h3>Horizontal Centering with Margin</h3>
 
 			<p>A handy feature of <strong>margin</strong> is that it allows horizontal centering of an element using the <em>auto</em> value, which simply takes up the available space. For example:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.example-div{
+			<pen-demo html-code='&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;'
+
+			css-code='.example-div{
 	background-color: powderblue;
 	margin: 0 auto; /*0 top and bottom, auto left and right*/
 	width: 50%;
-}</pre>
-
-				<pre data-lang="html">&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the demo above, try resizing the preview window by grabbing the bottom tight corner and dragging. Notice how the element always stays horizontally centered.</p>
 
@@ -284,68 +223,50 @@
 				<li><strong>border-color:</strong> defines the color of the border. Optional. If no color is defined, the border will match the color of the text.</li>
 			</ul>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.example-div{
+			<pen-demo html-code='&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment."&lt;/div&gt;'
+
+			css-code='.example-div{
 	background-color: powderblue;
 	border-color: green;
 	border-style: solid;
 	border-width: 2px;
-}</pre>
-
-				<pre data-lang="html">&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment."&lt;/div&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the demo above, try playing around with the different <code>border</code> values. See what happens when you change the color or the width. For the style, try out values such as <code>dotted</code> or <code>dashed</code>.</p>
 
 			<p>Border is applied outside of padding:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.example-div{
+			<pen-demo html-code='&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment."&lt;/div&gt;'
+
+			css-code='.example-div{
 	background-color: powderblue;
 	border-color: green;
 	border-style: solid;
 	border-width: 2px;
 	padding: 2rem;
-}</pre>
-
-				<pre data-lang="html">&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment."&lt;/div&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p>There is also a <strong>shorthand</strong> property for border (just <strong>border</strong>). The order of values is strict (and space-separated): <em>border-width border-style border-color(optional)</em>.</p>
 
-			<pre class="language-css "><code>.example-div-border-shorthand{
-border: 2px solid green;
-}</code></pre>
+			<code-block lang="css" code='.example-div-border-shorthand {
+	border: 2px solid green;
+}'></code-block>
 
 			<p>There are also <strong>single-side</strong> versions of all border properties, including the shorthand:</p>
 
-			<pre class="language-css "><code>.example-div-border-left{
+			<code-block lang="css" code='.example-div-border-left {
 	border-left-color: green;
 	border-left-style: solid;
 	border-left-width: 2px;
 }
 
-.example-div-border-left-shorthand{
+.example-div-border-left-shorthand {
 	border-left: 2px solid;
-}</code></pre>
+}'></code-block>
 
 			<p>As with padding and margin, border is added to the total size of an element, unless there is no room, in which case it pushes the content in to make room.</p>
 
@@ -354,50 +275,32 @@ border: 2px solid green;
 
 			<p>As mentioned in the previous sections, by default, padding and border are <em>added</em> to the starting size of an element. This means that in cases where the size of a box is defined using width and/or height, if padding or border are added, the final size of the box is larger than the size originally defined. Like so:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.example-div{
+			<pen-demo html-code='&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;'
+
+			css-code='.example-div{
 	background-color: powderblue;
 	border: 10px solid;
 	padding: 3rem;
 	width: 50%;
-}</pre>
-
-				<pre data-lang="html">&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p>As you can see, the div is larger than 50% of the width of the container because the padding and border are added to that.</p>
 
 			<p>With the <strong>box-sizing</strong> property, we can set the padding and border to <em>push in</em> from the defined size of an element rather than adding to it using the value <strong>border-box</strong>. This allows you to preserve your intended sizing:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.example-div{
+			<pen-demo html-code='&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight oclock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;'
+
+			css-code='.example-div{
 	background-color: powderblue;
 	border: 10px solid;
 	box-sizing: border-box;
 	padding: 3rem;
 	width: 50%;
-}</pre>
-
-				<pre data-lang="html">&lt;div class="example-div"&gt;"There will call upon you to-night, at a quarter to eight o'clock," it said, "a gentleman who desires to consult you upon a matter of the very deepest moment. Your recent services to one of the royal houses of Europe have shown that you are one who may safely be trusted with matters which are of an importance which can hardly be exaggerated.."&lt;/div&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p>With border-box applied, the box is now exactly 50% of the container and the padding and border have been added <em>within</em> that space.</p>
 
@@ -442,9 +345,10 @@ on <a href="https://codepen.io">CodePen</a>.</span>
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

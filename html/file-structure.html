@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -42,6 +41,7 @@
 					<a href="#home-page">Home Page</a>
 					<a href="#subfolders">Subfolders</a>
 					<a href="#parent-folders">Parent Folders</a>
+					<a href="#quiz">Practice Exercise</a>
 				</nav>
 				
 			</header>
@@ -78,13 +78,18 @@
 				<img src="images/subfolder.png" alt="Subfolder in a file structure">
 			</figure>
 			
-			<p>To refer to a file in a subfolder, the file path must be written to include the folder name, followed by a slash: <code>subfolder/file.html</code>. If there are multiple folders, each one can be written using the same format: <code>subfolder/sub-subfolder/file.html</code>.</p>
+			<p>To refer to a file in a subfolder, the <strong>file path</strong> (the written location of a file) must be written to include the folder name, followed by a slash: <code>subfolder/file.html</code>. If there are multiple folders, each one can be written using the same format: <code>subfolder/sub-subfolder/file.html</code>.</p>
 			
 			<h2 id="parent-folders">Parent Folders</h2>
 			
 			<p>To point to a folder that is a <em>parent</em> to the folder containing the current file, writing two periods and a slash (<code>../</code>) in the file path indicates the move up the file tree. So <code>../file.html</code> would point to a file one folder <em>up</em> from the file in which the file path is written.</p>
 			
 			<p>To move up multiple folders, the same pattern may be repeated as many times as necessary: <code>../../../file.html</code> points to a file three folders up from the file in which it is written.</p>
+			
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/html-structure.html"></lesson-quiz>
 			
 		</article>
 		
@@ -95,8 +100,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

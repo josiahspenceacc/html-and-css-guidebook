@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -50,22 +49,12 @@
 
 			<p>Created for what is traditionally referred to as an "accordion" widget, the paired <code>details</code> and <code>summary</code> elements can be used to show a snippet introductory or "summary" content that can be expanded / toggled open to show further "detail" content. These elements are useful for scenarios like a FAQ where users need to be able to quickly scan and parse a large amount of information.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
-				<pre data-lang="html">&lt;details&gt;
+			<pen-demo html-code='&lt;details&gt;
 	&lt;summary&gt;How much wood could a woodchuck chuck?&lt;/summary&gt;
 
 	&lt;p&gt;A woodchuck would chuck as much wood as a woodchuck could chuck&lt;/p&gt;
 
-&lt;/details&gt;</pre>
-			</div>
+&lt;/details&gt;'></pen-demo>
 			
 			<p class="try-this">In the above example, try changing the text that shows when the element is collapsed. Try changing the text that shows when the element is opened. Try adding additional paragraph to show only when the element is opened. For a more ambitious experiment, try adding a second <code>details</code> element with its own content for closed and opened states.</p>
 
@@ -75,51 +64,41 @@
 
 			<p>The <code>dialog</code> element is hidden by default, but can be set to display using the <code>open</code> attribute like so: <code>&lt;dialog open&gt;</code>. The typical way to toggle a <code>dialog</code> open and closed is to use a little javascript, attaching the open event to a button or other element.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
-				<pre data-lang="html">&lt;button id="open-dialog" type="button"&gt;Open Dialog&lt;/button&gt;
+			<pen-demo html-code='&lt;button id="open-dialog" type="button"&gt;Open Dialog&lt;/button&gt;
 
 &lt;dialog id="dialog-demo"&gt;
-	I'm dialog content!
+	Dialog content!
 &lt;/dialog&gt;
 
 &lt;!-- This should come just before the closing body tag --&gt;
 &lt;script&gt; 
-	const modal = document.getElementById('dialog-demo');
-	const open = document.getElementById('open-dialog');
+	const modal = document.getElementById("dialog-demo");
+	const open = document.getElementById("open-dialog");
 
-	open.addEventListener('click', () => {
-	  modal.showModal();
+	open.addEventListener("click", () => {
+		modal.showModal();
 	});
 
-	modal.addEventListener('click', event => {
-	  if (event.target === modal) {
-		modal.close('cancelled');
-	  }
+	modal.addEventListener("click", event => {
+		if (event.target === modal) {
+		modal.close("cancelled");
+		}
 	});
-&lt;/script&gt;</pre>
-			</div>
+&lt;/script&gt;'></pen-demo>
 			
 			<h2 id="video">Video Lesson</h2>
 			
 			<p>The following video demo is fully interactive. You can pause at any time to directly edit the code, and resume playback to restore to where you left off.</p>
 			
 			<video-demo url="https://scrimba.com/c/cp49ymcq"></video-demo>
+		
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				<li><a href="https://css-tricks.com/some-hands-on-with-the-html-dialog-element/">Some Hands on with the Dialog Element</a></li>
+			</ul>
 			
 		</article>
-		
-		<h2 id="resources">Resource Links</h2>
-		
-		<ul>
-			<li><a href="https://css-tricks.com/some-hands-on-with-the-html-dialog-element/">Some Hands on with the Dialog Element</a></li>
-		</ul>
 		
 	</main>
 	
@@ -128,9 +107,11 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/javascript.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 	
 </head>
@@ -61,16 +60,7 @@
 
 			<p class="big-point"><strong>Document Flow</strong> describes the default way block and inline items are laid out and affect each other.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
-				<pre data-lang="html">&lt;h1&gt;Heading 1 (block)&lt;/h1&gt;
+			<pen-demo html-code='&lt;h1&gt;Heading 1 (block)&lt;/h1&gt;
 
 &lt;h2&gt;Heading 2 (block)&lt;/h2&gt;
 
@@ -84,9 +74,10 @@
 
 &lt;h3&gt;Heading 3 (block)&lt;/h3&gt;
 
-&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;</pre>
+&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;'
 
-			</div>
+			css-code=''
+		></pen-demo>
 
 			<h2  id="relative">Relative</h2>
 
@@ -94,73 +85,57 @@
 
 			<p>In this example, the <code>h3</code> (given a blue background for easy identification) has been set to <code>relative</code> and has been shifted up and to the right.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">h3 {
+			<pen-demo html-code='&lt;h1&gt;Heading 1 (block)&lt;/h1&gt;
+
+&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;
+
+&lt;p&gt;Paragraph with some text (block). &lt;strong&gt;Strong (inline).&lt;/strong&gt; More paragraph text.&lt;/p&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;h3&gt;Heading 3 (block)&lt;/h3&gt;
+
+&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;'
+
+			css-code='h3 {
 	background-color: powderblue;
 	bottom: 1.5rem;
 	position: relative;
 	right: -2rem;
-}</pre>
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
-
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;p&gt;Paragraph with some text. &lt;strong&gt;Strong.&lt;/strong&gt; More paragraph text.&lt;/p&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-
-&lt;h2&gt;Heading 2&lt;/h2&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p>Notice that in the above example we used a positive number for the <code>bottom</code> property to push the element <em>from</em> the bottom. And we used a negative value for the <code>right</code> property to push the element <em>toward</em> the right. Alternatively, we could achieve the same result using <code>top</code> and <code>left</code> with opposite values:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">h3 {
+			<pen-demo html-code='&lt;h1&gt;Heading 1 (block)&lt;/h1&gt;
+
+&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;
+
+&lt;p&gt;Paragraph with some text (block). &lt;strong&gt;Strong (inline).&lt;/strong&gt; More paragraph text.&lt;/p&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;h3&gt;Heading 3 (block)&lt;/h3&gt;
+
+&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;'
+
+			css-code='h3 {
 	background-color: powderblue;
 	left: 2rem;
 	position: relative;
 	top: -1.5rem;
-}</pre>
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
-
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;p&gt;Paragraph with some text. &lt;strong&gt;Strong.&lt;/strong&gt; More paragraph text.&lt;/p&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-
-&lt;h2&gt;Heading 2&lt;/h2&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p class="try-this">In the example above, try changing the values for <code>left</code> and <code>top</code>. Note how the element is repositioned based on your values.</p>
 
@@ -168,109 +143,70 @@
 
 			<p><code>position: absolute;</code> takes the element <em>out of the document flow</em>, causing the rest of the elements on the page to behave as though it was never there. The <code>top</code>, <code>bottom</code>, <code>right</code>, and <code>left</code> can be used to position the element <strong>in relation to the page as a whole.</strong> Note that the element moves with the page as it scrolls.</p>
 
-			<p>In this example, the <code>h3</code> </p>
+			<pen-demo html-code='&lt;h1&gt;Heading 1 (block)&lt;/h1&gt;
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">h3 {
+&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;
+
+&lt;p&gt;Paragraph with some text (block). &lt;strong&gt;Strong (inline).&lt;/strong&gt; More paragraph text.&lt;/p&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;h3&gt;Heading 3 (block)&lt;/h3&gt;
+
+&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;
+
+&lt;p&gt;A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home.&lt;/p&gt;'
+
+			css-code='h3 {
 	background-color: powderblue;
-	top: 1rem;
 	margin-top: 0;
 	position: absolute;
 	right: 1rem;
-}</pre>
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
-
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;p&gt;Paragraph with some text. &lt;strong&gt;Strong.&lt;/strong&gt; More paragraph text.&lt;/p&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;p&gt;A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home.&lt;/p&gt;</pre>
-
-			</div>
+	top: 1rem;
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p>Notice that block elements with <code>position: absolute;</code> no longer span the entire width of the container, but are only wide enough to fit their contents. However, we can combine values for the <code>top</code> and <code>bottom</code> properties or the <code>right</code> and <code>left</code> properties to stretch the element to obey both values:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">h3 {
+			<pen-demo html-code='&lt;h1&gt;Heading 1 (block)&lt;/h1&gt;
+
+&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;
+
+&lt;p&gt;Paragraph with some text (block). &lt;strong&gt;Strong (inline).&lt;/strong&gt; More paragraph text.&lt;/p&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;h3&gt;Heading 3 (block)&lt;/h3&gt;
+
+&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;
+
+&lt;p&gt;A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home.&lt;/p&gt;'
+
+			css-code='h3 {
 	background-color: powderblue;
 	left: 0;
 	margin-top: 0;
 	position: absolute;
 	right: 0;
 	top: 0;
-}</pre>
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
-
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;p&gt;Paragraph with some text. &lt;strong&gt;Strong.&lt;/strong&gt; More paragraph text.&lt;/p&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;p&gt;A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<h3 id="absolute-relative-parent">Absolute with a Relative Parent</h3>
 
 			<p>Normally an element with <code>position: absolute;</code> is positioned with reference to the page as a whole. However, if a parent, grandparent, etcetera has <code>position: relative;</code> the absolutely positioned element is positioned <strong>with reference to the relative parent</strong>.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">div {
-	background-color: lightcoral;
-	position: relative;
-}
-
-h3 {
-	background-color: powderblue;
-	margin-top: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
-}</pre>
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+			<pen-demo html-code='&lt;h1&gt;Heading 1&lt;/h1&gt;
 
 &lt;h2&gt;Heading 2&lt;/h2&gt;
 
@@ -292,9 +228,22 @@ h3 {
 
 &lt;/div&gt;
 
-&lt;p&gt;A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home.&lt;/p&gt;</pre>
+&lt;p&gt;A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home.&lt;/p&gt;'
 
-			</div>
+			css-code='div {
+	background-color: lightcoral;
+	position: relative;
+}
+
+h3 {
+	background-color: powderblue;
+	margin-top: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}'
+			selected-tab="css"
+		></pen-demo>
 
 
 
@@ -302,42 +251,42 @@ h3 {
 
 			<p><code>position: fixed;</code> takes the element <em>out of the document flow</em>, causing the rest of the elements on the page to behave as though it was never there. The <code>top</code>, <code>bottom</code>, <code>right</code>, and <code>left</code> can be used to position the element <strong>in relation to the browser window.</strong> Note that the element stays fixed in place as the page scrolls.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">h3 {
+			<pen-demo html-code='&lt;h1&gt;Heading 1 (block)&lt;/h1&gt;
+
+&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;
+
+&lt;p&gt;Paragraph with some text (block). &lt;strong&gt;Strong (inline).&lt;/strong&gt; More paragraph text.&lt;/p&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;a href="#"&gt;Link (inline)&lt;/a&gt;
+
+&lt;h3&gt;Heading 3 (block)&lt;/h3&gt;
+
+&lt;h2&gt;Heading 2 (block)&lt;/h2&gt;
+
+&lt;p&gt;A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home.&lt;/p&gt;
+
+&lt;p&gt;A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home.&lt;/p&gt;
+
+&lt;p&gt;A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home.&lt;/p&gt;
+
+&lt;p&gt;A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home.&lt;/p&gt;'
+
+			css-code='h3 {
 	background-color: powderblue;
 	left: 2rem;
 	margin-top: 0;
 	position: fixed;
 	right: 0;
 	top: 0;
-}</pre>
-				<pre data-lang="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+}'
+			selected-tab="css"
+		></pen-demo>
 
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;p&gt;Paragraph with some text. &lt;strong&gt;Strong.&lt;/strong&gt; More paragraph text.&lt;/p&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;a href="#"&gt;Link&lt;/a&gt;
-
-&lt;h3&gt;Heading 3&lt;/h3&gt;
-
-&lt;h2&gt;Heading 2&lt;/h2&gt;
-
-&lt;p&gt;A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home. A Paragraph with enough text to make things scroll. Yadda yadda yadda. Whatnot and soforth. Stuff and things. Etcetera etcetera. And so on. Ad infinitum. Until the cows come home.&lt;/p&gt;</pre>
-
-			</div>
+		<p class="try-this">In the example above, scroll the preview area and notice how the <code>h3</code> stays in place. Can you figure out how to make the <code>h3</code> stay at the bottom of the preview area instead of the top?</p>
 			
 			<h2 id="video">Video Lesson</h2>
 			
@@ -359,9 +308,10 @@ h3 {
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

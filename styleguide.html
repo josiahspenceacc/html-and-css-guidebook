@@ -16,9 +16,8 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
-	<link rel="stylesheet" href="../style.css">
+	<!--  Styles  --> 
+	<link rel="stylesheet" href="style.css">
 	
 </head>
 <body>
@@ -77,19 +76,19 @@
 
 			<p>The only exception is in cases of inline content that occurs within text. In this case, the element should be written within the line of the text.</p>
 
-			<pre class="language-markup code-example-good"><code>&lt;div&gt;
+			<code-block class="code-example-good" code='&lt;div&gt;
   &lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href="http://google.com"&gt;link&lt;/a&gt; ut labore et dolore magna aliqua.&lt;/p&gt;</code></pre>
+&lt;p&gt;Lorem ipsum dolor sit amet, &lt;a href="http://google.com"&gt;link&lt;/a&gt; ut labore et dolore magna aliqua.&lt;/p&gt;'></code-block>
 
-		<pre class="language-markup code-example-bad"><code>&lt;div&gt;&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;&lt;div&gt;
+	<code-block class="code-example-bad" code='&lt;div&gt;&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;&lt;div&gt;
 
 &lt;p&gt;Lorem ipsum dolor sit amet,
 
 &lt;a href="http://google.com"&gt;link&lt;/a&gt;
 
-ut labore et dolore magna aliqua.&lt;/p&gt;</code></pre>
+ut labore et dolore magna aliqua.&lt;/p&gt;'></code-block>
 
 			<h3 id="html-indentation">Indentation</h3>
 
@@ -99,35 +98,35 @@ ut labore et dolore magna aliqua.&lt;/p&gt;</code></pre>
 
 			<p>Tabs width should be set to 4-spaces.</p>
 
-		<pre class="language-markup code-example-good"><code>&lt;div&gt;
+		<code-block class="code-example-good" code='&lt;div&gt;
 	&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;'></code-block>
 
-		<pre class="language-markup code-example-bad"><code>&lt;div&gt;
+		<code-block class="code-example-bad" code='&lt;div&gt;
   &lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;'></code-block>
 
 			<p>Use tabs instead of spaces for indentation. Tabs should be set to four spaces wide.</p>
 
-		<pre class="language-markup code-example-good"><code>&lt;div&gt;
+		<code-block class="code-example-good" code='&lt;div&gt;
 	&lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;'></code-block>
 
-		<pre class="language-markup code-example-bad"><code>&lt;div&gt;
+		<code-block class="code-example-bad" code='&lt;div&gt;
   &lt;a href="http://imdb.com"&gt;IMDB&lt;/a&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;'></code-block>
 
 			<h3 id="html-closing-tags">Self-Closing Tags</h3>
 
 			<p>Self-closing tags should be written without a slash at the end.</p>
 
-		<pre class="language-markup code-example-good"><code>&lt;br&gt;
+		<code-block class="code-example-good" code='&lt;br&gt;
 &lt;hr&gt;
-&lt;img src="image.jpg" alt="Image"&gt;</code></pre>
+&lt;img src="image.jpg" alt="Image"&gt;'></code-block>
 
-		<pre class="language-markup code-example-bad"><code>&lt;br/&gt;
+		<code-block class="code-example-bad" code='&lt;br/&gt;
 &lt;hr/&gt;
-&lt;img src="image.jpg" alt="Image" /&gt;</code></pre>
+&lt;img src="image.jpg" alt="Image" /&gt;'></code-block>
 
 
 			<h2 id="css-section">CSS</h2>
@@ -147,31 +146,31 @@ ut labore et dolore magna aliqua.&lt;/p&gt;</code></pre>
 
 			<p>Properties should be indented one tab from the containing selector. Closing brackets should align to the selector.</p>
 
-		<pre class="language-css code-example-good"><code>.some-class {
+			<code-block class="code-example-good" lang="css" code='.some-class {
 	position: absolute;
-}</code></pre>
+}'></code-block>
 
-		<pre class="language-css code-example-bad"><code>.some-class {
+		<code-block class="code-example-bad" lang="css" code='.some-class {
 position: absolute;
-}</code></pre>
+}'></code-block>
 
 			<h3 id="css-property-order">Property Order</h3>
 
 			<p>Alphabetize your CSS properties in each declaration block to make them easy to find.</p>
 
-		<pre class="language-css code-example-good"><code>.some-class {
+		<code-block class="code-example-good" lang="css" code='.some-class {
 	border-left: none;
 	left: 0;
 	position: absolute;
 	right: 0;
-}</code></pre>
+}'></code-block>
 
-		<pre class="language-css code-example-bad"><code>.some-class {
+		<code-block class="code-example-bad" lang="css" code='.some-class {
 	position: absolute;
 	left: 0;
 	right: 0;
 	border-left: none;
-}</code></pre>
+}'></code-block>
 
 			<p><em>Helpful hint: To quickly alphabetize properties in Sublime Text, highlight the lines you want to sort and go to Edit > Sort Lines or press F5.</em></p>
 
@@ -179,19 +178,19 @@ position: absolute;
 
 			<p>A single space between a selector and the opening curly bracket of the declaration block is preferred. There should also be a single space between the colon that follows a property name and the value that follows.</p>
 
-		<pre class="language-css code-example-good"><code>.some-class {
+		<code-block class="code-example-good" lang="css" code='.some-class {
 	border-left: none;
 	left: 0;
 	position: absolute;
 	right: 0;
-}</code></pre>
+}'></code-block>
 
-		<pre class="language-css code-example-bad"><code>.some-class{
+		<code-block class="code-example-bad" lang="css" code='.some-class{
 	border-left:none;
 	left:0;
 	position:absolute;
 	right:0;
-}</code></pre>
+}'></code-block>
 
 			<h3 id="css-class-names">Class Names</h3>
 
@@ -201,13 +200,13 @@ position: absolute;
 
 			<p>A good method for deciding if a class name is acceptable is to imagine someone reading your CSS who cannot look at the HTML. Would this person be able to make sense of the class? If not, try a more descriptive name.</p>
 
-		<pre class="language-css code-example-good"><code>.product-listing {}
+		<code-block class="code-example-good" lang="css" code='.product-listing {}
 .site-logo {}
-.page-footer-nav {}</code></pre>
+.page-footer-nav {}'></code-block>
 
-		<pre class="language-css code-example-bad"><code>.green {}
+		<code-block class="code-example-bad" lang="css" code='.green {}
 .left-column {}
-.grf-2 {}</code></pre>
+.grf-2 {}'></code-block>
 
 			<p>Use all lowercase and kebab-case for class and ID names, e.g. <code>&lt;p class="some-named-class"&gt;</code> instead of <code>&lt;p class="somenamedclass"&gt;</code>.</p>
 
@@ -217,11 +216,11 @@ position: absolute;
 
 			<p>Make liberal use of comments to break CSS code into discrete sections. Sections should either cover types of global styles (e.g. "Typography") or specific components in your design system (e.g. "Product Listing Card"). It is also sometimes useful to breakup sections into sub-sections.</p>
 
-		<pre class="language-css code-example-good"><code>/* ==========================================================================
+		<code-block class="code-example-good" lang="css" code='/* ==========================================================================
  Section comment block
 ========================================================================== */
 
-/** Sub-section comment block **/</code></pre>
+/** Sub-section comment block **/'></code-block>
 
 			
 		</article>
@@ -233,8 +232,10 @@ position: absolute;
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script src="dependencies/compressed.js"></script>
+	<script src="dependencies/xml.js"></script>
+	<script src="dependencies/css.js"></script>
+	<script src="dependencies/htmlmixed.js"></script>
+	<script src="js/scripts-dist.js"></script>
 </body>
 </html>

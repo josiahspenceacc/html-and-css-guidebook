@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>IDs and Classes Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+	<div id="app">
+		<quiz v-bind:badgehue="21" subject="IDs &amp; Classes" :currentStep="currentStep" v-on:next-step="nextStep"
+			v-on:skip-step="skipStep" v-cloak>
+
+			<!--Step 1-->
+			<question-step :step="1" v-bind:options='["Elements",
+							"Attributes",
+							"Tags",
+							"Properties"]'
+				answer="Attributes">
+
+				<p>Both <code>id</code> and <code>class</code> are examples of which of these?</p>
+
+			</question-step>
+
+			<!--Step 2-->
+			<question-step :step="2" v-bind:options='["The same value can be reused many times on the same page.",
+							"They are names you assign to identify elements.",
+							"They are placed inside the opening tag of an HTML element.",
+							"Spaces should not be used in the names."]'
+				answer="The same value can be reused many times on the same page.">
+
+				<p>Which of these are <strong>not true of both</strong> <code>class</code> and <code>id</code>?</p>
+
+			</question-step>
+
+			<!--Step 3-->
+			<question-step :step="3" v-bind:options='["True",
+							"False"]'
+				answer="False">
+
+				<p>True or False: The <code>id</code> attribute <strong>should</strong> be used for CSS purposes?</p>
+
+			</question-step>
+
+			<!--Step 4-->
+			<question-step :step="4" v-bind:options='["If you ever wanted to change the style, you would need to update all instances of the class.",
+							"It breaks doen the separation between HTML and CSS.",
+							"It could lead to styles that are mismatched to the class name.",
+							"All of the above."]'
+				answer="All of the above.">
+
+				<p>Why is it a bad idea to name a class something like <code>align-left</code>, which reflects CSS styles?</p>
+
+			</question-step>
+
+			<!--Step 5-->
+			<question-step :step="5" v-bind:options='["True",
+							"False"]'
+				answer="True">
+
+				<p>True or False: It <strong>is possible</strong> to have multiple <code>id</code> or <code>class</code> names on a single HTML element.</p>
+
+			</question-step>
+
+			<!--Step 6-->
+			<question-step :step="6" v-bind:options='["Noun",
+							"Verb",
+							"Preposition",
+							"Adverb"]'
+				answer="Noun">
+
+				<p>What is the <strong>best</strong> choice for naming a class?</p>
+
+			</question-step>
+
+			<!--Step 7-->
+			<question-step :step="7" v-bind:options='["Commas",
+							"Spaces",
+							"Dashes",
+							"Create a new attribute"]'
+				answer="Spaces">
+
+				<p>When adding multiple <code>id</code> or <code>class</code> names to a single HTML element, how do you separate them?</p>
+
+			</question-step>
+
+			<!--Step 8-->
+			<question-step :step="8" v-bind:options='["An anchor link",
+							"Javascript functionality",
+							"A single instance per page",
+							"CSS"]'
+				answer="CSS">
+
+				<p>Which of the following is <strong>not</strong> a good use for an <code>id</code> attribute?</p>
+
+			</question-step>
+
+			<!--Step 9-->
+			<question-step :step="9" v-bind:options='["True",
+							"False"]'
+				answer="True">
+
+				<p>True or False: <code>id</code> and <code>class</code> names should be written in all lowercase.</p>
+
+			</question-step>
+
+		</quiz>
+	</div>
+
+	<script src="../dependencies/compressed.js"></script>
+	<script async src="../dependencies/xml.js"></script>
+	<script async src="../dependencies/css.js"></script>
+	<script async src="../dependencies/htmlmixed.js"></script>
+	<script src="js/quiz-scripts-dist.js"></script>
+
+</body>
+
+</html>

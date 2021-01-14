@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -92,71 +91,18 @@
 
 			<h3 id="example-usage">Example Usage</h3>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">div {
-	background-color: lightsalmon;
-	height: 5rem;
-	padding: .25rem;
-	width: 5rem;				
-}
+			<pen-demo html-code='&lt;h2&gt;No Transform&lt;/h2&gt;
 
-figure {
-	background-color: ghostwhite;
-	margin: 2rem 0;
-	padding: 1rem;
-}
-
-.translatex {
-	transform: translateX(2rem);
-}
-
-.translatey {
-	transform: translateY(2rem);
-}
-
-.translate {
-	transform: translate(2rem,1rem);
-}
-
-.scale {
-	transform: scale(.5);
-}
-
-.rotate {
-	transform: rotate(45deg);
-}
-
-.skewx {
-	transform: skewX(15deg);
-}
-
-.skewy {
-	transform: skewY(20deg);
-}
-
-.skew {
-	transform: skew(15deg,20deg);
-}</pre>
-				<pre data-lang="html">&lt;h2&gt;No Transform&lt;/h2&gt;
-				
 &lt;figure&gt;
 	&lt;div&gt;No Transform&lt;/div&gt;
 &lt;/figure&gt;
-				
+
 &lt;h2&gt;translateX()&lt;/h2&gt;
-				
+
 &lt;figure&gt;
 	&lt;div class="translatex"&gt;translateX()&lt;/div&gt;
 &lt;/figure&gt;
-				
+
 &lt;h2&gt;translateY()&lt;/h2&gt;
 
 &lt;figure&gt;
@@ -197,9 +143,54 @@ figure {
 
 &lt;figure&gt;
 	&lt;div class="skew"&gt;skew()&lt;/div&gt;
-&lt;/figure&gt;</pre>
+&lt;/figure&gt;'
 
-			</div>
+			css-code='div {
+	background-color: lightsalmon;
+	height: 5rem;
+	padding: .25rem;
+	width: 5rem;
+}
+
+figure {
+	background-color: ghostwhite;
+	margin: 2rem 0;
+	padding: 1rem;
+}
+
+.translatex {
+	transform: translateX(2rem);
+}
+
+.translatey {
+	transform: translateY(2rem);
+}
+
+.translate {
+	transform: translate(2rem,1rem);
+}
+
+.scale {
+	transform: scale(.5);
+}
+
+.rotate {
+	transform: rotate(45deg);
+}
+
+.skewx {
+	transform: skewX(15deg);
+}
+
+.skewy {
+	transform: skewY(20deg);
+}
+
+.skew {
+	transform: skew(15deg,20deg);
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the demo above, can you make the <code>translateX()</code> example move left instead of right? Can you turn the text of the <code>rotate()</code> example upside down?</p>
 			
@@ -212,9 +203,10 @@ figure {
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>File Structure Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+	<div id="app">
+		<quiz v-bind:badgehue="83" subject="File Structure" :currentStep="currentStep" v-on:next-step="nextStep"
+			v-on:skip-step="skipStep" v-cloak>
+
+			<!--Step 1-->
+			<question-step :step="1" v-bind:options='["The map that shows users around a website.",
+							"The home folder of a website.",
+							"The service that matches domain names to IP addresses.",
+							"It points to a server where files live."]'
+				answer="The home folder of a website.">
+
+				<p>What does the  term <strong>root directory</strong> mean?</p>
+
+			</question-step>
+
+			<!--Step 2-->
+			<question-step :step="2" v-bind:options='["It is where all the HTML code is written.",
+							"It serves as the home folder of a website.",
+							"It lists all the pages of a website.",
+							"It serves as the home page for a website."]'
+				answer="It serves as the home page for a website.">
+
+				<p>What is special about a file named <code>index.html</code>?</p>
+
+			</question-step>
+
+			<!--Step 3-->
+			<question-step :step="3" v-bind:options='["True",
+							"False"]'
+				answer="True">
+
+				<p>True or False: It is okay to have subfolders within the main folder of a website (the root directory).</p>
+
+			</question-step>
+
+			<!--Step 4-->
+			<question-step :step="4" v-bind:options='["<code>pages-about.html</code>",
+							"<code>about.html/pages</code>",
+							"<code>pages/about.html</code>",
+							"<code>pages(about.html)</code>"]'
+				answer="<code>pages/about.html</code>">
+
+				<p>How would you write the file path for a file named <code>about.html</code> inside a subfolder named <code>pages</code>?</p>
+
+			</question-step>
+
+			<!--Step 5-->
+			<question-step :step="5" v-bind:options='["<code>/+</code>",
+							"<code>../</code>",
+							"<code>up/</code>",
+							"<code>///</code>"]'
+				answer="<code>../</code>">
+
+				<p>In a file path, how do you indicate a move <strong>up</strong> a folder level?</p>
+
+			</question-step>
+
+			<!--Step 6-->
+			<question-step :step="6" v-bind:options='["True",
+							"False"]'
+				answer="True">
+
+				<p>True or False: There is <strong>no limit</strong> to how many subdirectories may be placed within the root directory of a website.</p>
+
+			</question-step>
+
+		</quiz>
+	</div>
+
+	<script src="../dependencies/compressed.js"></script>
+	<script async src="../dependencies/xml.js"></script>
+	<script async src="../dependencies/css.js"></script>
+	<script async src="../dependencies/htmlmixed.js"></script>
+	<script src="js/quiz-scripts-dist.js"></script>
+
+</body>
+
+</html>

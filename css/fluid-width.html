@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 	
 </head>
@@ -53,21 +52,13 @@
 
 			<p>Any element can be given a set width using absolute CSS measurement units like <code>px</code> or <code>rem</code>. However, if the browser or container shrinks to smaller than the size set for the element, the element overflows / sticks out of the container. If it is the browser window that is too small, a horizontal scrollbar appears.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
-	width: 700px;
-}</pre>
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What has happened to me?" he thought.&lt;/p&gt;'
 
-			</div>
+			css-code='p {
+	width: 700px;
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p class="try-this">Try resizing the example above by grabbing the bottom right corner and dragging. Notice how the content fails to resize based on the size of the preview window.</p>
 
@@ -76,21 +67,13 @@
 
 			<p>One solution is to use a percent (<code>%</code>) value for the width. No matter how the container resizes, the element always resizes to occupy the given percentage of the container's width.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
-	width: 80%;
-}</pre>
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What has happened to me?" he thought.&lt;/p&gt;'
 
-			</div>
+			css-code='p {
+	width: 80%;
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p class="try-this">Resize the preview window above by grabbing and dragging the bottom right corner to see how this content responds. Try changing the percentage size of the <code>width</code> value to see how the content behaves.</p>
 
@@ -100,22 +83,14 @@
 			<h3>max-width</h3>
 
 			<p>Percentage widths can be problematic if the width of the container is not set&mdash;the element will keeps as the browser grows, past the point of looking good. The solution to this is to use the <code>max-width</code> property instead of the <code>width</code> property. With <code>max-width</code>, the element remains fluid and respond to the size of the container if the container is smaller than the size specified, but it doesn't grow beyond that size. <strong>It is an upper limit to the size of the element.</strong></p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
-	max-width: 25rem;
-}</pre>
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
 
-			</div>
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What has happened to me?" he thought.&lt;/p&gt;'
+
+			css-code='p {
+	max-width: 25rem;
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p class="try-this">Resize the preview window above to see how this example responds. Notice how the content is fluid up until it reaches 25rem, but then grows no wider. Try changing the <code>max-width</code> value.</p>
 
@@ -124,42 +99,31 @@
 
 			<p>Similarly, the <code>min-width</code> property sets a lower limit to the width of the element.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
-	min-width: 24rem;
-}</pre>
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What has happened to me?" he thought.&lt;/p&gt;'
 
-			</div>
+			css-code='p {
+	min-width: 24rem;
+}'
+			selected-tab="css"
+		></pen-demo>
+
+		<p class="try-this">Resize the preview window above to see how this example responds. Notice how the content reflows to fit in the window until it is less than 24rem wide, but then it refuses to shrink further. Try changing the <code>min-width</code> value.</p>
 
 
 			<h2 id="height">Height Properties</h2>
 
 			<p>Similar to <code>width</code> and its related properties, similar properties exist for <code>height</code>, <code>max-height</code>, and <code>min-height</code>, which all behave as you would expect. However, <code>height</code> properties should be used with caution because they can interfere with the natural flow of content vertically down the page.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">p {
-	max-height: 4rem;
-}</pre>
-				<pre data-lang="html">&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me?" he thought.&lt;/p&gt;</pre>
+			<pen-demo html-code='&lt;p&gt;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What has happened to me?" he thought.&lt;/p&gt;'
 
-			</div>
+			css-code='p {
+	background-color: lightblue;
+	max-height: 4rem;
+}'
+			selected-tab="css"
+		></pen-demo>
+
+		<p class="try-this">Notice how the content spills out of the background because there is not enough height allowed. Try changing the <code>min-height</code> value. How do you think it will behave if you change it to <code>min-height</code> instead?</p>
 			
 			<h2 id="video">Video Lesson</h2>
 			
@@ -183,9 +147,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

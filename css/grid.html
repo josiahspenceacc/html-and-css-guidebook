@@ -16,9 +16,8 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
-	<link rel="stylesheet" href="/style.css">
+	<!--  Styles  --> 
+	<link rel="stylesheet" href="../style.css">
 	
 </head>
 <body>
@@ -81,17 +80,23 @@
 
 			<p>So let's look at some code. If we start with a series of elements within a shared parent:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
+			<pen-demo html-code='&lt;div class="parent"&gt;
 
-				<pre data-lang="css">.parent {
+&lt;div&gt;Div 1&lt;/div&gt;
+
+&lt;div&gt;Div 2&lt;/div&gt;
+
+&lt;div&gt;Div 3&lt;/div&gt;
+
+&lt;div&gt;Div 4&lt;/div&gt;
+
+&lt;div&gt;Div 5&lt;/div&gt;
+
+&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;'
+
+			css-code='.parent {
 	background-color: ghostwhite;
 }
 
@@ -102,39 +107,29 @@ div {
 div div {
 	background-color: cornflowerblue;
 	border: 1px solid darkblue;
-}
-</pre>
+}'
+			selected-tab="css"
+		></pen-demo>
 
-				<pre data-lang="html">&lt;div class="parent"&gt;
+			<p>We apply <code>display: grid;</code> to the parent div, but nothing seems to happen:</p>
 
-	&lt;div&gt;Div 1&lt;/div&gt;
+			<pen-demo html-code='&lt;div class="parent"&gt;
 
-	&lt;div&gt;Div 2&lt;/div&gt;
-	
-	&lt;div&gt;Div 3&lt;/div&gt;
+&lt;div&gt;Div 1&lt;/div&gt;
 
-	&lt;div&gt;Div 4&lt;/div&gt;
-	
-	&lt;div&gt;Div 5&lt;/div&gt;
+&lt;div&gt;Div 2&lt;/div&gt;
 
-	&lt;div&gt;Div 6&lt;/div&gt;
+&lt;div&gt;Div 3&lt;/div&gt;
 
-&lt;/div&gt;</pre>
-			</div>
+&lt;div&gt;Div 4&lt;/div&gt;
 
-			<p>We apply <code>display: grid;</code> to the parent div, but nothing happens:</p>
+&lt;div&gt;Div 5&lt;/div&gt;
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
+&lt;div&gt;Div 6&lt;/div&gt;
 
-				<pre data-lang="css">.parent {
+&lt;/div&gt;'
+
+			css-code='.parent {
 	background-color: ghostwhite;
 	display: grid;
 }
@@ -146,25 +141,9 @@ div {
 div div {
 	background-color: cornflowerblue;
 	border: 1px solid darkblue;
-}
-</pre>
-
-				<pre data-lang="html">&lt;div class="parent"&gt;
-
-	&lt;div&gt;Div 1&lt;/div&gt;
-
-	&lt;div&gt;Div 2&lt;/div&gt;
-	
-	&lt;div&gt;Div 3&lt;/div&gt;
-
-	&lt;div&gt;Div 4&lt;/div&gt;
-	
-	&lt;div&gt;Div 5&lt;/div&gt;
-
-	&lt;div&gt;Div 6&lt;/div&gt;
-
-&lt;/div&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p>This is because the grid layout is undefined. Grid has been activated, but there are no grid cells into which the grid-children can be placed. For that we'll need Grid Template properties.</p>
 
@@ -181,18 +160,24 @@ div div {
 			<p>By default, there are no grid columns, and grid rows are generated automatically based on the content.</p>
 			
 			<p>For each of these properties, you can define any number of columns/rows by providing a size measurement value for each. Each size value should be separated by a space. So lets look at a code example:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="css">.parent {
+			<pen-demo html-code='&lt;div class="parent"&gt;
+
+&lt;div&gt;Div 1&lt;/div&gt;
+
+&lt;div&gt;Div 2&lt;/div&gt;
+
+&lt;div&gt;Div 3&lt;/div&gt;
+
+&lt;div&gt;Div 4&lt;/div&gt;
+
+&lt;div&gt;Div 5&lt;/div&gt;
+
+&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;'
+
+			css-code='.parent {
 	background-color: ghostwhite;
 	display: grid;
 	grid-template-columns: 100px 200px 100px; /* 3 values = 3 columns */
@@ -206,25 +191,9 @@ div {
 div div {
 	background-color: cornflowerblue;
 	border: 1px solid darkblue;
-}
-</pre>
-
-				<pre data-lang="html">&lt;div class="parent"&gt;
-
-	&lt;div&gt;Div 1&lt;/div&gt;
-
-	&lt;div&gt;Div 2&lt;/div&gt;
-	
-	&lt;div&gt;Div 3&lt;/div&gt;
-
-	&lt;div&gt;Div 4&lt;/div&gt;
-	
-	&lt;div&gt;Div 5&lt;/div&gt;
-
-	&lt;div&gt;Div 6&lt;/div&gt;
-
-&lt;/div&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the example above, see what happens when you change the values for the grid template properties. Try adding or removing values (remember that values must be separated by a space). What happens when you mix measurement unit types?</p>
 			
@@ -235,18 +204,24 @@ div div {
 			<h3>Automatic Rows</h3>
 			
 			<p>It's important to reiterate here that additional grid rows are added automatically whenever there is more content than the explicitly defined rows can contain. (Because of this, it is sometimes beneficial to not define any explicit rows, and instead rely entirely on automatic rows.) These new automatic rows are sized based on their contents. Let's look at what happens when we only define one explicit row:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="css">.parent {
+			<pen-demo html-code='&lt;div class="parent"&gt;
+
+&lt;div&gt;Div 1&lt;/div&gt;
+
+&lt;div&gt;Div 2&lt;/div&gt;
+
+&lt;div&gt;Div 3&lt;/div&gt;
+
+&lt;div&gt;Div 4&lt;/div&gt;
+
+&lt;div&gt;Div 5&lt;/div&gt;
+
+&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;'
+
+			css-code='.parent {
 	background-color: ghostwhite;
 	display: grid;
 	grid-template-columns: 100px 100px; /* 2 values = 2 columns */
@@ -260,25 +235,9 @@ div {
 div div {
 	background-color: cornflowerblue;
 	border: 1px solid darkblue;
-}
-</pre>
-
-				<pre data-lang="html">&lt;div class="parent"&gt;
-
-	&lt;div&gt;Div 1&lt;/div&gt;
-
-	&lt;div&gt;Div 2&lt;/div&gt;
-	
-	&lt;div&gt;Div 3&lt;/div&gt;
-
-	&lt;div&gt;Div 4&lt;/div&gt;
-	
-	&lt;div&gt;Div 5&lt;/div&gt;
-
-	&lt;div&gt;Div 6&lt;/div&gt;
-
-&lt;/div&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the example above, try adding new rows and notice how the divs resize to match the value(s) you provide.</p>
 			
@@ -297,18 +256,24 @@ div div {
 				<li><code>grid-template-columns: 1fr 1fr 2fr;</code> &mdash; Here there are still a total of four frs given, and each fr is 25% of the available space, but they are distributed differently, with the third column receiving two of the frs, or 50% of the available space.</li>
 				<li><code>grid-template-columns: 1fr 500px 1fr;</code> &mdash; Here there is a column defined in pixels, so that pixel amount is first subtracted from the available space. Then the remaining space is divided evenly between two frs expressed. They each get 50% (1/2 of 100%) of the space left.</li>
 			</ul>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="css">.parent {
+			<pen-demo html-code='&lt;div class="parent"&gt;
+
+&lt;div&gt;Div 1&lt;/div&gt;
+
+&lt;div&gt;Div 2&lt;/div&gt;
+
+&lt;div&gt;Div 3&lt;/div&gt;
+
+&lt;div&gt;Div 4&lt;/div&gt;
+
+&lt;div&gt;Div 5&lt;/div&gt;
+
+&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;'
+
+			css-code='.parent {
 	background-color: ghostwhite;
 	display: grid;
 	grid-template-columns: 1fr 2fr 1fr; /* 4 frs total = 25% each */
@@ -321,25 +286,9 @@ div {
 div div {
 	background-color: cornflowerblue;
 	border: 1px solid darkblue;
-}
-</pre>
-
-				<pre data-lang="html">&lt;div class="parent"&gt;
-
-	&lt;div&gt;Div 1&lt;/div&gt;
-
-	&lt;div&gt;Div 2&lt;/div&gt;
-	
-	&lt;div&gt;Div 3&lt;/div&gt;
-
-	&lt;div&gt;Div 4&lt;/div&gt;
-	
-	&lt;div&gt;Div 5&lt;/div&gt;
-
-	&lt;div&gt;Div 6&lt;/div&gt;
-
-&lt;/div&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the example above, try changing the numbers of frs in the values. Try adding new columns with fr units. Try mixing in pixel or rem values for a column.</p>
 			
@@ -361,18 +310,24 @@ div div {
 				<img src="images/grid-gap.png" alt="grid-gap illustration">
 				<figcaption>Here, the white lines show the delineations between grid cells.</figcaption>
 			</figure>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="css">.parent {
+			<pen-demo html-code='&lt;div class="parent"&gt;
+
+&lt;div&gt;Div 1&lt;/div&gt;
+
+&lt;div&gt;Div 2&lt;/div&gt;
+
+&lt;div&gt;Div 3&lt;/div&gt;
+
+&lt;div&gt;Div 4&lt;/div&gt;
+
+&lt;div&gt;Div 5&lt;/div&gt;
+
+&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;'
+
+			css-code='.parent {
 	background-color: ghostwhite;
 	display: grid;
 	grid-column-gap: .5rem;
@@ -388,25 +343,9 @@ div {
 div div {
 	background-color: cornflowerblue;
 	border: 1px solid darkblue;
-}
-</pre>
-
-				<pre data-lang="html">&lt;div class="parent"&gt;
-
-	&lt;div&gt;Div 1&lt;/div&gt;
-
-	&lt;div&gt;Div 2&lt;/div&gt;
-	
-	&lt;div&gt;Div 3&lt;/div&gt;
-
-	&lt;div&gt;Div 4&lt;/div&gt;
-	
-	&lt;div&gt;Div 5&lt;/div&gt;
-
-	&lt;div&gt;Div 6&lt;/div&gt;
-
-&lt;/div&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the example above, try changing the values for the grid gap properties. Try removing <code>grid-column-gap</code> and <code>grid-row-gap</code>, and replace them with <code>grid-gap</code> with a single value. Notice how that one number is used for both the row and column gaps.</p>
 			
@@ -426,18 +365,24 @@ div div {
 				<img src="images/justify-items.png" alt="justify-items illustration">
 				<figcaption>Here, the salmon-colored blocks represent the content of the grid children.</figcaption>
 			</figure>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="css">.parent {
+			<pen-demo html-code='&lt;div class="parent"&gt;
+
+&lt;div&gt;Div 1&lt;/div&gt;
+
+&lt;div&gt;Div 2&lt;/div&gt;
+
+&lt;div&gt;Div 3&lt;/div&gt;
+
+&lt;div&gt;Div 4&lt;/div&gt;
+
+&lt;div&gt;Div 5&lt;/div&gt;
+
+&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;'
+
+			css-code='.parent {
 	background-color: ghostwhite;
 	display: grid;
 	grid-column-gap: .5rem;
@@ -454,27 +399,11 @@ div {
 div div {
 	background-color: cornflowerblue;
 	border: 1px solid darkblue;
-}
-</pre>
-
-				<pre data-lang="html">&lt;div class="parent"&gt;
-
-	&lt;div&gt;Div 1&lt;/div&gt;
-
-	&lt;div&gt;Div 2&lt;/div&gt;
-	
-	&lt;div&gt;Div 3&lt;/div&gt;
-
-	&lt;div&gt;Div 4&lt;/div&gt;
-	
-	&lt;div&gt;Div 5&lt;/div&gt;
-
-	&lt;div&gt;Div 6&lt;/div&gt;
-
-&lt;/div&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
-			<p class="try-this">In the example above, try out the different possible values for <code>justify-items</code>. Can you center the grid children in the cells? Can you place them on the right sides of the cells?</p>
+			<p class="try-this">In the example above, try out different possible values for <code>justify-items</code>. Can you center the grid children in the cells? Can you place them on the right sides of the cells?</p>
 			
 			
 			<h2 id="align-items">Align Items</h2>
@@ -492,18 +421,24 @@ div div {
 				<img src="images/grid-align-items.png" alt="align-items illustration">
 				<figcaption>Here, the salmon-colored blocks represent the content of the grid children.</figcaption>
 			</figure>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="css">.parent {
+			<pen-demo html-code='&lt;div class="parent"&gt;
+
+&lt;div&gt;Div 1&lt;/div&gt;
+
+&lt;div&gt;Div 2&lt;/div&gt;
+
+&lt;div&gt;Div 3&lt;/div&gt;
+
+&lt;div&gt;Div 4&lt;/div&gt;
+
+&lt;div&gt;Div 5&lt;/div&gt;
+
+&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;'
+
+			css-code='.parent {
 	align-items: end;
 	background-color: ghostwhite;
 	display: grid;
@@ -512,7 +447,7 @@ div div {
 	grid-template-columns: repeat( 3, 1fr );
 	grid-template-rows: repeat( 3, 5rem );
 }
-
+	
 div {
 	padding: .5rem;
 }
@@ -520,25 +455,9 @@ div {
 div div {
 	background-color: cornflowerblue;
 	border: 1px solid darkblue;
-}
-</pre>
-
-				<pre data-lang="html">&lt;div class="parent"&gt;
-
-	&lt;div&gt;Div 1&lt;/div&gt;
-
-	&lt;div&gt;Div 2&lt;/div&gt;
-	
-	&lt;div&gt;Div 3&lt;/div&gt;
-
-	&lt;div&gt;Div 4&lt;/div&gt;
-	
-	&lt;div&gt;Div 5&lt;/div&gt;
-
-	&lt;div&gt;Div 6&lt;/div&gt;
-
-&lt;/div&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the example above, try using the different possible values for <code>align-items</code>. Can you vertically center the grid children in the cells? Can you place them on the tops of the cells?</p>
 			
@@ -555,18 +474,24 @@ div div {
 			</figure>
 			
 			<p>We can tell a grid child to start at a particular grid line and to end at another grid line for each direction.</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
 
-				<pre data-lang="css">.parent {
+			<pen-demo html-code='&lt;div class="parent"&gt;
+
+&lt;div&gt;Div 1&lt;/div&gt;
+
+&lt;div&gt;Div 2&lt;/div&gt;
+
+&lt;div&gt;Div 3&lt;/div&gt;
+
+&lt;div&gt;Div 4&lt;/div&gt;
+
+&lt;div&gt;Div 5&lt;/div&gt;
+
+&lt;div&gt;Div 6&lt;/div&gt;
+
+&lt;/div&gt;'
+
+			css-code='.parent {
 	background-color: ghostwhite;
 	display: grid;
 	grid-column-gap: .5rem;
@@ -592,25 +517,9 @@ div div {
 .div-2 {
 	grid-column-start: 2;
 	grid-column-end: 4;
-}
-</pre>
-
-				<pre data-lang="html">&lt;div class="parent"&gt;
-
-	&lt;div class="div-1"&gt;Div 1&lt;/div&gt;
-
-	&lt;div class="div-2"&gt;Div 2&lt;/div&gt;
-	
-	&lt;div&gt;Div 3&lt;/div&gt;
-
-	&lt;div&gt;Div 4&lt;/div&gt;
-	
-	&lt;div&gt;Div 5&lt;/div&gt;
-
-	&lt;div&gt;Div 6&lt;/div&gt;
-
-&lt;/div&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the example above, see what happens when you change the values for the start and end properties. Can you make div 1 start at the second row instead? Can you make div 2 only occupy the third column?</p>
 			
@@ -652,9 +561,10 @@ div div {
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

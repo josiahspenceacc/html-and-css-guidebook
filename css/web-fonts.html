@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Web Fonts</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  --> 
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Web Fonts</h1>
+
+				<p>As we learned in the chapter about <a href="/css/type-css.html">basic CSS properties</a>, the <code>font-family</code> property can be used to select typefaces for a webpage based on the fonts installed on the users computer. However, the world of web fonts allows us the have far more control and wider selection of typefaces for use in our designs.</p>
+
+				<nav class="page-nav">
+					<h2>On This Page</h2>
+					<a href="#webfonts">Web Font Basics</a>
+					<a href="#services">Web Font Services</a>
+					<a href="#weights-styles">Weights &amp; Styles</a>
+					<a href="#quiz">Practice Exercise</a>
+					<a href="#resources">Resources</a>
+					<a href="#tools">Tools</a>
+				</nav>
+				
+			</header>
+
+			<h2 id="webfonts">Web Font Basics</h2>
+			
+			<p>To recap what we've <a ref="/css/type-css.html#family">already learned</a>, typefaces can be applied to any HTML element (or other selector) using the <code>font-family</code> CSS property. A series of font options are given as a value, e.g. <code>"Times New Roman", Georgia, serif</code>. The browser looks on the user's computer to see if each font is available, from left to right. If the first font isn't installed (Times New Roman), the browser moves on to the next one (Georgia), and then on to the next, through as many font options are provided. It's standard practice to provide a generic option (serif or sans-serif) as the last in the series so that the browser can use the system default if none of the specified fonts are available.</p>
+			
+			<p class="big-point">Traditional use of the <code>font-family</code> property looks for fonts installed on the <strong>user's computer.</strong></p>
+			
+			<p>The reason the web has traditionally relied on <em>system fonts</em>&mdash;those installed on the user's computer&mdash;rather than providing custom fonts along with the other website files is that fonts are intellectual property. If a font is downloadable by the browser, it's easy for a user to keep the font without paying for it, which is both illegal and harmful to font creators. For decades, this limitation meant that only a handful of "web-safe" fonts&mdash;those commonly found pre-installed on most operating systems&mdash;could be used to style websites.</p>
+			
+			<h2 id="services">Web Font Services</h2>
+			
+			<p>Luckily for us, advances in technology and business models have created a new golden age of web typography through the advent of <em>web font services</em>. These are services that provide licenced and hosted web fonts that can be used legally and safely to style a site. Some of the most common web font services include <a href="https://fonts.google.com/">Google Fonts</a> (which has the added advantage of being completely free), <a href="https://fonts.adobe.com/">Adobe Fonts</a>, and <a href="https://www.fonts.com/">Fonts.com</a>, but there are countless others.</p>
+			
+			<p class="big-point">Web font services provide access to libraries of <strong>licensed typefaces</strong> for legal use on websites.</p>
+			
+			<p>These services provide the site developer with short snippet of <em>embed code</em> to be placed in either the site's CSS or the <code>head</code> of each HTML file. The font can then be applied normally using the <code>font-family</code> CSS property. It's still a good idea to provide fallback fonts, just in case anything goes wrong with the web font.</p>
+
+			<pen-demo html-code='&lt;p&gt;This text uses a typeface called Bitter from Google Fonts.&lt;/p&gt;'
+
+			css-code="/*Google Fonts CSS Embed Code:*/
+@import url('https://fonts.googleapis.com/css?family=Bitter&display=swap');
+				
+p {
+	font-family: Bitter, Times, serif;
+}"
+			selected-tab="css"
+		></pen-demo>
+			
+			<p class="try-this">What happens if you remove the Google Fonts embed code? Do you think the font will change?</p>
+			
+			<h2 id="weights-styles">Weights &amp; Styles</h2>
+
+			<p>Not every typeface has italic styles or bold weights. Some typefaces only have a single variation, while others have several weights, from ultra-light to ultra-black, and an italic style for every weight. When choosing fonts from a webfont provider, it's important to make sure to choose typefaces that include the weights and styles you need for your design, and to mark those weights and styles for inclusion in your selection.</p>
+
+			<p>The flip-side of this is that every weight and style that is downloaded by the browser from a webfont provider adds to the overall load time of the web page, and including too many typefaces with too many weights and styles can slow the loading of a page down significantly. Because of this, it's important to be judicious and only include weights and styles that are absolutely necessary to the design. Every webfont service has a different interface for choosing weights and styles, but some of the better ones include an indicator to show you how much of an impact the fonts will have on the load time of the page.</p>
+
+			<p class="big-point">When selecting webfonts, choosing <strong>which</strong> weights and styles to include is super important.</p>
+
+			<h3>Fake Bold and Fake Italic</h3>
+
+			<p>Another factor to bear in mind is that some elements have weights or styles applied to them by the browser's default CSS, such as the bold applied to headings by default or the italics applied to the <code>em</code> element. If you load a webfont that lacks a bold style and use it on an element that is bolded by either default styles or your CSS, the browser will attempt to <em>fake</em> a bold style by simply making the available weight thicker. Similarly, if there is no italic style available for an element that is italicized by default or by your CSS, the browser will attempt to fake it by tilting the letterforms.</p>
+			
+			<p class="big-point"><strong>Fake bold or italic</strong> is a typographic crime and should <strong>never</strong> be allowed to happen.</p>
+
+			<p>To avoid fake bold and italic, you can either ensure that the needed weights or styles are included for whatever typeface you use. Or you can manually set the weight (using <code>font-weight</code>) and / or style (using <code>font-style</code>) in the CSS to match what <em>is</em> available for the typeface.</p>
+			
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/css-webfonts.html"></lesson-quiz>
+			
+			
+			<h2 id="resources">Resource Links</h2>
+			
+			<ul>
+				
+				<li><a href="http://typecast.com/blog/show-and-tell-a-practical-look-at-choosing-type">A Practical Look at Choosing Typefaces</a></li>
+				<li><a href="https://typ.io/">Typ.io: Webfont inspiration</a></li>
+				<li><a href="http://femmebot.github.io/google-type/">Google Font type inspiration</a></li>
+				<li><a href="https://www.canva.com/font-combinations/">Canva Font Combinations inspiration</a></li>
+
+			</ul>
+			
+			<h2 id="tools">Tools</h2>
+			
+			<ul>
+				<li><a href="https://fonts.google.com/">Google Fonts: A free webfont library</a></li>
+				<li><a href="https://fonts.adobe.com/">Adobe Fonts</a></li>
+				<li><a href="https://www.fonts.com/">Fonts.com</a></li>
+			</ul>
+			
+		</article>
+		
+	</main>
+	
+	<site-footer></site-footer>
+	
+	</div>
+	
+	<!--Scripts-->
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
+</body>
+</html>

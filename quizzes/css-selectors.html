@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CSS Selectors Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+	<div id="app">
+		<quiz v-bind:badgehue="194" subject="CSS Selectors" :currentStep="currentStep" v-on:next-step="nextStep"
+			v-on:skip-step="skipStep" v-cloak>
+
+			<!--Step 1-->
+			<question-step :step="1" v-bind:options='["<strong>All</strong> instances of an <code>aside</code> element",
+							"<strong>All</strong> instances of a class named <code>aside</code>",
+							"The <strong>first</strong> instance of an <code>aside</code> element",
+							"The <strong>first</strong> instance of an <code>aside</code> attribute"]'
+				answer="<strong>All</strong> instances of an <code>aside</code> element">
+
+				<p>Given the CSS below, which HTML will have blue text?</p>
+
+				<codemirror	:options="{
+					mode: 'css',
+					lineWrapping: true,
+					lineNumbers: true,
+					htmlMode: true,
+					indentUnit: 4,
+					indentWithTabs: true
+				}"
+				value='aside {
+	color: blue;
+}'></codemirror>
+
+			</question-step>
+
+			<!--Step 2-->
+			<question-step :step="2" v-bind:options='["A period: <code>.class-name</code>",
+							"A hashtag: <code>#class-name</code>",
+							"Square brackets: <code>[class-name]</code>",
+							"No symbol is needed"]'
+				answer="A period: <code>.class-name</code>">
+
+				<p>Which symbol is used to indicate a <strong>class</strong> selector?</p>
+
+			</question-step>
+
+			<!--Step 3-->
+			<question-step :step="3" v-bind:options='["Select every <code>li</code> element that is a <strong>direct child</strong> of a <code>header</code> element",
+							"Select every <code>header</code> element that is a <strong>decendant</strong> of an <code>li</code> element",
+							"Select every <code>li</code> element that is a <strong>decendant</strong> of a <code>header</code> element",
+							"Select every <code>header</code> element <strong>and</strong> every <code>li</code> element"]'
+				answer="Select every <code>li</code> element that is a <strong>decendant</strong> of a <code>header</code> element">
+
+				<p>What does the selector in the following CSS mean?</p>
+
+				<codemirror	:options="{
+					mode: 'css',
+					lineWrapping: true,
+					lineNumbers: true,
+					htmlMode: true,
+					indentUnit: 4,
+					indentWithTabs: true
+				}"
+				value='header li {
+	font-size: 1.3rem;
+}'></codemirror>
+
+			</question-step>
+
+			<!--Step 4-->
+			<question-step :step="4" v-bind:options='["True",
+							"False"]'
+				answer="True">
+
+				<p>True or False: When writing a decendant combinator, you can <strong>mix types</strong> of selectors, such as using a class with an element.</p>
+
+			</question-step>
+
+			<!--Step 5-->
+			<question-step :step="5" v-bind:options='["A dash: <code>-</code>",
+							"A semi-colon: <code>;</code>",
+							"A space: <code></code>",
+							"A comma: <code>,</code>"]'
+				answer="A comma: <code>,</code>">
+
+				<p>When writing a <strong>selector list</strong> for multiple selectors, how are the different selectors separated?</p>
+
+			</question-step>
+
+			<!--Step 6-->
+			<question-step :step="6" v-bind:options='["<code>section h2, p</code>",
+							"<code>section h2, section p</code>",
+							"<code>section h2 p</code>",
+							"<code>h2 section, p section</code>"]'
+				answer="<code>section h2, section p</code>">
+
+				<p>To select <strong>both</strong> any <code>h2</code> element inside of a <code>section</code> element <strong>and</strong> any <code>p</code> element inside of a <code>section</code> element, how would you write the selector list?</p>
+
+			</question-step>
+
+			<!--Step 7-->
+			<question-step :step="7" v-bind:options='["True",
+							"False"]'
+				answer="False">
+
+				<p>True or False: To select the grandchild of a particular element, you must write the grandparent, the parent, and the child as part of the selector. E.g. <code>nav li p</code>.</p>
+
+			</question-step>
+
+			<!--Step 8-->
+			<question-step :step="8" v-bind:options='["An <strong>element</strong> that is <strong>not</strong> called <code>open</code>",
+							"An element with an <strong>ID</strong> called <code>open</code>",
+							"An element with a <strong>class</strong> called <code>open</code>",
+							"An element with an <strong>attribute</strong> called <code>open</code>"]'
+				answer="An element with an <strong>attribute</strong> called <code>open</code>">
+
+				<p>What does <code>[open]</code> select?</p>
+
+			</question-step>
+
+			<!--Step 9-->
+			<question-step :step="9" v-bind:options='["True",
+							"False"]'
+				answer="True">
+
+				<p>True or False: An attribute selector <strong>may or may not</strong> include a value, depending on the attribute.</p>
+
+			</question-step>
+			
+
+		</quiz>
+	</div>
+
+	<script src="../dependencies/compressed.js"></script>
+	<script async src="../dependencies/xml.js"></script>
+	<script async src="../dependencies/css.js"></script>
+	<script async src="../dependencies/htmlmixed.js"></script>
+	<script src="js/quiz-scripts-dist.js"></script>
+
+</body>
+
+</html>

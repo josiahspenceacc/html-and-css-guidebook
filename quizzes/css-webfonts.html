@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Web Fonts Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+	<div id="app">
+		<quiz v-bind:badgehue="228" subject="Web Fonts" :currentStep="currentStep" v-on:next-step="nextStep"
+			v-on:skip-step="skipStep" v-cloak>
+
+			<!--Step 1-->
+			<question-step :step="1" v-bind:options='["On the server",
+							"On the website of the font maker",
+							"On the computer of the user",
+							"It does not have to look for anything"]'
+				answer="On the computer of the user">
+
+				<p>If no web font is provided, where does the browser look for the typefaces specified in a <code>font-family</code> declaration?</p>
+
+			</question-step>
+
+			<!--Step 2-->
+			<question-step :step="2" v-bind:options='["It takes care of licencing fonts for legal use",
+							"It hosts the web fonts for use on websites",
+							"It provides a library of typefaces that can be used in web design",
+							"All of the above"]'
+				answer="All of the above">
+
+				<p>What purpose does a web font service fulfill?</p>
+
+			</question-step>
+
+			<!--Step 3-->
+			<question-step :step="3" v-bind:options='["True",
+							"False"]'
+				answer="False">
+
+				<p>True or False: You should <strong>never</strong> set any fallback fonts in a <code>font-family</code> declaration when using web fonts.</p>
+
+			</question-step>
+
+			<!--Step 4-->
+			<question-step :step="4" v-bind:options='["The font-weight is ignored and a normal weight is used.",
+							"The browser searches the web for a bold weight of the font.",
+							"All fonts include a bold weight.",
+							"The browser <em>fakes</em> a bold weight by making the normal weight thicker."]'
+				answer="The browser <em>fakes</em> a bold weight by making the normal weight thicker.">
+
+				<p>What happens if a bold font-weight is applied in the CSS to an element when no bold weight is available for the typeface?</p>
+
+			</question-step>
+
+			<!--Step 5-->
+			<question-step :step="5" v-bind:options='["They can cause the page to load more slowly.",
+							"There are no negative effects.",
+							"The browser gets confused if there are too many.",
+							"CSS is not capable of using more than two weights."]'
+				answer="They can cause the page to load more slowly.">
+
+				<p>What is a negative effect of including a large number of weights and styles of a web font?</p>
+
+			</question-step>
+
+			<!--Step 6-->
+			<question-step :step="6" v-bind:options='["True",
+							"False"]'
+				answer="False">
+
+				<p>True or False: <strong>All</strong> typefaces include an italic style.</p>
+
+			</question-step>
+
+			<!--Step 7-->
+			<question-step :step="7" v-bind:options='["Add the embed code from the web font services.",
+							"Use the <code>font-family</code> property in the CSS.",
+							"Add the embed code from the web font services, then use the <code>font-family</code> property in the CSS.",
+							"The web font service creates your web page for you."]'
+				answer="Add the embed code from the web font services, then use the <code>font-family</code> property in the CSS.">
+
+				<p>How do you make use of fonts from a web font service?</p>
+
+			</question-step>
+
+			<!--Step 8-->
+			<question-step :step="8" v-bind:options='["For accessibility purposes",
+							"In case one or more fonts is unavailable for any reason",
+							"So that the user can select which one to use",
+							"It is unnecessary to provide fallback fonts unless you want to"]'
+				answer="In case one or more fonts is unavailable for any reason">
+
+				<p>Whether using web fonts or system fonts, why is it important to provide fallback font options?</p>
+
+			</question-step>
+
+			<!--Step 9-->
+			<question-step :step="9" v-bind:options='["Ensure that the needed weights or styles are included for whatever typeface you use",
+							"Manually set the <code>font-weight</code> and <code>font-style</code> to match the weights and styles available for the typeface",
+							"All of the above"]'
+				answer="All of the above">
+
+				<p>How can you avoid the browser creating fake bold and fake italic?</p>
+
+			</question-step>
+			
+
+		</quiz>
+	</div>
+
+	<script src="../dependencies/compressed.js"></script>
+	<script async src="../dependencies/xml.js"></script>
+	<script async src="../dependencies/css.js"></script>
+	<script async src="../dependencies/htmlmixed.js"></script>
+	<script src="js/quiz-scripts-dist.js"></script>
+
+</body>
+
+</html>

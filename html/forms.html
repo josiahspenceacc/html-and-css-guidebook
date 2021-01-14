@@ -16,9 +16,8 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
-	<link rel="stylesheet" href="/style.css">
+	<!--  Styles  --> 
+	<link rel="stylesheet" href="../style.css">
 	
 </head>
 <body>
@@ -47,6 +46,7 @@
 					<a href="#submit">Submit Buttons</a>
 					<a href="#attributes">Additional Attributes</a>
 					<a href="#video">Video Lesson</a>
+					<a href="#quiz">Practice Exercise</a>
 				</nav>
 
 			</header>
@@ -55,82 +55,70 @@
 
 			<p>All the fields and other contents of a given form should be contained in the HTML <code>form</code> element. It acts as a container for all the fields and serves to associate them together as a single group of inputs.</p>
 
-			<pre class="language-markup"><code>&lt;form action=""&gt;
-&lt;/form&gt;</code></pre>
+			<code-block code='&lt;form action=""&gt;
+&lt;/form&gt;'></code-block>
 
 			<h3>The Action Attribute</h3>
 
 			<p>In the above example, notice that the form tag includes an <code>action</code> attribute. This attribute holds the file path to a script that receives and handles the data sent from the form. This file might be javascript or some other programming language, and might save the data to a database or send it as an email or use it to pay for a product. In any case, all that is important for the HTML is that the <code>action</code> attribute contains a reference to the correct file.</p>
 
-			<pre class="language-markup"><code>&lt;form action="filename.js"&gt;
-&lt;/form&gt;</code></pre>
+			<code-block code='&lt;form action="filename.js"&gt;
+&lt;/form&gt;'></code-block>
 
 
 			<h2 id="input">The Input Element</h2>
 
 			<p>Many (but not all) form fields are created using the <code>input</code> element. This is a self-closing tag and uses attributes to determine its behavior.</p>
 
-			<pre class="language-markup"><code>&lt;input type="text"&gt;</code></pre>
+			<code-block code='&lt;input type="text"&gt;'></code-block>
 
 			<h3>The Type Attribute</h3>
 
 			<p>The most important attribute for the <code>input</code> element is the <code>type</code> attribute, which tells it what kind of input field it should be. Some example values include:</p>
 
 			<ul>
-				<li>text</li>
-				<li>email</li>
-				<li>url</li>
-				<li>number</li>
-				<li>password</li>
-				<li>range</li>
-				<li>file</li>
-				<li>submit</li>
+				<li><code>text</code></li>
+				<li><code>email</code></li>
+				<li><code>url</code></li>
+				<li><code>number</code></li>
+				<li><code>password</code></li>
+				<li><code>range</code></li>
+				<li><code>file</code></li>
+				<li><code>submit</code></li>
 			</ul>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
+			<pen-demo html-code='&lt;form action=""&gt;
 
-				<pre data-lang="css">input {
+&lt;label&gt;Text&lt;/label&gt;
+&lt;input type="text"&gt;
+
+&lt;label&gt;Email&lt;/label&gt;
+&lt;input type="email"&gt;
+
+&lt;label&gt;URL&lt;/label&gt;
+&lt;input type="url"&gt;
+
+&lt;label&gt;Number&lt;/label&gt;
+&lt;input type="number"&gt;
+
+&lt;label&gt;Password&lt;/label&gt;
+&lt;input type="password"&gt;
+
+&lt;label&gt;Range&lt;/label&gt;
+&lt;input type="range"&gt;
+
+&lt;label&gt;File&lt;/label&gt;
+&lt;input type="file"&gt;
+
+&lt;label&gt;Submit&lt;/label&gt;
+&lt;input type="submit"&gt;
+
+&lt;/form&gt;'
+
+			css-code='input {
 	display: block;
 	margin-bottom: 1rem;
-}</pre>
-
-				<pre data-lang="html">&lt;form action=""&gt;
-				
-	&lt;label&gt;Text&lt;/label&gt;
-	&lt;input type="text"&gt;
-
-	&lt;label&gt;Email&lt;/label&gt;
-	&lt;input type="email"&gt;
-
-	&lt;label&gt;URL&lt;/label&gt;
-	&lt;input type="url"&gt;
-
-	&lt;label&gt;Number&lt;/label&gt;
-	&lt;input type="number"&gt;
-
-	&lt;label&gt;Password&lt;/label&gt;
-	&lt;input type="password"&gt;
-
-	&lt;label&gt;Range&lt;/label&gt;
-	&lt;input type="range"&gt;
-
-	&lt;label&gt;File&lt;/label&gt;
-	&lt;input type="file"&gt;
-
-	&lt;label&gt;Submit&lt;/label&gt;
-	&lt;input type="submit"&gt;
-
-&lt;/form&gt;</pre>
-
-			</div>
+}'></pen-demo>
 			
 			<p class="try-this">In the above example, try filling out some of the form fields with the wrong type of content. Put numbers in the email field. Put an email in the number field. What happens when you try to submit the form?</p>
 
@@ -139,25 +127,13 @@
 
 			<p>The <code>textarea</code> element creates a large multi-line text field. It requires and opening and closing tag, and any text between the two tags will auto-fill the field.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
+			<pen-demo html-code='&lt;label&gt;Textarea&lt;/label&gt;
+&lt;textarea&gt;&lt;/textarea&gt;'
 
-				<pre data-lang="css">textarea {
+			css-code='textarea {
 	display: block;
 	margin-bottom: 1rem;
-}</pre>
-
-				<pre data-lang="html">&lt;label&gt;Textarea&lt;/label&gt;
-&lt;textarea&gt;&lt;/textarea&gt;</pre>
-
-			</div>
+}'></pen-demo>
 			
 			<p class="try-this">What happens when you fill in multiple lines of text into the textarea field above?</p>
 
@@ -166,87 +142,51 @@
 
 			<p>The <code>select</code> element creates a drop-down select field and the <code>option</code> element, when nested inside a <code>select</code>, provides the selection options. Both elements require opening and closing tags.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
-
-				<pre data-lang="css">select {
-	display: block;
-	margin-bottom: 1rem;
-}</pre>
-
-				<pre data-lang="html">&lt;label&gt;Select&lt;/label&gt;
+			<pen-demo html-code='&lt;label&gt;Select&lt;/label&gt;
 &lt;select&gt;
 	&lt;option&gt;Option 1&lt;/option&gt;
 	&lt;option&gt;Option 2&lt;/option&gt;
 	&lt;option&gt;Option 3&lt;/option&gt;
-&lt;/select&gt;</pre>
+&lt;/select&gt;'
 
-			</div>
+			css-code='select {
+	display: block;
+	margin-bottom: 1rem;
+}'></pen-demo>
 			
 			<p class="try-this">In the above example, try changing the text of the option elements. What happens when you click on the field?</p>
 
 			<h3>The Value Attribute</h3>
 
-			<p>Sometimes, you want a user to see something different for an <code>option</code> than the data that gets sent when the form is submitted. For instance, in a selection of states, you might want the user to see them spelled out (Texas), but the actual form to send the postal code (TX). For cases like this, you can use the <code>value</code> attribute to specify what data should be sent:</p>
+			<p>Sometimes, you want a user to see something different for an <code>option</code> than the data that gets recorded when the form is submitted. For instance, in a selection of states, you might want the user to see them spelled out (Texas), but the actual form to send the postal code (TX). For cases like this, you can use the <code>value</code> attribute to specify what data should be sent:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
-
-				<pre data-lang="css">select {
-	display: block;
-	margin-bottom: 1rem;
-}</pre>
-
-				<pre data-lang="html">&lt;label&gt;Select Your State&lt;/label&gt;
+			<pen-demo html-code='&lt;label&gt;Select Your State&lt;/label&gt;
 &lt;select&gt;
 	&lt;option value="NH"&gt;New Hampshire&lt;/option&gt;
 	&lt;option value="TX"&gt;Texas&lt;/option&gt;
 	&lt;option value="UT"&gt;Utah&lt;/option&gt;
-&lt;/select&gt;</pre>
+&lt;/select&gt;'
 
-			</div>
+			css-code='select {
+	display: block;
+	margin-bottom: 1rem;
+}'></pen-demo>
 
 			<h3>Showing a Grayed-out First Option</h3>
 
 			<p>Sometimes you want the first thing to show in a <code>select</code> to be something like "Choose One". In cases like this, you can use an <code>option</code> which has the <code>disabled</code> attribute (to prevent it from being selected), the <code>hidden</code> attribute (to prevent it from showing in the dropdown), and the <code>selected</code> attribute (to make sure it shows by default):</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
-
-				<pre data-lang="css">select {
-	display: block;
-	margin-bottom: 1rem;
-}</pre>
-
-				<pre data-lang="html">&lt;label&gt;Select One&lt;/label&gt;
+			<pen-demo html-code='&lt;label&gt;Select One&lt;/label&gt;
 &lt;select&gt;
 	&lt;option disabled hidden selected&gt;Choose One&lt;/option&gt;
 	&lt;option&gt;Option 1&lt;/option&gt;
 	&lt;option&gt;Option 3&lt;/option&gt;
-&lt;/select&gt;</pre>
+&lt;/select&gt;'
 
-			</div>
+			css-code='select {
+	display: block;
+	margin-bottom: 1rem;
+}'></pen-demo>
 			
 			<p class="try-this">In the above example, what happens when you remove the <em>disabled</em> attribute from the first option? What about when you remove the <em>hidden</em> attribute? And the <em>selected</em> attribute?</p>
 
@@ -255,9 +195,8 @@
 
 			<p>You may have noticed in the previous example how the <code>label</code> element was used to identify each field. This is its purpose, but there is something missing&mdash;each label should include the <code>for</code> attribute which should match the <code>id</code> applied to its form field. This lets the browser know which label is for which field.</p>
 
-			<pre class="language-markup"><code>&lt;label for="name"&gt;Your Name&lt;/label&gt;
-
-&lt;input type="text" id="name"&gt;</code></pre>
+			<code-block code='&lt;label for="user-name"&gt;Your Name&lt;/label&gt;
+&lt;input type="text" id="user-name"&gt;'></code-block>
 
 
 			<h2 id="submit">Submit Buttons</h2>
@@ -268,35 +207,13 @@
 
 			<p>As with so many of the form fields, the <code>input</code> element can be used by specifying the corresponding <code>type</code> attribute. In this case, <code>type="submit"</code>. By default, the button text reads "submit", but that text can be changed using the <code>value</code> attribute.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
-
-				<pre data-lang="html">&lt;input type="submit" value="Button Text"&gt;</pre>
-			</div>
+			<pen-demo html-code='&lt;input type="submit" value="Button Text"&gt;'></pen-demo>
 
 			<h3>The Button Element</h3>
 
 			<p>The <code>button</code> element can be used to submit a form, but can also be used to trigger javascript actions. To use it for a form, use <code>type="submit"</code> as an attribute. One of the main differences between the <code>button</code> element and <code>input</code> is that <code>button</code> is needs a separate closing tag. Whatever text is placed between the opening and closing tags is the text that is shown on the button.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
-
-				<pre data-lang="html">&lt;button type="submit"&gt;Button Text&lt;/button&gt;
-			</div>
+			<pen-demo html-code='&lt;button type="submit"&gt;Button Text&lt;/button&gt;'></pen-demo>
 
 
 			<h2 id="attributes">Additional Attributes</h2>
@@ -307,25 +224,29 @@
 
 			<p>The <code>required</code> attribute can be added to any form field. If that field is left empty when the user attempts to submit, the browser will show an error saying the field must be filled.</p>
 
-			<pre class="language-markup"><code>&lt;input type="text" required&gt;</code></pre>
+			<code-block code='&lt;input type="text" required&gt;'></code-block>
 
 			<h3>The Disabled Attribute</h3>
 
 			<p>The <code>disabled</code> attribute can be added to any form field. It effectively "turns off" the functionality of that field and does not allow the user to interact with it.</p>
 
-			<pre class="language-markup"><code>&lt;input type="text" disabled&gt;</code></pre>
+			<code-block code='&lt;input type="text" disabled&gt;'></code-block>
 
 			<h3>The Placeholder Attribute</h3>
 
 			<p>The <code>placeholder</code> attribute accepts text or another appropriate value to show as a "placeholder" to indicate where and how the user should add input.</p>
 
-			<pre class="language-markup"><code>&lt;input type="text" placeholder="Some Placeholder Text"&gt;</code></pre>
+			<code-block code='&lt;input type="text" placeholder="Some Placeholder Text"&gt;'></code-block>
 			
 			<h2 id="video">Video Lesson</h2>
 
 			<p>The following video demo is fully interactive. You can pause it at any time to directly edit the code, and resume playback to pickup where you left off.</p>
 			
 			<video-demo url="https://scrimba.com/c/cgq8gPfy"></video-demo>
+
+			<h2 id="quiz">Practice Exercise</h2>
+			
+			<lesson-quiz url="../quizzes/html-forms.html"></lesson-quiz>
 				
 			<h2 id="resources">Resources</h2>
 				
@@ -345,9 +266,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

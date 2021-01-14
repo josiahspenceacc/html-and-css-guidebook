@@ -5,7 +5,7 @@
 	<!--  Meta  -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Shadows</title>
+	<title>Shadows & Rounded Corners</title>
 	
 	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 	
 </head>
@@ -48,6 +47,8 @@
 				</nav>
 
 			</header>
+
+			<h2>Two Kinds of Shadows</h2>
 			
 			<p>In CSS, shadows can be added to either an element's outer box using <code>box-shadow</code>, or directly to text using <code>text-shadow</code>. The value syntax for both are identical.</p>
 
@@ -66,22 +67,13 @@
 				<li><code>inset</code> &mdash; Including this keyword causes the shadow to be placed <strong>inside</strong> the element box.</li>
 			</ol>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">h2 {
+			<pen-demo html-code='&lt;h2&gt;Heading 2&lt;/h2&gt;'
+
+			css-code='h2 {
 	box-shadow: 3px 3px 2px cornflowerblue;
-}</pre>
-
-				<pre data-lang="html">&lt;h2&gt;Heading 2&lt;/h2&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the example above, see if you can figure out how to make the edge of the shadow blurrier. Can you make the shadow bigger overall? Try changing the color. What happens if you add the <code>inset</code> keyword to the end of the value?</p>
 
@@ -92,22 +84,13 @@
 
 			<p>As with <code>box-shadow</code>, <code>text-shadow</code> takes multiple terms for its value in the following order: <code>[x-offset] [y-offset] [blur amount] [color]</code>. The <code>[spread]</code> and <code>inset</code> values <strong>cannot be used</strong> for <code>text-shadow</code>.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">h2 {
-	text-shadow: 3px 3px 2px cornflowerblue;
-}</pre>
+			<pen-demo html-code='&lt;h2&gt;Heading 2&lt;/h2&gt;'
 
-				<pre data-lang="html">&lt;h2&gt;Heading 2&lt;/h2&gt;</pre>
-
-			</div>
+			css-code='h2 {
+				text-shadow: 3px 3px 2px cornflowerblue;;
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">Can you shift the shadow so that it sits to the top and left of the text instead of the bottom right? Can you remove the blur from the shadow so that it is hard-edged?</p>
 
@@ -130,16 +113,15 @@
 				
 			</ul>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.one-value {
+			<pen-demo html-code='&lt;div class="one-value"&gt;
+	Div with one value for all corners
+&lt;/div&gt;
+
+&lt;div class="four-value"&gt;
+	Div with separate values for each corner
+&lt;/div&gt;'
+
+			css-code='.one-value {
 	background-color: cornflowerblue;
 	border-radius: .75rem; /*Used on all four corners*/
 	margin-bottom: 1rem;
@@ -148,21 +130,13 @@
 
 .four-value {
 	background-color: lightsalmon;
-	border-radius: .75rem 25px 5% 3em; /*Used on all four corners*/
+	border-radius: .75rem 25px 5% 3em; /*top-left, top-right, bottom-right, bottom-left*/
 	padding: 2rem;
-}</pre>
-
-				<pre data-lang="html">&lt;div class="one-value"&gt;
-	Div with one value for all corners
-&lt;/div&gt;
-
-&lt;div class="four-value"&gt;
-	Div with separate values for each corner
-&lt;/div&gt;</pre>
+}'
+			selected-tab="css"
+			></pen-demo>
 				
-				<p class="try-this">In the demo above, can you figure out how to round the corners of the first box enough to form an actual oval? Can you make the only top-left corner of the second box a pointed corner?</p>
-
-			</div>
+			<p class="try-this">In the demo above, can you figure out how to round the corners of the first box enough to form an actual oval? Can you make the only top-left corner of the second box a pointed corner?</p>
 			
 			<h2 id="video">Video Lesson</h2>
 			
@@ -193,9 +167,10 @@
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

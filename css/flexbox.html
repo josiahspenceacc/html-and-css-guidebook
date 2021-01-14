@@ -16,9 +16,8 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
-	<link rel="stylesheet" href="/style.css">
+	<!--  Styles  --> 
+	<link rel="stylesheet" href="../style.css">
 	
 </head>
 <body>
@@ -35,7 +34,7 @@
 
 				<h1>Flexbox</h1>
 
-				<p>Flexbox is powerful, flexible CSS system for arranging items in a <strong>single line</strong> / along a single axis. This article only covers the very basics of flexbox. You may want to research more advanced properties and techniques on your own.</p>
+				<p>Flexbox is a powerful, flexible CSS system for arranging items in a <strong>single line</strong> / along a single axis. This article only covers the very basics of flexbox. You may want to research more advanced properties and techniques on your own.</p>
 
 				<nav class="page-nav">
 					<h2>On This Page</h2>
@@ -58,17 +57,21 @@
 
 			<p>So let's look at some code. If we start with a series of elements within a shared parent:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
+			<pen-demo html-code='&lt;div class="parent"&gt;
 
-				<pre data-lang="css">.parent {
+	&lt;div&gt;Div 1&lt;/div&gt;
+
+	&lt;div&gt;Div 2&lt;/div&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;List Item 1&lt;/li&gt;
+		&lt;li&gt;List Item 2&lt;/li&gt;
+		&lt;li&gt;List Item 3&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/div&gt;'
+
+			css-code='.parent {
 	background-color: ghostwhite;
 }
 
@@ -83,10 +86,13 @@ div div {
 
 ul {
 	background-color: khaki;
-}
-</pre>
+}'
+			selected-tab="css"
+		></pen-demo>
 
-				<pre data-lang="html">&lt;div class="parent"&gt;
+			<p>We can apply <code>display: flex;</code> to the parent div, and its direct children are automatically arranged in a left-justified horizontal line, according to flexbox defaults:</p>
+
+			<pen-demo html-code='&lt;div class="parent"&gt;
 
 	&lt;div&gt;Div 1&lt;/div&gt;
 
@@ -98,22 +104,9 @@ ul {
 		&lt;li&gt;List Item 3&lt;/li&gt;
 	&lt;/ul&gt;
 
-&lt;/div&gt;</pre>
-			</div>
+&lt;/div&gt;'
 
-			<p>We can apply <code>display: flex;</code> to the parent div, and its direct children are automatically arranged in a left-justified horizontal line, according to flexbox defaults:</p>
-
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-
-				<pre data-lang="css">.parent {
+			css-code='.parent {
 	background-color: ghostwhite;
 	display: flex;
 }
@@ -129,23 +122,9 @@ div div {
 
 ul {
 	background-color: khaki;
-}
-</pre>
-
-				<pre data-lang="html">&lt;div class="parent"&gt;
-
-	&lt;div&gt;Div 1&lt;/div&gt;
-
-	&lt;div&gt;Div 2&lt;/div&gt;
-
-	&lt;ul&gt;
-		&lt;li&gt;List Item 1&lt;/li&gt;
-		&lt;li&gt;List Item 2&lt;/li&gt;
-		&lt;li&gt;List Item 3&lt;/li&gt;
-	&lt;/ul&gt;
-
-&lt;/div&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p><em>Notice that the list items still stack on top of one another. This is because they are not direct children of the div that has been set to flex.</em></p>
 
@@ -172,55 +151,7 @@ ul {
 			
 			<p>And here is a similar example with code:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-
-				<pre data-lang="css">.parent {
-	background-color: ghostwhite;
-}
-
-.row-parent {
-	display: flex;
-	flex-direction: row; /*This is the default*/
-}
-
-.row-reverse-parent {
-	display: flex;
-	flex-direction: row-reverse;
-}
-
-.column-parent {
-	display: flex;
-	flex-direction: column;
-}
-
-.column-reverse-parent {
-	display: flex;
-	flex-direction: column-reverse;
-}
-
-div, ul {
-	margin: .5rem;
-	padding: .5rem;
-}
-
-div div {
-	background-color: cornflowerblue;
-}
-
-ul {
-	background-color: khaki;
-}
-</pre>
-
-				<pre data-lang="html">&lt;h2&gt;Row&lt;/h2&gt;
+			<pen-demo html-code='&lt;h2&gt;Row&lt;/h2&gt;
 
 &lt;div class="row-parent parent"&gt;
 
@@ -282,8 +213,46 @@ ul {
 		&lt;li&gt;List Item 3&lt;/li&gt;
 	&lt;/ul&gt;
 
-&lt;/div&gt;</pre>
-			</div>
+&lt;/div&gt;'
+
+			css-code='.parent {
+	background-color: ghostwhite;
+}
+
+.row-parent {
+	display: flex;
+	flex-direction: row; /*This is the default*/
+}
+
+.row-reverse-parent {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.column-parent {
+	display: flex;
+	flex-direction: column;
+}
+
+.column-reverse-parent {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+div, ul {
+	margin: .5rem;
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+}
+
+ul {
+	background-color: khaki;
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the example above, try the different possible values for <code>flex-direction</code> for the <code>.row-parent</code> selector. Pay attention to how the children change direction and order.</p>
 
@@ -310,65 +279,7 @@ ul {
 			
 			<p>And a code example:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-
-				<pre data-lang="css">.parent {
-	background-color: ghostwhite;
-}
-
-.flex-start-parent {
-	display: flex;
-	justify-content: flex-start; /* default */
-}
-
-.flex-end-parent {
-	display: flex;
-	justify-content: flex-end;
-}
-
-.center-parent {
-	display: flex;
-	justify-content: center;
-}
-
-.space-around-parent {
-	display: flex;
-	justify-content: space-around;
-}
-
-.space-between-parent {
-	display: flex;
-	justify-content: space-between;
-}
-
-.space-evenly-parent {
-	display: flex;
-	justify-content: space-evenly;
-}
-
-div, ul {
-	margin: .5rem;
-	padding: .5rem;
-}
-
-div div {
-	background-color: cornflowerblue;
-}
-
-ul {
-	background-color: khaki;
-}
-</pre>
-
-				<pre data-lang="html">&lt;h2&gt;Flex-Start&lt;/h2&gt;
+			<pen-demo html-code='&lt;h2&gt;Flex-Start&lt;/h2&gt;
 
 &lt;div class="flex-start-parent parent"&gt;
 
@@ -462,8 +373,56 @@ ul {
 		&lt;li&gt;List Item 3&lt;/li&gt;
 	&lt;/ul&gt;
 
-&lt;/div&gt;</pre>
-			</div>
+&lt;/div&gt;'
+
+			css-code='.parent {
+	background-color: ghostwhite;
+}
+
+.flex-start-parent {
+	display: flex;
+	justify-content: flex-start; /* default */
+}
+
+.flex-end-parent {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.center-parent {
+	display: flex;
+	justify-content: center;
+}
+
+.space-around-parent {
+	display: flex;
+	justify-content: space-around;
+}
+
+.space-between-parent {
+	display: flex;
+	justify-content: space-between;
+}
+
+.space-evenly-parent {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+div, ul {
+	margin: .5rem;
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+}
+
+ul {
+	background-color: khaki;
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above example, try the different possible values for <code>justify-content</code> for the <code>.flex-start-parent</code> selector. Pay attention to how the children are redistributed across the main axis.</p>
 
@@ -471,20 +430,24 @@ ul {
 
 			<p>When <code>margin: auto</code> is applied to one side of a flex-child on the main axis, it serves to push that item and its neighbor as far from one another as possible. This allows an additional element of control along the main axis in addition to what justify-content allows. Notice in the following example how the main axis is defined as <code>justify-content: space-between</code>, but because the middle item has <code>margin-left: auto</code>, it is pushed all the way to the right and sits right next to the last item:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
+			<pen-demo html-code='&lt;div class="parent"&gt;
 
-				<pre data-lang="css">.parent {
+&lt;div&gt;Div 1&lt;/div&gt;
+
+&lt;div class="example"&gt;Div w/ margin-left&lt;/div&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;List Item 1&lt;/li&gt;
+	&lt;li&gt;List Item 2&lt;/li&gt;
+	&lt;li&gt;List Item 3&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;'
+
+			css-code='.parent {
 	background-color: ghostwhite;
 	display: flex;
-	justify-content: space-between; /* default */
+	justify-content: space-between;
 }
 
 .example {
@@ -502,23 +465,9 @@ div div {
 
 ul {
 	background-color: khaki;
-}
-</pre>
-
-				<pre data-lang="html">&lt;div class="parent"&gt;
-
-&lt;div&gt;Div 1&lt;/div&gt;
-
-&lt;div class="example"&gt;Div w/ margin-left&lt;/div&gt;
-
-&lt;ul&gt;
-	&lt;li&gt;List Item 1&lt;/li&gt;
-	&lt;li&gt;List Item 2&lt;/li&gt;
-	&lt;li&gt;List Item 3&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;</pre>
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above example, try changing <code>margin-left</code> to <code>margin-right</code> for the <code>.example</code> div. If you want to go further, try moving the <code>margin</code> to other selectors to see what happens.</p>
 
@@ -542,60 +491,7 @@ ul {
 				<figcaption>In this illustration, the darker background box represents the flex-parent.</figcaption>
 			</figure>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-
-				<pre data-lang="css">.parent {
-	background-color: ghostwhite;
-}
-
-.stretch-parent {
-	display: flex;
-	align-items: stretch; /* default */
-}
-
-.flex-start-parent {
-	display: flex;
-	align-items: flex-start; /* default */
-}
-
-.flex-end-parent {
-	display: flex;
-	align-items: flex-end;
-}
-
-.center-parent {
-	display: flex;
-	align-items: center;
-}
-
-.baseline-parent {
-	display: flex;
-	align-items: baseline;
-}
-
-div, ul {
-	margin: .5rem;
-	padding: .5rem;
-}
-
-div div {
-	background-color: cornflowerblue;
-}
-
-ul {
-	background-color: khaki;
-}
-</pre>
-
-				<pre data-lang="html">&lt;h2&gt;Stretch&lt;/h2&gt;
+			<pen-demo html-code='&lt;h2&gt;Stretch&lt;/h2&gt;
 
 &lt;div class="stretch-parent parent"&gt;
 
@@ -673,8 +569,51 @@ ul {
 		&lt;li&gt;List Item 3&lt;/li&gt;
 	&lt;/ul&gt;
 
-&lt;/div&gt;</pre>
-			</div>
+&lt;/div&gt;'
+
+			css-code='.parent {
+	background-color: ghostwhite;
+}
+
+.stretch-parent {
+	display: flex;
+	align-items: stretch; /* default */
+}
+
+.flex-start-parent {
+	display: flex;
+	align-items: flex-start;
+}
+
+.flex-end-parent {
+	display: flex;
+	align-items: flex-end;
+}
+
+.center-parent {
+	display: flex;
+	align-items: center;
+}
+
+.baseline-parent {
+	display: flex;
+	align-items: baseline;
+}
+
+div, ul {
+	margin: .5rem;
+	padding: .5rem;
+}
+
+div div {
+	background-color: cornflowerblue;
+}
+
+ul {
+	background-color: khaki;
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above example, try the different possible values for <code>align-items</code> for the <code>.stretch-parent</code> selector. Pay attention to how the children are realigned on the cross axis.</p>
 
@@ -713,9 +652,10 @@ ul {
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

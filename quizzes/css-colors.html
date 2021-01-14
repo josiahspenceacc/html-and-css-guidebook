@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Colors Exercise</title>
+
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="../quiz-style.css">
+</head>
+
+<body id="quiz-body">
+
+	<div id="app">
+		<quiz v-bind:badgehue="15" subject="CSS Colors" :currentStep="currentStep" v-on:next-step="nextStep"
+			v-on:skip-step="skipStep" v-cloak>
+
+			<!--Step 1-->
+			<question-step :step="1" v-bind:options='["<code>r (75), g (94), b (150)</code>",
+							"<code>rgb( 75 94 150 )</code>",
+							"<code>( 75, 94, 150 )</code>",
+							"<code>rgb( 75, 94, 150 )</code>"]'
+				answer="<code>rgb( 75, 94, 150 )</code>">
+
+				<p>What is the proper way to write the code for <strong>rgb</strong> color format?</p>
+
+			</question-step>
+
+			<!--Step 2-->
+			<question-step :step="2" v-bind:options='["Named color",
+							"Hexadecimal color",
+							"RGB color",
+							"HSL color"]'
+				answer="Hexadecimal color">
+
+				<p>What name do we use for the following color format: <code>#90a0d2</code>?</p>
+
+			</question-step>
+
+			<!--Step 3-->
+			<question-step :step="3" v-bind:options='["True",
+							"False"]'
+				answer="True">
+
+				<p>True or false: Some colors can be referred to by written <strong>names</strong> in CSS, such as "white", "black", or "red".</p>
+
+			</question-step>
+
+			<!--Step 4-->
+			<question-step :step="4" v-bind:options='["Opacity",
+							"Hue",
+							"Array",
+							"Tiny"]'
+				answer="Opacity">
+
+				<p>In the <strong>rgba</strong> format what does the <strong>"a"</strong> represent?</p>
+
+			</question-step>
+
+			<!--Step 5-->
+			<question-step :step="5" v-bind:options='["The intensity of the color <strong>red</strong>",
+							"The intensity of the color <strong>green</strong>",
+							"The intensity of the color <strong>blue</strong>",
+							"The intensity of the color <strong>black</strong>"]'
+				answer="The intensity of the color <strong>green</strong>">
+
+				<p>In this color: <code>rgb( 231, 56, 141 )</code>, what does the value <code>56</code> represent?</p>
+
+			</question-step>
+
+			<!--Step 6-->
+			<question-step :step="6" v-bind:options='["True",
+							"False"]'
+				answer="True">
+
+				<p>True or false: The <strong>opacity</strong> value in the rgba format is scaled from <strong>0 to 1</strong>.</p>
+
+			</question-step>
+
+			<!--Step 7-->
+			<question-step :step="7" v-bind:options='["True",
+							"False"]'
+				answer="False">
+
+				<p>True or false: Every possible color in CSS has a <strong>name</strong> that can be used for it.</p>
+
+			</question-step>
+			
+
+		</quiz>
+	</div>
+
+	<script src="../dependencies/compressed.js"></script>
+	<script async src="../dependencies/xml.js"></script>
+	<script async src="../dependencies/css.js"></script>
+	<script async src="../dependencies/htmlmixed.js"></script>
+	<script src="js/quiz-scripts-dist.js"></script>
+
+</body>
+
+</html>

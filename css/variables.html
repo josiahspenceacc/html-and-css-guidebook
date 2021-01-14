@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 	
 </head>
@@ -53,15 +52,15 @@
 
 			<h3>Defining a variable that can be used anywhere in the CSS</h3>
 
-			<pre class="language-css"><code>html {
+			<code-block lang="css" code='html {
 	--color-gray-light: #eee;
-}</code></pre>
+}'></code-block>
 
 			<h3>Defining a variable that can only be used in the site header</h3>
 
-			<pre class="language-css"><code>.site-header {
+			<code-block lang="css" code='.site-header {
 	--color-gray: #444;
-}</code></pre>
+}'></code-block>
 
 			<h2>Redefining and Overriding Variables</h2>
 
@@ -69,7 +68,7 @@
 
 			<p>A common use for this might be with media queries:</p>
 
-			<pre class="language-css"><code>html {
+			<code-block lang="css" code='html {
 	--font-size: 17px;
 }
 
@@ -77,11 +76,11 @@
 	html {
 		--font-size: 20px;
 	}
-}</code></pre>
+}'></code-block>
 
 			<p>You might also use this to create component-specific overrides:</p>
 
-			<pre class="language-css"><code>:root{
+			<code-block lang="css" code=':root{
 	--color-text: #333;
 }
 
@@ -93,16 +92,16 @@ html {
 	--color-text: white;
 
 	background-color: blue;
-}</code></pre>
+}'></code-block>
 
 
 			<h2 id="using">Using Variables</h2>
 
 			<p>Variables can be used in place of a relevant value by expressing the name within the parinthesis of <code>var()</code>.</p>
 
-			<pre class="language-css"><code>h2 {
+			<code-block lang="css" code='h2 {
 	color: var(--color-gray);
-}</code></pre>
+}'></code-block>
 			
 			<h2 id="video">Video Lesson</h2>
 			
@@ -127,8 +126,10 @@ html {
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

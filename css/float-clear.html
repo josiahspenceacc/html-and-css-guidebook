@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -52,47 +51,33 @@
 
 			<p>An element can be floated <code>right</code>:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.float-image-example {
+			<pen-demo html-code='&lt;img src="images/dog.jpg" alt="dog" class="float-image-example"&gt;
+
+&lt;p&gt;The domestic dog (Canis lupus familiaris when considered a subspecies of the wolf or Canis familiaris when considered a distinct species) is a member of the genus Canis (canines), which forms part of the wolf-like canids, and is the most widely abundant terrestrial carnivore. The dog and the extant gray wolf are sister taxa as modern wolves are not closely related to the wolves that were first domesticated, which implies that the direct ancestor of the dog is extinct. The dog was the first species to be domesticated and has been selectively bred over millennia for various behaviors, sensory capabilities, and physical attributes.&lt;/p&gt;
+
+&lt;p&gt;The domestic dog (Canis lupus familiaris when considered a subspecies of the wolf or Canis familiaris when considered a distinct species) is a member of the genus Canis (canines), which forms part of the wolf-like canids, and is the most widely abundant terrestrial carnivore. The dog and the extant gray wolf are sister taxa as modern wolves are not closely related to the wolves that were first domesticated, which implies that the direct ancestor of the dog is extinct. The dog was the first species to be domesticated and has been selectively bred over millennia for various behaviors, sensory capabilities, and physical attributes.&lt;/p&gt;'
+
+			css-code='.float-image-example {
 	float: right;
 	margin: 0 0 .5rem .5rem;
-}</pre>
-
-				<pre data-lang="html">&lt;img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-lick-03-1533228266.jpg?crop=0.5xw:1xh;center,top&resize=100:*" alt="dog" class="float-image-example"&gt;
-
-&lt;p&gt;The domestic dog (Canis lupus familiaris when considered a subspecies of the wolf or Canis familiaris when considered a distinct species) is a member of the genus Canis (canines), which forms part of the wolf-like canids, and is the most widely abundant terrestrial carnivore. The dog and the extant gray wolf are sister taxa as modern wolves are not closely related to the wolves that were first domesticated, which implies that the direct ancestor of the dog is extinct. The dog was the first species to be domesticated and has been selectively bred over millennia for various behaviors, sensory capabilities, and physical attributes.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p>An element can also be floated <code>left</code>:</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.float-image-example {
+			<pen-demo html-code='&lt;img src="images/dog.jpg" alt="dog" class="float-image-example"&gt;
+
+&lt;p&gt;The domestic dog (Canis lupus familiaris when considered a subspecies of the wolf or Canis familiaris when considered a distinct species) is a member of the genus Canis (canines), which forms part of the wolf-like canids, and is the most widely abundant terrestrial carnivore. The dog and the extant gray wolf are sister taxa as modern wolves are not closely related to the wolves that were first domesticated, which implies that the direct ancestor of the dog is extinct. The dog was the first species to be domesticated and has been selectively bred over millennia for various behaviors, sensory capabilities, and physical attributes.&lt;/p&gt;
+
+&lt;p&gt;The domestic dog (Canis lupus familiaris when considered a subspecies of the wolf or Canis familiaris when considered a distinct species) is a member of the genus Canis (canines), which forms part of the wolf-like canids, and is the most widely abundant terrestrial carnivore. The dog and the extant gray wolf are sister taxa as modern wolves are not closely related to the wolves that were first domesticated, which implies that the direct ancestor of the dog is extinct. The dog was the first species to be domesticated and has been selectively bred over millennia for various behaviors, sensory capabilities, and physical attributes.&lt;/p&gt;'
+
+			css-code='.float-image-example {
 	float: left;
 	margin: 0 .5rem .5rem 0;
-}</pre>
-
-				<pre data-lang="html">&lt;img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-lick-03-1533228266.jpg?crop=0.5xw:1xh;center,top&resize=100:*" alt="dog" class="float-image-example"&gt;
-
-&lt;p&gt;The domestic dog (Canis lupus familiaris when considered a subspecies of the wolf or Canis familiaris when considered a distinct species) is a member of the genus Canis (canines), which forms part of the wolf-like canids, and is the most widely abundant terrestrial carnivore. The dog and the extant gray wolf are sister taxa as modern wolves are not closely related to the wolves that were first domesticated, which implies that the direct ancestor of the dog is extinct. The dog was the first species to be domesticated and has been selectively bred over millennia for various behaviors, sensory capabilities, and physical attributes.&lt;/p&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 
 			<p>You can also <em>disable</em> a previously set float using <code>float: none;</code></p>
 
@@ -101,34 +86,21 @@
 			<h2 id="clear">Clear</h2>
 
 			<p>When an element is floated, all following content will wrap around it, so long as there is space. For example:</p>
+			
+			<pen-demo html-code='&lt;img src="images/dog.jpg" alt="dog" class="float-image-example"&gt;
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.float-image-example {
+&lt;p&gt;The domestic dog (Canis lupus familiaris when considered a subspecies of the wolf or Canis familiaris when considered a distinct species) is a member of the genus Canis (canines), which forms part of the wolf-like canids, and is the most widely abundant terrestrial carnivore.&lt;/p&gt;
+
+&lt;h3&gt;Nine Lives&lt;/h3&gt;'
+
+			css-code='.float-image-example {
 	float: left;
 	margin: 0 .5rem .5rem 0;
-}</pre>
-
-				<pre data-lang="html">&lt;img src="https://s3.amazonaws.com/filestore.rescuegroups.org/2736/pictures/animals/13088/13088121/60231003_100x300.jpg" alt="cat" class="float-image-example"&gt;
-
-&lt;p&gt;The domestic cat (Felis silvestris catus or Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines. They are often valued by humans for companionship and for their ability to hunt vermin. There are more than seventy cat breeds recognized by various cat registries.&lt;/p&gt;
-
-&lt;h5&gt;Nine Lives&lt;/h5&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above examples, try removing the floats. What happens to the layout without them? What happens when you add them back in? What about when you change the side to which the image is floated?</p>
-
-
-
-			<p class="post-clear-example">Note that the image sticks out of the bottom of the container. This is because floated elements are not considered in the height of a container.</p>
 
 			<p>For an element that follows an element that is floated, you can apply the <code>clear</code> property to cause it to break to below the floated element rather than wrapping to its side.</p>
 			
@@ -137,32 +109,23 @@
 			<p><code>clear</code> can accept a value of <code>left</code> to clear an element floated left, <code>right</code> to clear an element floated right, or <code>both</code>, which clears all floats.</p>
 
 			<p>A good metaphor for <code>clear</code> is that it is like an invisible bar at the top of the element that sticks out to the side defined and forces the element to below anything the bar hits.</p>
+			
+			<pen-demo html-code='&lt;img src="images/dog.jpg" alt="dog" class="float-image-example"&gt;
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.float-image-example {
+&lt;p&gt;The domestic dog (Canis lupus familiaris when considered a subspecies of the wolf or Canis familiaris when considered a distinct species) is a member of the genus Canis (canines), which forms part of the wolf-like canids, and is the most widely abundant terrestrial carnivore.&lt;/p&gt;
+
+&lt;h3&gt;Nine Lives&lt;/h3&gt;'
+
+			css-code='.float-image-example {
 	float: left;
 	margin: 0 .5rem .5rem 0;
 }
 
-h5 {
+h3 {
 	clear: both;
-}</pre>
-
-				<pre data-lang="html">&lt;img src="https://s3.amazonaws.com/filestore.rescuegroups.org/2736/pictures/animals/13088/13088121/60231003_100x300.jpg" alt="cat" class="float-image-example"&gt;
-
-&lt;p&gt;The domestic cat (Felis silvestris catus or Felis catus) is a small, typically furry, carnivorous mammal. They are often called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from other felids and felines. They are often valued by humans for companionship and for their ability to hunt vermin. There are more than seventy cat breeds recognized by various cat registries.&lt;/p&gt;
-
-&lt;h5&gt;Nine Lives&lt;/h5&gt;</pre>
-
-			</div>
+}'
+			selected-tab="css"
+		></pen-demo>
 			
 			<p class="try-this">In the above example, try changing the values for <code>float</code> and for <code>clear</code>. What happens when they match? What happens when they don't?</p>
 			
@@ -187,9 +150,10 @@ h5 {
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

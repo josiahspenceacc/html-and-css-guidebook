@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -73,16 +72,8 @@
 
 			<p><strong>A separate transition must defined for each end state.</strong> In the example below, that means we need a transition on the hover state and another on the default state for when the hover ends and the state returns to normal.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.transition-example {
+			<pen-demo html-code='&lt;a href="" class="transition-example"&gt;Hover over me!&lt;/a&gt;'
+		css-code='.transition-example {
 	background-color: blue;
 	color: white;
 	padding: .5rem;
@@ -94,11 +85,9 @@
 	color: blue;
 	padding: .5rem 1rem;
 	transition: all 1s ease;
-}</pre>
-
-				<pre data-lang="html">&lt;a href="" class="transition-example"&gt;Hover over me!&lt;/a&gt;</pre>
-
-			</div>
+}'
+		selected-tab="css"
+	></pen-demo>
 			
 			<p class="try-this">In the example above, try removing the <code>transition</code> property from the default state, then try hovering on and off the link in the preview window. Notice how it no longer transitions back to the default state. You can also try playing with which properties transition.</p>
 
@@ -115,7 +104,7 @@
 
 			<p>To define a keyframe animation, you set it up using <code>@keyframes</code> and a name of your choice. Then, you set CSS properties at each point (keyframe) along the duration of the animation (usually expressed in percentages) as are necessary for the effect.</p>
 
-			<pre class=" language-css"><code>@keyframes example-animation {
+			<code-block lang="css" code='@keyframes example-animation {
 	0% {
 		opacity: 0;
 		transform: translatex(-100rem);
@@ -129,7 +118,7 @@
 		opacity: 1;
 		transform: translatex(0);
 	}
-}</code></pre>
+}'></code-block>
 
 			<p>In the above example, since the <code>opacity</code> property isn't updated at the <code>85%</code> value, <code>opacity</code> continues its transition between 0% and 100% as though there were no keyframe between.</p>
 
@@ -155,16 +144,8 @@
 
 			<p>There are several more advanced properties that can be used for animations, but those listed above cover basic implementation.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">.keyframes-example:hover {
+			<pen-demo html-code='&lt;div class="keyframes-example"&gt;Hover over me!&lt;/div&gt;'
+		css-code='.keyframes-example:hover {
 	/* name duration timing-function delay */
 	animation: example-animation 2s ease .5s;
 }
@@ -183,11 +164,9 @@
 		opacity: 1;
 		transform: translatex(0);
 	}
-}</pre>
-
-				<pre data-lang="html">&lt;div class="keyframes-example"&gt;Hover over me!&lt;/div&gt;</pre>
-
-			</div>
+}'
+		selected-tab="css"
+	></pen-demo>
 			
 			<p class="try-this">In the example above, try changing the animation to have the text cycle through a series of colors. Add more keyframe steps to use more colors.</p>
 
@@ -195,16 +174,8 @@
 
 			<p>It is also worth noting that you can use multiple animations on a single selector by comma-separating the declarations. This can be utilized in combination with animation-delay to create complex effects.</p>
 
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				<pre data-lang="css">@keyframes fade-in {
+		<pen-demo html-code='&lt;div class="multiple-keyframes-example"&gt;Hover over me!&lt;/div&gt;'
+	css-code='@keyframes fade-in {
 	0% {
 		opacity: 0;
 	}
@@ -234,11 +205,9 @@
 
 .multiple-keyframes-example:hover {
 	animation: fade-in 1.5s linear, pulse .7s ease .7s;
-}</pre>
-
-			<pre data-lang="html">&lt;div class="multiple-keyframes-example"&gt;Hover over me!&lt;/div&gt;</pre>
-
-		</div>
+}'
+	selected-tab="css"
+></pen-demo>
 			
 			<h2 id="video">Video Lesson</h2>
 			
@@ -274,10 +243,11 @@
 	
 	</div>
 	
-	<!--ipts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<!--Scripts-->
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>

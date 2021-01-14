@@ -16,8 +16,7 @@
 	<meta name="msapplication-TileColor" content="#ffa07a">
 	<meta name="theme-color" content="#ffffff">
 
-	<!--  Styles  -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -52,27 +51,16 @@
 			<p class="big-point">By starting with the HTML only, we ensure <strong>semantic</strong> element structure, rather than choosing elements based upon their appearance.</p>
 			
 			<p>The full HTML with only default browser styles looks like this:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="html,result" 
-			>
 
-				<pre data-lang="html">&lt;nav&gt;
+			<pen-demo html-code='&lt;nav&gt;
 	&lt;ul&gt;
 		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
 	&lt;/ul&gt;
-&lt;/nav&gt;</pre>
-
-			</div>
+&lt;/nav&gt;'
+	></pen-demo>
 			
 			<h2 id="mobile-first">Mobile-First Styles</h2>
 			
@@ -86,78 +74,53 @@
 			
 			<p class="big-point">Make sure you <strong>only</strong> select the list items in the navigation. Otherwise, your styles will be applied to all list items on the site.</p>
 
-						
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				
-				<pre data-lang="css">nav li {
-	list-style: none;
-}</pre>
-
-				<pre data-lang="html">&lt;nav&gt;
+			<pen-demo html-code='&lt;nav&gt;
 	&lt;ul&gt;
 		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
 		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
 	&lt;/ul&gt;
-&lt;/nav&gt;</pre>
-
-			</div>
+&lt;/nav&gt;'
+		css-code='nav li {
+	list-style: none;
+}'
+		selected-tab="css"
+	></pen-demo>
 			
 			<p>The bullets are gone! But there's a problem&mdash;all the text is indented somewhat from the left side of the page. Using the developer tools inspector, we will see that this results from the <code>padding-left</code> that is on the <code>ul</code> by default. We can remove it by zeroing out that padding, making sure again to only do so for unordered lists that are decendants of a <code>nav</code>:</p>
-			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				
-				<pre data-lang="css">nav ul {
+
+			<pen-demo html-code='&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;'
+		css-code='nav ul {
 	padding-left: 0;
 }
 				
 nav li {
 	list-style: none;
-}</pre>
-
-				<pre data-lang="html">&lt;nav&gt;
-	&lt;ul&gt;
-		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;</pre>
-
-			</div>
+}'
+		selected-tab="css"
+	></pen-demo>
 			
 			<h3>Styling the Links</h3>
 			
 			<p>To add a little visual separation, let's add some <code>padding</code> to each link and a line between them using <code>border-bottom</code>. While we're at it, we can remove the default underline from the link text using <code>text-decoration</code>:</p>
 			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				
-				<pre data-lang="css">nav ul {
+			<pen-demo html-code='&lt;nav&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/nav&gt;'
+				css-code='nav ul {
 	padding-left: 0;
 }
 				
@@ -169,18 +132,9 @@ nav a {
 	border-bottom: 1px solid #ccc;
 	padding: .5rem .75rem;
 	text-decoration: none;
-}</pre>
-
-				<pre data-lang="html">&lt;nav&gt;
-	&lt;ul&gt;
-		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;</pre>
-
-			</div>
+}'
+				selected-tab="css"
+			></pen-demo>
 			
 			<p>Hmmm, that looks kind of funny. The borders don't stretch all the way across the space available, and something weird is happening vertically that causes the borders to overlap the text. So what's going on?</p>
 			
@@ -190,17 +144,15 @@ nav a {
 			
 			<p>We could solve the problem by placing the padding and border on the <code>li</code> selector instead because list items are <em>block</em> by default. However, if we did so, users wouldn't be able to tap within the padded area to visit the link. Only the links are clickable here. So instead, let's simply make the links <em>block</em> using the <code>display</code> property:</p>
 			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				
-				<pre data-lang="css">nav ul {
+			<pen-demo html-code='&lt;nav&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/nav&gt;'
+				css-code='nav ul {
 	padding-left: 0;
 }
 				
@@ -213,18 +165,9 @@ nav a {
 	display: block;
 	padding: .5rem .75rem;
 	text-decoration: none;
-}}</pre>
-
-				<pre data-lang="html">&lt;nav&gt;
-	&lt;ul&gt;
-		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;</pre>
-
-			</div>
+}'
+				selected-tab="css"
+			></pen-demo>
 			
 			<h3>Link States</h3>
 			
@@ -232,17 +175,15 @@ nav a {
 			
 			<p>Since the hover and focus states both exist to let the user know the link is ready to be clicked, we'll use a comma-separated multi-selector to style them both the same with color and background. And we'll get rid of the default focus style using the <code>outline</code> property. Finally, we'll simply use a different background color for the active state:</p>
 			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				
-				<pre data-lang="css">nav ul {
+			<pen-demo html-code='&lt;nav&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/nav&gt;'
+				css-code='nav ul {
 	padding-left: 0;
 }
 				
@@ -265,18 +206,9 @@ nav a:hover, nav a:focus {
 
 nav a:active {
 	background-color: darkblue;
-}</pre>
-
-				<pre data-lang="html">&lt;nav&gt;
-	&lt;ul&gt;
-		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;</pre>
-
-			</div>
+}'
+				selected-tab="css"
+			></pen-demo>
 			
 			<p class="try-this">Try hovering over the links. Can you figure out how to change the background color on hover? Can you make the borders thicker?</p>
 			
@@ -289,17 +221,15 @@ nav a:active {
 			
 			<p>The most common design pattern is to have the nav links sit side-by-side on larger screens, so let's create a media query where we'll apply our new styles (let's try <code>600px</code> wide and up) and set the links to <code>inline-block</code>. We choose this instead of <code>inline</code> to ensure that any vertical padding or margin is still applied.</p>
 			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				
-				<pre data-lang="css">nav ul {
+			<pen-demo html-code='&lt;nav&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/nav&gt;'
+				css-code='nav ul {
 	padding-left: 0;
 }
 				
@@ -330,32 +260,21 @@ nav a:active {
 		display: inline-block;
 	}
 
-}</pre>
-
-				<pre data-lang="html">&lt;nav&gt;
-	&lt;ul&gt;
-		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;</pre>
-
-			</div>
+}'
+				selected-tab="css"
+			></pen-demo>
 			
 			<p>The links are still stacking, so what's going on? If you recall, each link is wrapped in a list item, which are themselves block elements by default. So we'll need to change them as well. Since their sizes are currently determined by the links they contain, it doesn't matter much whether we set them to <code>inline</code> or <code>inline-block</code>, but we'll go with <code>inline-block</code> just to be consistent:</p>
 			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				
-				<pre data-lang="css">nav ul {
+			<pen-demo html-code='&lt;nav&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/nav&gt;'
+				css-code='nav ul {
 	padding-left: 0;
 }
 				
@@ -390,34 +309,23 @@ nav a:active {
 		display: inline-block;
 	}
 
-}</pre>
-
-				<pre data-lang="html">&lt;nav&gt;
-	&lt;ul&gt;
-		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;</pre>
-
-			</div>
+}'
+				selected-tab="css"
+			></pen-demo>
 			
 			<p class="try-this">Grab the lower-right corner of the demo and resize the viewport. Note how it changes between the mobile layout and the side-by-side layout depending on the width.</p>
 			
 			<p>So far, so good. But let's get rid of the borders under the links. They look a little funny in this layout:</p>
 			
-			<!--Example Pen-->
-			<div 
-			  class="codepen" 
-			  data-prefill 
-			  data-height="400"
-			  data-editable="true"
-			  data-theme-id="36581"
-			  data-default-tab="css,result" 
-			>
-				
-				<pre data-lang="css">nav ul {
+			<pen-demo html-code='&lt;nav&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/nav&gt;'
+				css-code='nav ul {
 	padding-left: 0;
 }
 				
@@ -453,18 +361,9 @@ nav a:active {
 		display: inline-block;
 	}
 
-}</pre>
-
-				<pre data-lang="html">&lt;nav&gt;
-	&lt;ul&gt;
-		&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="staff.html"&gt;Staff&lt;/a&gt;&lt;/li&gt;
-		&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;/nav&gt;</pre>
-
-			</div>
+}'
+				selected-tab="css"
+			></pen-demo>
 			
 			<p>There you have it! A simple responsive navigation that follows common design patterns. If you wanted you could alter the hover, focus, and active states within the media query. Or you could add a second media query to change the styles further on even larger viewport widths. Or you could create more imaginative navigation layouts at any of the sizes. This example is just here to get you started.</p>
 			
@@ -477,9 +376,10 @@ nav a:active {
 	</div>
 	
 	<!--Scripts-->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="/script.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
-	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	<script src="../dependencies/compressed.js"></script>
+	<script src="../dependencies/xml.js"></script>
+	<script src="../dependencies/css.js"></script>
+	<script src="../dependencies/htmlmixed.js"></script>
+	<script src="../js/scripts-dist.js"></script>
 </body>
 </html>
