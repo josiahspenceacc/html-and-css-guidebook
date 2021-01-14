@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  
+	<!--  Meta  -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<le>Practical Challenges</title>
+	
+	<!-- Favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffa07a">
+	<meta name="msapplication-TileColor" content="#ffa07a">
+	<meta name="theme-color" content="#ffffff">
+
+	<!--  Styles  -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.min.css">
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	
+	<div id="app">
+	
+	<page-header></page-header>
+	
+	<main>
+		
+		<article>
+			
+			<header>
+	
+				<h1>Practical Challenges</h1>
+				
+				<p>These self-paced challenges will help you put into practice the skills and concepts you learn throughout this guidebook. Each challenge builds on the last one and includes examples of the completed code so you can check your work.</p>
+				
+			</header>
+			
+			<h2>The Challenges</h2>
+			
+			<details>
+				<summary>Challenge 1</summary>
+
+				<div>
+					<div class="challenge-meta">
+						<p>This challenge reviews: <a href="/html/html-intro.html">Introduction to HTML</a>, <a href="/html/file-structure.html">Website File Structure</a>, <a href="/html/skeleton-code.html">Skeleton Code</a>, and <a href="/html/basic-text.html">Basic Text Elements</a>.</p>
+
+						<p>Download: <a href="/challenge-files/challenge-1.zip" download>Finished Version</a></p>
+					</div>
+
+					<div class="challenge-content">
+						<p>As you work, don't forget to frequently save your file and check it in your browser to see how everything displays.</p>
+
+						<ul>
+							<li>Create a new <strong>root directory</strong> for this website and name it <em>practical-challenge-site.</em> You will use this directory as the root for this project as we continue to add to it throughout these challenges</li>
+							<li>Inside that directory, create a new html file and name it appropriately for a site <strong>home page</strong>.</li>
+							<li>In your new home page file, add all the standard required <strong>skeleton code,</strong> don't forget to <strong>indent</strong> properly to show which elements are inside of which other elements.</li>
+							<li>For the <code>title</code> element, use <span class="selectable">The Design of the 1960s</span>.</li>
+							<li>Now, let's move inside of the <code>body</code> element for the rest of our work. Remember, the <code>body</code> element is what holds all the content that shows up on the webpage for users.</li>
+							<li>First, let's add an <code>h1</code> element to serve as the primary heading for the page. Inside the element write <span class="selectable">The Design of the 1960s,</span> just as you did in the <code>title</code> element above.</li>
+							<li>Next, add a <strong>paragraph</strong> with the following text:
+								<div class="selectable">
+									The nineteen-sixties were a vibrant time in the world of design in which increasing internationalism and experimentation flourished. This website pays tribute to some of the great designers and landmark design moments of that pivotal and unforgettable decade.
+								</div>
+							</li>
+							<li>In the paragraph you just added, we want the user to know that the time period is <strong>important</strong>, so place the word <em>nineteen-sixties</em> in the appropriate HTML element to indicate importance.</li>
+							<li>Let's also add a little <strong>emphasis</strong> to the words <em>internationalism</em> and <em>experimentalism</em> by adding the appropriate HTML element to them.</li>
+							<li>Below the paragraph, add a new <strong>heading</strong> to indicate a sub-section of the page. The heading should be the appropriate number level to indicate that it is a direct <strong>sub-section of the <code>h1</code></strong> that describes the page above. The text of the heading should say <span class="selectable">Significant Designers.</span></li>
+							<li>Below the heading you just added, create an <strong>unordered list</strong> (including the <strong>nesting</strong> shown) of the following names:
+								<div class="selectable">
+									<ul>
+										<li>Paul Rand</li>
+										<li>Muriel Cooper</li>
+										<li>Ikko Tanaka</li>
+										<li>The 
+											<ul>
+												<li>Ray Eames</li>
+												<li>Charles Eames</li>
+											</ul>
+										</li>
+										<li>Saul Bass</li>
+										<li>Margaret Calvert</li>
+										<li>Yusaku Kamekura</li>
+										<li>Herb Lubalin</li>
+										<li>Shigeo Fukuda</li>
+										<li>Milton Glaser</li>
+										<li>Massimo Vignelli</li>
+									</ul>
+								</div>
+							</li>
+							<li>After the unordered list, add another <strong>heading</strong> at the same level of hierarchy as the previous section heading and use the text <span class="selectable">Top Typefaces of 1960s Style.</span></li>
+							<li>After this heading, we'll use another list, but since the list is ranked let's make it an <strong>ordered list.</strong> Here are the items to include:
+								<div class="selectable"> 
+									<ol>
+										<li>Avant Garde</li>
+										<li>Cooper Black</li>
+										<li>Futura</li>
+										<li>Helvetica</li>
+										<li>Univers</li>
+										<li>Eurostile</li>
+										<li>Impact</li>
+										<li>Sabon</li>
+										<li>Bauhaus</li>
+										<li>Baby Teeth</li>
+									</ol>
+								</div>
+							</li>
+							<li>Finally, after the list of typefaces, let's add a credit to show who created this website. In the appropriate <strong>element for text that is less important</strong> add the text <span class="selectable">Website by Your Name.</span></li>
+							<li>Congratulations! You've completed this challenge! Now download the <a href="/challenge-files/challenge-1.zip" download>finished version</a> and compare your work to it, making sure to check that:
+								<ul>
+									<li>All of your HTML elements are opened and closed in the correct places</li>
+									<li>You have used proper spacing and capitalization</li>
+									<li>Your elements are correctly indented to show which elements are children of other elements</li>
+								</ul>
+							</li>
+						</ul>
+
+					</div>
+
+				</div>
+
+			</details>
+
+			<details>
+				<summary>Challenge 2</summary>
+
+				<div>
+					<div class="challenge-meta">
+						<p>This challenge reviews: <a href="/html/html5-semantic.html">HTML5 Semantic Elements</a>, <a href="/html/div-span.html">Div & Span: Meaningless Elements</a>, and <a href="/html/images.html">Images in HTML</a>.</p>
+
+						<p>Download: <a href="/challenge-files/challenge-1.zip" download>Starter Files</a> | <a href="/challenge-files/challenge-2.zip" download>Finished Version</a></p>
+					</div>
+
+					<div class="challenge-content">
+						<p>As you work, don't forget to frequently save your file and check it in your browser to see how everything displays.</p>
+
+						<ul>
+							<li>This challenge builds on the previous challenge, so open up the <code>index.html</code> file from last time to get started. If you didn't finish the previous challenge or haven't had time to make corrections, you can download the starter files, which contain a completed version of the last challenge, and work from that instead.</li>
+							<li>Now that we have the basic page content that we added in Challenge 1, let's add more meaning to the page by making use of the HTML5 semantic elements. We'll start by wrapping all the content inside the <code>body</code> element <em>except</em> for the <code>small</code> at the end of the page in the appropriate element for <strong>the primary content of a page</strong>. Be sure to update your indentation to show the new parent/child relationship between elements.</li>
+							<li>Inside the element you just added, find the <code>h2</code> that says "Significant Designers" and the unordered list of designer names. Wrap both that heading and the list in the element that means <strong>a group of thematically related content</strong>.</li>
+							<li>Now use another instance of the same element to wrap the <code>h2</code> that says "Top Typefaces of 1960s Style" along with the unordered list of typefaces.</li>
+							<li>Now let's turn our attention to the <code>small</code> element at the end that contains the "written by" statement. Wrap that element in the semantic element that refers to <strong>information about the creator or creation of a page or article</strong>.</li>
+							
+						</ul>
+
+					</div>
+
+				</div>
+
+			</details>
+			
+		</article>
+		
+	</main>
+		
+	<site-footer></site-footer>
+		
+</div>
+	
+	<!--Scripts-->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</body>
+</html>

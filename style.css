@@ -15,19 +15,21 @@ img {
 
 html {
 	--ratio:				1.3;
-	--size-xxxxlarge:	calc( var( --size-xxxlarge ) * var( --ratio ) );
-	--size-xxxlarge:	calc( var( --size-xxlarge ) * var( --ratio ) );
-	--size-xxlarge:	calc( var( --size-xlarge ) * var( --ratio ) );
-	--size-xlarge:		calc( var( --size-large ) * var( --ratio ) );
-	--size-large:		calc( 1rem * var( --ratio ) );
-	--size-small:		calc( 1rem * .8 );
+	--size-xxxxlarge:		calc( var( --size-xxxlarge ) * var( --ratio ) );
+	--size-xxxlarge:		calc( var( --size-xxlarge ) * var( --ratio ) );
+	--size-xxlarge:			calc( var( --size-xlarge ) * var( --ratio ) );
+	--size-xlarge:			calc( var( --size-large ) * var( --ratio ) );
+	--size-large:			calc( 1rem * var( --ratio ) );
+	--size-small:			calc( 1rem * .8 );
 	
-	--line-height: 	1.7rem;
+	--line-height: 			1.7rem;
 	
-	--color-blue-light:	#F0F5FD;
-	--color-blue-dark:	#4f6388;
-	--color-orange:		lightsalmon;
-	--color-orange-light:#ffc2aa;
+	--color-blue-light:		#F0F5FD;
+	--color-blue-lighter:	#f7faff;
+	--color-blue-dark:		#4f6388;
+	--color-orange:			lightsalmon;
+	--color-orange-dark:	#ff7038;
+	--color-orange-light:	#ffc2aa;
 	--color-gray-bg:		#f9f9f9;
 	
 	--font-secondary:		'Libre Baskerville', serif;
@@ -260,6 +262,80 @@ tr td:first-child {
 		padding: 2rem;
 	}
 }
+
+/* ==========================================================================
+   Details & Summary / Challenge
+   ========================================================================== */
+
+details {
+	box-shadow: 0 4px 7px rgba( 0, 0, 0, .3 );
+	
+}
+
+details:not([open]):hover {
+	background-color: var(--color-blue-light);
+}
+
+details > div {
+	padding: 0 2rem 4rem;
+}
+
+@media (min-width: 58rem) {
+	article > details {
+		grid-column: 1 / span 10;
+	}
+
+	.challenge-content {
+		margin: auto;
+		max-width: 34rem;
+	}
+}
+
+@media (min-width: 68rem) {
+	article > details {
+		grid-column: 2 / span 7;
+	}
+}
+
+summary {
+	font-family: var(--font-secondary);
+	font-weight: bold;
+	padding: 2rem;
+}
+
+summary:hover, summary:focus {
+	color: var(--color-orange-dark);
+	cursor: pointer;
+	outline: none;
+}
+
+details[open] summary {
+	padding-bottom: 1rem;
+}
+
+.challenge-meta {
+	border: 1px solid #ccc;
+	border-width: 1px 0;
+	font-size: smaller;
+	margin-bottom: var(--line-height);
+	padding: 1rem 0 .5rem;
+}
+
+.challenge-meta a {
+	display: inline-block;
+}
+
+.selectable {
+	background-color: var(--color-blue-lighter);
+	padding: .1rem .5rem;
+	user-select: all;
+}
+
+div.selectable {
+	margin-top: .5rem;
+	padding: 1rem;
+}
+
 
 /* ==========================================================================
    Page Layout
