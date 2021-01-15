@@ -18,6 +18,86 @@
 
 	<!--  Styles  --> 
 	<link rel="stylesheet" href="../style.css">
+
+	<style>
+		.box-model-demo {
+			box-shadow: 0 4px 7px rgba( 0, 0, 0, .3 );
+			text-align: center;
+		}
+
+		.box-model-demo label {
+			display: block;
+		}
+
+		.box-model-demo #outer-div, .box-model-demo .inner-div {
+			background-color: var(--color-blue-dark);
+			margin: 10px;
+			padding: 10px;
+			transition: all .3s;
+		}
+
+		.box-model-demo .inner-div {
+			background-color: var(--color-orange);
+			color: white;
+			font-weight: bold;
+			text-shadow: 0 0 3px rgba( 0, 0, 0, .4 );
+		}
+
+		#inner-div-2 {
+			background-color: rgb(76, 185, 185);
+		}
+
+		.box-model-demo h3 {
+			font-size: 1.2rem;
+			margin: .5rem 0 1rem;
+		}
+
+		.box-model-demo h3:before {
+			content: '◼ ';
+		}
+
+		.outer-div-heading:before {
+			color: var(--color-blue-dark);
+		}
+
+		.inner-div-1-heading:before {
+			color: var(--color-orange);
+		}
+
+		.inner-div-2-heading:before {
+			color: rgb(76, 185, 185);
+		}
+
+		.box-model-demo .controls {
+			padding-top: 2rem;
+		}
+
+		.box-model-demo .control-group {
+			margin-bottom: 1.5rem;
+		}	
+
+		.box-model-demo input[type=range] {
+			max-width: 11rem;
+			width: 80%;
+		}
+
+		@media ( min-width: 550px ){
+			.box-model-demo .controls {
+				display: flex;
+			}
+			
+			.box-model-demo .control-group {
+				border-right: 1px solid #ddd;
+				padding: 1rem;
+				width: 33.3%;
+			}
+			
+			.box-model-demo .control-group:last-child {
+				border: none;
+			}
+		}
+
+	</style>
 	
 </head>
 <body>
@@ -317,12 +397,75 @@
 
 			<p class="try-this">Below is a little experiment where you can play with the box model properties and and get a sense of how they interact.</p>
 
-			<div class="dominant-example">
-				<p class="codepen" data-height="700" data-theme-id="36581" data-show-tab-bar="no" data-default-tab="result" data-user="JosiahACC" data-slug-hash="KxrjYz" style="minheight: 85vh; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 1px solid black; margin: 1em 0; padding: 1em;" data-pen-title="Box Model Demonstration">
-					<span>See the Pen <a href="https://codepen.io/JosiahACC/pen/KxrjYz/">
-Box Model Demonstration</a> by Josiah Spence (<a href="https://codepen.io/JosiahACC">@JosiahACC</a>)
-on <a href="https://codepen.io">CodePen</a>.</span>
-				</p>
+			<div class="dominant-example box-model-demo">
+
+				<div class="controls">
+					
+					<div class="control-group">
+						
+						<h3 class="outer-div-heading">Outer Div</h3>
+					
+						<label for="outer-div-margin" id="outer-div-margin-amount">Margin: 10px</label>
+
+						<input id="outer-div-margin" type="range" min="1" max="50" step="1" value="10">
+					
+						<label for="outer-div-padding" id="outer-div-padding-amount">Padding: 10px</label>
+
+						<input id="outer-div-padding" type="range" min="1" max="50" step="1" value="10">
+					
+						<label for="outer-div-border" id="outer-div-border-amount">Border-Width: 1px</label>
+
+						<input id="outer-div-border" type="range" min="1" max="10" step="1" value="1">
+						
+					</div>
+					
+					<div class="control-group">
+						
+						<h3 class="inner-div-1-heading">Inner Div 1</h3>
+					
+						<label for="inner-div-1-margin" id="inner-div-1-margin-amount">Margin: 10px</label>
+
+						<input id="inner-div-1-margin" type="range" min="1" max="50" step="1" value="10">
+					
+						<label for="inner-div-1-padding" id="inner-div-1-padding-amount">Padding: 10px</label>
+
+						<input id="inner-div-1-padding" type="range" min="1" max="50" step="1" value="10">
+					
+						<label for="inner-div-1-border" id="inner-div-1-border-amount">Border-Width: 1px</label>
+
+						<input id="inner-div-1-border" type="range" min="1" max="10" step="1" value="1">
+						
+					</div>
+					
+					<div class="control-group">
+						
+						<h3 class="inner-div-2-heading">Inner Div 2</h3>
+					
+						<label for="inner-div-2-margin" id="inner-div-2-margin-amount">Margin: 10px</label>
+
+						<input id="inner-div-2-margin" type="range" min="1" max="50" step="1" value="10">
+					
+						<label for="inner-div-2-padding" id="inner-div-2-padding-amount">Padding: 10px</label>
+
+						<input id="inner-div-2-padding" type="range" min="1" max="50" step="1" value="10">
+					
+						<label for="inner-div-2-border" id="inner-div-2-border-amount">Border-Width: 1px</label>
+
+						<input id="inner-div-2-border" type="range" min="1" max="10" step="1" value="1">
+						
+					</div>
+					
+				</div>
+
+				<div id="outer-div">
+					<div id="inner-div-1" class="inner-div">
+						Inner Div 1
+					</div>
+					<div id="inner-div-2" class="inner-div">
+						Inner Div 2
+					</div>
+				</div>
+	
 			</div>
 			
 			<h2 id="quiz">Practice Exercise</h2>
@@ -350,5 +493,47 @@ on <a href="https://codepen.io">CodePen</a>.</span>
 	<script src="../dependencies/css.js"></script>
 	<script src="../dependencies/htmlmixed.js"></script>
 	<script src="../js/scripts-dist.js"></script>
+	<script>
+		function adjuster( select ) {
+	
+		// Margin Selectors
+		var margin = document.getElementById( select + '-margin' ),
+			marginDiv = document.getElementById( select + '-margin-amount' ),
+			outerDiv = document.getElementById( select );
+
+		// Update Margin
+		margin.onchange = function() {
+			marginDiv.innerHTML = 'Margin: ' + this.value + 'px';
+			outerDiv.style.margin = this.value + 'px';	
+		}
+
+		// Padding Selectors
+		var padding = document.getElementById( select + '-padding' ),
+			paddingDiv = document.getElementById( select + '-padding-amount' );
+
+		// Update Padding
+		padding.onchange = function() {
+			paddingDiv.innerHTML = 'Padding: ' + this.value + 'px';
+			outerDiv.style.padding = this.value + 'px';
+		}
+
+		// Border Selectors
+		var border = document.getElementById( select + '-border' ),
+			borderDiv = document.getElementById( select + '-border-amount' );
+
+		// Update Border
+		border.onchange = function() {
+			borderDiv.innerHTML = 'Border-Width: ' + this.value + 'px';
+			outerDiv.style.borderWidth = this.value + 'px';
+		}
+		
+	};
+
+	adjuster('outer-div');
+
+	adjuster('inner-div-1');
+
+	adjuster('inner-div-2');
+	</script>
 </body>
 </html>
