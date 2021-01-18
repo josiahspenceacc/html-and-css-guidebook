@@ -54,7 +54,7 @@
 					<div class="challenge-content">
 						<p>As you work, don't forget to frequently save your file and check it in your browser to see how everything displays.</p>
 
-						<ul>
+						<ol>
 							<li>Create a new <strong>root directory</strong> for this website and name it <em>practical-challenge-site.</em> You will use this directory as the root for this project as we continue to add to it throughout these challenges</li>
 							<li>Inside that directory, create a new html file and name it appropriately for a site <strong>home page</strong>.</li>
 							<li>In your new home page file, add all the standard required <strong>skeleton code,</strong> don't forget to <strong>indent</strong> properly to show which elements are inside of which other elements.</li>
@@ -110,13 +110,13 @@
 							</li>
 							<li>Finally, after the list of typefaces, let's add a credit to show who created this website. In the appropriate <strong>element for text that is less important</strong> add the text <span class="selectable">Website by Your Name.</span></li>
 							<li>Congratulations! You've completed this challenge! Now download the <a href="/challenge-files/challenge-1.zip" download>finished version</a> and compare your work to it, making sure to check that:
-								<ul>
+								<ol>
 									<li>All of your HTML elements are opened and closed in the correct places</li>
-									<li>You have used proper spacing and capitalization</li>
-									<li>Your elements are correctly indented to show which elements are children of other elements</li>
-								</ul>
+									<li>You have used proper spacing and capitalization.</li>
+									<li>Your elements are correctly indented to show which elements are children of other elements.</li>
+								</ol>
 							</li>
-						</ul>
+						</ol>
 
 					</div>
 
@@ -137,30 +137,30 @@
 					<div class="challenge-content">
 						<p>As you work, don't forget to frequently save your file and check it in your browser to see how everything displays.</p>
 
-						<ul>
+						<ol>
 							<li>This challenge builds on the previous challenge, so open up the <code>index.html</code> file from last time to get started. If you didn't finish the previous challenge or haven't had time to make corrections, you can download the starter files above, which contain a completed version of the last challenge, and work from that instead.</li>
 							<li>Now that we have the basic page content that we added in Challenge 1, let's add more meaning to the page by making use of the HTML5 semantic elements. We'll start by wrapping all the content inside the <code>body</code> element <em>except</em> for the <code>small</code> at the end of the page in the appropriate element for <strong>the primary content of a page</strong>. Be sure to update your indentation to show the new parent/child relationship between elements.</li>
 							<li>Inside the element you just added, find the <code>h2</code> that says "Significant Designers" and the unordered list of designer names. Wrap both that heading and the list in the element that means <strong>a group of thematically related content</strong>.</li>
-							<li>Now use another instance of the same element you used in the last step to wrap the <code>h2</code> that says "Top Typefaces of 1960s Style" along with the unordered list of typefaces.</li>
+							<li>Now use another instance of the same element you used in Step 3 to wrap the <code>h2</code> that says "Top Typefaces of 1960s Style" along with the unordered list of typefaces.</li>
 							<li>Now let's turn our attention to the <code>small</code> element at the end that contains the "written by" statement. Wrap that element in the semantic element that refers to <strong>information about the creator or creation of a page or article</strong>.</li>
-							<li>Now our page has semantic elements for the primary content and for the creator's credit, but it lacks anything to introduce the site. Above the element for primary content, just after the opening <code>body</code> tag, add the semantic element for <strong>introductory content about a page or article</strong>.</li>
+							<li>Now our page has semantic elements for the primary content and for the creator's credit, but it lacks anything to introduce the site. Above the element for primary content that you added in Step 2, just after the opening <code>body</code> tag, add the semantic element for <strong>introductory content about a page or article</strong>.</li>
 							<li>Inside the element you just added, let's add some text that will serve the role of our site's logo. Since there is no element specifically for logos, add <strong>a block element that is meaningless</strong> and fill it with this text: <span class="selectable">The History of Design</span>, which will be the name of our site as a whole.</li>
 							<li>Let's add some visual interest to the site by adding an image. But first, we need a place to put the image file. We could place it directly in our root directory, but keeping images with all the pages could lead to poor organization down the road. Instead, directly <strong>inside your root directory, create a new directory named <span class="selectable">images</span>.</strong></li>
 							<li><a href="/challenge-files/rockroll.jpg" download>Download this image file</a> and place it inside your new images directory.</li>
 							<li>Now, back in your <code>index.html</code> file, directly below the <code>h1</code> and above the paragraph, <strong>add the HTML to include the image on your page.</strong>
-								<ul>
+								<ol>
 									<li>Remember to include the required attribute for users who can't see the image. Use the text: <span class="selectable">Rock and Roll Poster</span>.</li>
 									<li>Be sure to save and check your page in the browser to ensure the image shows up.</li>
-								</ul>
+								</ol>
 							</li>
 							<li>Congratulations! Another challenge complete! Now download the <a href="/challenge-files/challenge-2.zip" download>finished version</a> and compare your own work against it, making sure to check that:
-								<ul>
-									<li>The new elements match what you have and are in the same places</li>
-									<li>Your elements are correctly indented to show which elements are children of other elements</li>
-									<li>All elements are closed correctly</li>
-								</ul>
+								<ol>
+									<li>The new elements match what you have and are in the same places.</li>
+									<li>Your elements are correctly indented to show which elements are children of other elements.</li>
+									<li>All elements are closed correctly.</li>
+								</ol>
 							</li>
-						</ul>
+						</ol>
 
 					</div>
 
@@ -187,10 +187,49 @@
 					<div class="challenge-content">
 						<p>As you work, don't forget to frequently save your file and check it in your browser to see how everything displays.</p>
 
-						<ul>
+						<ol>
 							<li>This challenge builds on the previous challenges, so open up the <code>index.html</code> file from last time to get started. If you didn't finish the previous challenge or haven't had time to make corrections, you can download the starter files, which contain a completed version of the last challenge, and work from that instead.</li>
 
-						</ul>
+							<li>So far we've only used HTML to add content to this site, but it looks really plain, so let's begin adding some style. The first thing we'll need to do is <strong>add a CSS file named <span class="selectable">style.css</span> directly inside the root directory</strong> of the website.</li>
+							<li>But our HTML file doesn't yet know about the CSS file. In the <code>head</code> of <code>index.html</code>, <strong>add the necessary code to tell the browser to use the CSS file</strong> you just created.</li>
+							<li>One of the primary factors that determines the look and feel of a design is the type, so let's get started by setting a typeface for all the body copy. In your CSS file, <strong>select for the HTML element that contains all other HTML elements and apply this font stack:</strong> <span class="selectable">Georgia, Times, "Times New Roman", serif</span>. Selecting the topmost parent element like this should result in the type being used by all elements on the page.</li>
+							<li>Now the spacing between the lines in the body copy feels too tight. Let's fix that by <strong>setting the space between lines to <code>1.5</code></strong>. (Notice that we don't need a unit for this measurement.)</li>
+							<li>To add a bit of variety to the site, in your CSS <strong>select for <code>h1</code>, <code>h2</code>, and <code>h3</code> (there aren't any h3s on the page yet, but we may add some in the future) and apply the font stack:</strong> <span class="selectable">Arial, "Helvetica Neue", Helvetica, sans-serif</span>.
+								<ol>
+									<li>What is the most efficient way you can write the CSS to apply this font stack to the headings listed?</li>
+									<li>Note that because this is applied to specific elements within the element you used in Step 4, the font overrides the Georgia fonts for these headings.</li>
+								</ol>
+							</li>
+							<li>While we're styling the headings, let's add some other styles for a bit of flavor. To the same three headings you used in the previous step, give them a <strong>text color</strong> of <span class="selectable">#AE053E</span>.</li>
+							<li>To make the page title really stand out, do the following to <strong>just the</strong> <code>h1</code>:
+								<ol>
+									<li>Make the text <strong>all capital letters</strong> using CSS.</li>
+									<li>Make the type a <strong>regular weight</strong> instead of the default bold.</li>
+									<li>Add <code>.1rem</code> of extra <strong>spacing between all the letters</strong>.</li>
+								</ol>
+							</li>
+							<li>To make the page feel a little more impactful, let's <strong> the size of the headings</strong> to the following values:
+								<ol>
+									<li>Make the <code>h1</code> elements <code>3.5rem</code>.</li>
+									<li>Make the <code>h2</code> elements <code>2rem</code>.</li>
+									<li>Make the <code>h3</code> elements <code>1.5rem</code>.</li>
+								</ol>
+							</li>
+							<li>Finally, since the first paragraph on the page explains what the website is all about, let's give it some special visual treatment. Since we want to apply these styles only to this one particular paragraph and not all paragraphs we might add in the future, we can't select it using the <code>p</code> element. So do the following instead:
+								<ol>
+									<li>In your HTML file, <strong>add a class of</strong> <span class="selectable">site-intro</span>.</li>
+									<li>Back in your CSS, select for the class you just added and <strong>set the type size to</strong> <code>1.25rem</code>.</li> 
+								</ol>
+							</li>
+							<li>All done! Now download the <a href="/challenge-files/challenge-3.zip" download>finished version</a> and compare your own work against it, making sure to check that:
+								<ol>
+									<li>Your CSS is correctly formatted, with proper indentation, spacing, and alphabetized properties.</li>
+									<li>You have selected for the different headings in the most efficient way possible.</li>
+									<li>The class you added to your HTML is formatted correctly.</li>
+								</ol>
+							</li>
+
+						</ol>
 				
 					</div>
 				
