@@ -554,6 +554,10 @@ Vue.component( 'table-of-contents', {
 
 			<ul>
 
+				<li><h5><a href="/challenges.html">Practical Challenges</a></h5>
+					<div class="meta-text">A series of step-by-step challenges to practice what you've learned by creating a realistic website.</div>
+				</li>
+
 				<li><h5><a href="/styleguide.html">Code Style Guide</a></h5>
 					<div class="meta-text">Use this resource to guide you in formatting and other preferred practices for writing your code.</div>
 				</li>
