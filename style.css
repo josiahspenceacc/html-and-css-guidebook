@@ -962,10 +962,12 @@ p > code,
 li > code,
 dd > code,
 td > code,
-small > code {
+small > code,
+strong > code {
 	background-color: #f5f2f0;
 	color: #905;
 	display: inline-block;
+	font-weight: normal;
 	margin: 0 .2rem;
 	padding: 0 .25rem;
 }

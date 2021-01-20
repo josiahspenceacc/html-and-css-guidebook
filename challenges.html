@@ -208,7 +208,7 @@
 									<li>Add <code>.1rem</code> of extra <strong>spacing between all the letters</strong>.</li>
 								</ol>
 							</li>
-							<li>To make the page feel a little more impactful, let's <strong> the size of the headings</strong> to the following values:
+							<li>To make the page feel a little more impactful, let's <strong>increase the size of the headings</strong> to the following values:
 								<ol>
 									<li>Make the <code>h1</code> elements <code>3.5rem</code>.</li>
 									<li>Make the <code>h2</code> elements <code>2rem</code>.</li>
@@ -226,6 +226,77 @@
 									<li>Your CSS is correctly formatted, with proper indentation, spacing, and alphabetized properties.</li>
 									<li>You have selected for the different headings in the most efficient way possible.</li>
 									<li>The class you added to your HTML is formatted correctly.</li>
+								</ol>
+							</li>
+
+						</ol>
+				
+					</div>
+				
+				</div>
+
+			</details>
+
+			<details>
+				<summary>Challenge 4</summary>
+
+				<div>
+					<div class="challenge-meta">
+						<p>This challenge reviews: <a href="/css/list-styles.html">Styling Lists</a>
+<a href="/css/display.html">The Display Property</a>
+<a href="/css/box-model.html">The Box Model</a>
+.</p>
+
+						<p>Download: <a href="/challenge-files/challenge-3.zip" download>Starter Files</a> | <a href="/challenge-files/challenge-4.zip" download>Finished Version</a></p>
+					</div>
+
+					<div class="challenge-content">
+						<p>As you work, don't forget to frequently save your file and check it in your browser to see how everything displays.</p>
+
+						<ol>
+							<li>This challenge builds on the previous challenges, so open up the files from last time to get started. If you didn't finish the previous challenge or haven't had time to make corrections, you can download the starter files, which contain a completed version of the last challenge, and work from that instead.</li>
+
+							<li>Right now, all the content stretches all the way across the page, with almost no space at the edges, and on wide browsers the lines of body text can become too long to read comfortably. To fix this, in your CSS set the <code>main</code> element to <strong>never grow wider</strong> than <code>38rem</code>.</li>
+							<li>That's better, but the content now sits to the left side of the page on browsers that are wider than <code>38rem</code>. To fix this, <strong>use margin to horizontally center the <code>main</code> in the available space</strong>.</li>
+							<li>Now that the formatting is looking better, let's pay attention to some details. The <em>Significant Designers</em> section of the page has an unordered list that looks a little plain. Use CSS to set <strong>all unordered lists to show a square instead of a black disc</strong> as the list item marker.</li>
+							<li>That looks good, but the nested list shouldn't show the same marker as the parent list. <strong>Set the list marker of nested unordered lists to be a hollow circle</strong>.</li>
+							<li>On a related note, for fun let's <strong>change the <em>ordered</em> lists to use numbers with a leading zero</strong> instead of the standard single digit style.</li>
+							<li>As our page takes shape I'm noticing that some of the headings still look a little plain. To fix this, let's make the following changes to all <code>h2</code> elements:
+								<ol>
+									<li>Give them a <strong>solid line border across the bottom that is <span class="selectable">5px</span> thick and the same color as the text</strong>.</li>
+									<li>Add <span class="selectable">.5rem</span> of <strong>space between the bottom of the text and the border</strong>.</li>
+									<li>Add the following space <strong>between the element and the surrounding contents:</strong> <span class="selectable">4rem</span> of space on top, no space on the sides, and <span class="selectable">2rem</span> of space on bottom. 
+								</ol>
+							</li>
+							<li>Lastly, let's start planning for when we add additional pages to this website. Specifically, in <code>index.html</code> let's add a list of items to serve as the main navigation of the site by doing the following:
+								<ol>
+									<li>Inside the page's <code>header</code> element, just after the <code>div</code> with the site name, <strong>add the semantic element appropriate for page navigation</strong>.</li>
+									<li>Inside the element you just added, write an <strong>unordered list that contains the following items</strong> (just the text for now; we'll make them links in a future challenge):
+										<div class="selectable">
+											<ul>
+												<li>Home</li>
+												<li>About</li>
+												<li>Contact</li>
+											</ul>
+										</div>
+									</li>
+									<li>To the list as a whole, <strong>add a class of <span class="selectable">site-nav-list</span></strong> so we can target it in our CSS and style it differently from other unordered lists.</li>
+								</ol>
+							</li>
+							<li>The navigation list we just added contains the right information, but it doesn't look how users expect navigation to look. To fix this, jump back into your CSS file and do the following:
+								<ol>
+									<li>Change the <strong>display property of the list items so that they sit side-by-side</strong>. Remember, you only want to affect the list items in this navigation list, so you'll need to be sure to write a <strong>CSS selector that only targets list items within the "site-nav-list" unordered list</strong>.</li>
+									<li>On the "site-nav-list" list itself, there's some default space inside the element on the left side. <strong>Remove the default space from the list</strong>.</li>
+									
+								</ol>
+							</li>
+							<li>That's it for this challenge! Now download the <a href="/challenge-files/challenge-4.zip" download>finished version</a> and compare your own work against it, making sure to check that:
+								<ol>
+									<li>You have used the correct selectors for everything you added to your CSS.</li>
+									<li>You have chosen correctly between the margin and padding properties everywhere that you changed spacing.</li>
+									<li>You used shorthand where possible for margin and padding.</li>
+									<li>All your CSS properties are nicely alphabetized within the selector blocks.</li>
+									<li>You added the correct semantic element in your HTML.</li>
 								</ol>
 							</li>
 
