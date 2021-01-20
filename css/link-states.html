@@ -42,6 +42,7 @@
 					<a href="#hover">Hover</a>
 					<a href="#focus">Focus</a>
 					<a href="#active">Active</a>
+					<a href="#order">Order of Selectors</a>
 					<a href="#full-example">Full Example</a>
 					<a href="#video">Video Lesson</a>
 					<a href="#quiz">Practice Exercise</a>
@@ -96,6 +97,11 @@
 			<code-block lang="css" code='a:active {
 	color: green;
 }'></code-block>
+
+
+			<h2 id="order">Order of Selectors</h2>
+
+			<p>Because styles of one link state can sometimes override the styles of another link state, it's important to <strong>always write the styles for the link states in the correct order</strong> to ensure there are no conflicts. The best link order is <strong>default, visited, hover, focus, then active</strong>. You can remember this order using a handy mnemonic device: "<strong>V</strong>ery <strong>H</strong>ungry <strong>F</strong>eline <strong>A</strong>crobats".  (Note that this is the same order used in the following example.)</p>
 			
 			<h2 id="full-example">Full Example</h2>
 
@@ -125,6 +131,7 @@ a:active {
 		></pen-demo>
 			
 			<p class="try-this">In the above example, try hovering over the link. Try selecting it with the tab key. Try clicking on it. See what happens? Try adding your own CSS to the various link states.</p>
+
 			
 			<h2 id="video">Video Lesson</h2>
 			

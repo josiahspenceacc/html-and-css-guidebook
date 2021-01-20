@@ -287,6 +287,7 @@ Vue.component( 'table-of-contents', {
 						<li><a href="/css/link-states.html#hover">Hover</a></li>
 						<li><a href="/css/link-states.html#active">Active</a></li>
 						<li><a href="/css/link-states.html#focus">Focus</a></li>
+						<li><a href="/css/link-states.html#order">Order of Selectors</a></li>
 						<li><a href="/css/link-states.html#full-example">Full Example</a></li>
 						<li><a href="/css/link-states.html#video">Video Lesson</a></li>
 						<li><a href="/css/link-states.html#quiz">Practice Exercise</a></li>
