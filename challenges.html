@@ -188,7 +188,7 @@
 						<p>As you work, don't forget to frequently save your file and check it in your browser to see how everything displays.</p>
 
 						<ol>
-							<li>This challenge builds on the previous challenges, so open up the <code>index.html</code> file from last time to get started. If you didn't finish the previous challenge or haven't had time to make corrections, you can download the starter files, which contain a completed version of the last challenge, and work from that instead.</li>
+							<li>This challenge builds on the previous challenges, so open up the <code>index.html</code> file from last time to get started. If you didn't finish the previous challenge or haven't had time to make corrections, you can download the starter files above, which contain a completed version of the last challenge, and work from that instead.</li>
 
 							<li>So far we've only used HTML to add content to this site, but it looks really plain, so let's begin adding some style. The first thing we'll need to do is <strong>add a CSS file named <span class="selectable">style.css</span> directly inside the root directory</strong> of the website.</li>
 							<li>But our HTML file doesn't yet know about the CSS file. In the <code>head</code> of <code>index.html</code>, <strong>add the necessary code to tell the browser to use the CSS file</strong> you just created.</li>
@@ -254,7 +254,7 @@
 						<p>As you work, don't forget to frequently save your file and check it in your browser to see how everything displays.</p>
 
 						<ol>
-							<li>This challenge builds on the previous challenges, so open up the files from last time to get started. If you didn't finish the previous challenge or haven't had time to make corrections, you can download the starter files, which contain a completed version of the last challenge, and work from that instead.</li>
+							<li>This challenge builds on the previous challenges, so open up your files from last time to get started. If you didn't finish the previous challenge or haven't had time to make corrections, you can download the starter files above, which contain a completed version of the last challenge, and work from that instead.</li>
 
 							<li>Right now, all the content stretches all the way across the page, with almost no space at the edges, and on wide browsers the lines of body text can become too long to read comfortably. To fix this, in your CSS set the <code>main</code> element to <strong>never grow wider</strong> than <code>38rem</code>.</li>
 							<li>That's better, but the content now sits to the left side of the page on browsers that are wider than <code>38rem</code>. To fix this, <strong>use margin to horizontally center the <code>main</code> in the available space</strong>.</li>
@@ -297,6 +297,72 @@
 									<li>You used shorthand where possible for margin and padding.</li>
 									<li>All your CSS properties are nicely alphabetized within the selector blocks.</li>
 									<li>You added the correct semantic element in your HTML.</li>
+								</ol>
+							</li>
+
+						</ol>
+				
+					</div>
+				
+				</div>
+
+			</details>
+
+			<details>
+				<summary>Challenge 5</summary>
+
+				<div>
+					<div class="challenge-meta">
+						<p>This challenge reviews: <a href="/html/links.html">Styling Lists</a>
+<a href="/css/link-states.html">The Display Property</a>
+.</p>
+
+						<p>Download: <a href="/challenge-files/challenge-4.zip" download>Starter Files</a> | <a href="/challenge-files/challenge-5.zip" download>Finished Version</a></p>
+					</div>
+
+					<div class="challenge-content">
+						<p>As you work, don't forget to frequently save your file and check it in your browser to see how everything displays.</p>
+
+						<ol>
+							<li>This challenge builds on the previous challenges, so open up your files from last time to get started. If you didn't finish the previous challenge or haven't had time to make corrections, you can download the starter files above, which contain a completed version of the last challenge, and work from that instead.</li>
+
+							<li>So far, our website is very self-contained. Let's broaden our horizons a bit by setting up some links. In the introductory paragraph of <code>index.html</code>, <strong>make the words "landmark design moments" a link</strong> that points to this article: <span class="selectable">https://www.printmag.com/post/vintage-graphic-design-ads-1960s</span>. Be sure to test the link in your browser to make sure it works correctly.</li>
+
+							<li>Now, let's do some linking <em>within</em> our own website. First we'll need to create at least one more page:
+								<ol>
+									<li>Inside your root directory <strong>create a new directory named:</strong> <span class="selectable">designers</span>.</li>
+									<li><strong>Create a new HTML file</strong> in your <em>designers</em> directory and name it <span class="selectable">ikko-tanaka.html</span>.</li>
+									<li>In the new HTML file, <strong>add all required skeleton code</strong> and for the <code>title</code> element use: <span class="selectable">Ikko Tanaka | The Design of the 1960s</span>.</li>
+									<li>Also in the new HTML file, <strong>modify the file path that points to <code>style.css</code></strong> so that it finds it in the parent of the current directory.</li>
+									<li>Inside the <code>body</code> element, <strong>copy and paste in from the home page</strong> the <code>header</code> and <code>footer</code> along with their contents, then between them <strong>add</strong> an empty <code>main</code> element to hold the unique content we'll write for the page.</li>
+									<li>Inside the newly added <code>main</code> element, <strong>add a top-level heading</strong> that says <span class="selectable">Ikko Tanaka</span>.</li>
+									<li>Below the heading, <strong>add two paragraphs</strong> with the following content:
+										<div class="selectable">
+											<p>Born in Nara, Japan in 1930, Ikko Tanaka created a style of graphic design that fused modernism principles and aesthetics with the Japanese tradition. As a child he studied art and as a young adult he was involved in modern drama and theatrical study groups. In 1963 he formed Tanaka Design Studio where he worked for corporations such as Mazda, Hanae Mori, Issey Miyake and the International Garden and Greenery Exhibition.</p>
+											<p>He is most well-known for his poster design for the Nihon Buyo performance by the Asian Performing Arts Institute. The poster (pictured above) shows his fusion of modernist sensibilities and traditional Japanese culture through the simplified illustration of a geisha. He designed, among other things, posters, logos, packaging and annual reports. Among his wide ranging work, his designs for the symbols for the Expo '85 in Tsukuba and the World City Expo Tokyo '96 garnered much attention. He died in 2002 of a heart attack at the age of 71.</p>
+										</div>
+									</li>
+									<li>Because all of this information could stand alone if taken out of context it, <strong>wrap</strong> everything inside the <code>main</code> element in the appropriate semantic element for <strong>content that could stand alone as its own document</strong>.</li>
+								</ol>
+							</li>
+							<li>Now let's briefly switch back to <code>index.html</code>. In the list of significant designers, find Ikko Tanaka's name and <strong>link it to the new page</strong> about him. Remember to think about the <em>designers</em> directory when writing the path of your link. Make sure the link is placed <em>inside</em> the list item, not the other way around.</li>
+							<li>Back in <code>ikko-tanaka.html</code>, let's provide a way for users to get back to the home page. We've already added <em>home</em> as one of the list items in the <code>nav</code> of our page <code>header</code>, so <strong>link that to the home page,</strong> remembering to consider the directory relationship between files when you write the file path.</li>
+							<li>We want to keep the navigation the same on all pages, so <strong>copy the modified <em>home</em> link</strong> from <code>ikko-tanaka.html</code> and paste it in to <strong>replace the existing <em>home</em> item in the home page <code>nav></code></strong>. Then <strong>modify the link</strong> for <em>home</em> so that it correctly links to itself. (It's pretty common for page navigation to have links that point to the current page.)</li>
+							<li>Finally, let's move into our CSS file and add some styles for all our links and their various possible states:
+								<ol>
+									<li>For <strong>default</strong> links, change the text color to: <span class="selectable">#006EAC</span>.</li>
+									<li>For <strong>visited</strong> links, change the color to: <span class="selectable">#2A4758</span>.</li>
+									<li>For <strong>hovered</strong> links, change the color to: <span class="selectable">white</span>, and set the background color to: <span class="selectable">#006EAC</span>.</li>
+									<li>For <strong>focused</strong> links, change the color to: <span class="selectable">white</span>, and set the background color to: <span class="selectable">#AE053E</span>.</li>
+									<li>For <strong>active</strong> links, change the color to: <span class="selectable">white</span>, and set the background color to: <span class="selectable">black</span>.</li>
+								</ol>
+							</li>
+
+							<li>That's it for this challenge! Now download the <a href="/challenge-files/challenge-5.zip" download>finished version</a> and compare your own work against it, making sure to check that:
+								<ol>
+									<li>All your links work as intended.</li>
+									<li>Nothing is missing from your new HTML.</li>
+									<li>All the styles for your link states are written correctly and work as intended.</li>
 								</ol>
 							</li>
 
