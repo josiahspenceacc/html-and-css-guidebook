@@ -324,7 +324,7 @@
 						<p>As you work, don't forget to frequently save your file and check it in your browser to see how everything displays.</p>
 
 						<ol>
-							<li>This challenge builds on the previous challenges, so open up your files from last time to get started. If you didn't finish the previous challenge or haven't had time to make corrections, you can download the starter files above, which contain a completed version of the last challenge, and work from that instead.</li>
+							<li>This challenge builds on the previous challenges, so open up your files from last time to get started. Or you can download the starter files above, which contain a completed version of the last challenge, and work from that instead.</li>
 
 							<li>So far, our website is very self-contained. Let's broaden our horizons a bit by setting up some links. In the introductory paragraph of <code>index.html</code>, <strong>make the words "landmark design moments" a link</strong> that points to this article: <span class="selectable">https://www.printmag.com/post/vintage-graphic-design-ads-1960s</span>. Be sure to test the link in your browser to make sure it works correctly.</li>
 
@@ -363,6 +363,76 @@
 									<li>All your links work as intended.</li>
 									<li>Nothing is missing from your new HTML.</li>
 									<li>All the styles for your link states are written correctly and work as intended.</li>
+								</ol>
+							</li>
+
+						</ol>
+				
+					</div>
+				
+				</div>
+
+			</details>
+
+			<details>
+				<summary>Challenge 6</summary>
+
+				<div>
+					<div class="challenge-meta">
+						<p>This challenge reviews: <a href="/css/web-fonts.html">Web Fonts</a>
+<a href="/css/float-clear.html">Float & Clear</a>
+<a href="/css/fluid-width.html">Fluid Width</a>
+.</p>
+
+						<p>Download: <a href="/challenge-files/challenge-5.zip" download>Starter Files</a> | <a href="/challenge-files/challenge-6.zip" download>Finished Version</a></p>
+					</div>
+
+					<div class="challenge-content">
+						<p>As you work, don't forget to frequently save your file and check it in your browser to see how everything displays.</p>
+
+						<ol>
+							<li>As always, this challenge builds on previous challenges, so open up your files from last time to get started. Or you can download the starter files above and work from that instead.</li>
+
+							<li>Let's start in the <code>ikko-tanaka.html</code> file that was created in the last challenge. Since we're talking about Tanaka's design work, it would be good to show a visual example. To do so:
+								<ol>
+									<li><strong>Download <a href="challenge-files/nihon.jpg" download>this image</a></strong> of one of Tanaka's posters to your <em>images</em> directory.</li>
+									<li>In your <code>ikko-tanaka.html</code> code, below the <code>h1</code>, <strong>add the image</strong> to the page. Remember as you write the file path to the image that your current file is in a sub-directory.</li>
+									<li>For the <code>alt</code> attribute, use the text <span class="selectable">Nihon Buyo poster by Ikko Tanaka</span>.</li>
+								</ol>
+							</li>
+							<li>Since this image helps users to understand Tanaka's design, <strong>wrap the image in the appropriate semantic element</strong> that means <em>a visual example of the topic referenced in the text</em>.</li>
+							<li>The default styles for the element you just added in step 3 add a bit of awkward space to the left side of the image. Use your developer tools to figure out what is causing the extra space and, in your CSS file, <strong>remove the space from the left side of this type of element</strong>.</li>
+							<li>Now, let's make some more specific design changes. Since we don't want to affect all image examples, we'll need to first <strong>add the following class to the element you added in step 3:</strong> <span class="selectable">design-example</span>. Now we can reuse the same class for similar examples on pages about other designers.</li>
+							<li>Now, in your CSS, <strong>select for the <code>design-example</code> class</strong> and do the following:
+								<ol>
+									<li>Make it so the element will <strong>never be wider than 30% of the parent</strong>.</li>
+									<li>Make it so the element <strong>moves to the right side of the parent with the text wrapping around its left side</strong>.</li>
+									<li>We don't want the text to butt up against the image awkwardly, so <strong>add <code>1rem</code> of space</strong> on both the <strong>left and bottom sides</strong> of the element.</li>
+								</ol>
+							</li>
+							<li>If you save your files and check them in your browser, you'll notice that the image actually hangs out of the column of the text. This is because we've set the element that contains it to a size smaller than the image file itself, so we need to tell the image to shrink to fit within its parent. It's a good idea to make this adjustment to all images everywhere so we don't run into the same problem again. To do so, in your CSS <strong>select for all image elements</strong> and apply the following:
+								<ol>
+									<li>Set images to <strong>never grow wider than 100% of the parent</strong>.</li>
+									<li>While we're at it, make let's make the behavior of images more predictable by setting images to <strong>behave as a <span>block</span> element</strong> rather than as an <span>inline</span> element.</li>
+								</ol>
+							</li>
+							<li>Now let's switch gears. When we chose our typefaces for the site we didn't know yet how to use webfonts and so we used system fonts. Now, let's take advantage of a wider selection by implementing some Google Fonts:
+								<ol>
+									<li>Go to Google Fonts and select <strong>the bold weight only of <a href="https://fonts.google.com/specimen/Oswald">Oswald</a></strong> and <strong>the regular, regular italic, and bold weights of <a href="https://fonts.google.com/specimen/Merriweather">Merriweather</a>.</li>
+									<li><strong>Add the Google Fonts embed code</strong> to the <code>head</code> of <strong>each</strong> HTML file in your project.</li>
+									<li>In your CSS, <strong>replace the font declaration on the <code>HTML</code> element with Merriweather</strong>.</li>
+									<li>In your CSS, <strong>replace the font declaration for the headings with Oswald</strong>.</li>
+									<li>Since we only brought in the bold weight of Oswald, <strong>remove the declaration that sets the <code>h1</code> to have a normal font weight</strong>.</li>
+
+								</ol>
+							</li>
+
+							<li>That's it, another challenge complete! Now download the <a href="/challenge-files/challenge-6.zip" download>finished version</a> and compare your own work against it, making sure to check that:
+								<ol>
+									<li>You've used the correct semantic element for your image.</li>
+									<li>You've styled the image and its parent element correctly in your CSS.</li>
+									<li>You have the correct embed code for the Google Fonts.</li>
+									<li>Double check your indentation.</li>
 								</ol>
 							</li>
 
