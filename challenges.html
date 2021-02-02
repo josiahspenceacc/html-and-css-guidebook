@@ -194,7 +194,7 @@
 							<li>But our HTML file doesn't yet know about the CSS file. In the <code>head</code> of <code>index.html</code>, <strong>add the necessary code to tell the browser to use the CSS file</strong> you just created.</li>
 							<li>One of the primary factors that determines the look and feel of a design is the type, so let's get started by setting a typeface for all the body copy. In your CSS file, <strong>select for the HTML element that contains all other HTML elements and apply this font stack:</strong> <span class="selectable">Georgia, Times, "Times New Roman", serif</span>. Selecting the topmost parent element like this should result in the type being used by all elements on the page.</li>
 							<li>Now the spacing between the lines in the body copy feels too tight. Let's fix that by <strong>setting the space between lines to <code>1.5</code></strong>. (Notice that we don't need a unit for this measurement.)</li>
-							<li>To add a bit of variety to the site, in your CSS <strong>select for <code>h1</code>, <code>h2</code>, and <code>h3</code> (there aren't any h3s on the page yet, but we may add some in the future) and apply the font stack:</strong> <span class="selectable">Arial, "Helvetica Neue", Helvetica, sans-serif</span>.
+							<li>To add a bit of variety to the site, in your CSS <strong>select for <code>h1</code>, <code>h2</code>, and <code>h3</code></strong> (there aren't any h3s on the page yet, but we may add some in the future) and <strong>apply this font stack:</strong> <span class="selectable">Arial, "Helvetica Neue", Helvetica, sans-serif</span>.
 								<ol>
 									<li>What is the most efficient way you can write the CSS to apply this font stack to the headings listed?</li>
 									<li>Note that because this is applied to specific elements within the element you used in Step 4, the font overrides the Georgia fonts for these headings.</li>
@@ -418,7 +418,7 @@
 							</li>
 							<li>Now let's switch gears. When we chose our typefaces for the site we didn't know yet how to use webfonts and so we used system fonts. Now, let's take advantage of a wider selection by implementing some Google Fonts:
 								<ol>
-									<li>Go to Google Fonts and select <strong>the bold weight only of <a href="https://fonts.google.com/specimen/Oswald">Oswald</a></strong> and <strong>the regular, regular italic, and bold weights of <a href="https://fonts.google.com/specimen/Merriweather">Merriweather</a>.</li>
+									<li>Go to Google Fonts and select <strong>the bold weight only of <a href="https://fonts.google.com/specimen/Oswald">Oswald</a></strong> and <strong>the regular, regular italic, and bold weights of <a href="https://fonts.google.com/specimen/Merriweather">Merriweather</a></strong>.</li>
 									<li><strong>Add the Google Fonts embed code</strong> to the <code>head</code> of <strong>each</strong> HTML file in your project.</li>
 									<li>In your CSS, <strong>replace the font declaration on the <code>HTML</code> element with Merriweather</strong>.</li>
 									<li>In your CSS, <strong>replace the font declaration for the headings with Oswald</strong>.</li>
@@ -433,6 +433,72 @@
 									<li>You've styled the image and its parent element correctly in your CSS.</li>
 									<li>You have the correct embed code for the Google Fonts.</li>
 									<li>Double check your indentation.</li>
+								</ol>
+							</li>
+
+						</ol>
+				
+					</div>
+				
+				</div>
+
+			</details>
+
+			<details>
+				<summary>Challenge 7</summary>
+
+				<div>
+					<div class="challenge-meta">
+						<p>This challenge reviews: <a href="/css/backgrounds.html">CSS Backgrounds</a>
+<a href="/css/effects.html">Special Effects</a>
+.</p>
+
+						<p>Download: <a href="/challenge-files/challenge-6.zip" download>Starter Files</a> | <a href="/challenge-files/challenge-7.zip" download>Finished Version</a></p>
+					</div>
+
+					<div class="challenge-content">
+						<p>As you work, don't forget to save your file and check it in your browser to see how everything displays.</p>
+
+						<ol>
+							<li>As always, this challenge builds on previous challenges, so open up your files from last time to get started. Or you can download the starter files above and work from that instead.</li>
+
+							<li>We've made a fair amount of progress toward styling our site, but the pages still look a little plain. Let's add a background color to spice things up. <strong>To the element that holds all other elements on the page, add the following background color:</strong> <span class="selectable">#FFFEF4</span>. It's subtle, but it adds a nice warmth.</li>
+							<li>Now to add some real excitement to the design with a background image:
+								<ul>
+									<li><strong>Download</strong> <a href="/challenge-files/dots.png">this image</a> to your <em>images</em> directory, then <strong>apply it as a background image</strong> to the <code>html</code> element.</li>
+									<li>Set the background image so that it <strong>only repeats vertically</strong>, not horizontally.</li>
+									<li>To make sure the background image doesn't interfere with any of the content of the page, give the <code>html</code> element <strong><span class="selectable">40px</span> of padding on its left side.</strong></li>
+								</ul>
+							</li>
+							<li>Next, we'll create a more interesting and attention-getting hero area for the home page:
+								<ul>
+									<li>In <code>index.html</code>, <strong>remove the image</strong> that is placed directly after the <code>h1</code> element.</li>
+									<li>Then, wrap the <code>h1</code> in <strong>a meaningless block element</strong>, and <strong>give the element a class</strong> of <span class="selectable">hero</span>.</li>
+									<li><strong>Download</strong> <a href="/challenge-files/challenge-hero.jpg">this image</a> to your <em>images</em> directory, then <strong>apply it as a background image</strong> to the element with the class of <code>hero</code>.</li>
+									<li>The element is too short to show much of the newly added background image, so set it so that it is <strong>always at least <span class="selectable">38rem</span> tall</strong> (the same as the <code>main</code> element's width).</li>
+									<li>The background image is still a little too big, so <strong>set the background image to always show as much of itself as possible while filling the entire container</strong>.</li>
+									<li>To make the text work better with the image, set the hero so that <strong>any text it contains will be center aligned</strong>.</li>
+									<li>The only problem now is that the text is a bit hard to read in some places. To fix this, give <strong>only the <code>h1</code> inside the hero a <span class="selectable">white</span> text shadow</strong>. (No other <code>h1</code> on the site should be affected.) The shadow should be <strong>offset <span class="selectable">5px</span> to the right</strong>, <strong><span class="selectable">5px</span> to the bottom</strong>, and have <strong>no blur</strong>.</li>
+								</ul>
+							</li>
+
+							<li>It's a good idea to give users a suggested action to perform when they first get to the site, so let's create a call to action link:
+								<ul>
+									<li>Inside the hero <code>div</code>, <strong>add a new anchor link</strong> that points to the <em>Significant Designers</em> <code>h2</code> further down the page. (Hint: You'll need to add something to the <code>h2</code>. You decide what to call it.)</li>
+									<li>So that we can style it separately from other links, <strong>give the link you just added a class of <span class="selectable">call-to-action</span></strong>.</li>
+									<li>In your CSS, give the call to action link a <strong>background color of</strong> <span class="selectable">#0070B0</span>, and <strong>make the text white</strong>.</li>
+									<li>To give the text some breathing room, give the link <strong>padding of <span class="selectable">1rem</span> on the top and bottom, and <span class="selectable">1.5rem</span> on the sides</strong>.</li>
+									<li>To make things a little cleaner and easier to read, <strong>make the text bold and remove the underline</strong>.</li>
+									<li><strong>Round the corners of the box by <span class="selectable">.5rem</span></strong> to soften things up.</li>
+									<li>Finally, to make the link stand out from the background image <strong>add a <span class="selectable">white</span> shadow to the box</strong>. The shadow should be <strong>offset <span class="selectable">2px</span> to the right</strong>, <strong><span class="selectable">2px</span> to the bottom</strong>, and be <strong>blurred <span class="selectable">6px</span></strong>.</li>
+								</ul>
+							</li>
+
+							<li>That's one more challenge complete! Now download the <a href="/challenge-files/challenge-7.zip" download>finished version</a> and compare your own work against it, making sure to check that:
+								<ol>
+									<li>The new HTML in your <code>index.html</code> file is correct.</li>
+									<li>You've used all the correct styles for your background images.</li>
+									<li>Your shadows and rounded corners use the correct values.</li>
 								</ol>
 							</li>
 

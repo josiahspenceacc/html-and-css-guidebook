@@ -344,6 +344,8 @@ details[open] summary {
 
 .selectable {
 	background-color: #f5f2f0;
+	color: black;
+	font-weight: normal;
 	padding: .1rem .25rem;
 	user-select: all;
 }
