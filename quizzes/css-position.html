@@ -23,7 +23,7 @@
 <body id="quiz-body">
 
 <div id="app">
-	<quiz v-bind:badgehue="325" subject="Position Property" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
+	<quiz v-bind:badgehue="325" subject="Position" :currentStep="currentStep" v-on:next-step="nextStep" v-on:skip-step="skipStep" v-cloak>
 
 		<!-- Step 1 -->
 		<quiz-step :step="1" mode="css"
@@ -236,10 +236,10 @@ nav li {
 
 			<h3>Moving in the Viewport</h3>
 			
-			<p>And now something a little more complex and position an element so that it stays in place as the page scrolls beneath it. Again, we'll do this in two steps:</p>
+			<p>And now we'll try something a little more complex and position an element so that it stays in place as the page scrolls beneath it. Again, we'll do this in two steps:</p>
 
 			<ol>
-				<li>Set the <code>position</code> property for the <strong>navigation</strong> so that it <strong>is removed from the document flow</strong> and can be positioned with regard to the <strong>viewport window</strong> as a canvas. It should remain still when the page scrolls.</li>
+				<li>Set the <code>position</code> property for the <strong>navigation</strong> so that it <strong>is removed from the document flow</strong> and can be positioned with regard to the <strong>viewport window</strong> as a canvas. It should remain in place when the page scrolls.</li>
 
 				<li>Place the <strong>navigation</strong> at the <strong>very bottom</strong> of the viewport window, with <strong>no space</strong> between it and the edge of the window.</li>
 			</ol>
@@ -360,7 +360,7 @@ nav li {
 
 			<h3>Placing Multiple Sides</h3>
 			
-			<p>It's nice that the navigation stays at the bottom as the user scrolls, but we can probably make it look a little nicer. Add the CSS to make the <strong>navigation</strong> span the whole width of the bottom of the window, from the <strong>left edge</strong> to the <strong>right edge</strong>.</p>
+			<p>It's nice that the navigation stays at the bottom as the user scrolls, but we can probably make it look a little nicer. Add the CSS to make the <strong>navigation</strong> extend the whole width of the bottom of the window, from the <strong>left edge</strong> to the <strong>right edge</strong>.</p>
 
 			<p>There are multiple ways to achieve this, but you should use the technique most closely tied to the <code>position</code> property and its related properties</p>
 			
