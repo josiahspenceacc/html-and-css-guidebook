@@ -2,6 +2,8 @@
 Vue.component( 'site-footer', {
 	template: `<footer class="site-footer" :class="{ isOpen: isOpen }">
 
+		<licence></licence>
+
 		<button type="button" class="menu-toggle" @click="toggle">
 	
 			<svg xmlns="http://www.w3.org/2000/svg" class="menu-open icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

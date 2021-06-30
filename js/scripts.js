@@ -8,6 +8,7 @@ import './lesson-quiz.js';
 import './code-block.js';
 import './pen-demo.js';
 import './table-of-contents.js';
+import './licence.js';
 import './page-footer.js';
 
 
